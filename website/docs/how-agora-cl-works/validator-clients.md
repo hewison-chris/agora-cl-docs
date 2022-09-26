@@ -16,7 +16,7 @@ As mentioned, validators have two responsibilities: to [propose](/docs/terminolo
 
 ## How does it work?
 
-A validator instance is permitted to begin participating in the network once 32 BOA is locked up in a [validator deposit contract](./validator-deposit-contract). Validators are tasked with correctly [proposing](/docs/terminology#propose) or [attesting](/docs/terminology#attest) to blocks on the beacon chain, and receive either rewards or penalties to the initial deposit based upon their overall performance.
+A validator instance is permitted to begin participating in the network once 40,000 BOA is locked up in a [validator deposit contract](./validator-deposit-contract). Validators are tasked with correctly [proposing](/docs/terminology#propose) or [attesting](/docs/terminology#attest) to blocks on the beacon chain, and receive either rewards or penalties to the initial deposit based upon their overall performance.
 
 If validators act against the protocol, their locked up deposit will be cut in a process known as 'slashing'. Validators that are intermittently offline or do not have reliable uptime will gradually lose their deposit, eventually leaking enough to be automatically removed from the network entirely. More on this topic can be found in the [Ethereum proof-of-stake economics](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-economics/) outline.
 
@@ -32,7 +32,7 @@ In order of operations, the client:
 4. The validator then has a ticker that works every slot \(6 seconds\). If the slot ticks at the validator's assigned slot, a beacon block is either [proposed](/docs/terminology#propose) or [attested](/docs/terminology#attest), depending on assigned role.
 5. This repeats forever until the validator decides to exit the system voluntarily, or is penalized by the system for either acting maliciously or being idle when assigned tasks to perform.
 
-As mentioned, every validator instance represents 32 BOA being staked in the network. In Agora-cl, this is currently the default; however, the Agora-cl validator also supports running multiple keypairs that correspond to multiple validators in a single runtime, simplifying the process of deploying several validator instances for those whom want to stake more funds to help secure the network.  To run multiple keypairs, they must be encrypted with the same password and kept in the same directory.
+As mentioned, every validator instance represents 40,000 BOA being staked in the network. In Agora-cl, this is currently the default; however, the Agora-cl validator also supports running multiple keypairs that correspond to multiple validators in a single runtime, simplifying the process of deploying several validator instances for those whom want to stake more funds to help secure the network.  To run multiple keypairs, they must be encrypted with the same password and kept in the same directory.
 
 ### Proposing a beacon block
 

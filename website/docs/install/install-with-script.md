@@ -79,8 +79,8 @@ We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP
 **Can you mix and match networks between execution layer and consensus layer?** <br />
 No. See [Nodes and networks](../concepts/nodes-networks.md) for more information.
 
-**Can I stake with less than 32 BOA?** <br />
-Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 BOA.
+**Can I stake with less than 40,000 BOA?** <br />
+Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 40,000 BOA.
 
 
 **What should I do if I can't run a node using my own hardware?** <br />

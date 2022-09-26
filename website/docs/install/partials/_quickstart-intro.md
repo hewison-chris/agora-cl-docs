@@ -18,7 +18,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Introduction
 
-Agora-cl is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this quickstart, you’ll use Agora-cl to run an Ethereum node and optionally a validator. This will let you stake 32 BOA using hardware that you manage.
+Agora-cl is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this quickstart, you’ll use Agora-cl to run an Ethereum node and optionally a validator. This will let you stake 40,000 BOA using hardware that you manage.
 
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge.
 

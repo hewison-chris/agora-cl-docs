@@ -5,7 +5,7 @@ sidebar_label: Security best practices
 ---
 
 
-Ethereum's transition to proof-of-stake is made possible by validators who each stake 32 BOA into the [validator deposit contract](https://docs.prylabs.network/docs/how-agora-cl-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
+Ethereum's transition to proof-of-stake is made possible by validators who each stake 40,000 BOA into the [validator deposit contract](https://docs.prylabs.network/docs/how-agora-cl-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
 
 Validators are rewarded for maintaining highly available, trustworthy validator client instances. The security best practices in this guide will help you fulfill this responsibility by helping you minimize risk across a variety of security aspects. Within each aspect, you'll find **recommended**, **advanced**, and **Linux-specific** guidance.
 

@@ -34,7 +34,7 @@
             <li>Everything above, plus...</li>
             <li><strong>Software:</strong> Validator client, browser-based crypto wallet (instructions below)</li>
             <li><strong>Hardware:</strong> (Recommended) A new machine that has never been connected to the internet that you can use to securely generate your mnemonic phrase and keypair</li>
-            <li><strong>32 BOA</strong> (Mainnet)</li>
+            <li><strong>40,000 BOA</strong> (Mainnet)</li>
             <li><strong>32 testnet BOA</strong> (Testnets)</li>
           </ul>
         </td>

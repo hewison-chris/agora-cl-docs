@@ -268,7 +268,7 @@ The Ethereum launchpad URL is `https://launchpad.ethereum.org` and the only, off
 
 :::
 
-Use the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) to deposit your 32 BOA. If you want to participate in the **testnet**, use the [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
+Use the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) to deposit your 40,000 BOA. If you want to participate in the **testnet**, use the [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
 
 Throughout the process, you'll be asked to generate new validator credentials using the [official Ethereum deposit command-line-tool](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Agora-cl from that folder in the next step.
 
