@@ -1,8 +1,8 @@
 ---
-id: prysmatic-labs
-title: Prysmatic Labs
+id: bosagora
+title: Bosagora
 sidebar_label: Agora-cl License
-description: Relevant licenses for Agora-cl and the various materials produced by Prysmatic Labs.
+description: Relevant licenses for Agora-cl and the various materials produced by Bosagora.
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
