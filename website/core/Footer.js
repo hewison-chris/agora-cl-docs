@@ -47,7 +47,7 @@ class Footer extends React.Component {
           <div>
             <h5>Community</h5>
             <a
-              href="https://gitter.im/prysmaticlabs/prysm"
+              href="https://gitter.im/zeroone-boa/agora-cl"
               target="_blank"
               rel="noreferrer noopener">
               Gitter
@@ -63,12 +63,12 @@ class Footer extends React.Component {
           <div>
             <h5>More</h5>
             <a href={"https://medium.com/prysmatic-labs"}>Blog</a>
-            <a href="https://github.com/prysmaticlabs/prysm">GitHub</a>
+            <a href="https://github.com/zeroone-boa/agora-cl">GitHub</a>
             <a
               className="github-button"
-              href="https://github.com/prysmaticlabs/prysm"
+              href="https://github.com/zeroone-boa/agora-cl"
               data-icon="octicon-star"
-              data-count-href="/prysmaticlabs/prysm"
+              data-count-href="/zeroone-boa/agora-cl"
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star Agora-cl on GitHub">

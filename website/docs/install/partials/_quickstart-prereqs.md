@@ -27,15 +27,15 @@
     <tr>
         <td><strong>Validator</strong></td>
         <td>
-        Lets you stake ETH, propose + validate blocks, earn staking rewards + transaction fee tips.
+        Lets you stake BOA, propose + validate blocks, earn staking rewards + transaction fee tips.
         </td>
         <td>
           <ul>
             <li>Everything above, plus...</li>
             <li><strong>Software:</strong> Validator client, browser-based crypto wallet (instructions below)</li>
             <li><strong>Hardware:</strong> (Recommended) A new machine that has never been connected to the internet that you can use to securely generate your mnemonic phrase and keypair</li>
-            <li><strong>32 ETH</strong> (Mainnet)</li>
-            <li><strong>32 testnet ETH</strong> (Testnets)</li>
+            <li><strong>32 BOA</strong> (Mainnet)</li>
+            <li><strong>32 testnet BOA</strong> (Testnets)</li>
           </ul>
         </td>
     </tr>
@@ -45,10 +45,10 @@
 
 ### Best practices
 
-- **If you're staking ETH as a validator, try this guide on a testnet first**, *then* mainnet.
+- **If you're staking BOA as a validator, try this guide on a testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for the network(s) that you're using: [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/), [Mainnet](https://launchpad.ethereum.org/en/).
 - Review all of our [published security best practices](/docs/security-best-practices).
-- **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Agora-cl Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
+- **Join the community** - join our [mailing list](https://groups.google.com/g/agora-cl-dev), the [Agora-cl Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 </div>

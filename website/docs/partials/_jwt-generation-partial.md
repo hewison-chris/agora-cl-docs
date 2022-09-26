@@ -21,7 +21,7 @@ The HTTP connection between your beacon node and execution node needs to be auth
 SET USE_PRYSM_VERSION=v3.1.1
 
 ## Required.
-prysm.bat beacon-chain generate-auth-secret
+agora-cl.bat beacon-chain generate-auth-secret
 ```
 
   </TabItem>
@@ -32,7 +32,7 @@ prysm.bat beacon-chain generate-auth-secret
 USE_PRYSM_VERSION=v3.1.1
 
 ## Required.
-./prysm.sh beacon-chain generate-auth-secret
+./agora-cl.sh beacon-chain generate-auth-secret
 ```
 
   </TabItem>

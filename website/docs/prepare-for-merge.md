@@ -35,7 +35,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-1">Use Agora-cl v3.1.1</label>
-            <p><a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.1'>Agora-cl v3.1.1</a> is a <strong>Merge-ready release</strong>. Review the <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.1'>release notes</a> to understand how this release impacts your configuration.</p>
+            <p><a href='https://github.com/zeroone-boa/agora-cl/releases/tag/v3.1.1'>Agora-cl v3.1.1</a> is a <strong>Merge-ready release</strong>. Review the <a href='https://github.com/zeroone-boa/agora-cl/releases/tag/v3.1.1'>release notes</a> to understand how this release impacts your configuration.</p>
         </div>
     </div>
     <div class='task'>
@@ -49,7 +49,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-6" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-6">Verify your Agora-cl version</label>
-            <p>Verify that you're running Agora-cl <code>v3.1.1</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
+            <p>Verify that you're running Agora-cl <code>v3.1.1</code> by issuing the following command: <code>agora-cl.sh beacon-chain --version</code> (Linux) <code>agora-cl.bat beacon-chain --version</code> (Windows).</p>
         </div>
     </div>
     <div class='task'>
@@ -122,7 +122,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-8" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-8">Update your firewall</label>
-            <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port <code>8551</code>. Previously, port <code>8545</code> was used. If your beacon node and execution node are on different host machines, ensure that your firewall rules are updated accordingly, and refer to <a href='./prysm-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a> for general connectivity improvement tips.</p>
+            <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port <code>8551</code>. Previously, port <code>8545</code> was used. If your beacon node and execution node are on different host machines, ensure that your firewall rules are updated accordingly, and refer to <a href='./agora-cl-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a> for general connectivity improvement tips.</p>
         </div>
     </div>
     <div class='task'>
@@ -184,7 +184,7 @@ import FullSyncWarningPartial from '@site/docs/partials/_full-sync-warning-parti
 
 <FullSyncWarningPartial />
 
-Other than ensuring that you're using the [latest stable Agora-cl release](https://github.com/prysmaticlabs/prysm/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](./execution-node/fee-recipient.md) to learn more.
+Other than ensuring that you're using the [latest stable Agora-cl release](https://github.com/zeroone-boa/agora-cl/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](./execution-node/fee-recipient.md) to learn more.
 
 import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-partial.md';
 

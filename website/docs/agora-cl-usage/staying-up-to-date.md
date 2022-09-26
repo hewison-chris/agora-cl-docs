@@ -20,16 +20,16 @@ There are three main ways of installing Agora-cl:
 
 ## Recommended versions
 
-Regardless of your installation method, we always recommend you are running the latest version in our [releases page](https://github.com/prysmaticlabs/prysm/releases) on Github, specified in [semver](https://semver.org/) format such as `v1.0.0-beta.1`. You can check your Agora-cl version by running your beacon node or validator with the `--version` flag. For example, if using `prysm.sh` to run the beacon node, you would run:
+Regardless of your installation method, we always recommend you are running the latest version in our [releases page](https://github.com/zeroone-boa/agora-cl/releases) on Github, specified in [semver](https://semver.org/) format such as `v1.0.0-beta.1`. You can check your Agora-cl version by running your beacon node or validator with the `--version` flag. For example, if using `agora-cl.sh` to run the beacon node, you would run:
 
 ```
-prysm.sh beacon-chain --version
+agora-cl.sh beacon-chain --version
 ```
 
-You should see a message that says `Using prysm version` and prints the version number. If you have set environment variable `USE_PRYSM_VERSION` to a specific version, the prysm.sh script will not automatically update your client. Unset the environment variable or set it to a recent version, then restart your processes with prysm.sh.
+You should see a message that says `Using agora-cl version` and prints the version number. If you have set environment variable `USE_PRYSM_VERSION` to a specific version, the agora-cl.sh script will not automatically update your client. Unset the environment variable or set it to a recent version, then restart your processes with agora-cl.sh.
 
 :::warning Double Check Running Processes
-Running `prysm.sh beacon-chain --version` may not reflect the version of the currently running process. After verifying the version with `prysm.sh`, be sure to check that your process was restarted recently to pick up the latest version. Alternatively, you can query the `/metrics` page for the `prysm_version` value on port `8080` or `8081` for the beacon-chain node and validator node, respectively.
+Running `agora-cl.sh beacon-chain --version` may not reflect the version of the currently running process. After verifying the version with `agora-cl.sh`, be sure to check that your process was restarted recently to pick up the latest version. Alternatively, you can query the `/metrics` page for the `prysm_version` value on port `8080` or `8081` for the beacon-chain node and validator node, respectively.
 :::
 
 :::info Always Run a Stable Release
@@ -38,7 +38,7 @@ If you are running docker or building from source, we **never** recommend runnin
 
 ## How to subscribe for updates
 
-Agora-cl has two official channels for release updates: our [Discord](https://discord.gg/prysmaticlabs) and our [mailing list](https://groups.google.com/g/prysm-dev). All releases will be notified via those channels, and we always recommend reading our release notes on Github in case there are **breaking changes** to running a node. Our team avoids breaking changes whenever possible, and we will make it clear in our release notes or in releases ahead of time that breaking changes are coming.
+Agora-cl has two official channels for release updates: our [Discord](https://discord.gg/prysmaticlabs) and our [mailing list](https://groups.google.com/g/agora-cl-dev). All releases will be notified via those channels, and we always recommend reading our release notes on Github in case there are **breaking changes** to running a node. Our team avoids breaking changes whenever possible, and we will make it clear in our release notes or in releases ahead of time that breaking changes are coming.
 
 ## How to securely upgrade Agora-cl
 
@@ -65,35 +65,35 @@ import TabItem from '@theme/TabItem';
 
 **Using the Agora-cl installation script**
 
-If you are running `prysm.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `agora-cl.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
 To update your Agora-cl with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
 ```text
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
-docker pull gcr.io/prysmaticlabs/prysm/validator:stable
+docker pull gcr.io/zeroone-boa/agora-cl/beacon-chain:stable
+docker pull gcr.io/zeroone-boa/agora-cl/validator:stable
 ```
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the commit hash of the latest release, then do `git checkout COMMIT_HASH`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the commit hash of the latest release, then do `git checkout COMMIT_HASH`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
 
 </TabItem>
 <TabItem value="win">
 
 **Using the Agora-cl installation script**
 
-If you are running `prysm.bat`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `agora-cl.bat`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
 To update your Agora-cl with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
 ```text
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
-docker pull gcr.io/prysmaticlabs/prysm/validator:stable
+docker pull gcr.io/zeroone-boa/agora-cl/beacon-chain:stable
+docker pull gcr.io/zeroone-boa/agora-cl/validator:stable
 ```
 
 </TabItem>
@@ -101,20 +101,20 @@ docker pull gcr.io/prysmaticlabs/prysm/validator:stable
 
 **Using the Agora-cl installation script**
 
-If you are running `prysm.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `agora-cl.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
 To update your Agora-cl with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
 ```text
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
-docker pull gcr.io/prysmaticlabs/prysm/validator:stable
+docker pull gcr.io/zeroone-boa/agora-cl/beacon-chain:stable
+docker pull gcr.io/zeroone-boa/agora-cl/validator:stable
 ```
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the commit hash of the latest release, then do `git checkout COMMIT_HASH`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the commit hash of the latest release, then do `git checkout COMMIT_HASH`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
 
 
 </TabItem>
@@ -122,15 +122,15 @@ To run our latest release with Bazel, you can look up our [releases page](https:
 
 **Using the Agora-cl installation script**
 
-If you are running `prysm.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `agora-cl.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
 To update your Agora-cl with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
 ```text
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
-docker pull gcr.io/prysmaticlabs/prysm/validator:stable
+docker pull gcr.io/zeroone-boa/agora-cl/beacon-chain:stable
+docker pull gcr.io/zeroone-boa/agora-cl/validator:stable
 ```
 
 </TabItem>
@@ -158,19 +158,19 @@ If you are downgrading between **patch versions**, which means only the last num
 
 **Using the Agora-cl installation script**
 
-If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully).
 
-Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `export USE_PRYSM_VERSION=v1.0.5`.
+Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/zeroone-boa/agora-cl/releases), such as v1.0.5, then run the command `export USE_PRYSM_VERSION=v1.0.5`.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
 **Using Docker**
 
-To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the release tag you want to run, such as v1.0.5, then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the release tag you want to run, such as v1.0.5, then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
 
 **Using Systemd**
 
@@ -186,7 +186,7 @@ After           = network-online.target
 [Service]
 Type            = simple
 User            = eth
-ExecStart       = /home/eth/prysm/prysm.sh beacon-chain --config-file=/etc/prysm/beacon-chain.yaml
+ExecStart       = /home/eth/agora-cl/agora-cl.sh beacon-chain --config-file=/etc/agora-cl/beacon-chain.yaml
 Restart         = on-failure
 TimeoutStopSec  = 900
 Environment     = USE_PRYSM_VERSION=v2.0.2
@@ -200,56 +200,56 @@ After you finish editing both of the files, you need to reload the service unit
 sudo systemctl daemon-reload
 ```
 
-Once you do that, the prysm beacon and validator are locked in that version, so you need to always update it. If you want to go back to the automatic upgrades after reboot, you just need to remove the `Environment` key.
+Once you do that, the agora-cl beacon and validator are locked in that version, so you need to always update it. If you want to go back to the automatic upgrades after reboot, you just need to remove the `Environment` key.
 
 </TabItem>
 <TabItem value="win">
 
 **Using the Agora-cl installation script**
 
-If you are running `prysm.bat`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.bat`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully).
 
-Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set USE_PRYSM_VERSION=v1.0.5`.
+Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/zeroone-boa/agora-cl/releases), such as v1.0.5, then run the command `set USE_PRYSM_VERSION=v1.0.5`.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
 **Using Docker**
 
-To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 </TabItem>
 <TabItem value="mac">
 
 **Using the Agora-cl installation script**
 
-If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully).
 
-Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `export USE_PRYSM_VERSION=v1.0.5`.
+Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/zeroone-boa/agora-cl/releases), such as v1.0.5, then run the command `export USE_PRYSM_VERSION=v1.0.5`.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
 **Using Docker**
 
-To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the release tag you want to run, such as v1.0.5, then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the release tag you want to run, such as v1.0.5, then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
 
 </TabItem>
 <TabItem value="arm">
 
 **Using the Agora-cl installation script**
 
-If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully).
 
-Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
+Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/zeroone-boa/agora-cl/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
 **Using Docker**
 
-To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 </TabItem>
 </Tabs>
@@ -272,17 +272,17 @@ If you are downgrading between **minor versions**, meaning the middle number in 
 
 **Using the Agora-cl installation script**
 
-If you are running `prysm.sh`, first stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.sh`, first stop your beacon node and validator (wait for the process to close down gracefully).
 
 Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
 ```
-prysm.sh validator db migrate down --datadir=/path/to/folder
+agora-cl.sh validator db migrate down --datadir=/path/to/folder
 ```
 
-Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
+Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/zeroone-boa/agora-cl/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
@@ -295,14 +295,14 @@ Next, we recommend backing up any important important folders such as your beaco
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
 ```
-docker run -v /path/to/folder:/data gcr.io/prysmaticlabs/prysm/validator:stable db migrate down --datadir=/data
+docker run -v /path/to/folder:/data gcr.io/zeroone-boa/agora-cl/validator:stable db migrate down --datadir=/data
 ```
 
-Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the release tag you want to run, such as v1.0.5.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the release tag you want to run, such as v1.0.5.
 
 Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
@@ -319,17 +319,17 @@ Then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and 
 
 **Using the Agora-cl installation script**
 
-If you are running `prysm.bat`, first stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.bat`, first stop your beacon node and validator (wait for the process to close down gracefully).
 
 Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
 ```
-prysm.bat validator db migrate down --datadir=\path\to\folder
+agora-cl.bat validator db migrate down --datadir=\path\to\folder
 ```
 
-Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set USE_PRYSM_VERSION=v1.0.5`.
+Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/zeroone-boa/agora-cl/releases), such as v1.0.5, then run the command `set USE_PRYSM_VERSION=v1.0.5`.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
@@ -342,27 +342,27 @@ Next, we recommend backing up any important important folders such as your beaco
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
 ```
-docker run -v \path\to\folder:/data gcr.io/prysmaticlabs/prysm/validator:stable db migrate down --datadir=/data
+docker run -v \path\to\folder:/data gcr.io/zeroone-boa/agora-cl/validator:stable db migrate down --datadir=/data
 ```
 
-Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 </TabItem>
 <TabItem value="mac">
 
 **Using the Agora-cl installation script**
 
-If you are running `prysm.sh`, first stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.sh`, first stop your beacon node and validator (wait for the process to close down gracefully).
 
 Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
 ```
-prysm.sh validator db migrate down --datadir=/path/to/folder
+agora-cl.sh validator db migrate down --datadir=/path/to/folder
 ```
 
-Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `export USE_PRYSM_VERSION=v1.0.5`.
+Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/zeroone-boa/agora-cl/releases), such as v1.0.5, then run the command `export USE_PRYSM_VERSION=v1.0.5`.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
@@ -375,14 +375,14 @@ Next, we recommend backing up any important important folders such as your beaco
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
 ```
-docker run -v /path/to/folder:/data gcr.io/prysmaticlabs/prysm/validator:stable db migrate down --datadir=/data
+docker run -v /path/to/folder:/data gcr.io/zeroone-boa/agora-cl/validator:stable db migrate down --datadir=/data
 ```
 
-Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the release tag you want to run, such as v1.0.5.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the release tag you want to run, such as v1.0.5.
 
 Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
@@ -399,17 +399,17 @@ Then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and 
 
 **Using the Agora-cl installation script**
 
-If you are running `prysm.sh`, first stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.sh`, first stop your beacon node and validator (wait for the process to close down gracefully).
 
 Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
 ```
-prysm.sh validator db migrate down --datadir=/path/to/folder
+agora-cl.sh validator db migrate down --datadir=/path/to/folder
 ```
 
-Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
+Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/zeroone-boa/agora-cl/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
@@ -422,10 +422,10 @@ Next, we recommend backing up any important important folders such as your beaco
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
 ```
-docker run -v /path/to/folder:/data gcr.io/prysmaticlabs/prysm/validator:stable db migrate down --datadir=/data
+docker run -v /path/to/folder:/data gcr.io/zeroone-boa/agora-cl/validator:stable db migrate down --datadir=/data
 ```
 
-Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 </TabItem>
 </Tabs>

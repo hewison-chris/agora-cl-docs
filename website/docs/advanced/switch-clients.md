@@ -51,13 +51,13 @@ We have a section dedicated to exporting and importing slashing protection histo
 
 This step is not required for nodes which are running on a virtual public cloud, but keep in mind - nodes will be required to run a an execution client locally post merge!
 
-By default, Agora-cl uses TCP/13000 and UDP/12000. Remove those two rules and replace them with the appropriate port forwards for the client you are switching to. The process will be very similar to the steps laid out [here.](https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip#port-forwarding)
+By default, Agora-cl uses TCP/13000 and UDP/12000. Remove those two rules and replace them with the appropriate port forwards for the client you are switching to. The process will be very similar to the steps laid out [here.](https://docs.prylabs.network/docs/agora-cl-usage/p2p-host-ip#port-forwarding)
 
 Teku, Nimbus, and Lighthouse all use port 9000 for both TCP and UDP.
 
 ### Step 5: Import Validator Keys
 
-To minimise slashing risk, wait until at least 1 full epoch has elapsed between stopping prysm and importing your validator keys, approximately 6.5 minutes, before proceeding. The inactivity leak cost is negligible compared to the cost of getting slashed.
+To minimise slashing risk, wait until at least 1 full epoch has elapsed between stopping agora-cl and importing your validator keys, approximately 6.5 minutes, before proceeding. The inactivity leak cost is negligible compared to the cost of getting slashed.
 
 Once that amount of time has passed, import your validator keys into the respective validator client you wish to run.
 

@@ -22,7 +22,7 @@ To begin, follow the instructions to run Agora-cl in mainnet or testnet:
 
 - [Joining Mainnet](/docs/install/install-with-script)
 
-To launch the web interface, you will need to restart your validator client from step 1 with the `--web` flag. This will allow you to access the web interface by default on `http://localhost:7500` if running on the same computer as your validator client and using `prysm.sh`, `prysm.bat` or building from source.
+To launch the web interface, you will need to restart your validator client from step 1 with the `--web` flag. This will allow you to access the web interface by default on `http://localhost:7500` if running on the same computer as your validator client and using `agora-cl.sh`, `agora-cl.bat` or building from source.
 
 Agora-cl protects web users with a special URL for authentication instead of requiring the user to remember a password. The URL can be retrieved in the terminal logs where the `validator --web` command was run. please copy it into a web browser to initialize the website with authentication. The base url `http://127.0.0.1:7500` or `http://localhost:7500` may differ based on your own validator settings.
 
@@ -110,7 +110,7 @@ Please create a [github issue](https://github.com/prysmaticlabs) or contact the 
 
 ## Contributing
 
-The web interface is open source and located at [github.com/prysmaticlabs/prysm-web-ui](https://github.com/prysmaticlabs/prysm-web-ui). It is an Angular application, and we always welcome your help!
+The web interface is open source and located at [github.com/zeroone-boa/agora-cl-web-ui](https://github.com/zeroone-boa/agora-cl-web-ui). It is an Angular application, and we always welcome your help!
 
 ### Prerequisites
 
@@ -124,7 +124,7 @@ after cloning the repo navigate to where the `package.json` file and run `npm in
 run `npm start` in the folder path where `package.json` lives and open the website on `localhost:4200`.
 
 :::warning Web UI in development mode uses mock data by default
-The recommended way to run prysm web is from the validator client itself via the `--web` flag. If you are building the web UI from source and doing `npm start`, you **will be using fake, mock data!** Keep that in mind if you are trying to use real accounts with the web UI.
+The recommended way to run agora-cl web is from the validator client itself via the `--web` flag. If you are building the web UI from source and doing `npm start`, you **will be using fake, mock data!** Keep that in mind if you are trying to use real accounts with the web UI.
 :::
 
 :::tip Develop URL login

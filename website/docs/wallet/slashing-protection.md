@@ -24,7 +24,7 @@ To protect itself from accidentally being slashed due to some software bug or ot
 
 ## How to use slashing protection
 
-Basic slashing protection is **enabled** by default using a database that keeps track of objects your validator has previously signed in order to prevent it from signing the same message again causing a violation and getting slashed. If you want to use a more advanced, *remote* slashing protection, see our section on how to use **slasher** [here](/docs/prysm-usage/slasher).
+Basic slashing protection is **enabled** by default using a database that keeps track of objects your validator has previously signed in order to prevent it from signing the same message again causing a violation and getting slashed. If you want to use a more advanced, *remote* slashing protection, see our section on how to use **slasher** [here](/docs/agora-cl-usage/slasher).
 
 
 ## Slashing protection history standard format
@@ -93,13 +93,13 @@ import TabItem from '@theme/TabItem';
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.sh validator slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
+agora-cl.sh validator slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/output
 ```
 
 You will then find the slashing protection JSON file in your specified /path/to/outputdir folder.
@@ -116,13 +116,13 @@ bazel run //validator -- slashing-protection-history export --datadir=/path/to/y
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.bat validator slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=\path\to\desired\outputdir
+agora-cl.bat validator slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=\path\to\desired\outputdir
 ```
 
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\outputdir:/output -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/output
+docker run -it -v \path\to\outputdir:/output -v \path\to\wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/output
 ```
 
 You will then find the slashing protection JSON file in your specified \path\to\outputdir folder.
@@ -133,13 +133,13 @@ You will then find the slashing protection JSON file in your specified \path\to\
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.sh validator slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
+agora-cl.sh validator slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/output
 ```
 
 You will then find the slashing protection JSON file in your specified /path/to/outputdir folder.
@@ -156,7 +156,7 @@ bazel run //validator -- slashing-protection-history export --datadir=/path/to/y
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.sh validator slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
+agora-cl.sh validator slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 **Using Bazel**
@@ -187,13 +187,13 @@ To import a slashing protection JSON file you obtained elsewhere, either from an
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.sh validator slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
+agora-cl.sh validator slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 **Using Bazel**
@@ -208,12 +208,12 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/y
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.bat validator slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=\path\to\desiredimportfile
+agora-cl.bat validator slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=\path\to\desiredimportfile
 ```
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 </TabItem>
@@ -222,13 +222,13 @@ docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.sh validator slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
+agora-cl.sh validator slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 **Using Bazel**
@@ -243,7 +243,7 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/y
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.sh validator slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
+agora-cl.sh validator slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 **Using Bazel**

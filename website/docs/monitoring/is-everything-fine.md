@@ -35,7 +35,7 @@ Note that peers will be continuously disconnecting and connecting. If you notice
 
 ## Expected behavior: Validator client
 
-Validators are generally in one of the following states: `Unknown`, `Deposited`, `Pending`, `Active`, `Exiting`, `Slashing`, or `Exited`. To learn more about these states, visit [Validator Lifecycle](../how-prysm-works/validator-lifecycle.md).
+Validators are generally in one of the following states: `Unknown`, `Deposited`, `Pending`, `Active`, `Exiting`, `Slashing`, or `Exited`. To learn more about these states, visit [Validator Lifecycle](../how-agora-cl-works/validator-lifecycle.md).
 
 When your validator is in `Deposited` state, it will produce `INFO` logs that look like this:
 

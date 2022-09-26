@@ -14,7 +14,7 @@ Bug reports are critical to the rapid development of the Agora-cl client. In ord
 
 Duplicate tickets are a hinderance to the development process and, as such, it is crucial to first check through Agora-cl's existing issues to see if what you are experiencing has already been indexed.
 
-To do so, head over to the [issue page](https://github.com/prysmaticlabs/prysm/issues) and enter some related keywords into the search bar. This may include a sample from the output or specific components it affects. If this is unsuccessful, check the [issue labels index](https://github.com/prysmaticlabs/prysm/labels) for related catagories and review the tickets within.
+To do so, head over to the [issue page](https://github.com/zeroone-boa/agora-cl/issues) and enter some related keywords into the search bar. This may include a sample from the output or specific components it affects. If this is unsuccessful, check the [issue labels index](https://github.com/zeroone-boa/agora-cl/labels) for related catagories and review the tickets within.
 
 If searches have shown the issue in question has not been reported yet, feel free to open up a new issue ticket.
 

@@ -46,35 +46,35 @@
         "title": "Terminology",
         "sidebar_label": "Terminology"
       },
-      "how-prysm-works/bls-cryptography": {
+      "how-agora-cl-works/bls-cryptography": {
         "title": "BLS Cryptography",
         "sidebar_label": "BLS Cryptography"
       },
-      "how-prysm-works/database-backend-boltdb": {
+      "how-agora-cl-works/database-backend-boltdb": {
         "title": "Agora-cl Validator Client",
         "sidebar_label": "Agora-cl Validator Client"
       },
-      "how-prysm-works/prysm-public-api": {
+      "how-agora-cl-works/agora-cl-public-api": {
         "title": "Ethereum 2.0 Public API",
         "sidebar_label": "Ethereum 2.0 Public API"
       },
-      "how-prysm-works/simple-serialize-ssz": {
+      "how-agora-cl-works/simple-serialize-ssz": {
         "title": "Simple Serialize (SSZ)",
         "sidebar_label": "Simple Serialize (SSZ)"
       },
-      "how-prysm-works/architecture-overview": {
+      "how-agora-cl-works/architecture-overview": {
         "title": "Architecture Overview",
         "sidebar_label": "Architecture Overview"
       },
-      "how-prysm-works/p2p-networking": {
+      "how-agora-cl-works/p2p-networking": {
         "title": "P2P Networking",
         "sidebar_label": "P2P Networking"
       },
-      "/docs/how-prysm-works/beacon-node": {
+      "/docs/how-agora-cl-works/beacon-node": {
         "title": "Agora-cl Beacon Node",
         "sidebar_label": "Agora-cl Beacon Node"
       },
-      "how-prysm-works/validator-deposit-contract": {
+      "how-agora-cl-works/validator-deposit-contract": {
         "title": "Validator Deposit Contract",
         "sidebar_label": "Validator Deposit Contract"
       },
@@ -86,7 +86,7 @@
         "title": "On Ethereum 2.0",
         "sidebar_label": "On Ethereum 2.0"
       },
-      "introduction/what-is-prysm": {
+      "introduction/what-is-agora-cl": {
         "title": "What is Agora-cl?",
         "sidebar_label": "What is Agora-cl?"
       },

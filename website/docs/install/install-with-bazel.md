@@ -79,12 +79,12 @@ You can install Bazelisk in multiple ways, including:
 
 ## Install Agora-cl using Bazel
 
-Clone Agora-cl's [main repository](https://github.com/prysmaticlabs/prysm). Make sure you switch to the latest version (the latest version number can be found from the [releases page](https://github.com/prysmaticlabs/prysm/releases)). Once cloned, enter the directory:
+Clone Agora-cl's [main repository](https://github.com/zeroone-boa/agora-cl). Make sure you switch to the latest version (the latest version number can be found from the [releases page](https://github.com/zeroone-boa/agora-cl/releases)). Once cloned, enter the directory:
 
 ```text
-git clone https://github.com/prysmaticlabs/prysm
+git clone https://github.com/zeroone-boa/agora-cl
 git checkout <version>
-cd prysm
+cd agora-cl
 ```
 
 Build both the beacon chain node and the validator client:
@@ -105,7 +105,7 @@ Bazel will automatically pull and install any dependencies as well, including Go
 
 :::
 
-To run a beacon node, you'll need access to an execution node. See [Configure execution node](/docs/execution-node/configuring-for-prysm) for detailed instructions if you don't already have an execution node configured.
+To run a beacon node, you'll need access to an execution node. See [Configure execution node](/docs/execution-node/configuring-for-agora-cl) for detailed instructions if you don't already have an execution node configured.
 
 
 
@@ -173,7 +173,7 @@ Navigate to the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) and 
 
 :::danger Exercise extreme caution
 
-The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send ETH directly to the contract - use the Ethereum.org launchpad instead.
+The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send BOA directly to the contract - use the Ethereum.org launchpad instead.
 
 :::
 
@@ -206,7 +206,7 @@ To check on the status of your validator, we recommend checking out the popular 
 
 We use Bazel to build the Docker images for Agora-cl as well. This section outlines comprehensive instructions on how to build them by yourself, run them in Docker, and push to an image registry if desired. In particular, we use [`bazel rules docker`](https://github.com/bazelbuild/rules_docker) which provides us the ability to specify a base, barebones image, and essentially builds our binary and creates a Docker container as a simple wrapper over our binaries.
 
-We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simple experience with all of its benefits. To see an example use of `bazel rules docker` for how we build a particular package, see [here](https://github.com/prysmaticlabs/prysm/blob/aa389c82a157008741450ba1e04d898924734432/tools/bootnode/BUILD.bazel#L36).
+We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simple experience with all of its benefits. To see an example use of `bazel rules docker` for how we build a particular package, see [here](https://github.com/zeroone-boa/agora-cl/blob/aa389c82a157008741450ba1e04d898924734432/tools/bootnode/BUILD.bazel#L36).
 
 ### Dependencies needed
 
@@ -224,14 +224,14 @@ bazel build //beacon-chain:image_bundle --config=release
 bazel build //validator:image_bundle --config=release
 ```
 
-The tags for the images are specified [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator. The default image tags for these images are:
+The tags for the images are specified [here](https://github.com/zeroone-boa/agora-cl/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/zeroone-boa/agora-cl/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator. The default image tags for these images are:
 
 
 <!-- todo: RC links to gcr.io -->
 
 ```text
-gcr.io/prysmaticlabs/prysm/beacon-chain:latest
-gcr.io/prysmaticlabs/prysm/validator:latest
+gcr.io/zeroone-boa/agora-cl/beacon-chain:latest
+gcr.io/zeroone-boa/agora-cl/validator:latest
 ```
 
 You can edit these in the links above to your liking.
@@ -278,8 +278,8 @@ fd6fa224ea91: Loading layer [==================================================>
 a6dc470c72b7: Loading layer [==================================================>]  10.24kB/10.24kB
 a0de9c673ef6: Loading layer [==================================================>]  56.37MB/56.37MB
 84ff92691f90: Loading layer [==================================================>]  10.24kB/10.24kB
-Loaded image: gcr.io/prysmaticlabs/prysm/beacon-chain:latest
-Loaded image: prysmaticlabs/prysm-beacon-chain:latest
+Loaded image: gcr.io/zeroone-boa/agora-cl/beacon-chain:latest
+Loaded image: zeroone-boa/agora-cl-beacon-chain:latest
 ```
 
 ### Pushing to a container registry
@@ -306,9 +306,9 @@ bazel run //beacon-chain:push_images --config=release
 bazel run //validator:push_images --config=release
 ```
 
-Which will deploy all images with the tags specified in [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator.
+Which will deploy all images with the tags specified in [here](https://github.com/zeroone-boa/agora-cl/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/zeroone-boa/agora-cl/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator.
 
-By default, this will deploy to Prysmatic Labs' Google Container Registry namespace: `gcr.io/prysmaticlabs/prysm`, which you will not have authentication access to, so make sure you edit the image tags to your appropriate registry and authenticate as needed.
+By default, this will deploy to Prysmatic Labs' Google Container Registry namespace: `gcr.io/zeroone-boa/agora-cl`, which you will not have authentication access to, so make sure you edit the image tags to your appropriate registry and authenticate as needed.
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

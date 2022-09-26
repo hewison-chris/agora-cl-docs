@@ -3,10 +3,10 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export const HeaderBadgesWidget = ({ commaDelimitedContributors, lastVerifiedDateString, lastVerifiedVersionString }) => {
 	let githubUsernames = {
-		Mick: "mick-prysm",
+		Mick: "mick-agora-cl",
 		Raul: "rauljordan",
 		Terence: "terencechain",
-		James: "james-prysm",
+		James: "james-agora-cl",
 		Kasey: "kasey",
 		Potuz: "potuz",
 		Nishant: "nisdas"

@@ -10,16 +10,16 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 [Grafana](https://grafana.com/) is an open-source data metrics tool that is used to aggregate large amounts of data into a comprehensive visual dashboard for easy analysis. This section includes instructions for installing Grafana on the local machine and configuring Telegram or Discord alerts for monitoring validator status on-the-go.
 
-![Grafana dashboard for prysm node and validator](/img/dashboard_overview.png "Grafana dashboard for prysm node and validator")
+![Grafana dashboard for agora-cl node and validator](/img/dashboard_overview.png "Grafana dashboard for agora-cl node and validator")
 
 
 ### Getting account metrics
  Ensure metrics have been activated by visiting the following dashboards:
   * Node metrics are found at http://localhost:8080/metrics
   * Validator metrics are found at http://localhost:8081/metrics
-  * Slasher metrics are found at http://localhost:8082/metrics 
+  * Slasher metrics are found at http://localhost:8082/metrics
 
-If you are using a custom --monitoring-host for these processes, such as an IP address, then just change `localhost` to the custom host you are using. 
+If you are using a custom --monitoring-host for these processes, such as an IP address, then just change `localhost` to the custom host you are using.
 
 > Note: Running a slasher isn't mandatory for staking, only people that are running a slasher can find the metrics at the port 8082. For those that don't run a slasher, all instructions that follow remain correct.
 
@@ -27,9 +27,9 @@ If you are using a custom --monitoring-host for these processes, such as an IP a
 
 Prometheus must first be installed to fetch the data from the beacon node and validator for Grafana to display.
 
-1. [Download the Prometheus files](https://prometheus.io/download/) suited for the host system. 
+1. [Download the Prometheus files](https://prometheus.io/download/) suited for the host system.
 
-2. Extract the archive and enter it's new directory. 
+2. Extract the archive and enter it's new directory.
 
 3. Locate the `prometheus.yml` file and replace the contents with the following:
 
@@ -67,8 +67,8 @@ or do so in a terminal by issuing the command:
 ```
 ./prometheus
 ```
-  A terminal will open presenting the Prometheus log. 
- 
+  A terminal will open presenting the Prometheus log.
+
   > **NOTICE:** Prometheus' default data logging time is 15 days. To extend dashboard statistics to 31 days, add `--storage.tsdb.retention.time=31d` to this startup command.
 
 5. Navigate to http://localhost:9090/graph in a browser. It will present a page similar to this:
@@ -93,9 +93,9 @@ Grafana must now be installed to provide the graphical component of the data ana
 
 2. Open http://localhost:3000 in a browser. By default, the username and the password to this panel are both ‘admin’.
 
-3. Create a data source and choose Prometheus, then enter in the URL field http://localhost:9090. 
+3. Create a data source and choose Prometheus, then enter in the URL field http://localhost:9090.
 
-4. click on **Save & Test**. 
+4. click on **Save & Test**.
 
 A green notification saying “Datasource updated” should now be visible on the upper right corner.
 
@@ -107,7 +107,7 @@ This section is currently out of date. Refer to Grafana's [The new unified alert
 
 :::
 
-1. On the left menu of Grafana, select **Notification channels** under the bell icon. 
+1. On the left menu of Grafana, select **Notification channels** under the bell icon.
 
 2. Click on **New channel**.
 
@@ -121,11 +121,11 @@ This section is currently out of date. Refer to Grafana's [The new unified alert
 
 ### Option 2: Discord
 
-1. Select **Discord** in the type drop down selection. 
+1. Select **Discord** in the type drop down selection.
 
 2. To complete the set up, a Discord server (and a text channel available) as well as a Webhook URL are required. For instructions on setting up a Discord's Webhooks, see [this section](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) of their documentation.
-  
-3. Navigate back to http://localhost:3000 and enter the Webhook URL in the Discord notification settings panel. 
+
+3. Navigate back to http://localhost:3000 and enter the Webhook URL in the Discord notification settings panel.
 
 4. Click **Send Test**, which will push a confirmation message to the Discord channel.
 
@@ -135,7 +135,7 @@ This section is currently out of date. Refer to Grafana's [The new unified alert
 - [dashboard designed for small amount of validator keys](https://docs.prylabs.network/assets/grafana-dashboards/small_amount_validators.json)
 - [dashboard designed for more than 10 validator keys](https://docs.prylabs.network/assets/grafana-dashboards/big_amount_validators.json)
 
-2. To import this json into the Grafana dashboard, click on the **+** icon on the left menu and select 'Import', 
+2. To import this json into the Grafana dashboard, click on the **+** icon on the left menu and select 'Import',
 
 3. Paste the json and click the **Load** button.
 
@@ -143,10 +143,10 @@ This section is currently out of date. Refer to Grafana's [The new unified alert
 
 For those running their node and validators on separate machines, simply modify the pasted `prometheus.yml` data from the earlier step and change any instances of `localhost` to the desired IP. For local networks, the _private IP_ is required. For connections over the internet, the _public facing IP_ will be required.
 
-* [Finding a **private IP**](/docs/prysm-usage/p2p-host-ip/#private-ip-addresses)
-* [Finding a **public IP**](/docs/prysm-usage/p2p-host-ip/#public-ip-addresses)
+* [Finding a **private IP**](/docs/agora-cl-usage/p2p-host-ip/#private-ip-addresses)
+* [Finding a **public IP**](/docs/agora-cl-usage/p2p-host-ip/#public-ip-addresses)
 
-> **NOTICE:** In case of public IPs, [port forwarding](/docs/prysm-usage/p2p-host-ip/#port-forwarding) may need to be configured.
+> **NOTICE:** In case of public IPs, [port forwarding](/docs/agora-cl-usage/p2p-host-ip/#port-forwarding) may need to be configured.
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

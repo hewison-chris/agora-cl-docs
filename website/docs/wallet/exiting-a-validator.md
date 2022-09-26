@@ -18,7 +18,7 @@ To voluntarily exit your validator from the Ethereum network, you'll follow this
  2. Select the account(s) that should be exited. This step can be skipped by specifying the account(s) via the `--public-keys` flag when issuing the `voluntary-exit` command.
  3. Confirm your understanding of the consequences of exiting your validator by typing `Exit my validator` when prompted.
 
-After providing confirmation, your validator node will initiate the voluntary exit by broadcasting your request through your beacon node. By default, your validator node will try to access a beacon node running on `127.0.0.1:4000`. Learn how to update this and other settings via the `--help` flag (for example: `./prysm.sh validator accounts voluntary-exit --help`). Alternatively, visit our [Parameters documentation](../prysm-usage/parameters.md).
+After providing confirmation, your validator node will initiate the voluntary exit by broadcasting your request through your beacon node. By default, your validator node will try to access a beacon node running on `127.0.0.1:4000`. Learn how to update this and other settings via the `--help` flag (for example: `./agora-cl.sh validator accounts voluntary-exit --help`). Alternatively, visit our [Parameters documentation](../agora-cl-usage/parameters.md).
 
 :::caution
 
@@ -41,14 +41,14 @@ Although validator nodes can voluntarily exit, you won't be able to withdraw you
 **Using Agora-cl.sh**
 
 ```bash
-./prysm.sh validator accounts voluntary-exit
+./agora-cl.sh validator accounts voluntary-exit
 ```
 
 **Using Docker**
 
 ```text
-docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  gcr.io/prysmaticlabs/prysm/validator:latest \
+docker run -it -v $HOME/Eth2Validators/agora-cl-wallet-v2:/wallet \
+  gcr.io/zeroone-boa/agora-cl/validator:latest \
   accounts voluntary-exit --wallet-dir=/wallet
 ```
 
@@ -64,13 +64,13 @@ bazel run //validator --config=release -- accounts voluntary-exit
 **Using Agora-cl.bat**
 
 ```bash
-prysm.bat validator accounts voluntary-exit
+agora-cl.bat validator accounts voluntary-exit
 ```
 
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts voluntary-exit --wallet-dir=/wallet
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\agora-cl-wallet-v2:/wallet gcr.io/zeroone-boa/agora-cl/validator:latest accounts voluntary-exit --wallet-dir=/wallet
 ```
 
 </TabItem>
@@ -79,14 +79,14 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/p
 **Using Agora-cl.sh**
 
 ```bash
-./prysm.sh validator accounts voluntary-exit
+./agora-cl.sh validator accounts voluntary-exit
 ```
 
 **Using Docker**
 
 ```text
-docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  gcr.io/prysmaticlabs/prysm/validator:latest \
+docker run -it -v $HOME/Eth2Validators/agora-cl-wallet-v2:/wallet \
+  gcr.io/zeroone-boa/agora-cl/validator:latest \
   accounts voluntary-exit --wallet-dir=/wallet
 ```
 
@@ -100,7 +100,7 @@ bazel run //validator --config=release -- accounts voluntary-exit
 <TabItem value="arm">
 
 ```bash
-./prysm.sh validator accounts voluntary-exit
+./agora-cl.sh validator accounts voluntary-exit
 ```
 
 </TabItem>

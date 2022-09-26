@@ -17,8 +17,8 @@ Create a folder called `ethereum` on your SSD, and then two subfolders within it
     <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
 
 ```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
+mkdir agora-cl && cd agora-cl
+curl https://raw.githubusercontent.com/zeroone-boa/agora-cl/master/agora-cl.bat --output agora-cl.bat
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ```
 
@@ -28,8 +28,8 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
     <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
 
 ```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
+mkdir agora-cl && cd agora-cl
+curl https://raw.githubusercontent.com/zeroone-boa/agora-cl/master/agora-cl.sh --output agora-cl.sh && chmod +x agora-cl.sh
 ```
 
   <p>This will download the Agora-cl client and make it executable.</p>

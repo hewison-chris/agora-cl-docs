@@ -21,19 +21,19 @@ Validator private keys are encrypted with the wallet's password using the [EIP-2
 To start using the HD wallet, you can create a new wallet using:
 
 ```bash
-./prysm.sh validator wallet create
+./agora-cl.sh validator wallet create
 ```
 
 :::info
 You'll need to set a **strong** password for your new HD wallet, containing at least 1 uppercase letter, 1 number, a special character, and be at least 8 characters long. Any unicode characters can be used for your wallet password.
 :::
 
-Then select **HD** wallet when prompted. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help`.
+Then select **HD** wallet when prompted. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./agora-cl.sh validator wallet create --help`.
 
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/agora-cl-wallet-v2")
 | `--keymanager-kind`     | Type of wallet to create, either "direct", "derived, or "remote" (default "derived")
 | `--wallet-password-file` | Path to a plain-text, password.txt file to lock your wallet
 |`--mnemonic-25th-word-file`| (Advanced) Path to a plain-text, .txt file containing a 25th word passphrase for your mnemonic for HD wallets.
@@ -42,7 +42,7 @@ Then select **HD** wallet when prompted. You can also create a wallet **non-inte
 Here's a full example on how to create an HD wallet at `$HOME/myhdwallet`
 
 ```bash
-./prysm.sh validator wallet create --wallet-dir=$HOME/myhdwallet --keymanager-kind=derived --wallet-password-file=password.txt
+./agora-cl.sh validator wallet create --wallet-dir=$HOME/myhdwallet --keymanager-kind=derived --wallet-password-file=password.txt
 ```
 
 ### Wallet recovery
@@ -50,18 +50,18 @@ Here's a full example on how to create an HD wallet at `$HOME/myhdwallet`
 You can fully recover an HD wallet along with all its accounts from a 24-word english mnemonic phrase generated during the wallet's creation process (which you should have stored offline). To recover your HD wallet in Agora-cl, you can run
 
 ```bash
-./prysm.sh validator wallet recover
+./agora-cl.sh validator wallet recover
 ```
 
 Output
 
 ```text
 ✔ Enter the wallet recovery phrase: layer write film stuff camp album strong ...
-Enter a wallet directory: /Users/johndoe/Library/Eth2Validators/.prysm-wallet-v2
+Enter a wallet directory: /Users/johndoe/Library/Eth2Validators/.agora-cl-wallet-v2
 New wallet password: *********
 Confirm password: *********
 Enter how many accounts you would like to recover: 2
-[2020-07-27 11:54:16]  INFO accounts: Successfully recovered HD wallet with 2 accounts. Please use accounts list to view details for your accounts. wallet-path=/Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
+[2020-07-27 11:54:16]  INFO accounts: Successfully recovered HD wallet with 2 accounts. Please use accounts list to view details for your accounts. wallet-path=/Users/johndoe/Library/Eth2Validators/agora-cl-wallet-v2
 ```
 
 :::info Recovering many accounts
@@ -70,7 +70,7 @@ Your accounts are generated deterministically from your recovery phrase, so you 
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/agora-cl-wallet-v2")
 | `--num-accounts` | Total number of accounts to recover from the wallet (default 1)
 
 ### List validator accounts
@@ -78,13 +78,13 @@ Your accounts are generated deterministically from your recovery phrase, so you 
 You can list all validator accounts in your HD wallet using the following command
 
 ```bash
-./prysm.sh validator accounts list
+./agora-cl.sh validator accounts list
 ```
 
 Where you'll see the following output
 
 ```bash
-INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
+INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/agora-cl-wallet-v2
 
 Showing **1** validator account
 View the eth1 deposit transaction data for your accounts by running `validator accounts list --show-deposit-data
@@ -98,13 +98,13 @@ personally-conscious-echidna
 You can view the `deposit_data` needed to send 32ETH to the Ethereum validator deposit contract for your validator accounts by optionally passing in a `--show-deposit-data` flag as follows.
 
 ```bash
-./prysm.sh validator accounts list --show-deposit-data
+./agora-cl.sh validator accounts list --show-deposit-data
 ```
 
 Where you'll see the following output
 
 ```bash
-INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
+INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/agora-cl-wallet-v2
 
 Showing **1** validator account
 
@@ -120,11 +120,11 @@ personally-conscious-echidna
 ===================================================================
 ```
 
-You can also run the `accounts list` command **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator accounts list --help`.
+You can also run the `accounts list` command **non-interactively** by using the following command line flags, which are also viewable by typing `./agora-cl.sh validator accounts list --help`.
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2").
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/agora-cl-wallet-v2").
 | `--wallet-password-file` | Path to plain-text file containing your wallet's password.
 | `--show-deposit-data` | Display raw eth1 tx deposit data for validator accounts.
 | `--show-private-keys` | Display the private keys for validator accounts.

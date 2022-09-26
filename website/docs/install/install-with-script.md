@@ -1,6 +1,6 @@
 ---
 id: install-with-script
-title: "Quickstart: Run a node and (optionally) stake ETH using Agora-cl"
+title: "Quickstart: Run a node and (optionally) stake BOA using Agora-cl"
 sidebar_label: "Quickstart: Run a node"
 ---
 
@@ -28,7 +28,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 <div class='hide-tabs'>
 
-import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quickstart-install-prysm.md';
+import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quickstart-install-agora-cl.md';
 
 <QuickstartInstallPrysmPartial />
 
@@ -71,7 +71,7 @@ The Beginner's Introduction to Agora-cl uses diagrams to help you visualize Ethe
 Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](../security-best-practices.md).
 
 **Can I use Agora-cl on a Mac M1 ARM chip?** <br />
-Mac M1 ARM chips currently require users to run Agora-cl through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.
+Mac M1 ARM chips currently require users to run Agora-cl through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/zeroone-boa/agora-cl/issues/9385'>open bug</a> for details.
 
 **Do I need to configure JWT if I'm using IPC instead of HTTP?** <br />
 No.
@@ -82,8 +82,8 @@ We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP
 **Can you mix and match networks between execution layer and consensus layer?** <br />
 No. See [Nodes and networks](../concepts/nodes-networks.md) for more information.
 
-**Can I stake with less than 32 ETH?** <br />
-Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 ETH.
+**Can I stake with less than 32 BOA?** <br />
+Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 BOA.
 
 
 **What should I do if I can't run a node using my own hardware?** <br />
@@ -112,7 +112,7 @@ The Merge introduces a new Engine API that allows consensus-layer clients to com
 Yes. Downtime penalties are minimal but we recommend having uptime and downtime alerts configured for your execution node, beacon node, and validator if possible.
 
 **My beacon node is taking a long time to sync. Is there any way I can speed it up?** <br />
-Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your beacon node.
+Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/agora-cl-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your beacon node.
 <!--TODO: explain why -->
 
 

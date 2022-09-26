@@ -12,7 +12,7 @@ There are a number of ways to help out the project for people of all skillsets a
 
 ## Getting Started
 
-Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Agora-cl's [open issues on Github](https://github.com/prysmaticlabs/prysm/issues). We recommend looking for issues tagged with the "Good First Issue" label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/prysmaticlabs). Sign in to your Github account, then navigate to [the official Agora-cl repository](https://github.com/prysmaticlabs/prysm/). In the upper right hand corner of the page, click the 'Fork' button. This will create a copy of the Agora-cl repository on your account that can be edited for pull requests.
+Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Agora-cl's [open issues on Github](https://github.com/zeroone-boa/agora-cl/issues). We recommend looking for issues tagged with the "Good First Issue" label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/prysmaticlabs). Sign in to your Github account, then navigate to [the official Agora-cl repository](https://github.com/zeroone-boa/agora-cl/). In the upper right hand corner of the page, click the 'Fork' button. This will create a copy of the Agora-cl repository on your account that can be edited for pull requests.
 
 ### Setting up your environment
 
@@ -26,13 +26,13 @@ To develop Agora-cl, you'll need the following:
 First, create a local clone of Agora-cl.
 
 ```text
-$ git clone https://github.com/prysmaticlabs/prysm.git && cd prysm
+$ git clone https://github.com/zeroone-boa/agora-cl.git && cd agora-cl
 ```
 
 Then link your local repository to your newly created fork.
 
 ```text
-$ git remote add myprysmrepo https://github.com/<your_github_user_name>/prysm.git
+$ git remote add myprysmrepo https://github.com/<your_github_user_name>/agora-cl.git
 ```
 
 Finally, ensure Go is installed and working on your machine:
@@ -61,7 +61,7 @@ This will build the project by downloading dependencies as Go modules.
 All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected.
 
 Many tests rely on the Bazel build system, thus testing with `go test` may not work.
-See the [next section](#building-and-tessting-prysm-with-bazel) for instructions on testing with prysm.
+See the [next section](#building-and-tessting-agora-cl-with-bazel) for instructions on testing with agora-cl.
 
 ### Building and testing Agora-cl with Bazel
 
@@ -95,7 +95,7 @@ $ bazel test //beacon-chain/node:go_default_test
 For running a specific test, for example, a test called `TestNode_GetPeers` inside of `beacon-chain/node/node_test.go`, you can use Bazel to filter it out:
 
 ```text
-$ bazel test //beacon-chain/rpc/prysm/v1alpha1/node:go_default_test --test_output=streamed --test_filter=TestNode_GetPeers
+$ bazel test //beacon-chain/rpc/agora-cl/v1alpha1/node:go_default_test --test_output=streamed --test_filter=TestNode_GetPeers
 ```
 
 For the list of all available flags to the `bazel test` command, you can see the reference documentation [here](https://docs.bazel.build/versions/master/command-line-reference.html#test).
@@ -108,11 +108,11 @@ $ bazel test //testing/endtoend:go_default_test
 
 #### Adding dependencies
 
-If you want to add a new dependency to Agora-cl, please adhere to the guidelines found in our [DEPENDENCIES.md](https://github.com/prysmaticlabs/prysm/blob/master/DEPENDENCIES.md) document.
+If you want to add a new dependency to Agora-cl, please adhere to the guidelines found in our [DEPENDENCIES.md](https://github.com/zeroone-boa/agora-cl/blob/master/DEPENDENCIES.md) document.
 
 ### Contributing to the Ethereum consensus API
 
-The Ethereum consensus API implemented by Agora-cl is maintained as a separate repository than Agora-cl. You can read more about how to contribute specifically to the API [here](/docs/how-prysm-works/prysm-public-api#contributing).
+The Ethereum consensus API implemented by Agora-cl is maintained as a separate repository than Agora-cl. You can read more about how to contribute specifically to the API [here](/docs/how-agora-cl-works/agora-cl-public-api#contributing).
 
 ### Making your first contribution
 
@@ -186,9 +186,9 @@ $ git push myrepo feature-in-progress-branch
 
 Navigate to your fork of the repository on Github. In the upper left where the current branch is listed, change the branch to your newly created one. Open the files that you have worked on and ensure they include your changes.
 
-Navigate to [https://github.com/prysmaticlabs/prysm](https://github.com/prysmaticlabs/prysm) and click on the new pull request button. In the “base” box on the left, leave the default selection “base master”, the branch that you want your changes to be applied to. In the “compare” box on the right, select the branch containing the changes you want to apply. You will then be asked to answer a few questions about your pull request. Pull requests should have enough context about what you are working on, how you are solving a problem, and reference all necessary information for your reviewers to help.
+Navigate to [https://github.com/zeroone-boa/agora-cl](https://github.com/zeroone-boa/agora-cl) and click on the new pull request button. In the “base” box on the left, leave the default selection “base master”, the branch that you want your changes to be applied to. In the “compare” box on the right, select the branch containing the changes you want to apply. You will then be asked to answer a few questions about your pull request. Pull requests should have enough context about what you are working on, how you are solving a problem, and reference all necessary information for your reviewers to help.
 
-After you complete the questionnaire, the pull request will appear in the list of pull requests at [https://github.com/prysmaticlabs/prysm/pulls](https://github.com/prysmaticlabs/prysm/pulls).
+After you complete the questionnaire, the pull request will appear in the list of pull requests at [https://github.com/zeroone-boa/agora-cl/pulls](https://github.com/zeroone-boa/agora-cl/pulls).
 
 #### Following up
 

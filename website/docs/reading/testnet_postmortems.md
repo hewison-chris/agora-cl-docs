@@ -25,8 +25,8 @@ As part of our day to day job in building eth2 with our Agora-cl project, we are
 **Summary:** Beacon nodes were not receiving blocks via gossipsub p2p at all, making it impossible to keep up with the chain head after initial sync completes.
 
 **Reference issues:**
-https://github.com/prysmaticlabs/prysm/issues/5476
-https://github.com/prysmaticlabs/prysm/issues/5491
+https://github.com/zeroone-boa/agora-cl/issues/5476
+https://github.com/zeroone-boa/agora-cl/issues/5491
 
 **Impact:** This incident was reproducible on most node restarts, making it likely to kill our testnet if left unchecked.
 
@@ -82,7 +82,7 @@ Showing duplicate values for various topics, where the 00000000 and f071c66c are
 
 **Authors:** Raul, Terence, Preston
 
-**Status:** Solved - root cause identified: https://github.com/prysmaticlabs/prysm/issues/4526#issuecomment-573828747
+**Status:** Solved - root cause identified: https://github.com/zeroone-boa/agora-cl/issues/4526#issuecomment-573828747
 
 **Summary:** No one was able to propose a block after genesis time was reached with the mainnet config in our running testnet, required manual intervention.
 
@@ -101,7 +101,7 @@ Showing duplicate values for various topics, where the 00000000 and f071c66c are
 
 #### Root Cause
 
-The problem had to do with usage of both `go-ssz.HashTreeRoot` and `stateutil.HashTreeRootState` in Agora-cl for the genesis state. Explanation outlined here: https://github.com/prysmaticlabs/prysm/issues/4526#issuecomment-573828747
+The problem had to do with usage of both `go-ssz.HashTreeRoot` and `stateutil.HashTreeRootState` in Agora-cl for the genesis state. Explanation outlined here: https://github.com/zeroone-boa/agora-cl/issues/4526#issuecomment-573828747
 
 #### Timeline
 
@@ -242,7 +242,7 @@ We thankfully had archival and experimental pods that were working fine and as s
 - 09:53 - Preston has observes very long times for spans in jaeger in proposing a block, suggesting there is some sort of mutex deadlock going on. Signatures failing on request block with the message `parent root does not match the latest block header signing root in state`
 - 10:00 - Raul begins investigating, looking in more detail at jaeger spans to increase likeliness of lock being the root cause
 - 10:16 - Raul identifies large monitoring gap in Jaeger, with the most expensive operation in forkchoice.OnBlock not having a span. Looking at Agora-cl PR #4086 shows a function `updateCheckpoints` called in forkchoice.OnBlock without a span, providing high likelihood it is the offender
-- 10:24 - Preston suggests rolling back all images to version before PR #4086, suggesting image tag: gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:7f9a060569d32a1ae05027ba2f0337b586b27dfd7a46307f552046271f1b448c. Raul proceeds and applies image to statefulset, archival deployment, and experimental deployment
+- 10:24 - Preston suggests rolling back all images to version before PR #4086, suggesting image tag: gcr.io/zeroone-boa/agora-cl/beacon-chain@sha256:7f9a060569d32a1ae05027ba2f0337b586b27dfd7a46307f552046271f1b448c. Raul proceeds and applies image to statefulset, archival deployment, and experimental deployment
 - 10:33 - Rollback succeeded in removing the deadlock in forkchoice.OnBlock, but grpc.ProposeBlock still failing at an alarming rate. Investigation into jaeger spans concludes ProcessSlots in the state transition function is taking too long and leading to deadline exceeded problems
 - 10:38 - Raul identifies ProcessSlots is taking an average of 5 seconds due to SSZ in the production nodes, making it nearly impossible for validators to attest or request attestations to put into blocks
 - 10:39 - Terence suggests using the emergency flag created by Nishant called --enable-skip-slots-cache in all the beacon nodes
@@ -333,7 +333,7 @@ Lack of metrics. For a single entry, we often have to consider 2 values. The lat
 
 #### Supporting information
 
-Supporting test: https://github.com/prysmaticlabs/prysm/blob/454c7d70e69e98e39d26f862c306b352a5381f08/beacon-chain/core/state/transition_test.go#L1109
+Supporting test: https://github.com/zeroone-boa/agora-cl/blob/454c7d70e69e98e39d26f862c306b352a5381f08/beacon-chain/core/state/transition_test.go#L1109
 
 Additional supporting data: https://gist.github.com/prestonvanloon/365cc64804b46bd65790ba898cf60e1b
 

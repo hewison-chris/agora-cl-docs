@@ -1,6 +1,6 @@
 <table>
     <tr>
-        <th style={{minWidth: 180 + 'px'}}>Scenario</th> 
+        <th style={{minWidth: 180 + 'px'}}>Scenario</th>
         <th>Solution</th>
     </tr>
     <tr>
@@ -13,6 +13,6 @@
     </tr>
     <tr>
       <td>Can't import accounts, stuck in a loop. You see <code>Could not import accounts: could not write accounts: file already exists without proper 0600 permissions</code></td>
-      <td>This usually happens when the account you're using doesn't have permission to read and write to the target directory. See <a href='https://github.com/prysmaticlabs/prysm/issues/11130#issuecomment-1199984124'>this GitHub issue</a> for a workaround.</td>
+      <td>This usually happens when the account you're using doesn't have permission to read and write to the target directory. See <a href='https://github.com/zeroone-boa/agora-cl/issues/11130#issuecomment-1199984124'>this GitHub issue</a> for a workaround.</td>
     </tr>
 </table>

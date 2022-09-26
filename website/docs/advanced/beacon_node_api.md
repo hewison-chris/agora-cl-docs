@@ -28,7 +28,7 @@ While the default setting is sufficient for regular beacon chain functionality, 
 
 Full details of the Ethereum beacon API are available here:
 
-The Agora-cl documenation portal [Ethreum public API] (https://docs.prylabs.network/docs/how-prysm-works/prysm-public-api)
+The Agora-cl documenation portal [Ethreum public API] (https://docs.prylabs.network/docs/how-agora-cl-works/agora-cl-public-api)
 
 ## Command line/Configuration file usage:
 
@@ -38,17 +38,17 @@ Setting the beacon node to save the state for each slot can be done both on the 
 **Using Linux/MacOS based systems**
 
 ```sh
-./prysm.sh beacon-chain --slots-per-archive-point=32
+./agora-cl.sh beacon-chain --slots-per-archive-point=32
 ```
 
 **Using Windows based systems**
 
 ```sh
-prysm.bat beacon-chain --slots-per-archive-point=32
+agora-cl.bat beacon-chain --slots-per-archive-point=32
 ```
 **Using the Configuration file:**
 
-If you are running Agora-cl and specifying command line flags via a configuration file such as ***/home/beacon/config.yaml*** on Linux or MacOS or ***c:\prysm\beacon\config.yaml*** on Windows, you can add the following to that file:
+If you are running Agora-cl and specifying command line flags via a configuration file such as ***/home/beacon/config.yaml*** on Linux or MacOS or ***c:\agora-cl\beacon\config.yaml*** on Windows, you can add the following to that file:
 
 ```sh
 slots-per-archive-point: 32

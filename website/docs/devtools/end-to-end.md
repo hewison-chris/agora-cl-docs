@@ -20,7 +20,7 @@ bazel test //testing/endtoend:go_default_test --//proto:network=minimal --test_f
 
 ## How are E2E tests special?
 
-E2E tests are located in https://github.com/prysmaticlabs/prysm/tree/develop/testing/endtoend. They are regular Go tests enhanced by Bazel. The main reason why we need Bazel is to prepare binaries for components executed by the test, including the beacon node and validator. This means we are testing the system as a whole, including all inter-process communication. E2E uses a dedicated beacon config that overrides several important parameters, such as time-related values (we don't want the test to take too long given that it's supposed to run for several epochs).
+E2E tests are located in https://github.com/zeroone-boa/agora-cl/tree/develop/testing/endtoend. They are regular Go tests enhanced by Bazel. The main reason why we need Bazel is to prepare binaries for components executed by the test, including the beacon node and validator. This means we are testing the system as a whole, including all inter-process communication. E2E uses a dedicated beacon config that overrides several important parameters, such as time-related values (we don't want the test to take too long given that it's supposed to run for several epochs).
 
 :::info
 The difference between `TestEndToEnd_MinimalConfig` and `TestEndToEnd_MinimalConfig_ValidatorAtCurrentRelease` is that the former runs the latest validator code, whereas the latter run the validator's latest release. The idea is to ensure backwards compatibility between `HEAD` and the latest validator release.
@@ -44,11 +44,11 @@ type ComponentRunner interface {
 }
 ```
 
-There are several types that implement this interface and they can all be found in https://github.com/prysmaticlabs/prysm/tree/develop/testing/endtoend/components.
+There are several types that implement this interface and they can all be found in https://github.com/zeroone-boa/agora-cl/tree/develop/testing/endtoend/components.
 
 E2E requires appropriate regular version updates for certain components that run on binary such as web3signer. Currently, E2E can only support 1 version of a component at a time.
 
-Running components correctly is not a simple task. We can't simply start up all components at the same time and expect the system to work. The beacon node requires a running boot node to be able to find peers, as well as an Eth1 node with blocks that include deposits for validators that will be used during the test. This means we need a combination of synchronous and asynchronous behavior. This is achieved by the use of goroutines and the `ComponentRunner` interface inside `run()` in https://github.com/prysmaticlabs/prysm/blob/develop/testing/endtoend/endtoend_test.go.
+Running components correctly is not a simple task. We can't simply start up all components at the same time and expect the system to work. The beacon node requires a running boot node to be able to find peers, as well as an Eth1 node with blocks that include deposits for validators that will be used during the test. This means we need a combination of synchronous and asynchronous behavior. This is achieved by the use of goroutines and the `ComponentRunner` interface inside `run()` in https://github.com/zeroone-boa/agora-cl/blob/develop/testing/endtoend/endtoend_test.go.
 
 ### Evaluators
 
@@ -63,7 +63,7 @@ type Evaluator struct {
 }
 ```
 
-The purpose of an evaluator is to assert an invariant that the system must hold in order to run properly. Examples of such invariants include the ability to undergo a fork transition or the ability to find peers in the network. All evaluators can be found in https://github.com/prysmaticlabs/prysm/tree/develop/testing/endtoend/evaluators.
+The purpose of an evaluator is to assert an invariant that the system must hold in order to run properly. Examples of such invariants include the ability to undergo a fork transition or the ability to find peers in the network. All evaluators can be found in https://github.com/zeroone-boa/agora-cl/tree/develop/testing/endtoend/evaluators.
 
 Each evaluator has a name, a policy (which we will cover later) and an evaluation function. The evaluation function is the actual code that asserts if the system behaves correctly. If the invariant is broken, an error is returned from the function, and the test is stopped and considered failed.
 
@@ -74,7 +74,7 @@ Each evaluator has a name, a policy (which we will cover later) and an evaluatio
 
 ### Policies
 
-Not every invariant can be checked at every epoch. As an example, the Altair fork transition invariant should be asserted only after the Altair hard fork occurred. Evaluator timings are controlled with policies, which are simple functions returning boolean values, with `true` indicating that the evaluator should be ran for a specific epoch. All policies can be found in https://github.com/prysmaticlabs/prysm/tree/develop/testing/endtoend/policies.
+Not every invariant can be checked at every epoch. As an example, the Altair fork transition invariant should be asserted only after the Altair hard fork occurred. Evaluator timings are controlled with policies, which are simple functions returning boolean values, with `true` indicating that the evaluator should be ran for a specific epoch. All policies can be found in https://github.com/zeroone-boa/agora-cl/tree/develop/testing/endtoend/policies.
 
 ## Investigating failures
 
@@ -96,14 +96,14 @@ If one or more evaluators fail, we get a console output similar to the following
     --- PASS: TestEndToEnd_MinimalConfig/all_nodes_have_same_head_1 (0.10s)
     --- PASS: TestEndToEnd_MinimalConfig/metrics_check_epoch_1 (0.11s)
 FAIL
-FAIL: //testing/endtoend:go_default_test (see /home/user/.cache/bazel/_bazel_user/ec3daeb6ce0cd7052bf7c79ca31f19c6/execroot/prysm/bazel-out/k8-fastbuild-ST-02d640e6fd05/testlogs/testing/endtoend/go_default_test/test.log)
+FAIL: //testing/endtoend:go_default_test (see /home/user/.cache/bazel/_bazel_user/ec3daeb6ce0cd7052bf7c79ca31f19c6/execroot/agora-cl/bazel-out/k8-fastbuild-ST-02d640e6fd05/testlogs/testing/endtoend/go_default_test/test.log)
 Target //testing/endtoend:go_default_test up-to-date:
   bazel-out/k8-fastbuild-ST-02d640e6fd05/bin/testing/endtoend/go_default_test_/go_default_test
 INFO: Elapsed time: 235.338s, Critical Path: 235.16s
 INFO: 2 processes: 1 internal, 1 linux-sandbox.
 INFO: Build completed, 1 test FAILED, 2 total actions
 //testing/endtoend:go_default_test                                       FAILED in 235.1s
-  /home/user/.cache/bazel/_bazel_user/ec3daeb6ce0cd7052bf7c79ca31f19c6/execroot/prysm/bazel-out/k8-fastbuild-ST-02d640e6fd05/testlogs/testing/endtoend/go_default_test/test.log
+  /home/user/.cache/bazel/_bazel_user/ec3daeb6ce0cd7052bf7c79ca31f19c6/execroot/agora-cl/bazel-out/k8-fastbuild-ST-02d640e6fd05/testlogs/testing/endtoend/go_default_test/test.log
 
 INFO: Build completed, 1 test FAILED, 2 total actions
 ```
@@ -111,7 +111,7 @@ INFO: Build completed, 1 test FAILED, 2 total actions
 This tells us which evaluator failed (`healthz_check_epoch_1`), but we don't know the reason of the failure. Fortunately, there are several logs that we can inspect. First of all, we can take a look at the main test log, whose path is provided in the output:
 
 ```
-/home/user/.cache/bazel/_bazel_user/ec3daeb6ce0cd7052bf7c79ca31f19c6/execroot/prysm/bazel-out/k8-fastbuild-ST-02d640e6fd05/testlogs/testing/endtoend/go_default_test/test.log
+/home/user/.cache/bazel/_bazel_user/ec3daeb6ce0cd7052bf7c79ca31f19c6/execroot/agora-cl/bazel-out/k8-fastbuild-ST-02d640e6fd05/testlogs/testing/endtoend/go_default_test/test.log
 ```
 
 The directory of the `test.log` file contains a `test.output` directory, which itself contains a zipped file with logs from several components, including all beacon nodes and validator clients started up during the test. They provide invaluable information about our test run. As an example, let's inspect a different error message:
@@ -122,13 +122,13 @@ endtoend_test.go:279: E2E test ended in error: failed to start the ETH1 miner: e
 
 The uzipped output file contains a `eth1-init_miner.log` file with the following contents:
 
-> Fatal: Failed to read genesis file: open /home/user/.cache/bazel/\_bazel\_user/ec3daeb6ce0cd7052bf7c79ca31f19c6/sandbox/linux-sandbox/1779/execroot/prysm/bazel-out/k8-fastbuild-ST-02d640e6fd05/bin/testing/endtoend/go\_default\_test\_/go\_default\_test.runfiles/com\_github\_ethereum\_go\_ethereum/cmd/geth/geth_/genesiss.json: no such file or directory
+> Fatal: Failed to read genesis file: open /home/user/.cache/bazel/\_bazel\_user/ec3daeb6ce0cd7052bf7c79ca31f19c6/sandbox/linux-sandbox/1779/execroot/agora-cl/bazel-out/k8-fastbuild-ST-02d640e6fd05/bin/testing/endtoend/go\_default\_test\_/go\_default\_test.runfiles/com\_github\_ethereum\_go\_ethereum/cmd/geth/geth_/genesiss.json: no such file or directory
 
 The issue here is that our repo contains a static file named `genesis.json` that we want to use to initialize Geth, but issuing the command has a typo in the word `genesis` (there is a double `s` at the end).
 
 ## Testing features
 
-Agora-cl supports [feature flags](https://github.com/prysmaticlabs/prysm/blob/develop/config/features/README.md), which are very useful when we want to test a particular feature before making it a standard in production. Sometimes you might want to run E2E with your feature flag enabled. To do this, go to https://github.com/prysmaticlabs/prysm/blob/develop/config/features/flags.go and append your flag to `E2EBeaconChainFlags`:
+Agora-cl supports [feature flags](https://github.com/zeroone-boa/agora-cl/blob/develop/config/features/README.md), which are very useful when we want to test a particular feature before making it a standard in production. Sometimes you might want to run E2E with your feature flag enabled. To do this, go to https://github.com/zeroone-boa/agora-cl/blob/develop/config/features/flags.go and append your flag to `E2EBeaconChainFlags`:
 
 ```
 var E2EBeaconChainFlags = []string{

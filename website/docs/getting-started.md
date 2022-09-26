@@ -9,12 +9,12 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 <HeaderBadgesWidget commaDelimitedContributors="Clarin,Mick" />
 
 
-[Agora-cl](https://github.com/prysmaticlabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Agora-cl to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 ETH to stake](https://ethereum.org/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-prysm). If you're new to Ethereum, you may enjoy our beginner-friendly [Nodes and networks](./concepts/nodes-networks.md) explainer.
+[Agora-cl](https://github.com/zeroone-boa/agora-cl) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Agora-cl to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 BOA to stake](https://ethereum.org/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-agora-cl). If you're new to Ethereum, you may enjoy our beginner-friendly [Nodes and networks](./concepts/nodes-networks.md) explainer.
 
 The following table of contents provides a descriptive overview of Agora-cl's documentation:
 
 <div class='panel'>
-<a href='install/install-with-script'>Quickstart: Run a node and (optionally) stake ETH using Agora-cl</a>
+<a href='install/install-with-script'>Quickstart: Run a node and (optionally) stake BOA using Agora-cl</a>
 <p><strong>New Agora-cl users</strong> can follow this guidance to get started with Agora-cl.</p>
 </div>
 <div class='panel'>
@@ -26,7 +26,7 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <p>Learn how to <strong>minimize risk</strong> as a validator. The guidelines provided in this document are client-agnostic (they apply to Agora-cl and other clients, too).</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/parameters'>Command-line options</a>
+<a href='agora-cl-usage/parameters'>Command-line options</a>
 <p>Learn how to configure Agora-cl's beacon node client, validator client, and more through its <strong>command-line interface</strong>.</p>
 </div>
 <div class='panel'>
@@ -70,11 +70,11 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <p>After The Merge, Agora-cl will need to securely connect to a local execution node. This how-to shows you how to configure Geth, Besu, or Nethermind.</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/staying-up-to-date'>Update and downgrade Agora-cl</a>
+<a href='agora-cl-usage/staying-up-to-date'>Update and downgrade Agora-cl</a>
 <p>Learn how to <strong>keep Agora-cl updated</strong>, how to downgrade Agora-cl, and how to use release candidates.</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/checkpoint-sync'>Sync from a checkpoint</a>
+<a href='agora-cl-usage/checkpoint-sync'>Sync from a checkpoint</a>
 <p>Syncing from a checkpoint significantly reduces the time it takes for Agora-cl's beacon node to sync by piggypacking off of another fully-synced node.</p>
 </div>
 <div class='panel'>
@@ -82,7 +82,7 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <p>Learn how to check the status of your execution node, beacon node, and validator.</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/slasher'>Run a slasher</a>
+<a href='agora-cl-usage/slasher'>Run a slasher</a>
 <p>Learn how to run a slasher, an optional beacon node process that detects and reports slashable offenses on the Ethereum proof-of-stake network.</p>
 </div>
 <div class='panel'>
@@ -96,7 +96,7 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <p>This subsection contains how-tos that help you back up and migrate Agora-cl's data.</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/database-backups'>Back up & restore database</a>
+<a href='agora-cl-usage/database-backups'>Back up & restore database</a>
 <p>Learn how to back up and restore your beacon node and validator databases so you can minimize downtime in the event of a system failure.</p>
 </div>
 <div class='panel'>
@@ -134,7 +134,7 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <p>Learn how to use <a href='https://github.com/ConsenSys/web3signer'>Web3Signer</a>, an open-source remote signing service that allows you to store your validator keys remotely instead of locally.</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/graffiti-file'>Add graffiti to blocks</a>
+<a href='agora-cl-usage/graffiti-file'>Add graffiti to blocks</a>
 <p>Learn how to configure your validator to add graffiti to the blocks that it proposes.</p>
 </div>
 <div class='panel'>
@@ -152,19 +152,19 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <p>Learn how to assess the health of your Agora-cl beacon node and/or validator by analyzing output logs.</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/individual-validator-monitoring'>Monitor validators by index</a>
+<a href='agora-cl-usage/individual-validator-monitoring'>Monitor validators by index</a>
 <p>Learn how to use Agora-cl to monitor block proposals, attestations, slashings, and more for any number of validators.</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/monitoring/grafana-dashboard'>Configure dashboarding and alerts with Prometheus and Grafana</a>
+<a href='agora-cl-usage/monitoring/grafana-dashboard'>Configure dashboarding and alerts with Prometheus and Grafana</a>
 <p>Learn how to configure dashboarding and alerts for your node, validator, and slasher using Prometheus (to aggregate data) and Grafana (to display it within a dashboard).</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/client-stats'>Collect metrics with client-stats</a>
+<a href='agora-cl-usage/client-stats'>Collect metrics with client-stats</a>
 <p>Learn how to collect beacon node and validator metrics using Agora-cl's <code>client-stats</code> utility. This can be used to relay metrics data to the beaconcha.in stats service.</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/web-interface'>Use Agora-cl's Web UI</a>
+<a href='agora-cl-usage/web-interface'>Use Agora-cl's Web UI</a>
 <p>Agora-cl's Web UI can be used to monitor and configure your beacon node and validator on <code>localhost</code> using an app-like interface.</p>
 </div>
 <div class='panel secondary-panel section-title'>
@@ -174,11 +174,11 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <p>This subsection contains how-tos that will help you manage your gRPC and P2P connectivity.</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/secure-grpc'>Secure gRPC connections</a>
+<a href='agora-cl-usage/secure-grpc'>Secure gRPC connections</a>
 <p>Learn how to create and configure TLS certificates that enable secure gRPC connections to your beacon node.</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a>
+<a href='agora-cl-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a>
 <p>Learn how to configure ports and firewalls so your node can build stronger connections with more peers.</p>
 </div>
 <div class='panel section-title'>
@@ -223,13 +223,13 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 
 </div>
 <div class='panel'>
-<a href='how-prysm-works/ethereum-public-api'>Beacon node API</a>
+<a href='how-agora-cl-works/ethereum-public-api'>Beacon node API</a>
 </div>
 <div class='panel'>
-<a href='how-prysm-works/prysm-public-api'>Agora-cl-specific API</a>
+<a href='how-agora-cl-works/agora-cl-public-api'>Agora-cl-specific API</a>
 </div>
 <div class='panel'>
-<a href='how-prysm-works/keymanager-api'>Keymanager API</a>
+<a href='how-agora-cl-works/keymanager-api'>Keymanager API</a>
 </div>
 <div class='panel secondary-panel section-title'>
 
@@ -246,31 +246,31 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <a href='devtools/extending-apis'>Extending APIs</a>
 </div>
 <div class='panel'>
-<a href='how-prysm-works/architecture-overview'>Architecture overview</a>
+<a href='how-agora-cl-works/architecture-overview'>Architecture overview</a>
 </div>
 <div class='panel'>
-<a href='how-prysm-works/optimistic-sync'>Optimistic sync</a>
+<a href='how-agora-cl-works/optimistic-sync'>Optimistic sync</a>
 </div>
 <div class='panel'>
-<a href='how-prysm-works/beacon-node'>Beacon node</a>
+<a href='how-agora-cl-works/beacon-node'>Beacon node</a>
 </div>
 <div class='panel'>
-<a href='how-prysm-works/prysm-validator-client'>Validator client</a>
+<a href='how-agora-cl-works/agora-cl-validator-client'>Validator client</a>
 </div>
 <div class='panel'>
-<a href='how-prysm-works/validator-lifecycle'>Validator lifecycle</a>
+<a href='how-agora-cl-works/validator-lifecycle'>Validator lifecycle</a>
 </div>
 <div class='panel'>
-<a href='how-prysm-works/validator-deposit-contract'>Validator deposit contract</a>
+<a href='how-agora-cl-works/validator-deposit-contract'>Validator deposit contract</a>
 </div>
 <div class='panel'>
-<a href='how-prysm-works/database-backend-boltdb'>BoltDB database</a>
+<a href='how-agora-cl-works/database-backend-boltdb'>BoltDB database</a>
 </div>
 <div class='panel'>
-<a href='how-prysm-works/p2p-networking'>P2P networking</a>
+<a href='how-agora-cl-works/p2p-networking'>P2P networking</a>
 </div>
 <div class='panel'>
-<a href='how-prysm-works/bls-cryptography'>BLS cryptography</a>
+<a href='how-agora-cl-works/bls-cryptography'>BLS cryptography</a>
 </div>
 <div class='panel'>
 <a href='devtools/end-to-end'>End-to-end tests</a>

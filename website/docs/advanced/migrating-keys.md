@@ -63,13 +63,13 @@ import TabItem from '@theme/TabItem';
 **Using the Agora-cl installation script**
 
 ```sh
-./prysm.sh validator slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
+./agora-cl.sh validator slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
 ```
 
 **Using Bazel**
@@ -86,14 +86,14 @@ The first time you run the process you will be asked to accept or decline the te
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.bat validator slashing-protection-history export --datadir=\path\to\validatorDb --slashing-protection-export-dir=\path\to\desired\outputdir
+agora-cl.bat validator slashing-protection-history export --datadir=\path\to\validatorDb --slashing-protection-export-dir=\path\to\desired\outputdir
 ```
 
 
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\outputdir:/output -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable --slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
+docker run -it -v \path\to\outputdir:/output -v \path\to\wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable --slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
 ```
 
 Note that `datadir` should point to the directory containing your `validator.db` file. For example: `/direct/validator.db`.
@@ -106,13 +106,13 @@ The first time you run the process you will be asked to accept or decline the te
 **Using the Agora-cl installation script**
 
 ```sh
-./prysm.sh validator slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
+./agora-cl.sh validator slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
 ```
 
 **Using Bazel**
@@ -129,7 +129,7 @@ The first time you run the process you will be asked to accept or decline the te
 **Using the Agora-cl installation script**
 
 ```sh
-./prysm.sh validator slashing-protection-history export --datadir=\path\to\validatorDb --slashing-protection-export-dir=\path\to\desired\outputdir
+./agora-cl.sh validator slashing-protection-history export --datadir=\path\to\validatorDb --slashing-protection-export-dir=\path\to\desired\outputdir
 ```
 
 **Using Bazel**
@@ -160,13 +160,13 @@ To Identify the account(s) loaded in your validator, issue the following command
 **Using Linux/MacOS based systems**
 
 ```sh
-./prysm.sh validator accounts list
+./agora-cl.sh validator accounts list
 ```
 
 **Using Windows based systems**
 
 ```sh
-prysm.bat validator accounts list
+agora-cl.bat validator accounts list
 ```
 This will produce output in the format of account number, three words seperated by a hyphon (-) and the public keys of each account. The output will be similar to this:
 
@@ -186,13 +186,13 @@ You can backup validator accounts from your wallet using the following command:
 **Using Linux/MacOS based systems**
 
 ```sh
-./prysm.sh validator accounts backup
+./agora-cl.sh validator accounts backup
 ```
 
 **Using Windows based systems**
 
 ```sh
-prysm.bat validator accounts backup
+agora-cl.bat validator accounts backup
 ```
 You will now be prompted for the wallet password. Once entered, you will be guided through the backup process where you will able to select individual or all accounts to backup and the location where the backup file is created. You will also be prompted for a **"password"** for the backup file, **it is important to keep a note of this for use during the import process**.
 
@@ -203,7 +203,7 @@ You can also run the accounts backup command non-interactively by using the foll
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/agora-cl-wallet-v2")
 | `--wallet-password-file` | Path to a plain-text, .txt file containing your wallet's password.
 | `--backup-dir`     | Path to a directory where accounts will be backed up into a zip file. (default: $HOME/Eth2Validators/)
 | `--backup-public-keys`	| Comma-separated list of public key hex strings to specify which validator accounts to backup.
@@ -217,13 +217,13 @@ Expand (unzip) the backup file created above. The file will contain one JSON fil
 **Using Linux/MacOS based systems**
 
 ```sh
-./prysm.sh validator accounts import --keys-dir=/path/to/keystore-file.json
+./agora-cl.sh validator accounts import --keys-dir=/path/to/keystore-file.json
 ```
 
 **Using Windows based systems**
 
 ```sh
-prysm.bat validator accounts import --keys-dir=\path\to\keystore-file.json
+agora-cl.bat validator accounts import --keys-dir=\path\to\keystore-file.json
 ```
 
 This will import all files that are valid EIP-2335 keystores, such as those generated by the backup process above or the official Ethereum deposit launchpad's command-line tool.
@@ -249,13 +249,13 @@ To import a slashing protection JSON file (all Ethereum consensus clients use th
 **Using the Agora-cl installation script**
 
 ```sh
-./prysm.sh validator slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
+./agora-cl.sh validator slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 **Using Bazel**
@@ -270,12 +270,12 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/v
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.bat validator slashing-protection-history import --datadir=\path\to\validatorDb --slashing-protection-json-file=\path\to\desiredimportfile
+agora-cl.bat validator slashing-protection-history import --datadir=\path\to\validatorDb --slashing-protection-json-file=\path\to\desiredimportfile
 ```
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 </TabItem>
@@ -284,13 +284,13 @@ docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json
 **Using the Agora-cl installation script**
 
 ```sh
-./prysm.sh validator slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
+./agora-cl.sh validator slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 **Using Bazel**
@@ -305,7 +305,7 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/v
 **Using the Agora-cl installation script**
 
 ```sh
-./prysm.sh validator slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
+./agora-cl.sh validator slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 **Using Bazel**
@@ -327,13 +327,13 @@ On the original system, with the validator process stopped, remove the account(s
 **Using Linux/MacOS based systems**
 
 ```sh
-./prysm.sh validator accounts delete
+./agora-cl.sh validator accounts delete
 ```
 
 **Using Windows based systems**
 
 ```sh
-prysm.bat validator accounts delete
+agora-cl.bat validator accounts delete
 ```
 This will produce output in the same format as the list function, three words identifying the account seperated by a hyphon (-) and the public keys of each account, the output will be similar to this:
 

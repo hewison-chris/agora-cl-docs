@@ -17,13 +17,13 @@ import TabItem from '@theme/TabItem';
 
 #### How do I troubleshoot errors?
 
-If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/prysmaticlabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Agora-cl version you're running** and your **operating system**, and then file a bug report [here](https://github.com/prysmaticlabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysmaticlabs) about your error and we'll take a look as soon as possible.
+If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/zeroone-boa/agora-cl/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Agora-cl version you're running** and your **operating system**, and then file a bug report [here](https://github.com/zeroone-boa/agora-cl/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysmaticlabs) about your error and we'll take a look as soon as possible.
 
 #### My validator is losing money, what's going on?
 
 1. Try restarting your machine and associated processes.
 1. See if your node or validator client crashed. You can view the logs of the process to see if there were any `ERROR` logs. If so, please file a bug report or talk to our team on [discord](https://discord.gg/prysmaticlabs). A fatal crash is quite serious and something we'll investigate right away.
-2. Check your network connectivity. You can improve this by following our tips [here](/docs/prysm-usage/p2p-host-ip) which can help you find better peers, improve attestation effectiveness, and more.
+2. Check your network connectivity. You can improve this by following our tips [here](/docs/agora-cl-usage/p2p-host-ip) which can help you find better peers, improve attestation effectiveness, and more.
 3. Check your system resource usage, perhaps your node is using excess CPU and RAM. Depending on your operating system, there are different ways to do this.
 
 If you still need help, note your **Agora-cl version** and **operating system**, and then reach out to our team on [Discord](https://discord.gg/prysmaticlabs). Providing as much information as possible will help us troubleshoot your issue.
@@ -32,13 +32,13 @@ If you still need help, note your **Agora-cl version** and **operating system**,
 
 Losing peers can be due to the following reasons:
 
-1. Your network connectivity has problems. You can check how to improve it with some of our tips [here](/docs/prysm-usage/p2p-host-ip).
+1. Your network connectivity has problems. You can check how to improve it with some of our tips [here](/docs/agora-cl-usage/p2p-host-ip).
 2. Agora-cl is using a ton of memory or system resources and perhaps you ran out of memory. Ensure you meet the minimum specifications for running Agora-cl specified in our installation pages for your operating system.
-3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/docs/prysm-usage/staying-up-to-date) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/prysmaticlabs) letting us know you had this issue.
+3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/docs/agora-cl-usage/staying-up-to-date) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/prysmaticlabs) letting us know you had this issue.
 
 #### I have an issue in the web UI, getting errors, what can I do?
 
-The web UI is still in beta meaning there are bound to be UI bugs or other issues that we need to resolve. If you ran into a bug, please file a bug report [here](https://github.com/prysmaticlabs/prysm-web-ui/issues/new) with a thorough description of your problem and screenshots if possible.
+The web UI is still in beta meaning there are bound to be UI bugs or other issues that we need to resolve. If you ran into a bug, please file a bug report [here](https://github.com/zeroone-boa/agora-cl-web-ui/issues/new) with a thorough description of your problem and screenshots if possible.
 
 #### My CPU/RAM usage is huge, what’s going on?
 
@@ -57,7 +57,7 @@ Memory: 8GB RAM
 Storage: 20GB available space SSD
 Internet: Broadband connection
 
-If that still does not help, please file an issue with our team on Github [here](https://github.com/prysmaticlabs/prysm/issues/new?template=bug_report.md).
+If that still does not help, please file an issue with our team on Github [here](https://github.com/zeroone-boa/agora-cl/issues/new?template=bug_report.md).
 
 #### I got slashed! Why? How can I avoid getting slashed?
 
@@ -84,52 +84,52 @@ Depending on your installation method, there are different ways to verify your A
 }>
 <TabItem value="script">
 
-**Using prysm.sh**
+**Using agora-cl.sh**
 
 ```text
-./prysm.sh validator --version
-./prysm.sh beacon-chain --version
+./agora-cl.sh validator --version
+./agora-cl.sh beacon-chain --version
 ```
 
-**Using prysm.bat**
+**Using agora-cl.bat**
 
 ```text
-prysm.bat validator --version
-prysm.bat beacon-chain --version
+agora-cl.bat validator --version
+agora-cl.bat beacon-chain --version
 ```
 
 </TabItem>
 <TabItem value="docker">
 
-If you are running using docker and the :stable tag for Agora-cl, stable will always point to our latest [release](https://github.com/prysmaticlabs/prysm/releases). Otherwise, you can run the command `docker ps` to see your running docker containers. The suffix of your image name after the colon is the version you are running.
+If you are running using docker and the :stable tag for Agora-cl, stable will always point to our latest [release](https://github.com/zeroone-boa/agora-cl/releases). Otherwise, you can run the command `docker ps` to see your running docker containers. The suffix of your image name after the colon is the version you are running.
 
 ```
 CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
-371d6675888b        gcr.io/prysmaticlabs/prysm/validator:stable            "validator"              6 days ago
+371d6675888b        gcr.io/zeroone-boa/agora-cl/validator:stable            "validator"              6 days ago
 ```
 </TabItem>
 <TabItem value="bazel">
 
-If you are using Bazel, it means you are building Agora-cl from source. You can do `git log` and you will see the current commit hash you are running at the top. You can then visit our [releases page](https://github.com/prysmaticlabs/prysm/releases) to check what version the commit hash corresponds to.
+If you are using Bazel, it means you are building Agora-cl from source. You can do `git log` and you will see the current commit hash you are running at the top. You can then visit our [releases page](https://github.com/zeroone-boa/agora-cl/releases) to check what version the commit hash corresponds to.
 
 </TabItem>
 </Tabs>
 
 #### How can I upgrade Agora-cl? Do I just need to close and restart the process?
 
-Upgrading Agora-cl is done differently depending on your operating system and installation method. We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Agora-cl](/docs/prysm-usage/staying-up-to-date).
+Upgrading Agora-cl is done differently depending on your operating system and installation method. We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Agora-cl](/docs/agora-cl-usage/staying-up-to-date).
 
 #### How can I downgrade Agora-cl to an older version?
 
 Upgrading Agora-cl is done differently depending on your operating system and installation method. Please note that downgrading may not be as easy as upgrading as some versions may not be backward compatible and you will need to perform extra steps. For example, migrating down from v1.x to v1.0.x has breaking changes that require you to also rollback your database.
 
-We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Agora-cl](/docs/prysm-usage/staying-up-to-date).
+We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Agora-cl](/docs/agora-cl-usage/staying-up-to-date).
 
 #### How can I improve my attestation effectiveness?
 
 Attestation effectiveness is a metric that directly affects your validator rewards. In simple terms, an attestation is more valuable the sooner it is put into a block and included in the chain. This interval is called the "inclusion distance" of an attestation. The smaller it is, the more profitable your validator will be. We highly recommend reading Attestant's awesome blog post on the matter [here](https://www.attestant.io/posts/defining-attestation-effectiveness/).
 
-Some stakers might notice their effectiveness is perfect, while others might see lower values such as 80%. Improving attestation effectiveness depends on a variety of factors, such as attestation network propagation, your network connectivity, the peers you are connected to. However, your network connectivity is one of the most important factors you can control to improve this metric. We have some tips to improve your connectivity [here](/docs/prysm-usage/p2p-host-ip).
+Some stakers might notice their effectiveness is perfect, while others might see lower values such as 80%. Improving attestation effectiveness depends on a variety of factors, such as attestation network propagation, your network connectivity, the peers you are connected to. However, your network connectivity is one of the most important factors you can control to improve this metric. We have some tips to improve your connectivity [here](/docs/agora-cl-usage/p2p-host-ip).
 
 #### Do I need to keep my deposit keystores after I have imported them into Agora-cl?
 
@@ -141,11 +141,11 @@ For help with running geth specifically, the [go-ethereum discord](https://disco
 
 #### How often should I perform database backups?
 
-The Agora-cl beacon node and validator allow performing database backups in case your machine gets corrupted and you need to restore it from some checkpoint. You can read our instructions on performing backups [here](/docs/prysm-usage/database-backups). Briefly, the frequency at which you should perform backups really depends on your personal preference. If you want to perform backups once a day or once every week, there is no harm nor bigger difference in doing so. Losing your beacon chain database is not a big deal aside from the fact that you will need to sync again from genesis. Losing your validator db can be problematic but if you wait several epochs before starting your validator, ensure your computer's clock is synced, the risk of slashing is low.
+The Agora-cl beacon node and validator allow performing database backups in case your machine gets corrupted and you need to restore it from some checkpoint. You can read our instructions on performing backups [here](/docs/agora-cl-usage/database-backups). Briefly, the frequency at which you should perform backups really depends on your personal preference. If you want to perform backups once a day or once every week, there is no harm nor bigger difference in doing so. Losing your beacon chain database is not a big deal aside from the fact that you will need to sync again from genesis. Losing your validator db can be problematic but if you wait several epochs before starting your validator, ensure your computer's clock is synced, the risk of slashing is low.
 
 #### Seeing a warning regarding binary signature not being trusted when downloading Agora-cl, should I be worried?
 
-When downloading the Agora-cl precompiled binaries such as with prysm.sh or prysm.bat, you might see the following output
+When downloading the Agora-cl precompiled binaries such as with agora-cl.sh or agora-cl.bat, you might see the following output
 
 ```
 Latest Agora-cl version is v1.1.0.
@@ -167,7 +167,7 @@ Your node is running the popular [prometheus](https://prometheus.io/) server for
 
 #### Can I run this on a raspberry pi? What are the instructions?
 
-Yes, we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](/docs/install/install-with-script). However, we recommend using more powerful hardware in mainnet conditions.
+Yes, we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/zeroone-boa/agora-cl/releases). Our documentation portal has instructions on how to run the entire installation process [here](/docs/install/install-with-script). However, we recommend using more powerful hardware in mainnet conditions.
 
 ### Validator keys and validator deposits
 
@@ -183,7 +183,7 @@ There are a few possibilities. (1) your deposit has not yet been processed by be
 
 Agora-cl will soon implement the slashing protection [standard format](https://eips.ethereum.org/EIPS/eip-3076), meaning that you can export your slashing protection history and import it easily into another machine running any Ethereum consensus client, not just Agora-cl! In the meantime, however, migrating machines can be a little tricky and we prepared the following set of tips to help keep you safe.
 
-1. Turn off your beacon node and validator on machine 1, make sure it is not running as a system process. You can check this using the process monitor tools of your OS, or a command line tool such as top or htop and check for anything containing the name “prysm” “validator” or “beacon”
+1. Turn off your beacon node and validator on machine 1, make sure it is not running as a system process. You can check this using the process monitor tools of your OS, or a command line tool such as top or htop and check for anything containing the name “agora-cl” “validator” or “beacon”
 2. Note the location of your wallet directory. If you used the default when you started Agora-cl, you can view its path at the top of the output of `validator accounts list`, which varies based on your operating system
 3. Take that entire directory and move it over to your next machine
 4. If you modified your validators’ `— datadir`, also migrate that directory to your next machine
@@ -223,9 +223,9 @@ Overall, keep in mind that no one has an extra advantage as a validator compared
 
 Proposing a block is a factor of random chance depending on the number of active validators currently in the network. As time goes on, however, the probability of you proposing a block indeed goes up. One of our contributors, dv8s, prepared a handy tool to calculate your proposal probability [here](https://proposalprobab.web.app/). Your hardware does not affect your chances of you getting assigned to propose a block, it is random and you cannot gain any advantage over other validators.
 
-#### Can I get back my ETH? How can I withdraw my validator gains?
+#### Can I get back my BOA? How can I withdraw my validator gains?
 
-Deposits into Ethereum proof-of-stake are one-way in the beginning. Functionality of withdrawing gains transferring ETH won’t be available until Ethereum is fully using proof-of-stake (ETA 2022).
+Deposits into Ethereum proof-of-stake are one-way in the beginning. Functionality of withdrawing gains transferring BOA won’t be available until Ethereum is fully using proof-of-stake (ETA 2022).
 
 #### Where can I read more about the incentive model in Ethereum proof-of-stake?
 
@@ -233,7 +233,7 @@ Deposits into Ethereum proof-of-stake are one-way in the beginning. Functionalit
 
 #### What is balance and what is effective balance?
 
-Your validator balance is the actual amount of ETH you have from being a validator in Ethereum. It can go up or down every epoch depending on your participation. Effective balance is a bit different. It is a value that lags behind your actual balance and is used exclusively to determine rewards and penalties for your validator. It has a max value of 32ETH, but your regular balance is uncapped. You can read more about the purpose of effective balance in this excellent post by Attestant [here](https://www.attestant.io/posts/understanding-validator-effective-balance/).
+Your validator balance is the actual amount of BOA you have from being a validator in Ethereum. It can go up or down every epoch depending on your participation. Effective balance is a bit different. It is a value that lags behind your actual balance and is used exclusively to determine rewards and penalties for your validator. It has a max value of 32ETH, but your regular balance is uncapped. You can read more about the purpose of effective balance in this excellent post by Attestant [here](https://www.attestant.io/posts/understanding-validator-effective-balance/).
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 

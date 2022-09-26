@@ -30,7 +30,7 @@ You can use the `--graffiti` validator flag to add a string to your proposed blo
 
 ## Client Stats Configuration
 
-Below are all the available configuration parameters for Agora-cl client stats software: an optional service that can report process metrics to third-parties such as block explorers. You can read more about this [here](/docs/prysm-usage/client-stats).
+Below are all the available configuration parameters for Agora-cl client stats software: an optional service that can report process metrics to third-parties such as block explorers. You can read more about this [here](/docs/agora-cl-usage/client-stats).
 
 <FetchCLIHelp prysmComponent={"client-stats"}/>
 
@@ -54,11 +54,11 @@ datadir: '/data'
 
 3. Start the Agora-cl beacon chain as normal, while specifying the location of the `.yaml` like so:
 ```sh
-./prysm.sh beacon-chain --config-file=/path/to/file.yaml
+./agora-cl.sh beacon-chain --config-file=/path/to/file.yaml
 ```
 or for a validator like so:
 ```sh
-./prysm.sh validator --config-file=/path/to/file.yaml
+./agora-cl.sh validator --config-file=/path/to/file.yaml
 ```
 
 ### Windows
@@ -66,16 +66,16 @@ or for a validator like so:
 
 2. Add the following lines to the file before closing and saving:
 ```sh
-datadir: 'c:\prysm'
+datadir: 'c:\agora-cl'
 ```
 
 3. Start the Agora-cl beacon chain as normal, while specifying the location of the `.yaml` like so:
 ```sh
-.\prysm.bat beacon-chain --config-file=c:\path\to\file.yaml
+.\agora-cl.bat beacon-chain --config-file=c:\path\to\file.yaml
 ```
 or for a validator like so:
 ```sh
-.\prysm.bat validator --config-file=c:\path\to\file.yaml
+.\agora-cl.bat validator --config-file=c:\path\to\file.yaml
 ```
 
 It is possible to provide additional flags alongside the `.yaml` file, though if conflicting flags are provided, the flag defined in the`.yaml` file will take priority. For example, if the flag `--datadir=/data2` is specified and `datadir: "/data1"` is in the `.yaml` file, Agora-cl would prioritise writing to `/data1`.

@@ -8,9 +8,9 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-The beacon-chain node shipped with Agora-cl is the keystone component of the Ethereum proof-of-stake protocol. It is responsible for running a full [Proof-of-Stake](/docs/terminology#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](/docs/terminology#propose) and [attested](/docs/terminology#attest) on by [validators](/docs/terminology#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P \(peer-to-peer\) network, which also manages the lifecycle process of active [validator clients](/docs/how-prysm-works/prysm-validator-client).
+The beacon-chain node shipped with Agora-cl is the keystone component of the Ethereum proof-of-stake protocol. It is responsible for running a full [Proof-of-Stake](/docs/terminology#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](/docs/terminology#propose) and [attested](/docs/terminology#attest) on by [validators](/docs/terminology#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P \(peer-to-peer\) network, which also manages the lifecycle process of active [validator clients](/docs/how-agora-cl-works/agora-cl-validator-client).
 
-![Beacon node](/img/prysm-beacon-chain.png)
+![Beacon node](/img/agora-cl-beacon-chain.png)
 
 ## Beacon node functionality
 
@@ -20,7 +20,7 @@ At runtime, the beacon node initialises and maintains a number of services that 
 * An [**operations service**](#operations-service) prepares information contained in beacon blocks received from peers \(such as block deposits and attestations\) for inclusion into new validator blocks.
 * A [**core package** ](#core-package) containing Ethereum beacon-chain core functions, utilities, and state transitions required for conformity with the protocol.
 * A [**sync service**](#sync-service) which both queries nodes across the network to ensure latest [canonical head](/docs/terminology#canonical-head-block) and state are synced and processes incoming block announcements from peers.
-* An [**ETH 1.0 service**](#eth1-service) that listens to latest event logs from the validator deposit contract and the ETH 1.0 blockchain.
+* An [**BOA 1.0 service**](#eth1-service) that listens to latest event logs from the validator deposit contract and the BOA 1.0 blockchain.
 * A [**public RPC server**](#public-rpc-server) that requests information about the beacon chain's state, the latest block, validator information, etcetera.
 * A [**P2P server**](p2p-networking) which handles the life cycle of peer connections and facilitates broadcasting across the network.
 * A **full test suite** for running simulation on Ethereum beacon chain state transitions, benchmarks and conformity tests across clients.
@@ -47,7 +47,7 @@ The sync service has two responsibilities: ensuring the local beacon chain is up
 
 ## ETH1 service
 
-The [ETH1](/docs/terminology#eth1) service uses the [go-ethereum ethclient](https://github.com/ethereum/go-ethereum/tree/master/ethclient) to connect to a running Ethereum 1.0 node in order to listen for incoming [validator deposit contract](validator-deposit-contract) logs. The [validator clients](prysm-validator-client) include deposit objects inside of their proposed blocks, and the beacon chain state transition function then activates any pending validators from these deposits.
+The [ETH1](/docs/terminology#eth1) service uses the [go-ethereum ethclient](https://github.com/ethereum/go-ethereum/tree/master/ethclient) to connect to a running Ethereum 1.0 node in order to listen for incoming [validator deposit contract](validator-deposit-contract) logs. The [validator clients](agora-cl-validator-client) include deposit objects inside of their proposed blocks, and the beacon chain state transition function then activates any pending validators from these deposits.
 
 As the beacon node will need to frequently access information and one cannot rely on perfect latency from the [ETH1](/docs/terminology#eth1) node, the service also includes the ability to cache received logs and blocks from the Ethereum 1.0 chain.
 

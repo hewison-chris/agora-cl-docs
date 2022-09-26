@@ -9,10 +9,10 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 <HeaderBadgesWidget />
 
 :::danger Alpha testing
-This functionality is in its early stage alpha testing and may not be fully functional at this time. 
+This functionality is in its early stage alpha testing and may not be fully functional at this time.
 :::
 
-This section provides instructions on how to run the client-stats cli utility to collect metrics from your prysm validator or beacon node processes and push them to the beaconcha.in stats service.
+This section provides instructions on how to run the client-stats cli utility to collect metrics from your agora-cl validator or beacon node processes and push them to the beaconcha.in stats service.
 
 ## Why is this a separate process?
 
@@ -45,15 +45,15 @@ To collect metrics from both, also assuming that the validator and beacon node a
 
 `client-stats --validator-metrics-url=http://localhost:8081/metrics --beacon-node-metrics-url=http://localhost:8080/metrics --clientstats-api-url=https://beaconcha.in/api/v1/stats/{apikey}/{machineName}`
 
-To run client-stats from `prysm.sh` or `prysm.bat`, while adjusting the parameters to `client-stats` as per the above:
+To run client-stats from `agora-cl.sh` or `agora-cl.bat`, while adjusting the parameters to `client-stats` as per the above:
 
-`prysm.sh client-stats --validator-metrics-url=http://localhost:8081/metrics --beacon-node-metrics-url=http://localhost:8080/metrics --clientstats-api-url=https://beaconcha.in/api/v1/stats/{apikey}/{machineName}`
+`agora-cl.sh client-stats --validator-metrics-url=http://localhost:8081/metrics --beacon-node-metrics-url=http://localhost:8080/metrics --clientstats-api-url=https://beaconcha.in/api/v1/stats/{apikey}/{machineName}`
 
 or
 
-`prysm.bat client-stats --validator-metrics-url=http://localhost:8081/metrics --beacon-node-metrics-url=http://localhost:8080/metrics --clientstats-api-url=https://beaconcha.in/api/v1/stats/{apikey}/{machineName}`
+`agora-cl.bat client-stats --validator-metrics-url=http://localhost:8081/metrics --beacon-node-metrics-url=http://localhost:8080/metrics --clientstats-api-url=https://beaconcha.in/api/v1/stats/{apikey}/{machineName}`
 
-> If you see an error message that "PROCESS can be beacon-chain, validator, or slasher.", you need to manually update the `prysm.sh` or `prysm.bat` file to
+> If you see an error message that "PROCESS can be beacon-chain, validator, or slasher.", you need to manually update the `agora-cl.sh` or `agora-cl.bat` file to
 > its latest version, see [download instructions](https://docs.prylabs.network/docs/install/install-with-script).
 
 # What metrics does client-stats collect?

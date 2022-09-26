@@ -69,16 +69,16 @@ Next, pull the Agora-cl images:
 
 ```text
 ## stable, without Busybox debugging tools
-docker pull gcr.io/prysmaticlabs/prysm/validator:stable
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
+docker pull gcr.io/zeroone-boa/agora-cl/validator:stable
+docker pull gcr.io/zeroone-boa/agora-cl/beacon-chain:stable
 
 ## latest, without Busybox debugging tools
-docker pull gcr.io/prysmaticlabs/prysm/validator:latest
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:latest
+docker pull gcr.io/zeroone-boa/agora-cl/validator:latest
+docker pull gcr.io/zeroone-boa/agora-cl/beacon-chain:latest
 
 ## latest, with Busybox debugging tools
-docker pull gcr.io/prysmaticlabs/prysm/validator:latest-alpine
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:latest-alpine
+docker pull gcr.io/zeroone-boa/agora-cl/validator:latest-alpine
+docker pull gcr.io/zeroone-boa/agora-cl/beacon-chain:latest-alpine
 ```
 
 These commands will automatically install dependencies.
@@ -86,7 +86,7 @@ These commands will automatically install dependencies.
 
 ## Configure ports (optional)
 
-We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your beacon node startup command will configure Agora-cl to use your newly opened ports. Refer to [Configure ports and firewalls](../prysm-usage/p2p-host-ip.md) for more information.
+We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your beacon node startup command will configure Agora-cl to use your newly opened ports. Refer to [Configure ports and firewalls](../agora-cl-usage/p2p-host-ip.md) for more information.
 
 <div class='hide-tabs'>
 
@@ -122,7 +122,7 @@ Next, use Docker to tell your beacon node to connect to your local execution nod
 
 ```text
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain:stable \
+  gcr.io/zeroone-boa/agora-cl/beacon-chain:stable \
   --datadir=/data \
   --jwt-secret=<YOUR_JWT_SECRET> \
   --rpc-host=0.0.0.0 \
@@ -138,7 +138,7 @@ Download the Goerli-Prater genesis state from [Github](https://github.com/eth-cl
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain:stable \
+  gcr.io/zeroone-boa/agora-cl/beacon-chain:stable \
   --datadir=/data \
   --jwt-secret=<YOUR_JWT_SECRET> \
   --rpc-host=0.0.0.0 \
@@ -156,7 +156,7 @@ Download the Sepolia genesis state from [Github](https://github.com/eth-clients/
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
+  gcr.io/zeroone-boa/agora-cl/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
   --datadir=/data \
   --jwt-secret=<YOUR_JWT_SECRET> \
   --rpc-host=0.0.0.0 \
@@ -174,7 +174,7 @@ Download the Ropsten genesis state from [Github](https://github.com/eth-clients/
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
+  gcr.io/zeroone-boa/agora-cl/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
   --datadir=/data \
   --jwt-secret=<YOUR_JWT_SECRET> \
   --rpc-host=0.0.0.0 \
@@ -193,7 +193,7 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
 </TabItem>
 <TabItem value="win">
 
-To ensure that your Docker image has access to a data directory, mount a local drive to your container. Right click your Docker tray icon -> `Settings` -> `Shared Drives` -> select your drive -> `Apply`. Next, create a directory named `/prysm/` within your shared drive. This folder will be used as a local data directory for Agora-cl. This guide assumes that `C:` is the drive you've selected:
+To ensure that your Docker image has access to a data directory, mount a local drive to your container. Right click your Docker tray icon -> `Settings` -> `Shared Drives` -> select your drive -> `Apply`. Next, create a directory named `/agora-cl/` within your shared drive. This folder will be used as a local data directory for Agora-cl. This guide assumes that `C:` is the drive you've selected:
 
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
@@ -204,7 +204,7 @@ To ensure that your Docker image has access to a data directory, mount a local d
       <TabItem value="mainnet">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/zeroone-boa/agora-cl/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
   </TabItem>
@@ -213,7 +213,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 Download the Goerli-Prater genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --prater
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/zeroone-boa/agora-cl/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --prater
 ```
 
   </TabItem>
@@ -222,7 +222,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
 Download the Sepolia genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file, then run
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --sepolia
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/zeroone-boa/agora-cl/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --sepolia
 ```
 
   </TabItem>
@@ -231,7 +231,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
 Download the Ropsten genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz) to a local file, then run
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --ropsten
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/zeroone-boa/agora-cl/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --ropsten
 ```
 
 
@@ -263,15 +263,15 @@ If your node is done synchronizing, you will see the response:
 {"syncing":false}%
 ```
 
-### Stake your ETH
+### Stake your BOA
 
 :::danger Exercise caution
 
-The Ethereum launchpad URL is `https://launchpad.ethereum.org` and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send ETH directly to the contract - deposit your stake through Ethereum.org launchpad.
+The Ethereum launchpad URL is `https://launchpad.ethereum.org` and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send BOA directly to the contract - deposit your stake through Ethereum.org launchpad.
 
 :::
 
-Use the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) to deposit your 32 ETH. If you want to participate in the **testnet**, use the [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
+Use the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) to deposit your 32 BOA. If you want to participate in the **testnet**, use the [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
 
 Throughout the process, you'll be asked to generate new validator credentials using the [official Ethereum deposit command-line-tool](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Agora-cl from that folder in the next step.
 
@@ -291,10 +291,10 @@ Copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` dire
 
 ```text
 docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
-  -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
+  -v $HOME/Eth2Validators/agora-cl-wallet-v2:/wallet \
   --name validator \
   --accept-terms-of-use \
-  gcr.io/prysmaticlabs/prysm/validator:stable \
+  gcr.io/zeroone-boa/agora-cl/validator:stable \
   accounts import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
@@ -302,7 +302,7 @@ docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
 <TabItem value="win">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:stable accounts import --keys-dir=/keys --wallet-dir=/wallet --accept-terms-of-use
+docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\agora-cl-wallet-v2:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable accounts import --keys-dir=/keys --wallet-dir=/wallet --accept-terms-of-use
 ```
 
 </TabItem>
@@ -325,10 +325,10 @@ Open a second terminal window. Issue the following command to start the validato
 <TabItem value="others">
 
 ```text
-docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
+docker run -it -v $HOME/Eth2Validators/agora-cl-wallet-v2:/wallet \
   -v $HOME/Eth2:/validatorDB \
   --network="host" --name validator \
-  gcr.io/prysmaticlabs/prysm/validator:stable \
+  gcr.io/zeroone-boa/agora-cl/validator:stable \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet \
   --datadir=/validatorDB
@@ -338,7 +338,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 <TabItem value="win">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/prysmaticlabs/prysm/validator:stable --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\agora-cl-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/zeroone-boa/agora-cl/validator:stable --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB
 ```
 
 </TabItem>
@@ -380,7 +380,7 @@ To recreate a deleted container and refresh the chain database, issue the start 
 
 ```text
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
+  gcr.io/zeroone-boa/agora-cl/beacon-chain:latest \
   --datadir=/data \
   --clear-db \
   --rpc-host=0.0.0.0 \
@@ -392,7 +392,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 <TabItem value="win">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/zeroone-boa/agora-cl/beacon-chain:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 </TabItem>
@@ -406,7 +406,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 ## Frequently asked questions
 
 **Why do we set `--rpc-host` and `--grpc-gateway-host` to `0.0.0.0`?** <br />
-This tells your Docker container to to "listen" for connections from outside of your container, allowing you (and other services) to reach your RPC endpoint(s). See [Configure ports and firewalls](../prysm-usage/p2p-host-ip.md) for more information.
+This tells your Docker container to to "listen" for connections from outside of your container, allowing you (and other services) to reach your RPC endpoint(s). See [Configure ports and firewalls](../agora-cl-usage/p2p-host-ip.md) for more information.
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

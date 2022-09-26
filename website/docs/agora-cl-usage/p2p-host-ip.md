@@ -19,7 +19,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 :::
 
 
-In some cases, small changes to your port and firewall configuration can significantly improve your node's **peer-to-peer connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem by making blockchain data more available, and it can also help your validator find more work (and earn a little more ETH).
+In some cases, small changes to your port and firewall configuration can significantly improve your node's **peer-to-peer connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem by making blockchain data more available, and it can also help your validator find more work (and earn a little more BOA).
 
 In this how-to, we'll walk through the following tasks:
 

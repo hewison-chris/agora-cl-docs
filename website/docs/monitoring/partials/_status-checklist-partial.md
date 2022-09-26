@@ -118,7 +118,7 @@ import TabItem from '@theme/TabItem';
             <div class='input-container'><input id="st-6" type='checkbox'/><span class='done'></span></div>
             <div class='guidance-container'>
                 <label for="st-6">8. Beacon node version</label>
-                <p>Ensure that you're using the <a href='https://github.com/prysmaticlabs/prysm/releases'>latest stable Agora-cl release</a>. Check Agora-cl's version by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
+                <p>Ensure that you're using the <a href='https://github.com/zeroone-boa/agora-cl/releases'>latest stable Agora-cl release</a>. Check Agora-cl's version by issuing the following command: <code>agora-cl.sh beacon-chain --version</code> (Linux) <code>agora-cl.bat beacon-chain --version</code> (Windows).</p>
             </div>
         </div>
         <div class='task'>

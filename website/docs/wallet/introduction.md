@@ -26,7 +26,7 @@ At the core of Agora-cl's validator accounts lies the notion of a validator priv
 
 Security for your keys is a big topic, but at its core, it is important to clarify the role of the private keys in Ethereum consensus. When you generate a validator key, you actually generate 2 different ones: a **withdrawal key** and a **validating key**. The withdrawal key should be stored offline, and can be used to withdraw your gains in the future as it is not used during the validating process. Your validating key, however, needs to be accessible by your running validator client software **at all times**.
 
-As a validator, you're expected to be consistently online to produce blocks and vote on others' blocks, as this is how you get rewarded for participating in Ethereum consensus. To do this, your software needs to have instant access to your validating key, also referred to often as a "hot key" or access to a "hot wallet". Keeping your withdrawal key, or wallet mnemonic _far away_ from your validator client is what will give you **optimal security** in Ethereum consensus. If someone were to steal your validating keys, they wouldn't be able to withdraw your validator's staked ETH.
+As a validator, you're expected to be consistently online to produce blocks and vote on others' blocks, as this is how you get rewarded for participating in Ethereum consensus. To do this, your software needs to have instant access to your validating key, also referred to often as a "hot key" or access to a "hot wallet". Keeping your withdrawal key, or wallet mnemonic _far away_ from your validator client is what will give you **optimal security** in Ethereum consensus. If someone were to steal your validating keys, they wouldn't be able to withdraw your validator's staked BOA.
 
 :::tip Keeping your wallet safe
 When creating an HD wallet, you'll be given a 24-word mnemonic phrase which you need to store safely. Make sure you write it down somewhere safe offline, and do not leave traces of it on your computer. If someone gets ahold of this mnemonic, they can steal all your accounts!
@@ -35,7 +35,7 @@ When creating an HD wallet, you'll be given a 24-word mnemonic phrase which you 
 The ideal security for an average user participating as a validator is as follows:
 
 - Create a wallet using the official [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli) and keep your mnemonic stored offline, safely.
-- Import only the validating keys you need into your validator client, such as by following the instructions [here](../install/install-with-script#step-5-run-a-validator-using-prysm).
+- Import only the validating keys you need into your validator client, such as by following the instructions [here](../install/install-with-script#step-5-run-a-validator-using-agora-cl).
 
 For **best security** in production cloud deployments, it's best you use a **remote signer**, as that offers absolute separation of your secret keys and your validator client software. Read more about remote signers [here](/docs/wallet/remote).
 
@@ -67,7 +67,7 @@ HD wallets are password protected via a high-entropy, strong password, and allow
 
 This is the **most** secure type of wallet. Some advanced users may wish to run a remote-signer server, which handles the retrieval of keys and signing of Ethereum beacon chain requests. A Agora-cl validator client can then connect securely via [gRPC](https://grpc.io) to the remote server and perform its validating duties by relying on the server for the information it needs. Most advanced cloud deployments should likely use this approach, as it is the most customizable.
 
-To be compliant with a Agora-cl remote signing wallet, your remote signing server needs to implement the gRPC API specified in Agora-cl [here](https://github.com/prysmaticlabs/prysm/blob/7fff4ec41165e6581dda352b362d77fc6ca2710d/proto/validator/accounts/v2/keymanager.proto#L12).
+To be compliant with a Agora-cl remote signing wallet, your remote signing server needs to implement the gRPC API specified in Agora-cl [here](https://github.com/zeroone-boa/agora-cl/blob/7fff4ec41165e6581dda352b362d77fc6ca2710d/proto/validator/accounts/v2/keymanager.proto#L12).
 
 ```go
 service RemoteSigner {
@@ -103,7 +103,7 @@ If you are running an **HD wallet**, we store your encrypted wallet seed under y
 
 If you are running a **remote signer wallet**, we do not store anything on disk except for the remote server credential information, such as the remote address and path to the TLS certificates required to establish a connection.
 
-#### Why is my validator losing ETH despite my setup appearing ok?
+#### Why is my validator losing BOA despite my setup appearing ok?
 
 If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](/docs/monitoring/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/prysmaticlabs) anytime.
 

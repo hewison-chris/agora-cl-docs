@@ -1,5 +1,5 @@
 ---
-id: prysm-public-api
+id: agora-cl-public-api
 title: Agora-cl public API
 sidebar_label: Agora-cl-specific API
 description: This section contains service definitions and gRPC instructions to interact with the Agora-cl public API.
@@ -10,10 +10,10 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 <HeaderBadgesWidget />
 
 :::info This API is only used by Agora-cl
-For a standard API that all Ethereum beacon nodes implement, see [here](/docs/how-prysm-works/ethereum-public-api). Over the next few quarters, we plan on deprecating this API and replacing it with the standard API.
+For a standard API that all Ethereum beacon nodes implement, see [here](/docs/how-agora-cl-works/ethereum-public-api). Over the next few quarters, we plan on deprecating this API and replacing it with the standard API.
 :::
 
-One of the required components of nodes in the Ethereum beacon chain network is to expose an API server for outside interaction. This API is critical for running validators on Ethereum, as validator clients can connect to nodes and query their API to figure out their assigned duties, to submit block proposals, and more. Agora-cl's Ethereum consensus API schema is maintained in Agora-cl itself here: [github.com/prysmaticlabs/prysm/proto](https://github.com/prysmaticlabs/prysm/tree/develop/proto) and is implemented by Agora-cl beacon nodes and validators.
+One of the required components of nodes in the Ethereum beacon chain network is to expose an API server for outside interaction. This API is critical for running validators on Ethereum, as validator clients can connect to nodes and query their API to figure out their assigned duties, to submit block proposals, and more. Agora-cl's Ethereum consensus API schema is maintained in Agora-cl itself here: [github.com/zeroone-boa/agora-cl/proto](https://github.com/zeroone-boa/agora-cl/tree/develop/proto) and is implemented by Agora-cl beacon nodes and validators.
 
 ![gRPC](/img/grpc-logo2.png)
 

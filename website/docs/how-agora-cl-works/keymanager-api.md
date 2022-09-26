@@ -18,7 +18,7 @@ Please refer to the "remote keystores APIs" to manage public key settings for We
 
 ## Authentication
 
-A JWT token ( found on the second line of the auth-token file) will be generated in the prysm default wallet directory otherwise defined by `--wallet-dir` flag. the token will also be printed in the console:
+A JWT token ( found on the second line of the auth-token file) will be generated in the agora-cl default wallet directory otherwise defined by `--wallet-dir` flag. the token will also be printed in the console:
 ```
 [2022-04-15 14:07:39]  INFO rpc: http://127.0.0.1:7500/initialize?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.ck3J6tcvHcI74IiFjyJqcBH-MmNAq-fMr0ncyZkGvFM
 ```
@@ -29,7 +29,7 @@ Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.ck3J6tcvHcI74IiF
 
 ## Other Agora-cl specific errors and usecases
 
-Agora-cl comes with some client specific edge cases and usages. These cases will be documented on the [Keymanager API repos under flows](https://github.com/ethereum/keymanager-APIs/tree/master/flows/client-specific/prysm).
+Agora-cl comes with some client specific edge cases and usages. These cases will be documented on the [Keymanager API repos under flows](https://github.com/ethereum/keymanager-APIs/tree/master/flows/client-specific/agora-cl).
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

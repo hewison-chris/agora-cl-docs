@@ -7,7 +7,7 @@
       <td>Waiting for peers / peer disconnected / no active peers: <code>Waiting for enough suitable peers before syncing...</code> <code>msg="Peer disconnected" active=0</code></td>
       <td>Peers will continuously disconnect and reconnect, so don't worry about <code>Peer disconnected</code> messages. If your beacon node is struggling to find peers: <br/>
       <ul>
-          <li>Your beacon node might be suffering from connectivity problems. Visit <a href='/docs/prysm-usage/p2p-host-ip'>Improve P2P connectivity</a> for connectivity troubleshooting guidance. Ensure that your firewall isn't restricting any <strong>outbound</strong> ports for Agora-cl.</li>
+          <li>Your beacon node might be suffering from connectivity problems. Visit <a href='/docs/agora-cl-usage/p2p-host-ip'>Improve P2P connectivity</a> for connectivity troubleshooting guidance. Ensure that your firewall isn't restricting any <strong>outbound</strong> ports for Agora-cl.</li>
           <li>You may be using an incorrect genesis state or network flag. Every test network requires its own genesis state and network flag. Visit our <a href='../install/install-with-script'>Quickstart</a> for the latest test network parameters.</li>
       </ul>
       </td>
@@ -26,11 +26,11 @@
     </tr>
     <tr>
       <td><code>could not get ancestor state: failed to unmarshal encoding: incorrect size</code></td>
-      <td>This usually indicates that your beacon node's data has become corrupt. Try restarting your beacon node with a new or cleared data directory. Consider using <a href='https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync'>Checkpoint Sync</a> to reduce sync time.</td>
+      <td>This usually indicates that your beacon node's data has become corrupt. Try restarting your beacon node with a new or cleared data directory. Consider using <a href='https://docs.prylabs.network/docs/agora-cl-usage/checkpoint-sync'>Checkpoint Sync</a> to reduce sync time.</td>
     </tr>
     <tr>
       <td><code>could not process block: could not process block header: parent root 0x... does not match the latest block header signing root in state</code></td>
-      <td>This error is being actively investigated. See <a href='https://github.com/prysmaticlabs/prysm/issues/11279'>this open issue</a> for more information.</td>
+      <td>This error is being actively investigated. See <a href='https://github.com/zeroone-boa/agora-cl/issues/11279'>this open issue</a> for more information.</td>
     </tr>
     <tr>
       <td><code>Could not check configuration values between execution and consensus client" error="method not found" prefix=powchain</code></td>
@@ -49,7 +49,7 @@
     </tr>
     <tr>
       <td><code>weak-subjectivity-checkpoint not provided. Agora-cl recommends providing a weak subjectivity checkpoint for nodes synced from genesis</code></td>
-      <td>You can safely ignore this warning - it will be removed in an upcoming Agora-cl release. See <a href='https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync'>How to configure Checkpoint Sync</a> if you'd like to learn more about checkpoint sync.</td>
+      <td>You can safely ignore this warning - it will be removed in an upcoming Agora-cl release. See <a href='https://docs.prylabs.network/docs/agora-cl-usage/checkpoint-sync'>How to configure Checkpoint Sync</a> if you'd like to learn more about checkpoint sync.</td>
     </tr>
     <tr>
       <td><code>beacon node doesn't have a parent in db with root...</code></td>

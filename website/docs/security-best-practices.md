@@ -8,19 +8,19 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Mick" />
 
-Ethereum's transition to proof-of-stake is made possible by validators who each stake 32 ETH into the [validator deposit contract](https://docs.prylabs.network/docs/how-prysm-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
+Ethereum's transition to proof-of-stake is made possible by validators who each stake 32 BOA into the [validator deposit contract](https://docs.prylabs.network/docs/how-agora-cl-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
 
 Validators are rewarded for maintaining highly available, trustworthy validator client instances. The security best practices in this guide will help you fulfill this responsibility by helping you minimize risk across a variety of security aspects. Within each aspect, you'll find **recommended**, **advanced**, and **Linux-specific** guidance.
 
-Note that this document is subject to the [Prysmatic Labs Terms of Service](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md).
+Note that this document is subject to the [Prysmatic Labs Terms of Service](https://github.com/zeroone-boa/agora-cl/blob/master/TERMS_OF_SERVICE.md).
 
 
 ## Security principles
 The following principles apply generally to staking security:
 
  - **Keep it simple**. Over-engineered solutions tend to increase risk.
- - **Stay up to date**. At a minimum, join the [prysm-dev Google Group](https://groups.google.com/g/prysm-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the [Agora-cl Discord server](https://discord.gg/prysmaticlabs) and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
- - **Testnet first**. Harden your configuration using testnet [<a href='#footnote-1'>1</a>] before staking with real ETH on mainnet.
+ - **Stay up to date**. At a minimum, join the [agora-cl-dev Google Group](https://groups.google.com/g/agora-cl-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the [Agora-cl Discord server](https://discord.gg/prysmaticlabs) and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
+ - **Testnet first**. Harden your configuration using testnet [<a href='#footnote-1'>1</a>] before staking with real BOA on mainnet.
  - **Simulate risk events**. For each of the aspects within this document, simulate risk events and document your own risk mitigation plans. You can use the [risk mitigation worksheet](#mitigation-worksheet) located at the end of this guide.
  - **Proactively manage risk** You can't completely eliminate risk, but you can minimize it by following the best practices within this guide.
  - **If you’re not sure, ask**. The [Agora-cl Discord server](https://discord.gg/prysmaticlabs) and [r/ethstaker](https://www.reddit.com/r/ethstaker) subreddit are full of people who genuinely enjoy helping out.
@@ -29,18 +29,18 @@ The following principles apply generally to staking security:
 ## Uptime management
 The security of the Ethereum blockchain relies on a **highly available** network of validators. Ethereum's proof-of-stake implementation incentivizes validators to remain online.
 
-If your validator goes offline, you can lose some of your staked ETH [<a href='#footnote-2'>2</a>]. As long as you're online most of the time, you'll be profitable. Losses incurred from occasional downtime are negligible [<a href='#footnote-3'>3</a>].
+If your validator goes offline, you can lose some of your staked BOA [<a href='#footnote-2'>2</a>]. As long as you're online most of the time, you'll be profitable. Losses incurred from occasional downtime are negligible [<a href='#footnote-3'>3</a>].
 
 While it's possible to optimize your client instance architecture for high-availability and redundancy, we encourage validators to **keep it simple**. Complex validator architectures run the risk of accidentally engaging in slashable behavior. This can result in slashing [<a href='#footnote-4'>4</a>], which is a far steeper price to pay than the occasional downtime penalty.
 
- - **Essential**: Ensure that you have adequate disk space. [We recommend having 100GB of SSD storage available](https://docs.prylabs.network/docs/install/install-with-script#recommended-specifications). After [The Merge](https://ethereum.org/en/upgrades/merge/), this recommendation will increase to 1-2 TB if you're also running an [execution client](https://docs.prylabs.network/docs/execution-node/configuring-for-prysm) on the same computer.
+ - **Essential**: Ensure that you have adequate disk space. [We recommend having 100GB of SSD storage available](https://docs.prylabs.network/docs/install/install-with-script#recommended-specifications). After [The Merge](https://ethereum.org/en/upgrades/merge/), this recommendation will increase to 1-2 TB if you're also running an [execution client](https://docs.prylabs.network/docs/execution-node/configuring-for-agora-cl) on the same computer.
  - **Essential**: Use SSDs, not spinning disks.
  - **Essential**: Periodically check your disk space to ensure that it's not being consumed by another application.
  - **Essential**: Use a network monitoring service [<a href='#footnote-5'>5</a>] to configure alerts when something isn't right with your validator.
  - **Advanced**: Use an uninterruptible power supply (UPS) to protect your computer from issues related to power outages.
  - **Advanced**: Configure automatic boot / AC auto-recovery in your BIOS.
  - **Advanced**: Ensure that your beacon node and/or validator automatically start running when you reboot your machine.
- - **Advanced**: Configure [Prometheus and Grafana](https://docs.prylabs.network/docs/prysm-usage/monitoring/grafana-dashboard/) to help you visualize real-time validator metrics.
+ - **Advanced**: Configure [Prometheus and Grafana](https://docs.prylabs.network/docs/agora-cl-usage/monitoring/grafana-dashboard/) to help you visualize real-time validator metrics.
  - **Advanced**: Use a web-based uptime monitoring solution to monitor your validator's uptime with periodic ping-response checks [<a href='#footnote-6'>6</a>].
  - **Advanced**: Configure your validator client's machine to periodically ping a secondary machine with your validator status. If the secondary machine doesn't receive an expected ping from your validator, raise an alert.
 
@@ -120,7 +120,7 @@ Ethereum and its client software are constantly improving. This constant change 
  - **Essential**: Be prepared to engage with the [Agora-cl Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) if you need help troubleshooting issues.
  - **Essential**: When sharing logs, be sure to redact personally identifiable information and metadata that can be used to identify your validator.
  - **Essential**: Learn how to [inspect Agora-cl's performance](https://docs.prylabs.network/docs/monitoring/is-everything-fine).
- - **Essential**: Familiarize yourself with [Agora-cl's P2P connectivity guidance](https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip).
+ - **Essential**: Familiarize yourself with [Agora-cl's P2P connectivity guidance](https://docs.prylabs.network/docs/agora-cl-usage/p2p-host-ip).
  - **Essential**: Review [the Agora-cl FAQ](https://docs.prylabs.network/docs/faq).
 
 ## Migration security
@@ -177,7 +177,7 @@ Footnotes:
 <strong id='footnote-3'>3</strong>. See <a href='https://www.reddit.com/r/ethstaker/comments/nnwfx1/why_you_should_stop_worrying_about_your/'>Why you should stop worrying about your validator's uptime and start embracing the chaos instead</a>. <br />
 <strong id='footnote-4'>4</strong>. See <a href='https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50'>Eth2 Slashing Prevention Tips</a> to learn more about slashing.<br />
 <strong id='footnote-5'>5</strong>. <a href='https://www.beaconcha.in'>BeaconChain</a> has a mobile app that will alert you when your validator state changes. <br />
-<strong id='footnote-6'>6</strong>. See <a href='https://www.youtube.com/watch?v=txgOVDTemPQ'>How to monitor your ETH 2 Validator with Google Cloud</a> for a demonstration of this type of solution. <br />
+<strong id='footnote-6'>6</strong>. See <a href='https://www.youtube.com/watch?v=txgOVDTemPQ'>How to monitor your BOA 2 Validator with Google Cloud</a> for a demonstration of this type of solution. <br />
 <strong id='footnote-7'>7</strong>. See <a href='https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50'>Eth2 Slashing Prevention Tips</a> by Raul Jordan. <br />
 <strong id='footnote-8'>8</strong>. See <a href='https://www.reddit.com/r/ethstaker/comments/oa6m2o/my_validator_got_slashed/'>this discussion on Reddit</a> for an example of how an honest scripting mistake can result in slashing. The Ethereum ecosystem is growing quickly - this requires all participants to exercise an abundance of caution. <br />
 <strong id='footnote-9'>9</strong>. CoinCashew demonstrates firewall configuration best practices <a href='https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node#configure-your-firewall'>here</a>. <br />

@@ -55,7 +55,7 @@ import TabItem from '@theme/TabItem';
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.sh beacon-chain db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
+agora-cl.sh beacon-chain db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
 ```
 
 **Using Bazel**
@@ -70,7 +70,7 @@ bazel run //beacon-chain -- db restore --restore-source-file=/path/to/backup --r
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.bat beacon-chain db restore --restore-source-file=\path\to\backup --restore-target-dir=\path\to\desired\datadir
+agora-cl.bat beacon-chain db restore --restore-source-file=\path\to\backup --restore-target-dir=\path\to\desired\datadir
 ```
 
 </TabItem>
@@ -79,7 +79,7 @@ prysm.bat beacon-chain db restore --restore-source-file=\path\to\backup --restor
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.sh beacon-chain db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
+agora-cl.sh beacon-chain db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
 ```
 
 **Using Bazel**
@@ -94,7 +94,7 @@ bazel run //beacon-chain -- db restore --restore-source-file=/path/to/backup --r
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.sh beacon-chain db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
+agora-cl.sh beacon-chain db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
 ```
 
 **Using Bazel**
@@ -137,7 +137,7 @@ Ensure your validator client is turned off if restoring a backup. You can restor
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.sh validator db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
+agora-cl.sh validator db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
 ```
 
 **Using Bazel**
@@ -152,7 +152,7 @@ bazel run //validator -- db restore --restore-source-file=/path/to/backup --rest
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.bat validator db restore --restore-source-file=\path\to\backup --restore-target-dir=\path\to\desired\datadir
+agora-cl.bat validator db restore --restore-source-file=\path\to\backup --restore-target-dir=\path\to\desired\datadir
 ```
 
 </TabItem>
@@ -161,7 +161,7 @@ prysm.bat validator db restore --restore-source-file=\path\to\backup --restore-t
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.sh validator db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
+agora-cl.sh validator db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
 ```
 
 **Using Bazel**
@@ -176,7 +176,7 @@ bazel run //validator -- db restore --restore-source-file=/path/to/backup --rest
 **Using the Agora-cl installation script**
 
 ```sh
-prysm.sh validator db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
+agora-cl.sh validator db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
 ```
 
 **Using Bazel**

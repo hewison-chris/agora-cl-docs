@@ -14,26 +14,26 @@ This document will help advanced users create and configure TLS certificates to 
 The only practical use for using secure gRPC is in the case of connecting a beacon node that is being hosted remotely. For configurations in which the beacon node and validator reside on the same host system, these steps are not required nor recommended.
 :::
 
-A beacon node, by default, hosts a gRPC server on host `127.0.0.1` and port 4000, allowing any other process, such as a validator client, to establish an insecure connection on that port. The beacon node can also allow for secure, TLS connections if ran with the `--tls-cert=/path/to/cert.pem` and `--tls-key=/path/to/cert.key` flags, ensuring all connections via gRPC are secured. 
+A beacon node, by default, hosts a gRPC server on host `127.0.0.1` and port 4000, allowing any other process, such as a validator client, to establish an insecure connection on that port. The beacon node can also allow for secure, TLS connections if ran with the `--tls-cert=/path/to/cert.pem` and `--tls-key=/path/to/cert.key` flags, ensuring all connections via gRPC are secured.
 
 A validator client will attempt to connect to a beacon node by default with an insecure connection, but can be a secure TLS connection by using a `--tls-cert=/path/to/cert.pem` flag, utilising either a server pem certificate or a `ca.cert` certificate authority file. Assuming a TLS certificate has already been set up with a trusted authority for your beacon node, use the commands below to launch the node and validator. Otherwise, review the following section on creating your own self-signed certificates.
 
 To use secure gRPC with a beacon node:
 
 ```text
-./prysm.sh beacon-node --tls-cert=server.pem --tls-key=server.key
+./agora-cl.sh beacon-node --tls-cert=server.pem --tls-key=server.key
 ```
 
 and to use secure gRPC with a validator:
 
 ```text
-./prysm.sh validator --tls-cert=server.pem
+./agora-cl.sh validator --tls-cert=server.pem
 ```
 
 Alternatively, a `ca.cert` certificate authority file can be passed to the validator to attempt a connection without requiring the server's certificate itself:
- 
+
 ```text
-./prysm.sh validator --tls-cert=ca.cert
+./agora-cl.sh validator --tls-cert=ca.cert
 ```
 
 This will generate an output like so:
@@ -46,7 +46,7 @@ This will generate an output like so:
 
   > **NOTICE:** Creating a self-signed certificate is fine for simple TLS connections, though if the deployment will see public usage, it is always recommended to obtain valid certificates from a trusted certificate authority instead.
 
-1. Install [openssl](https://www.openssl.org/) for your operating system. 
+1. Install [openssl](https://www.openssl.org/) for your operating system.
 
 2. Create a root signing key:
 
@@ -128,16 +128,16 @@ This will generate an output like so:
 1. Use the certificates to launch the beacon node:
 
     ```text
-    ./prysm.sh beacon-node --tls-cert=beacon.pem --tls-key=beacon.key
+    ./agora-cl.sh beacon-node --tls-cert=beacon.pem --tls-key=beacon.key
     ```
 
 2. As well as a validator:
 
     ```text
-    ./prysm.sh validator --tls-cert=ca.cert
+    ./agora-cl.sh validator --tls-cert=ca.cert
     ```
 
-    This will generate an output like so: 
+    This will generate an output like so:
 
     ```text
     [2020-06-15 17:09:13]  INFO validator: Established secure gRPC connection

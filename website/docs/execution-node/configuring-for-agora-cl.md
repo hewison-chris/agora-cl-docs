@@ -1,5 +1,5 @@
 ---
-id: configuring-for-prysm
+id: configuring-for-agora-cl
 title: Configure an execution node for Agora-cl
 sidebar_label: Configure execution node
 ---

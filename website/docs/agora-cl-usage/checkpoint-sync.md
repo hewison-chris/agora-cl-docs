@@ -38,14 +38,14 @@ The following command starts a beacon node with checkpoint sync configured to pu
   <TabItem value="win">
 
 ```
-./prysm.bat beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-beacon-api-url=http://localhost:3500
+./agora-cl.bat beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-beacon-api-url=http://localhost:3500
 ```
 
   </TabItem>
   <TabItem value="others">
 
 ```bash
-./prysm.sh beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-beacon-api-url=http://localhost:3500
+./agora-cl.sh beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-beacon-api-url=http://localhost:3500
 ```
 
   </TabItem>
@@ -80,13 +80,13 @@ Issue the following commands to export the `BeaconState` and `SignedBeaconBlock`
 
 :::info
 
-Installing `prysmctl` via `prysm.sh`, or downloading it from prysm's github release page, will be possible in an upcoming stable release.
+Installing `prysmctl` via `agora-cl.sh`, or downloading it from agora-cl's github release page, will be possible in an upcoming stable release.
 
 :::
 
 ```bash
-$ git clone git@github.com:prysmaticlabs/prysm.git
-Cloning into 'prysm'...
+$ git clone git@github.com:zeroone-boa/agora-cl.git
+Cloning into 'agora-cl'...
 remote: Enumerating objects: 167386, done.
 remote: Counting objects: 100% (332/332), done.
 remote: Compressing objects: 100% (234/234), done.
@@ -94,7 +94,7 @@ remote: Total 167386 (delta 118), reused 220 (delta 93), pack-reused 167054
 Receiving objects: 100% (167386/167386), 154.30 MiB | 39.56 MiB/s, done.
 Resolving deltas: 100% (127482/127482), done.
 
-$ go run github.com/prysmaticlabs/prysm/v3/cmd/prysmctl checkpoint-sync download --beacon-node-host=http://localhost:3500
+$ go run github.com/zeroone-boa/agora-cl/v3/cmd/prysmctl checkpoint-sync download --beacon-node-host=http://localhost:3500
 ```
 
 You should see the following output if your export was successful:
@@ -127,7 +127,7 @@ Use the following command to start your beacon node with checkpoint sync configu
   <TabItem value="win">
 
 ```bash
-./prysm.bat beacon-chain \
+./agora-cl.bat beacon-chain \
 --checkpoint-block=$PWD/block_goerli_bellatrix_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz \
 --checkpoint-state=$PWD/state_goerli_bellatrix_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz \
 --genesis-state=$PWD/genesis.ssz
@@ -137,7 +137,7 @@ Use the following command to start your beacon node with checkpoint sync configu
   <TabItem value="others">
 
 ```bash
-./prysm.sh beacon-chain \
+./agora-cl.sh beacon-chain \
 --checkpoint-block=$PWD/block_goerli_bellatrix_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz \
 --checkpoint-state=$PWD/state_goerli_bellatrix_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz \
 --genesis-state=$PWD/genesis.ssz

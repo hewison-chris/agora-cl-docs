@@ -16,7 +16,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 A **remote signing wallet** provides the ability to connect to a remote server to retrieve validating public keys and process signing requests via a secure [gRPC](https://grpc.io) connection. You must supply valid TLS certificates for establishing the secure connection to your server. We have created a reference implementation of a remote signer server, maintained as an open source, Apache 2 project on Github [here](https://github.com/prysmaticlabs/remote-signer) as a starting point
 
-To be compliant with a Agora-cl remote signing wallet, your remote signing server needs to implement the gRPC API specified in Agora-cl [here](https://github.com/prysmaticlabs/prysm/blob/7fff4ec41165e6581dda352b362d77fc6ca2710d/proto/validator/accounts/v2/keymanager.proto#L12).
+To be compliant with a Agora-cl remote signing wallet, your remote signing server needs to implement the gRPC API specified in Agora-cl [here](https://github.com/zeroone-boa/agora-cl/blob/7fff4ec41165e6581dda352b362d77fc6ca2710d/proto/validator/accounts/v2/keymanager.proto#L12).
 
 ```go
 service RemoteSigner {
@@ -80,18 +80,18 @@ A Agora-cl validator client can then connect securely via [gRPC](https://grpc.io
 To create a new remote signing-capable wallet, you will need to prepare TLS certificates to connect securely to your remote gRPC server. Then, you can run:
 
 ```bash
-./prysm.sh validator wallet create
+./agora-cl.sh validator wallet create
 ```
 
 :::info
 You will need a TLS client cert, client key, and a Certificate Authority (CA) cert to establish a secure gRPC connection
 :::
 
-Then select **Remote** wallet when prompted. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help`.
+Then select **Remote** wallet when prompted. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./agora-cl.sh validator wallet create --help`.
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2").
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/agora-cl-wallet-v2").
 | `--keymanager-kind`     | Type of wallet to create, either "direct", "derived, or "remote" (default "derived").
 | `--grpc-remote-address`     | Host:port of a gRPC server for the remote signer server.
 | `--remote-signer-crt-path`     | /path/to/client.crt for establishing a secure, TLS gRPC connection to a remote signer server.
@@ -103,14 +103,14 @@ Then select **Remote** wallet when prompted. You can also create a wallet **non-
 To edit your existing remote wallet configuration, such as changing the path of your TLS certs or remote address, you can run
 
 ```bash
-./prysm.sh validator wallet-v2 edit-config
+./agora-cl.sh validator wallet-v2 edit-config
 ```
 
-You can also edit your wallet configuration **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help`.
+You can also edit your wallet configuration **non-interactively** by using the following command line flags, which are also viewable by typing `./agora-cl.sh validator wallet create --help`.
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2").
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/agora-cl-wallet-v2").
 | `--grpc-remote-address`     | Host:port of a gRPC server for the remote signer server.
 | `--remote-signer-crt-path`     | /path/to/client.crt for establishing a secure, TLS gRPC connection to a remote signer server.
 | `--remote-signer-key-path`     | /path/to/client.key for establishing a secure, TLS gRPC connection to a remote signer server.
@@ -121,15 +121,15 @@ You can also edit your wallet configuration **non-interactively** by using the f
 You can list all validator accounts in your non-HD wallet using the following command
 
 ```bash
-./prysm.sh validator accounts list
+./agora-cl.sh validator accounts list
 ```
 
 Where you'll see the following output
 
 ```bash
-[2020-07-27 14:30:13]  INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
+[2020-07-27 14:30:13]  INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/agora-cl-wallet-v2
 (keymanager kind) remote signer
-(configuration file path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2/remote/keymanageropts.json
+(configuration file path) /Users/johndoe/Library/Eth2Validators/agora-cl-wallet-v2/remote/keymanageropts.json
 
 Configuration options
 Remote gRPC address: localhost:4000
@@ -144,11 +144,11 @@ personally-conscious-echidna
 [created at] 16 minutes ago
 ```
 
-You can view all available options to run the `list` command by typing `./prysm.sh validator accounts list --help.
+You can view all available options to run the `list` command by typing `./agora-cl.sh validator accounts list --help.
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/agora-cl-wallet-v2")
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

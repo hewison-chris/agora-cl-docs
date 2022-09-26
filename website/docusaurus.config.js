@@ -7,7 +7,7 @@ module.exports = {
     onBrokenMarkdownLinks: 'throw',
     favicon: 'img/Agora-cl.svg',
     organizationName: 'Prysmatic Labs',
-    projectName: 'prysm-docs',
+    projectName: 'agora-cl-docs',
     customFields: {
         image: 'img/Agora-cl.svg',
     },
@@ -25,7 +25,7 @@ module.exports = {
             items: [{
                 type: 'docsVersion',
                 position: 'left',
-                to: 'https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.1',
+                to: 'https://github.com/zeroone-boa/agora-cl/releases/tag/v3.1.1',
                 label: 'v3.1.1',
             },
             {
@@ -34,7 +34,7 @@ module.exports = {
                 position: 'right',
             },
             {
-                href: 'https://github.com/prysmaticlabs/prysm',
+                href: 'https://github.com/zeroone-boa/agora-cl',
                 label: 'GitHub',
                 position: 'right',
             },
