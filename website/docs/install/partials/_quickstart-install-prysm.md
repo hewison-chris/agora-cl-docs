@@ -22,7 +22,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --ou
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ```
 
-  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
+  <p>This will download the Agora-cl client and update your registry to enable verbose logging.</p>
   </TabItem>
   <TabItem value="others">
     <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
@@ -32,7 +32,7 @@ mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-  <p>This will download the Prysm client and make it executable.</p>
+  <p>This will download the Agora-cl client and make it executable.</p>
   </TabItem>
 </Tabs>
 
@@ -50,8 +50,6 @@ import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md
 <JwtGenerationPartial />
 
 This guide assumes that you've placed your `jwt.hex` file in your `consensus` directory, but you can place it anywhere and revise the below commands as needed.
-    
+
   </TabItem>
 </Tabs>
-
-

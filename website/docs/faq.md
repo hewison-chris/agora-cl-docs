@@ -1,6 +1,6 @@
 ---
 id: faq
-title: Prysm - Frequently asked questions
+title: Agora-cl - Frequently asked questions
 sidebar_label: Frequently asked questions
 ---
 
@@ -13,11 +13,11 @@ import TabItem from '@theme/TabItem';
 
 # Frequently asked questions
 
-### Troubleshooting Prysm
+### Troubleshooting Agora-cl
 
 #### How do I troubleshoot errors?
 
-If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/prysmaticlabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Prysm version you're running** and your **operating system**, and then file a bug report [here](https://github.com/prysmaticlabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysmaticlabs) about your error and we'll take a look as soon as possible.
+If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/prysmaticlabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Agora-cl version you're running** and your **operating system**, and then file a bug report [here](https://github.com/prysmaticlabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysmaticlabs) about your error and we'll take a look as soon as possible.
 
 #### My validator is losing money, what's going on?
 
@@ -26,14 +26,14 @@ If your beacon node or validator logs display an `ERROR`, go to our [open issues
 2. Check your network connectivity. You can improve this by following our tips [here](/docs/prysm-usage/p2p-host-ip) which can help you find better peers, improve attestation effectiveness, and more.
 3. Check your system resource usage, perhaps your node is using excess CPU and RAM. Depending on your operating system, there are different ways to do this.
 
-If you still need help, note your **Prysm version** and **operating system**, and then reach out to our team on [Discord](https://discord.gg/prysmaticlabs). Providing as much information as possible will help us troubleshoot your issue.
+If you still need help, note your **Agora-cl version** and **operating system**, and then reach out to our team on [Discord](https://discord.gg/prysmaticlabs). Providing as much information as possible will help us troubleshoot your issue.
 
 #### My node suddenly lost peers, what can I do?
 
 Losing peers can be due to the following reasons:
 
 1. Your network connectivity has problems. You can check how to improve it with some of our tips [here](/docs/prysm-usage/p2p-host-ip).
-2. Prysm is using a ton of memory or system resources and perhaps you ran out of memory. Ensure you meet the minimum specifications for running Prysm specified in our installation pages for your operating system.
+2. Agora-cl is using a ton of memory or system resources and perhaps you ran out of memory. Ensure you meet the minimum specifications for running Agora-cl specified in our installation pages for your operating system.
 3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/docs/prysm-usage/staying-up-to-date) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/prysmaticlabs) letting us know you had this issue.
 
 #### I have an issue in the web UI, getting errors, what can I do?
@@ -67,11 +67,11 @@ The most common way validators get slashed is by **running the same validator ke
 
 Our team prepared a blog post on [slashing prevention tips](https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50) you can read to avoid slashings in the future.
 
-### Running Prysm
+### Running Agora-cl
 
-#### How can I check my Prysm version?
+#### How can I check my Agora-cl version?
 
-Depending on your installation method, there are different ways to verify your Prysm version:
+Depending on your installation method, there are different ways to verify your Agora-cl version:
 
 <Tabs
   groupId="method"
@@ -101,7 +101,7 @@ prysm.bat beacon-chain --version
 </TabItem>
 <TabItem value="docker">
 
-If you are running using docker and the :stable tag for Prysm, stable will always point to our latest [release](https://github.com/prysmaticlabs/prysm/releases). Otherwise, you can run the command `docker ps` to see your running docker containers. The suffix of your image name after the colon is the version you are running.
+If you are running using docker and the :stable tag for Agora-cl, stable will always point to our latest [release](https://github.com/prysmaticlabs/prysm/releases). Otherwise, you can run the command `docker ps` to see your running docker containers. The suffix of your image name after the colon is the version you are running.
 
 ```
 CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
@@ -110,20 +110,20 @@ CONTAINER ID        IMAGE                  COMMAND                  CREATED     
 </TabItem>
 <TabItem value="bazel">
 
-If you are using Bazel, it means you are building Prysm from source. You can do `git log` and you will see the current commit hash you are running at the top. You can then visit our [releases page](https://github.com/prysmaticlabs/prysm/releases) to check what version the commit hash corresponds to.
+If you are using Bazel, it means you are building Agora-cl from source. You can do `git log` and you will see the current commit hash you are running at the top. You can then visit our [releases page](https://github.com/prysmaticlabs/prysm/releases) to check what version the commit hash corresponds to.
 
 </TabItem>
 </Tabs>
 
-#### How can I upgrade Prysm? Do I just need to close and restart the process?
+#### How can I upgrade Agora-cl? Do I just need to close and restart the process?
 
-Upgrading Prysm is done differently depending on your operating system and installation method. We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Prysm](/docs/prysm-usage/staying-up-to-date).
+Upgrading Agora-cl is done differently depending on your operating system and installation method. We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Agora-cl](/docs/prysm-usage/staying-up-to-date).
 
-#### How can I downgrade Prysm to an older version?
+#### How can I downgrade Agora-cl to an older version?
 
-Upgrading Prysm is done differently depending on your operating system and installation method. Please note that downgrading may not be as easy as upgrading as some versions may not be backward compatible and you will need to perform extra steps. For example, migrating down from v1.x to v1.0.x has breaking changes that require you to also rollback your database.
+Upgrading Agora-cl is done differently depending on your operating system and installation method. Please note that downgrading may not be as easy as upgrading as some versions may not be backward compatible and you will need to perform extra steps. For example, migrating down from v1.x to v1.0.x has breaking changes that require you to also rollback your database.
 
-We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Prysm](/docs/prysm-usage/staying-up-to-date).
+We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Agora-cl](/docs/prysm-usage/staying-up-to-date).
 
 #### How can I improve my attestation effectiveness?
 
@@ -131,9 +131,9 @@ Attestation effectiveness is a metric that directly affects your validator rewar
 
 Some stakers might notice their effectiveness is perfect, while others might see lower values such as 80%. Improving attestation effectiveness depends on a variety of factors, such as attestation network propagation, your network connectivity, the peers you are connected to. However, your network connectivity is one of the most important factors you can control to improve this metric. We have some tips to improve your connectivity [here](/docs/prysm-usage/p2p-host-ip).
 
-#### Do I need to keep my deposit keystores after I have imported them into Prysm?
+#### Do I need to keep my deposit keystores after I have imported them into Agora-cl?
 
-It's always good to keep offline backups of important files such as the original keystores you used to import into Prysm. However, after you import them and are running Prysm successfully, there is no reason to keep the keystore files in that computer as Prysm has already converted the private keys into its own wallet representation. You can delete them.
+It's always good to keep offline backups of important files such as the original keystores you used to import into Agora-cl. However, after you import them and are running Agora-cl successfully, there is no reason to keep the keystore files in that computer as Agora-cl has already converted the private keys into its own wallet representation. You can delete them.
 
 #### I am running into issues running geth, how can I get help?
 
@@ -141,14 +141,14 @@ For help with running geth specifically, the [go-ethereum discord](https://disco
 
 #### How often should I perform database backups?
 
-The Prysm beacon node and validator allow performing database backups in case your machine gets corrupted and you need to restore it from some checkpoint. You can read our instructions on performing backups [here](/docs/prysm-usage/database-backups). Briefly, the frequency at which you should perform backups really depends on your personal preference. If you want to perform backups once a day or once every week, there is no harm nor bigger difference in doing so. Losing your beacon chain database is not a big deal aside from the fact that you will need to sync again from genesis. Losing your validator db can be problematic but if you wait several epochs before starting your validator, ensure your computer's clock is synced, the risk of slashing is low.
+The Agora-cl beacon node and validator allow performing database backups in case your machine gets corrupted and you need to restore it from some checkpoint. You can read our instructions on performing backups [here](/docs/prysm-usage/database-backups). Briefly, the frequency at which you should perform backups really depends on your personal preference. If you want to perform backups once a day or once every week, there is no harm nor bigger difference in doing so. Losing your beacon chain database is not a big deal aside from the fact that you will need to sync again from genesis. Losing your validator db can be problematic but if you wait several epochs before starting your validator, ensure your computer's clock is synced, the risk of slashing is low.
 
-#### Seeing a warning regarding binary signature not being trusted when downloading Prysm, should I be worried?
+#### Seeing a warning regarding binary signature not being trusted when downloading Agora-cl, should I be worried?
 
-When downloading the Prysm precompiled binaries such as with prysm.sh or prysm.bat, you might see the following output
+When downloading the Agora-cl precompiled binaries such as with prysm.sh or prysm.bat, you might see the following output
 
 ```
-Latest Prysm version is v1.1.0.
+Latest Agora-cl version is v1.1.0.
 Beacon chain is up to date.
 Verifying binary integrity.
 beacon-chain-v1.1.0-linux-amd64: OK
@@ -159,7 +159,7 @@ gpg: WARNING: This key is not certified with a trusted signature!
 gpg:          There is no indication that the signature belongs to the owner.
 ```
 
-Regarding the WARNING above, it means that the signature is correctly signed by the owner, however, since Prysm does not yet provide official linux packages nor windows trusted certs, you will get a warning that it might not have been Preston Van Loon that actually signed the binary, since there is no way to verify the integrity with a trusted authority. If binary integrity and security matter the most to you, building and running open source software from source is the best way to have full confidence the software you are running is a result of code you can inspect yourself.
+Regarding the WARNING above, it means that the signature is correctly signed by the owner, however, since Agora-cl does not yet provide official linux packages nor windows trusted certs, you will get a warning that it might not have been Preston Van Loon that actually signed the binary, since there is no way to verify the integrity with a trusted authority. If binary integrity and security matter the most to you, building and running open source software from source is the best way to have full confidence the software you are running is a result of code you can inspect yourself.
 
 #### How can I view the metrics of my node? How can I visualize them?
 
@@ -167,7 +167,7 @@ Your node is running the popular [prometheus](https://prometheus.io/) server for
 
 #### Can I run this on a raspberry pi? What are the instructions?
 
-Yes, we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](/docs/install/install-with-script). However, we recommend using more powerful hardware in mainnet conditions. 
+Yes, we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](/docs/install/install-with-script). However, we recommend using more powerful hardware in mainnet conditions.
 
 ### Validator keys and validator deposits
 
@@ -175,16 +175,16 @@ Yes, we currently support arm 64-bit architectures such as the raspberry pi 4 an
 
 Depositing into Ethereum as a validator is a multi-step process that can require quite a bit of waiting. As a comprehensive reference, we recommend reading Jim McDee's excellent post on the matter [here](https://www.attestant.io/posts/understanding-the-validator-lifecycle/#:~:text=Active%20%2D%20the%20validator%20is%20attesting,blocks%2C%20having%20been%20caught%20cheating). If you sent your deposit, we recommend tracking its progress in one of the block explorers such as [beaconcha.in](https://beaconcha.in) or [beaconscan](https://beaconscan.io). If your deposit is pending and it has still been a while, it is likely because there are a lot of validators in the pending queue ahead of you. There are approximately 4 validators activated every 6.4 minutes, and with thousands in the queue, your wait time can take days or even weeks. You can check how many validators are in the queue on the front page of [beaconcha.in](https://beaconcha.in).
 
-#### I made a correct deposit and my validator status in Prysm is still UNKNOWN, what’s going on?
+#### I made a correct deposit and my validator status in Agora-cl is still UNKNOWN, what’s going on?
 
 There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the beacon node to be able to process logs from the eth1 chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on the Ethereum launchpad), or (3) you never actually sent a deposit to the right contract address
 
 #### How can I move my validator to a different computer without getting slashed?
 
-Prysm will soon implement the slashing protection [standard format](https://eips.ethereum.org/EIPS/eip-3076), meaning that you can export your slashing protection history and import it easily into another machine running any Ethereum consensus client, not just Prysm! In the meantime, however, migrating machines can be a little tricky and we prepared the following set of tips to help keep you safe.
+Agora-cl will soon implement the slashing protection [standard format](https://eips.ethereum.org/EIPS/eip-3076), meaning that you can export your slashing protection history and import it easily into another machine running any Ethereum consensus client, not just Agora-cl! In the meantime, however, migrating machines can be a little tricky and we prepared the following set of tips to help keep you safe.
 
 1. Turn off your beacon node and validator on machine 1, make sure it is not running as a system process. You can check this using the process monitor tools of your OS, or a command line tool such as top or htop and check for anything containing the name “prysm” “validator” or “beacon”
-2. Note the location of your wallet directory. If you used the default when you started Prysm, you can view its path at the top of the output of `validator accounts list`, which varies based on your operating system
+2. Note the location of your wallet directory. If you used the default when you started Agora-cl, you can view its path at the top of the output of `validator accounts list`, which varies based on your operating system
 3. Take that entire directory and move it over to your next machine
 4. If you modified your validators’ `— datadir`, also migrate that directory to your next machine
 5. Wait at least a few epochs, sync your beacon node on your second machine, then start your validator client on your second machine
@@ -198,9 +198,9 @@ While this is possible, we highly recommend against it. Given there are so many 
 
 Yes, this is possible however we recommend against it. We recommend you deposit all within the same Ethereum consensus launchpad session from a single metamask instance to keep things simple as it is possible a step could get messed up along the way.
 
-#### Can I add more validators after I am already running one with Prysm?
+#### Can I add more validators after I am already running one with Agora-cl?
 
-Adding new validators to your already-running Prysm instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the Ethereum validator deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. Note that **you don't need to create a new mnemonic** when you do this. **Restart the validator client** after importing the new keystore for the changes to take effect.
+Adding new validators to your already-running Agora-cl instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the Ethereum validator deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. Note that **you don't need to create a new mnemonic** when you do this. **Restart the validator client** after importing the new keystore for the changes to take effect.
 
 You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/prysmaticlabs) if you still have issues.
 
@@ -215,7 +215,7 @@ If you have a fully synced beacon node, you can fetch your account balance via t
 
 #### Why are some validators making a lot more money than others?
 
-If you look at the [validator leaderboard](https://beaconcha.in/validators/leaderboard), there are some validators at the top that seem to be doing a lot better than others. The reason being that either they (a) got lucky with being assigned to propose more blocks than other validators, or (b) they caught slashable offenses in the network and packed them into their blocks. Slashings are meant to be rare, and Prysm's slasher by default broadcasts slashings it finds to the network so that validators do not selfishly hold on to them. You can actually disable this to selfishly withhold slashings with the `--disable-broadcast-slashings` flag in your beacon node, although don't expect to get rich from slashing other validators. 
+If you look at the [validator leaderboard](https://beaconcha.in/validators/leaderboard), there are some validators at the top that seem to be doing a lot better than others. The reason being that either they (a) got lucky with being assigned to propose more blocks than other validators, or (b) they caught slashable offenses in the network and packed them into their blocks. Slashings are meant to be rare, and Agora-cl's slasher by default broadcasts slashings it finds to the network so that validators do not selfishly hold on to them. You can actually disable this to selfishly withhold slashings with the `--disable-broadcast-slashings` flag in your beacon node, although don't expect to get rich from slashing other validators.
 
 Overall, keep in mind that no one has an extra advantage as a validator compared to others. Block proposal opportunities are random and it does not matter how powerful your hardware is. A lot of the times the validators near the top simply got lucky.
 

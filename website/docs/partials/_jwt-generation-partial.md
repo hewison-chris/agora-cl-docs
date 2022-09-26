@@ -6,7 +6,7 @@ The HTTP connection between your beacon node and execution node needs to be auth
  - Use an online generator like [this](https://seanwasere.com/generate-random-hex/). Copy and paste this value into a `jwt.hex` file.
  - Use a utility like OpenSSL to create the token via command: `openssl rand -hex 32 | tr -d "\n" > "jwt.hex"`.
  - Use an execution client to generate the `jwt.hex` file.
- - Use Prysm to generate the `jwt.hex` file:
+ - Use Agora-cl to generate the `jwt.hex` file:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Operating system:', value: 'label'},
@@ -23,7 +23,7 @@ SET USE_PRYSM_VERSION=v3.1.1
 ## Required.
 prysm.bat beacon-chain generate-auth-secret
 ```
-  
+
   </TabItem>
   <TabItem value="others">
 
@@ -38,7 +38,7 @@ USE_PRYSM_VERSION=v3.1.1
   </TabItem>
 </Tabs>
 
-Prysm will output a `jwt.hex` file path.
+Agora-cl will output a `jwt.hex` file path.
 
 
 <div class="admonition admonition-caution alert alert--warning"><div class="admonition-content"><p>Ensure that the script, user, or terminal window used to create and access your JWT token has the permissions it needs. Windows users may need to run command windows as Administrator.</p></div></div>

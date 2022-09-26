@@ -8,11 +8,11 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-Bug reports are critical to the rapid development of the Prysm client. In order to make the process quick and efficient for all parties, it is best to follow some common reporting etiquette when filing to avoid double issues or miscommunications.
+Bug reports are critical to the rapid development of the Agora-cl client. In order to make the process quick and efficient for all parties, it is best to follow some common reporting etiquette when filing to avoid double issues or miscommunications.
 
 ## Checking if your issue exists
 
-Duplicate tickets are a hinderance to the development process and, as such, it is crucial to first check through Prysm's existing issues to see if what you are experiencing has already been indexed.
+Duplicate tickets are a hinderance to the development process and, as such, it is crucial to first check through Agora-cl's existing issues to see if what you are experiencing has already been indexed.
 
 To do so, head over to the [issue page](https://github.com/prysmaticlabs/prysm/issues) and enter some related keywords into the search bar. This may include a sample from the output or specific components it affects. If this is unsuccessful, check the [issue labels index](https://github.com/prysmaticlabs/prysm/labels) for related catagories and review the tickets within.
 
@@ -29,7 +29,7 @@ An original bug report will very likely be preserved and used as a record and so
 
 ## The bug report template
 
-Below is the standard bug report template used by all of Prysm's official repositories.
+Below is the standard bug report template used by all of Agora-cl's official repositories.
 
 ```sh
 <!--- Provide a general summary of the issue in the Title above -->

@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-The `--graffiti-file` flag for the Prysm validator client allows you to add graffiti to blocks. Different graffiti may be configured for different validators running in the same process.
+The `--graffiti-file` flag for the Agora-cl validator client allows you to add graffiti to blocks. Different graffiti may be configured for different validators running in the same process.
 
 ## Usages
 

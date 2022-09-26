@@ -8,21 +8,21 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-## Introduction: Prysm API and Beacon API
+## Introduction: Agora-cl API and Beacon API
 ---
 
-Since Day 1 of the project Prysm has been using [gRPC](https://grpc.io/) as the API layer for inter-process communication. As an example, all requests from the validator to the beacon node are conducted via gRPC. This technology helped us greatly to make sure our Ethereum client has a well-defined set of APIs, and that we don't introduce backwards incompatibility across versions of Prysm.
+Since Day 1 of the project Agora-cl has been using [gRPC](https://grpc.io/) as the API layer for inter-process communication. As an example, all requests from the validator to the beacon node are conducted via gRPC. This technology helped us greatly to make sure our Ethereum client has a well-defined set of APIs, and that we don't introduce backwards incompatibility across versions of Agora-cl.
 
-As time went on, users started asking if it would be possible to have a JSON-over-HTTP API, which users could query for information about the beacon node, the network state etc. Fortunately it is easy to expose HTTP endpoints for gRPC methods using the [grpc-gateway library](https://github.com/grpc-ecosystem/grpc-gateway). This gave birth to a Prysm-specific set of APIs, which we will call the Prysm API.
+As time went on, users started asking if it would be possible to have a JSON-over-HTTP API, which users could query for information about the beacon node, the network state etc. Fortunately it is easy to expose HTTP endpoints for gRPC methods using the [grpc-gateway library](https://github.com/grpc-ecosystem/grpc-gateway). This gave birth to a Agora-cl-specific set of APIs, which we will call the Agora-cl API.
 
 At some point Ethereum researchers, in cooperation with client developer, decided it would be a good idea to have a standard set of HTTP APIs across the whole network. This led to the [official Beacon API specification](https://ethereum.github.io/beacon-APIs/), which we will call the Beacon API.
 
 ## Part 1: Extending protocol buffers and gRPC
 ---
 
-Extending both the Prysm API and the Beacon API requires following the same steps with regards to protocol buffers and gRPC functions. The only difference is that all Prysm API code lives in `prysm` folders and Beacon API code lives in `eth` folders.
+Extending both the Agora-cl API and the Beacon API requires following the same steps with regards to protocol buffers and gRPC functions. The only difference is that all Agora-cl API code lives in `prysm` folders and Beacon API code lives in `eth` folders.
 
-We will now step through the process of creating a new exemplary API endpoint inside the Prysm API.
+We will now step through the process of creating a new exemplary API endpoint inside the Agora-cl API.
 
 ## Step 1: Create protocol buffer messages
 
@@ -82,7 +82,7 @@ So far we only have protocol buffer definitions for a service and for messages, 
 "example_service.proto",
 ```
 
-Now it's time to run the script mentioned before. Assuming we are in Prysm's top-level directory on a Linux system, we issue the following command:
+Now it's time to run the script mentioned before. Assuming we are in Agora-cl's top-level directory on a Linux system, we issue the following command:
 
 ```
 ./hack/update-go-pbs.sh
@@ -111,7 +111,7 @@ type ExampleServiceServer interface {
 
 Any type implementing this interface will automatically be able to receive gRPC and HTTP requests. See [this document](../how-prysm-works/prysm-public-api) for an explanation on how to use the API.
 
-Beacon API must follow the official specification, for which the above steps, although necessary, are not enough. We must introduce another key component: the API Middleware. 
+Beacon API must follow the official specification, for which the above steps, although necessary, are not enough. We must introduce another key component: the API Middleware.
 
 ## Part 2: API Middleware
 ---
@@ -159,7 +159,7 @@ type EndpointFactory interface {
 }
 ```
 
-As the name implies, this is where `Endpoint`s come from. If you want to register an API endpoint, you firstly need to have a factory implementation. In Prysm we already have this interface satisfied by the `BeaconEndpointFactory` struct. We will skip `IsNil` in this text because it's not related to the middleware per se.
+As the name implies, this is where `Endpoint`s come from. If you want to register an API endpoint, you firstly need to have a factory implementation. In Agora-cl we already have this interface satisfied by the `BeaconEndpointFactory` struct. We will skip `IsNil` in this text because it's not related to the middleware per se.
 
 ```
 type BeaconEndpointFactory struct {
@@ -181,7 +181,7 @@ This factory will allow us to implement a new beacon node API endpoint. Let's sa
 > URL: /eth/v1/beacon/random/{block_id}
 > Query parameters: nonce (uint)
 > Example request: /eth/v1/beacon/random/0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2?nonce=123456
-> 
+>
 > Response fields: A (hex string, 4 bytes), B (string)
 > Example response: { "A": "0x23456789", "B": "345678" }
 
@@ -232,7 +232,7 @@ We don't bother with setting the `Path` and `Err` fields because the path is fil
 ```
 type randomResponseJson struct {
     A string `json:"a" hex:"true"`
-    B string `json:"b"` 
+    B string `json:"b"`
 }
 ```
 
@@ -253,13 +253,13 @@ case "/eth/v1/beacon/random/{block_id}":
     endpoint.RequestQueryParams = []apimiddleware.QueryParam{{Name: "nonce"}}
 ```
 
-At this point we can execute the example request `/eth/v1/beacon/random/0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2?nonce=123456` and we will get a response. Our new endpoint is working! 
+At this point we can execute the example request `/eth/v1/beacon/random/0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2?nonce=123456` and we will get a response. Our new endpoint is working!
 
 ### Custom logic
 
 There is one more thing we need to do before we can call it a day. The specification says that the field `A` must consist of exactly 4 bytes, but grpc-gateway passes 32 bytes into our proxy middleware. To handle this we firstly need to identify which part of the `handleApiPath` function in `api_middleware.go` would need to be changed to fit our needs. After some inspection we come to the conclusion that it's `SerializeMiddlewareResponseIntoJson` because this is where the grpc-gateway's response is transformed into the JSON sent to the HTTP client. We need to somehow inject our code before the response gets transformed: fetch the response, replace the contents of `A` by removing everything except the first 4 bytes, and transform it into JSON as usual.
 
-Let's inspect the `HookCollection` type, which is a part of the `Endpoint` definition. We see it contains a function field called `OnPreSerializeMiddlewareResponseIntoJson`, which is exactly what we need. We need to write a function that satisfies the field's signature and implements the required logic. Notice the `RunDefault` return parameter. It tells the middleware whether it should still execute the default code after the `Pre` function completes. In our case we don't have to serialize the response into JSON ourselves, so we want to set this value to `true` upon successfully returning from the function. 
+Let's inspect the `HookCollection` type, which is a part of the `Endpoint` definition. We see it contains a function field called `OnPreSerializeMiddlewareResponseIntoJson`, which is exactly what we need. We need to write a function that satisfies the field's signature and implements the required logic. Notice the `RunDefault` return parameter. It tells the middleware whether it should still execute the default code after the `Pre` function completes. In our case we don't have to serialize the response into JSON ourselves, so we want to set this value to `true` upon successfully returning from the function.
 
 All in all, `prepareA` can look something like below (the second return value can be used when we don't want to run the default; we can return the JSON directly from here).
 
@@ -267,10 +267,10 @@ All in all, `prepareA` can look something like below (the second return value ca
 func prepareA(response interface{}) (apimiddleware.RunDefault, []byte, apimiddleware.ErrorJson) (apimiddleware.RunDefault, []byte, apimiddleware.ErrorJson) {
     // type assert parameter into our response type
     randomResponse := (...)
-    
+
     // set the new value
     randomResponse.A = (...)
-    
+
     // run the default
     return true, nil, nil
 }

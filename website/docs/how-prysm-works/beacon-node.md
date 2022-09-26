@@ -1,6 +1,6 @@
 ---
 id: beacon-node
-title: Prysm's beacon node
+title: Agora-cl's beacon node
 sidebar_label: Beacon node
 ---
 
@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-The beacon-chain node shipped with Prysm is the keystone component of the Ethereum proof-of-stake protocol. It is responsible for running a full [Proof-of-Stake](/docs/terminology#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](/docs/terminology#propose) and [attested](/docs/terminology#attest) on by [validators](/docs/terminology#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P \(peer-to-peer\) network, which also manages the lifecycle process of active [validator clients](/docs/how-prysm-works/prysm-validator-client).
+The beacon-chain node shipped with Agora-cl is the keystone component of the Ethereum proof-of-stake protocol. It is responsible for running a full [Proof-of-Stake](/docs/terminology#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](/docs/terminology#propose) and [attested](/docs/terminology#attest) on by [validators](/docs/terminology#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P \(peer-to-peer\) network, which also manages the lifecycle process of active [validator clients](/docs/how-prysm-works/prysm-validator-client).
 
 ![Beacon node](/img/prysm-beacon-chain.png)
 
@@ -25,7 +25,7 @@ At runtime, the beacon node initialises and maintains a number of services that 
 * A [**P2P server**](p2p-networking) which handles the life cycle of peer connections and facilitates broadcasting across the network.
 * A **full test suite** for running simulation on Ethereum beacon chain state transitions, benchmarks and conformity tests across clients.
 
-We isolate each of these services into separate packages, each responsible for its own life cycle, logging and dependency management. Each Prysm service implements an interface to start, stop, and verify its status at any time.
+We isolate each of these services into separate packages, each responsible for its own life cycle, logging and dependency management. Each Agora-cl service implements an interface to start, stop, and verify its status at any time.
 
 ## Blockchain service
 
@@ -39,7 +39,7 @@ The operations service handles important information contained in blocks on the 
 
 ## Core package
 
-The core package implements the Ethereum beacon chain state transition function, as well as the core helpers and utilities. Every function that manages block processing, epoch processing, validator shuffling and finality is defined within this package. It is designed to be a near-identical translation of the official specification. The aim is to keep this package as free of outside code as possible, and it is comprised of mostly pure functions which do not require access to the other services across Prysm to function.
+The core package implements the Ethereum beacon chain state transition function, as well as the core helpers and utilities. Every function that manages block processing, epoch processing, validator shuffling and finality is defined within this package. It is designed to be a near-identical translation of the official specification. The aim is to keep this package as free of outside code as possible, and it is comprised of mostly pure functions which do not require access to the other services across Agora-cl to function.
 
 ## Sync service
 

@@ -1,7 +1,7 @@
 ---
 id: is-everything-fine
-title: Monitor Prysm for expected behavior
-sidebar_label: Monitor Prysm for expected behavior
+title: Monitor Agora-cl for expected behavior
+sidebar_label: Monitor Agora-cl for expected behavior
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
@@ -26,7 +26,7 @@ When your beacon node is done syncing, you should see a continuous stream of `IN
 
 ```
 INFO blockchain: synced new block block=0x7373721...
-INFO blockchain: finished appluing state transition attestations=71... 
+INFO blockchain: finished appluing state transition attestations=71...
 INFO p2p: peer disconnected
 INFO p2p: peer connected
 ```
@@ -40,7 +40,7 @@ Validators are generally in one of the following states: `Unknown`, `Deposited`,
 When your validator is in `Deposited` state, it will produce `INFO` logs that look like this:
 
 ```
-INFO validator: Deposit processed, entering activation queue after finalization... 
+INFO validator: Deposit processed, entering activation queue after finalization...
 ```
 
 When your validator is `Pending` activation, it will produce `INFO` logs that look like this:

@@ -1,6 +1,6 @@
 ---
 id: configuring-for-prysm
-title: Configure an execution node for Prysm
+title: Configure an execution node for Agora-cl
 sidebar_label: Configure execution node
 ---
 
@@ -16,7 +16,7 @@ This guidance is targeted at users who only need to configure an execution clien
 
 <div class='execution-node-guide'>
 
-## Select a configuration 
+## Select a configuration
 
 If you're looking for the simplest configuration, select `Geth` and `IPC`:
 
@@ -30,7 +30,7 @@ import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_q
 
 <QuickstartRunExecutionNodeJWTPartial />
 
-Congratulations - you’re now running an <strong>execution node</strong> that your Prysm beacon node can connect to.
+Congratulations - you’re now running an <strong>execution node</strong> that your Agora-cl beacon node can connect to.
 
 </div>
 

@@ -1,6 +1,6 @@
 ---
 id: install-with-script
-title: "Quickstart: Run a node and (optionally) stake ETH using Prysm"
+title: "Quickstart: Run a node and (optionally) stake ETH using Agora-cl"
 sidebar_label: "Quickstart: Run a node"
 ---
 
@@ -24,7 +24,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 <QuickstartPrereqsPartial />
 
-## Step 2: Install Prysm
+## Step 2: Install Agora-cl
 
 <div class='hide-tabs'>
 
@@ -34,7 +34,7 @@ import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quicksta
 
 ## Step 3: Run an execution client
 
-In this step, you'll install an execution-layer client that Prysm's beacon node will connect to.
+In this step, you'll install an execution-layer client that Agora-cl's beacon node will connect to.
 
 import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node.md';
 
@@ -42,14 +42,14 @@ import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_q
 
 Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
 
-## Step 4: Run a beacon node using Prysm
+## Step 4: Run a beacon node using Agora-cl
 
 import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-beacon-node.md';
 
 <QuickstartRunBeaconNodePartial />
 
 
-## Step 5: Run a validator using Prysm
+## Step 5: Run a validator using Agora-cl
 
 
 import QuickstartRunValidatorPartial from '@site/docs/install/partials/_quickstart-run-validator.md';
@@ -65,13 +65,13 @@ import QuickstartRunValidatorPartial from '@site/docs/install/partials/_quicksta
 ## Frequently asked questions
 
 <!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work?** <br />
-The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO) -->
+The Beginner's Introduction to Agora-cl uses diagrams to help you visualize Ethereum's architecture, and Agora-cl's too. (TODO) -->
 
 **Why do you recommend putting everything on a single machine?** <br />
 Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](../security-best-practices.md).
 
-**Can I use Prysm on a Mac M1 ARM chip?** <br />
-Mac M1 ARM chips currently require users to run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.
+**Can I use Agora-cl on a Mac M1 ARM chip?** <br />
+Mac M1 ARM chips currently require users to run Agora-cl through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.
 
 **Do I need to configure JWT if I'm using IPC instead of HTTP?** <br />
 No.
@@ -83,16 +83,16 @@ We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP
 No. See [Nodes and networks](../concepts/nodes-networks.md) for more information.
 
 **Can I stake with less than 32 ETH?** <br />
-Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 ETH. 
+Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 ETH.
 
 
 **What should I do if I can't run a node using my own hardware?** <br />
 You can delegate hardware management to <a href='https://ethereum.org/en/staking/saas/'>staking as a service</a> providers.
 
 <!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work? How much disk space does each node type require?** <br />
-The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO) -->
+The Beginner's Introduction to Agora-cl uses diagrams to help you visualize Ethereum's architecture, and Agora-cl's too. (TODO) -->
 
-**Can I use a light node with Prysm, or do I need to run a full execution node?** <br />
+**Can I use a light node with Agora-cl, or do I need to run a full execution node?** <br />
 No - at this time, a full node is required.
 
 <!-- **I don't have a 2TB SSD, but I have multiple smaller SSDs. Will this work?** <br />

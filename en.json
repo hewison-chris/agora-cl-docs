@@ -39,8 +39,8 @@
         "title": "Fifth Document"
       },
       "getting-started": {
-        "title": "Getting Started with Prysm",
-        "sidebar_label": "Getting Started with Prysm"
+        "title": "Getting Started with Agora-cl",
+        "sidebar_label": "Getting Started with Agora-cl"
       },
       "terminology": {
         "title": "Terminology",
@@ -51,8 +51,8 @@
         "sidebar_label": "BLS Cryptography"
       },
       "how-prysm-works/database-backend-boltdb": {
-        "title": "Prysm Validator Client",
-        "sidebar_label": "Prysm Validator Client"
+        "title": "Agora-cl Validator Client",
+        "sidebar_label": "Agora-cl Validator Client"
       },
       "how-prysm-works/prysm-public-api": {
         "title": "Ethereum 2.0 Public API",
@@ -71,8 +71,8 @@
         "sidebar_label": "P2P Networking"
       },
       "/docs/how-prysm-works/beacon-node": {
-        "title": "Prysm Beacon Node",
-        "sidebar_label": "Prysm Beacon Node"
+        "title": "Agora-cl Beacon Node",
+        "sidebar_label": "Agora-cl Beacon Node"
       },
       "how-prysm-works/validator-deposit-contract": {
         "title": "Validator Deposit Contract",
@@ -87,8 +87,8 @@
         "sidebar_label": "On Ethereum 2.0"
       },
       "introduction/what-is-prysm": {
-        "title": "What is Prysm?",
-        "sidebar_label": "What is Prysm?"
+        "title": "What is Agora-cl?",
+        "sidebar_label": "What is Agora-cl?"
       },
       "licenses/prysmatic-labs": {
         "title": "Prysmatic Labs",
@@ -107,7 +107,7 @@
     "categories": {
       "Getting Started": "Getting Started",
       "Introduction": "Introduction",
-      "How Prysm Works": "How Prysm Works",
+      "How Agora-cl Works": "How Agora-cl Works",
       "Getting Involved": "Getting Involved",
       "Licenses": "Licenses"
     }

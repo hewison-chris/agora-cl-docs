@@ -8,19 +8,19 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-This section explains how to import a slashing protection history file into Prysm as well as how to export your validators' slashing protection history to move between computers or between Ethereum consensus client implementations.
+This section explains how to import a slashing protection history file into Agora-cl as well as how to export your validators' slashing protection history to move between computers or between Ethereum consensus client implementations.
 
 ## What is slashing protection?
 
 Validators in Ethereum are assigned to produce blocks and vote on other blocks in a scheduled, random assignment basis. Upon performing their roles, they submit their data to a beacon node which then broadcasts it to the network, which if done properly, will earn the validator rewards for validating correctly. Ethereum, however, also relies on a system of punishments to ensure that validators cannot take advantage of the system. There are few actions that, if performed by a validator, will lead to **slashing**. When validators get slashed, they lose a portion of their stake, get forcefully ejected from the validator set, and **cannot rejoin** the network! Unfortunately, slashing happens to innocent validators quite often which set up their system incorrectly, or are using complicated failover mechanisms for their validators.
 
 :::tip We recommend running your validators in simple ways
-Some stakers care a lot about the uptime of their validators, even going to great extents to set up **failover** beacon nodes or validators across different machines to make sure they are always online and making money. Unfortunately, this is very easy to misconfigure and you could easily end up slashed, missing out on a lot of rewards until you are able to withdraw your stake! We recommend running Prysm in the simplest way possible for you, and not worrying too much about potentially small downtime. A validator only needs to be online 2/3's of the time in a given timeframe to remain profitable.
+Some stakers care a lot about the uptime of their validators, even going to great extents to set up **failover** beacon nodes or validators across different machines to make sure they are always online and making money. Unfortunately, this is very easy to misconfigure and you could easily end up slashed, missing out on a lot of rewards until you are able to withdraw your stake! We recommend running Agora-cl in the simplest way possible for you, and not worrying too much about potentially small downtime. A validator only needs to be online 2/3's of the time in a given timeframe to remain profitable.
 :::
 
 To protect itself from accidentally being slashed due to some software bug or other problem in a user's system, validator clients keep a small database of data they have previously signed, such as blocks and attestations, to ensure they do not sign a slashable offense in the future. You can read more about slashing prevention tips in our blog post [here](https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50).
 
-**This database is kept, by default, within the validator's wallet directory in a file called validator.db**. However, instead of manually copying and dealing with this file, Prysm provides tools to export and import your slashing protection history into a standard format supported by all Ethereum consensus clients, such as Lighthouse, Teku, and Nimbus. This standard format is useful as well if you want to move your validator between computers securely. You can export your slashing protection history from one computer as a file and import it safely into the other.
+**This database is kept, by default, within the validator's wallet directory in a file called validator.db**. However, instead of manually copying and dealing with this file, Agora-cl provides tools to export and import your slashing protection history into a standard format supported by all Ethereum consensus clients, such as Lighthouse, Teku, and Nimbus. This standard format is useful as well if you want to move your validator between computers securely. You can export your slashing protection history from one computer as a file and import it safely into the other.
 
 ## How to use slashing protection
 
@@ -61,7 +61,7 @@ Slashing protection history has been standardized by the Ethereum consensus clie
                 }
             ]
         }
-    ]   
+    ]
 }
 ```
 
@@ -70,7 +70,7 @@ Basically containing a simple history of the blocks and attestations your valida
 ## Exporting your validators' slashing protection history
 
 :::tip Stop the Validator
-Ensure that you stop Prysm before exporting slashing protection. 
+Ensure that you stop Agora-cl before exporting slashing protection.
 :::
 
 To export your slashing protection history, use the following command:
@@ -90,7 +90,7 @@ import TabItem from '@theme/TabItem';
 }>
 <TabItem value="lin">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.sh validator slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
@@ -113,7 +113,7 @@ bazel run //validator -- slashing-protection-history export --datadir=/path/to/y
 </TabItem>
 <TabItem value="win">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.bat validator slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=\path\to\desired\outputdir
@@ -130,7 +130,7 @@ You will then find the slashing protection JSON file in your specified \path\to\
 </TabItem>
 <TabItem value="mac">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.sh validator slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
@@ -153,7 +153,7 @@ bazel run //validator -- slashing-protection-history export --datadir=/path/to/y
 </TabItem>
 <TabItem value="arm">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.sh validator slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
@@ -168,9 +168,9 @@ bazel run //validator -- slashing-protection-history export --datadir=/path/to/y
 </TabItem>
 </Tabs>
 
-## Importing a slashing protection history into your Prysm validator
+## Importing a slashing protection history into your Agora-cl validator
 
-To import a slashing protection JSON file you obtained elsewhere, either from another Prysm instance or from another Ethereum consensus client, you can import it as follows using any installation method for your Prysm validator.
+To import a slashing protection JSON file you obtained elsewhere, either from another Agora-cl instance or from another Ethereum consensus client, you can import it as follows using any installation method for your Agora-cl validator.
 
 <Tabs
   groupId="operating-systems"
@@ -184,7 +184,7 @@ To import a slashing protection JSON file you obtained elsewhere, either from an
 }>
 <TabItem value="lin">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.sh validator slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
@@ -205,7 +205,7 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/y
 </TabItem>
 <TabItem value="win">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.bat validator slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=\path\to\desiredimportfile
@@ -219,7 +219,7 @@ docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json
 </TabItem>
 <TabItem value="mac">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.sh validator slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
@@ -240,7 +240,7 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/y
 </TabItem>
 <TabItem value="arm">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.sh validator slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
@@ -276,7 +276,7 @@ We recommend waiting a couple epochs and running your validator node with the `-
 
 **How will I know if I've successfully imported my slashing protection history?**
 
-Prysm will output a success message upon successful import. An error message will be displayed if your slashing protection history is either empty or corrupt.
+Agora-cl will output a success message upon successful import. An error message will be displayed if your slashing protection history is either empty or corrupt.
 
 **I'm nervous about this procedure... can I have some help?**
 

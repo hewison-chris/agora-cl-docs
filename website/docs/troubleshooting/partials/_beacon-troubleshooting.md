@@ -1,13 +1,13 @@
 <table>
     <tr>
-        <th style={{minWidth: 180 + 'px'}}>Scenario</th> 
+        <th style={{minWidth: 180 + 'px'}}>Scenario</th>
         <th>Solution</th>
     </tr>
     <tr>
       <td>Waiting for peers / peer disconnected / no active peers: <code>Waiting for enough suitable peers before syncing...</code> <code>msg="Peer disconnected" active=0</code></td>
       <td>Peers will continuously disconnect and reconnect, so don't worry about <code>Peer disconnected</code> messages. If your beacon node is struggling to find peers: <br/>
       <ul>
-          <li>Your beacon node might be suffering from connectivity problems. Visit <a href='/docs/prysm-usage/p2p-host-ip'>Improve P2P connectivity</a> for connectivity troubleshooting guidance. Ensure that your firewall isn't restricting any <strong>outbound</strong> ports for Prysm.</li>
+          <li>Your beacon node might be suffering from connectivity problems. Visit <a href='/docs/prysm-usage/p2p-host-ip'>Improve P2P connectivity</a> for connectivity troubleshooting guidance. Ensure that your firewall isn't restricting any <strong>outbound</strong> ports for Agora-cl.</li>
           <li>You may be using an incorrect genesis state or network flag. Every test network requires its own genesis state and network flag. Visit our <a href='../install/install-with-script'>Quickstart</a> for the latest test network parameters.</li>
       </ul>
       </td>
@@ -48,8 +48,8 @@
       <td>These errors are usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
     </tr>
     <tr>
-      <td><code>weak-subjectivity-checkpoint not provided. Prysm recommends providing a weak subjectivity checkpoint for nodes synced from genesis</code></td>
-      <td>You can safely ignore this warning - it will be removed in an upcoming Prysm release. See <a href='https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync'>How to configure Checkpoint Sync</a> if you'd like to learn more about checkpoint sync.</td>
+      <td><code>weak-subjectivity-checkpoint not provided. Agora-cl recommends providing a weak subjectivity checkpoint for nodes synced from genesis</code></td>
+      <td>You can safely ignore this warning - it will be removed in an upcoming Agora-cl release. See <a href='https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync'>How to configure Checkpoint Sync</a> if you'd like to learn more about checkpoint sync.</td>
     </tr>
     <tr>
       <td><code>beacon node doesn't have a parent in db with root...</code></td>

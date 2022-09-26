@@ -9,25 +9,25 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 <HeaderBadgesWidget commaDelimitedContributors="Clarin,Mick" />
 
 
-[Prysm](https://github.com/prysmaticlabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 ETH to stake](https://ethereum.org/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-prysm). If you're new to Ethereum, you may enjoy our beginner-friendly [Nodes and networks](./concepts/nodes-networks.md) explainer.
+[Agora-cl](https://github.com/prysmaticlabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Agora-cl to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 ETH to stake](https://ethereum.org/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-prysm). If you're new to Ethereum, you may enjoy our beginner-friendly [Nodes and networks](./concepts/nodes-networks.md) explainer.
 
-The following table of contents provides a descriptive overview of Prysm's documentation:
+The following table of contents provides a descriptive overview of Agora-cl's documentation:
 
 <div class='panel'>
-<a href='install/install-with-script'>Quickstart: Run a node and (optionally) stake ETH using Prysm</a>
-<p><strong>New Prysm users</strong> can follow this guidance to get started with Prysm.</p>
+<a href='install/install-with-script'>Quickstart: Run a node and (optionally) stake ETH using Agora-cl</a>
+<p><strong>New Agora-cl users</strong> can follow this guidance to get started with Agora-cl.</p>
 </div>
 <div class='panel'>
 <a href='prepare-for-merge'>Prepare for The Merge</a>
-<p><strong>Current Prysm users</strong> can follow this guidance to prepare their nodes and validators for <a href='https://ethereum.org/en/upgrades/merge/'>The Merge</a>, an ongoing event that transitions Ethereum from proof-of-work to proof-of-stake.</p>
+<p><strong>Current Agora-cl users</strong> can follow this guidance to prepare their nodes and validators for <a href='https://ethereum.org/en/upgrades/merge/'>The Merge</a>, an ongoing event that transitions Ethereum from proof-of-work to proof-of-stake.</p>
 </div>
 <div class='panel'>
 <a href='security-best-practices'>Security best practices</a>
-<p>Learn how to <strong>minimize risk</strong> as a validator. The guidelines provided in this document are client-agnostic (they apply to Prysm and other clients, too).</p>
+<p>Learn how to <strong>minimize risk</strong> as a validator. The guidelines provided in this document are client-agnostic (they apply to Agora-cl and other clients, too).</p>
 </div>
 <div class='panel'>
 <a href='prysm-usage/parameters'>Command-line options</a>
-<p>Learn how to configure Prysm's beacon node client, validator client, and more through its <strong>command-line interface</strong>.</p>
+<p>Learn how to configure Agora-cl's beacon node client, validator client, and more through its <strong>command-line interface</strong>.</p>
 </div>
 <div class='panel'>
 <a href='troubleshooting/issues-errors'>Troubleshooting</a>
@@ -45,17 +45,17 @@ The following table of contents provides a descriptive overview of Prysm's docum
 </div>
 <div class='panel'>
 <a href='install/install-with-docker'>Install using Docker</a>
-<p>Learn how to install Prysm using preconfigured Docker images that ship with every Prysm release.</p>
+<p>Learn how to install Agora-cl using preconfigured Docker images that ship with every Agora-cl release.</p>
 </div>
 <div class='panel'>
 <a href='install/install-with-bazel'>Build from source</a>
-<p>Learn how to build Prysm from source using Bazel.</p>
+<p>Learn how to build Agora-cl from source using Bazel.</p>
 </div>
 <div class='panel section-title'>
 
 ## How-tos
 
-<p>This section contains procedural documentation that walks you through <strong>specific tasks related to Prysm</strong>.</p>
+<p>This section contains procedural documentation that walks you through <strong>specific tasks related to Agora-cl</strong>.</p>
 </div>
 <div class='panel'>
 <a href='execution-node/fee-recipient'>Configure Fee Recipient</a>
@@ -63,19 +63,19 @@ The following table of contents provides a descriptive overview of Prysm's docum
 </div>
 <div class='panel'>
 <a href='execution-node/authentication'>Configure JWT authentication</a>
-<p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to form this secure connection using a JWT token.</p>
+<p>After The Merge, Agora-cl will need to securely connect to a local execution node. This how-to shows you how to form this secure connection using a JWT token.</p>
 </div>
 <div class='panel'>
 <a href='execution-node/authentication'>Configure execution node</a>
-<p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to configure Geth, Besu, or Nethermind.</p>
+<p>After The Merge, Agora-cl will need to securely connect to a local execution node. This how-to shows you how to configure Geth, Besu, or Nethermind.</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/staying-up-to-date'>Update and downgrade Prysm</a>
-<p>Learn how to <strong>keep Prysm updated</strong>, how to downgrade Prysm, and how to use release candidates.</p>
+<a href='prysm-usage/staying-up-to-date'>Update and downgrade Agora-cl</a>
+<p>Learn how to <strong>keep Agora-cl updated</strong>, how to downgrade Agora-cl, and how to use release candidates.</p>
 </div>
 <div class='panel'>
 <a href='prysm-usage/checkpoint-sync'>Sync from a checkpoint</a>
-<p>Syncing from a checkpoint significantly reduces the time it takes for Prysm's beacon node to sync by piggypacking off of another fully-synced node.</p>
+<p>Syncing from a checkpoint significantly reduces the time it takes for Agora-cl's beacon node to sync by piggypacking off of another fully-synced node.</p>
 </div>
 <div class='panel'>
 <a href='monitoring/checking-status'>Check node and validator status</a>
@@ -93,7 +93,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 
 ### Backups and migrations
 
-<p>This subsection contains how-tos that help you back up and migrate Prysm's data.</p>
+<p>This subsection contains how-tos that help you back up and migrate Agora-cl's data.</p>
 </div>
 <div class='panel'>
 <a href='prysm-usage/database-backups'>Back up & restore database</a>
@@ -118,12 +118,12 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <p>This subsection contains how-tos that help you manage your validator and associated keys/wallets.</p>
 </div>
 <div class='panel'>
-<a href='wallet/deterministic'>Create a Prysm wallet</a>
-<p>Learn how to create a wallet using Prysm.</p>
+<a href='wallet/deterministic'>Create a Agora-cl wallet</a>
+<p>Learn how to create a wallet using Agora-cl.</p>
 </div>
 <div class='panel'>
-<a href='wallet/nondeterministic'>Import keys into a Prysm wallet</a>
-<p>Learn how to import EIP-2335 keystore files into Prysm, such as those generated by the Ethereum deposit CLI.</p>
+<a href='wallet/nondeterministic'>Import keys into a Agora-cl wallet</a>
+<p>Learn how to import EIP-2335 keystore files into Agora-cl, such as those generated by the Ethereum deposit CLI.</p>
 </div>
 <div class='panel'>
 <a href='advanced/maintaining-uptime'>Maintain validator uptime with systemd or Docker</a>
@@ -145,15 +145,15 @@ The following table of contents provides a descriptive overview of Prysm's docum
 
 ### Monitoring, metrics, and alerts
 
-<p>This subsection contains how-tos that help you configure monitoring and alerts for Prysm.</p>
+<p>This subsection contains how-tos that help you configure monitoring and alerts for Agora-cl.</p>
 </div>
 <div class='panel'>
-<a href='monitoring/is-everything-fine'>Monitor Prysm for expected behavior</a>
-<p>Learn how to assess the health of your Prysm beacon node and/or validator by analyzing output logs.</p>
+<a href='monitoring/is-everything-fine'>Monitor Agora-cl for expected behavior</a>
+<p>Learn how to assess the health of your Agora-cl beacon node and/or validator by analyzing output logs.</p>
 </div>
 <div class='panel'>
 <a href='prysm-usage/individual-validator-monitoring'>Monitor validators by index</a>
-<p>Learn how to use Prysm to monitor block proposals, attestations, slashings, and more for any number of validators.</p>
+<p>Learn how to use Agora-cl to monitor block proposals, attestations, slashings, and more for any number of validators.</p>
 </div>
 <div class='panel'>
 <a href='prysm-usage/monitoring/grafana-dashboard'>Configure dashboarding and alerts with Prometheus and Grafana</a>
@@ -161,11 +161,11 @@ The following table of contents provides a descriptive overview of Prysm's docum
 </div>
 <div class='panel'>
 <a href='prysm-usage/client-stats'>Collect metrics with client-stats</a>
-<p>Learn how to collect beacon node and validator metrics using Prysm's <code>client-stats</code> utility. This can be used to relay metrics data to the beaconcha.in stats service.</p>
+<p>Learn how to collect beacon node and validator metrics using Agora-cl's <code>client-stats</code> utility. This can be used to relay metrics data to the beaconcha.in stats service.</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/web-interface'>Use Prysm's Web UI</a>
-<p>Prysm's Web UI can be used to monitor and configure your beacon node and validator on <code>localhost</code> using an app-like interface.</p>
+<a href='prysm-usage/web-interface'>Use Agora-cl's Web UI</a>
+<p>Agora-cl's Web UI can be used to monitor and configure your beacon node and validator on <code>localhost</code> using an app-like interface.</p>
 </div>
 <div class='panel secondary-panel section-title'>
 
@@ -185,7 +185,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 
 ## Concepts
 
-<p>This section contains beginner-friendly <strong>conceptual guidance</strong> authored for readers who are new to Prysm and/or Ethereum.</p>
+<p>This section contains beginner-friendly <strong>conceptual guidance</strong> authored for readers who are new to Agora-cl and/or Ethereum.</p>
 </div>
 <div class='panel'>
 <a href='concepts/nodes-networks'>Nodes and networks</a>
@@ -193,7 +193,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 </div>
 <div class='panel'>
 <a href='wallet/introduction'>Keys, wallets, and accounts</a>
-<p>Learn how keys, wallets, and accounts relate to each other within the context of Prysm and Ethereum.</p>
+<p>Learn how keys, wallets, and accounts relate to each other within the context of Agora-cl and Ethereum.</p>
 </div>
 <div class='panel'>
 <a href='concepts/slashing'>Slashing</a>
@@ -203,10 +203,10 @@ The following table of contents provides a descriptive overview of Prysm's docum
 
 ## Developer wiki
 
-<p>This section contains documents targeted at developers who want to contribute to Prysm's codebase.</p>
+<p>This section contains documents targeted at developers who want to contribute to Agora-cl's codebase.</p>
 </div>
 <div class='panel'>
-<a href='contribute/contribution-guidelines'>Contribute to Prysm's codebase</a>
+<a href='contribute/contribution-guidelines'>Contribute to Agora-cl's codebase</a>
 </div>
 <div class='panel'>
 <a href='contribute/golang-principles'>Golang principles</a>
@@ -226,7 +226,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <a href='how-prysm-works/ethereum-public-api'>Beacon node API</a>
 </div>
 <div class='panel'>
-<a href='how-prysm-works/prysm-public-api'>Prysm-specific API</a>
+<a href='how-prysm-works/prysm-public-api'>Agora-cl-specific API</a>
 </div>
 <div class='panel'>
 <a href='how-prysm-works/keymanager-api'>Keymanager API</a>
@@ -284,7 +284,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <a href='audits/phase0'>Security audits</a>
 </div>
 <div class='panel'>
-<a href='licenses/prysmatic-labs'>Prysm license</a>
+<a href='licenses/prysmatic-labs'>Agora-cl license</a>
 </div>
 <div class='panel'>
 <a href='reading/eth2'>Ethereum learning resources</a>

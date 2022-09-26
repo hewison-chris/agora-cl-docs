@@ -1,12 +1,12 @@
-# Prysm Documentation Portal
+# Agora-cl Documentation Portal
 
-This repository houses all the documentation pertaining to the Prysm client and Ethereum 2. It is generated with [Docusaurus](https://github.com/facebook/docusaurus). 
+This repository houses all the documentation pertaining to the Agora-cl client and Ethereum 2. It is generated with [Docusaurus](https://github.com/facebook/docusaurus).
 
 Below are steps for initialising and reproducing this portal for development.
 
 ## Dependencies
 
-1.  The latest version of [Node](https://nodejs.org/en/download/) installed. 
+1.  The latest version of [Node](https://nodejs.org/en/download/) installed.
 2. The latest version of [Yarn](https://yarnpkg.com/en/docs/install) installed. (Optional, but recommended)
 
     > You have to be on Node >= 8.x and Yarn >= 1.5.
@@ -18,14 +18,14 @@ Below are steps for initialising and reproducing this portal for development.
 3. Issue the command `npm install`
 4. Wait for the installation process to complete.
 
-## Running the development server  
+## Running the development server
 
 1. From within the `website` directory, run the local web server using `yarn start` or `npm start`.
 2.  Load the example site at http://localhost:3000 if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
 
     You should see the example site loaded in your web browser. There's also a LiveReload server running, and any changes made to the docs and files in the `website` directory will cause the page to refresh.
-    
-    
+
+
 ## Building Static HTML Pages
 
 To create a static build of the documentation portal, run the following script from the `website` directory:

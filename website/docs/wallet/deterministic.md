@@ -1,7 +1,7 @@
 ---
 id: deterministic
-title: Create a Prysm wallet
-sidebar_label: Create a Prysm wallet
+title: Create a Agora-cl wallet
+sidebar_label: Create a Agora-cl wallet
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 ## Background
 
-Prysm features a built-in hierarchical deterministic (HD) wallet. HD wallets let you create new validator private keys deterministically from a seed phrase, shown as an English mnemonic following the [BIP-39 standard](https://en.bitcoin.it/wiki/Seed_phrase) upon wallet creation. If you created a deposit using the official [Ethereum launchpad](https://launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](/docs/install/install-with-script).
+Agora-cl features a built-in hierarchical deterministic (HD) wallet. HD wallets let you create new validator private keys deterministically from a seed phrase, shown as an English mnemonic following the [BIP-39 standard](https://en.bitcoin.it/wiki/Seed_phrase) upon wallet creation. If you created a deposit using the official [Ethereum launchpad](https://launchpad.ethereum.org/) and want to run Agora-cl using it, see our dedicated instructions [here](/docs/install/install-with-script).
 
 Validator private keys are encrypted with the wallet's password using the [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335) keystore.json standard for storing BLS12-381 private keys. This keystore.json file, along with its derivation path, comprises an **account** in an HD wallet.
 
@@ -47,7 +47,7 @@ Here's a full example on how to create an HD wallet at `$HOME/myhdwallet`
 
 ### Wallet recovery
 
-You can fully recover an HD wallet along with all its accounts from a 24-word english mnemonic phrase generated during the wallet's creation process (which you should have stored offline). To recover your HD wallet in Prysm, you can run
+You can fully recover an HD wallet along with all its accounts from a 24-word english mnemonic phrase generated during the wallet's creation process (which you should have stored offline). To recover your HD wallet in Agora-cl, you can run
 
 ```bash
 ./prysm.sh validator wallet recover
@@ -65,7 +65,7 @@ Enter how many accounts you would like to recover: 2
 ```
 
 :::info Recovering many accounts
-Your accounts are generated deterministically from your recovery phrase, so you had 100 validator accounts on the wallet you want to recover, you can easily do so in Prysm.
+Your accounts are generated deterministically from your recovery phrase, so you had 100 validator accounts on the wallet you want to recover, you can easily do so in Agora-cl.
 :::
 
 | Flag          | Usage         |

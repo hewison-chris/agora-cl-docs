@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-This document provides guidance on migrating Prysm and your validator keys from one host system to another while minimizing the risk of slashing.  
+This document provides guidance on migrating Agora-cl and your validator keys from one host system to another while minimizing the risk of slashing.
 
 :::danger Slashing Prevention
 
@@ -23,15 +23,15 @@ The following best practices will help minimize the risk of [slashing](../concep
 
 ## Migration Process
 
-The migration process is straightforward and not too dissimilar to backing up and restoring important data.  
+The migration process is straightforward and not too dissimilar to backing up and restoring important data.
 
 ### Step 1: Export slashing protection history
 
 :::tip Stop the Validator
-Exporting the slashing protection database is a real-time process and can be undertaken at any time. During migration, you should run the export once you have stopped the validator you are migrating away from. This ensures all validator actions are captured and subsequently imported into the new validator process.  
+Exporting the slashing protection database is a real-time process and can be undertaken at any time. During migration, you should run the export once you have stopped the validator you are migrating away from. This ensures all validator actions are captured and subsequently imported into the new validator process.
 :::
 
-To export your slashing protection history, use Prysm's built in commands which will work with any installation method.
+To export your slashing protection history, use Agora-cl's built in commands which will work with any installation method.
 
 :::info
 
@@ -60,7 +60,7 @@ import TabItem from '@theme/TabItem';
 
 
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 ./prysm.sh validator slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
@@ -83,7 +83,7 @@ The first time you run the process you will be asked to accept or decline the te
 </TabItem>
 <TabItem value="win">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.bat validator slashing-protection-history export --datadir=\path\to\validatorDb --slashing-protection-export-dir=\path\to\desired\outputdir
@@ -103,7 +103,7 @@ The first time you run the process you will be asked to accept or decline the te
 </TabItem>
 <TabItem value="mac">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 ./prysm.sh validator slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
@@ -126,7 +126,7 @@ The first time you run the process you will be asked to accept or decline the te
 </TabItem>
 <TabItem value="arm">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 ./prysm.sh validator slashing-protection-history export --datadir=\path\to\validatorDb --slashing-protection-export-dir=\path\to\desired\outputdir
@@ -147,14 +147,14 @@ The first time you run the process you will be asked to accept or decline the te
 
 ### Step 2:  Verify and Backup Validator accounts
 
-An important aspect of managing Validator accounts is ensuring you know which account(s) you are working with. This enables you to verify the account(s) loaded in the validator prior to starting or taking any other action using the validator process, and can help reduce the risk of running the same account on more than one validator instance. 
+An important aspect of managing Validator accounts is ensuring you know which account(s) you are working with. This enables you to verify the account(s) loaded in the validator prior to starting or taking any other action using the validator process, and can help reduce the risk of running the same account on more than one validator instance.
 
 
-:::tip Wallet Password needed 
-You will need the password to the validator wallet in order to undertake Delete, List, Backup or Import actions.   
+:::tip Wallet Password needed
+You will need the password to the validator wallet in order to undertake Delete, List, Backup or Import actions.
 :::
 
-#### Identify Accounts 
+#### Identify Accounts
 To Identify the account(s) loaded in your validator, issue the following command:
 
 **Using Linux/MacOS based systems**
@@ -168,7 +168,7 @@ To Identify the account(s) loaded in your validator, issue the following command
 ```sh
 prysm.bat validator accounts list
 ```
-This will produce output in the format of account number, three words seperated by a hyphon (-) and the public keys of each account. The output will be similar to this: 
+This will produce output in the format of account number, three words seperated by a hyphon (-) and the public keys of each account. The output will be similar to this:
 
 ```sh
 Account 0 | three-random-words
@@ -178,9 +178,9 @@ Account 1 | words-three-random
 ```
 
 We recommend that you keep an accurate and up-to-date record of the name (three word and public key combinations) of your account(s) for management and verification purposes.
- 
+
  #### Backup
- 
+
 You can backup validator accounts from your wallet using the following command:
 
 **Using Linux/MacOS based systems**
@@ -194,7 +194,7 @@ You can backup validator accounts from your wallet using the following command:
 ```sh
 prysm.bat validator accounts backup
 ```
-You will now be prompted for the wallet password. Once entered, you will be guided through the backup process where you will able to select individual or all accounts to backup and the location where the backup file is created. You will also be prompted for a **"password"** for the backup file, **it is important to keep a note of this for use during the import process**. 
+You will now be prompted for the wallet password. Once entered, you will be guided through the backup process where you will able to select individual or all accounts to backup and the location where the backup file is created. You will also be prompted for a **"password"** for the backup file, **it is important to keep a note of this for use during the import process**.
 
 You can also run the accounts backup command non-interactively by using the following command line flags, which are also viewable by appending --help to the command line listed above:
 
@@ -226,13 +226,13 @@ Expand (unzip) the backup file created above. The file will contain one JSON fil
 prysm.bat validator accounts import --keys-dir=\path\to\keystore-file.json
 ```
 
-This will import all files that are valid EIP-2335 keystores, such as those generated by the backup process above or the official Ethereum deposit launchpad's command-line tool. 
+This will import all files that are valid EIP-2335 keystores, such as those generated by the backup process above or the official Ethereum deposit launchpad's command-line tool.
 
-The files you are importing must have the prefix "keystore-" using the defaults in backup will typically create a zip file containing the sequential keystores for the validators. If you have 1 validator account the zip file will typically contain the file keystore-0.json. If you have 3 validator accounts the keystore will typically contain keystore-0.json, keystore-1.json and keystore-2.json.  
+The files you are importing must have the prefix "keystore-" using the defaults in backup will typically create a zip file containing the sequential keystores for the validators. If you have 1 validator account the zip file will typically contain the file keystore-0.json. If you have 3 validator accounts the keystore will typically contain keystore-0.json, keystore-1.json and keystore-2.json.
 
 ### Step 4: Importing slashing protection history
 
-To import a slashing protection JSON file (all Ethereum consensus clients use the same format defined in EIP-3076) use the appropriate installation method for your Prysm validator.
+To import a slashing protection JSON file (all Ethereum consensus clients use the same format defined in EIP-3076) use the appropriate installation method for your Agora-cl validator.
 
 <Tabs
   groupId="operating-systems"
@@ -246,7 +246,7 @@ To import a slashing protection JSON file (all Ethereum consensus clients use th
 }>
 <TabItem value="lin">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 ./prysm.sh validator slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
@@ -267,7 +267,7 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/v
 </TabItem>
 <TabItem value="win">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.bat validator slashing-protection-history import --datadir=\path\to\validatorDb --slashing-protection-json-file=\path\to\desiredimportfile
@@ -281,7 +281,7 @@ docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json
 </TabItem>
 <TabItem value="mac">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 ./prysm.sh validator slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
@@ -302,7 +302,7 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/v
 </TabItem>
 <TabItem value="arm">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 ./prysm.sh validator slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
@@ -320,14 +320,14 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/v
 
 ### Step 5:  Verification and restarting the validator client
 
-It is highly recommended that the validator process on the original, migrated validator is stopped and disabled to ensure it is not restarted automatically or accidently. 
+It is highly recommended that the validator process on the original, migrated validator is stopped and disabled to ensure it is not restarted automatically or accidently.
 
-On the original system, with the validator process stopped, remove the account(s) using the process below: 
+On the original system, with the validator process stopped, remove the account(s) using the process below:
 
 **Using Linux/MacOS based systems**
 
 ```sh
-./prysm.sh validator accounts delete 
+./prysm.sh validator accounts delete
 ```
 
 **Using Windows based systems**
@@ -335,21 +335,21 @@ On the original system, with the validator process stopped, remove the account(s
 ```sh
 prysm.bat validator accounts delete
 ```
-This will produce output in the same format as the list function, three words identifying the account seperated by a hyphon (-) and the public keys of each account, the output will be similar to this: 
+This will produce output in the same format as the list function, three words identifying the account seperated by a hyphon (-) and the public keys of each account, the output will be similar to this:
 
 ```sh
-Use the arrow keys to navigate 
+Use the arrow keys to navigate
 Select the account(s) you would like to delete
     Done Selecting
     All Accounts
     0 | three-random-words | 0xabcd1234...........
     1 | words-three-random | 0xdcba4321...........
 ```
-Using the arrow keys (up-down-left-right) navigate to the Validator(s) that has been migrated and that you want to delete and select it.  
+Using the arrow keys (up-down-left-right) navigate to the Validator(s) that has been migrated and that you want to delete and select it.
 
-Once complete, verify the account removal using the validator accounts list command outlined above in [Identify Accounts](#identify-accounts). 
+Once complete, verify the account removal using the validator accounts list command outlined above in [Identify Accounts](#identify-accounts).
 
-**When removal of the account has been confirmed, the new, migrated validator process can be started.**  
+**When removal of the account has been confirmed, the new, migrated validator process can be started.**
 
 
 ## Frequently asked questions

@@ -1,6 +1,6 @@
 ---
 id: security-best-practices
-title: Staking with Prysm - Security best practices
+title: Staking with Agora-cl - Security best practices
 sidebar_label: Security best practices
 ---
 
@@ -19,18 +19,18 @@ Note that this document is subject to the [Prysmatic Labs Terms of Service](http
 The following principles apply generally to staking security:
 
  - **Keep it simple**. Over-engineered solutions tend to increase risk.
- - **Stay up to date**. At a minimum, join the [prysm-dev Google Group](https://groups.google.com/g/prysm-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the [Prysm Discord server](https://discord.gg/prysmaticlabs) and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
+ - **Stay up to date**. At a minimum, join the [prysm-dev Google Group](https://groups.google.com/g/prysm-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the [Agora-cl Discord server](https://discord.gg/prysmaticlabs) and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
  - **Testnet first**. Harden your configuration using testnet [<a href='#footnote-1'>1</a>] before staking with real ETH on mainnet.
  - **Simulate risk events**. For each of the aspects within this document, simulate risk events and document your own risk mitigation plans. You can use the [risk mitigation worksheet](#mitigation-worksheet) located at the end of this guide.
  - **Proactively manage risk** You can't completely eliminate risk, but you can minimize it by following the best practices within this guide.
- - **If you’re not sure, ask**. The [Prysm Discord server](https://discord.gg/prysmaticlabs) and [r/ethstaker](https://www.reddit.com/r/ethstaker) subreddit are full of people who genuinely enjoy helping out.
+ - **If you’re not sure, ask**. The [Agora-cl Discord server](https://discord.gg/prysmaticlabs) and [r/ethstaker](https://www.reddit.com/r/ethstaker) subreddit are full of people who genuinely enjoy helping out.
 
 
 ## Uptime management
 The security of the Ethereum blockchain relies on a **highly available** network of validators. Ethereum's proof-of-stake implementation incentivizes validators to remain online.
- 
+
 If your validator goes offline, you can lose some of your staked ETH [<a href='#footnote-2'>2</a>]. As long as you're online most of the time, you'll be profitable. Losses incurred from occasional downtime are negligible [<a href='#footnote-3'>3</a>].
- 
+
 While it's possible to optimize your client instance architecture for high-availability and redundancy, we encourage validators to **keep it simple**. Complex validator architectures run the risk of accidentally engaging in slashable behavior. This can result in slashing [<a href='#footnote-4'>4</a>], which is a far steeper price to pay than the occasional downtime penalty.
 
  - **Essential**: Ensure that you have adequate disk space. [We recommend having 100GB of SSD storage available](https://docs.prylabs.network/docs/install/install-with-script#recommended-specifications). After [The Merge](https://ethereum.org/en/upgrades/merge/), this recommendation will increase to 1-2 TB if you're also running an [execution client](https://docs.prylabs.network/docs/execution-node/configuring-for-prysm) on the same computer.
@@ -46,19 +46,19 @@ While it's possible to optimize your client instance architecture for high-avail
 
 Linux-specific best practices:
 
- - **Essential**: If you’re not using a 1-2 TB SSD, monitor your disk space using [Disk Usage Analyzer](https://help.ubuntu.com/stable/ubuntu-help/disk-capacity.html.en). Prysm won’t rapidly consume your disk space, but periodically checking your available capacity can reduce the risk of surprises.
+ - **Essential**: If you’re not using a 1-2 TB SSD, monitor your disk space using [Disk Usage Analyzer](https://help.ubuntu.com/stable/ubuntu-help/disk-capacity.html.en). Agora-cl won’t rapidly consume your disk space, but periodically checking your available capacity can reduce the risk of surprises.
  - **Advanced**: Ubuntu users can use the [Startup Applications](https://help.ubuntu.com/stable/ubuntu-help/startup-applications.html.en) utility to auto-start beacon and validator services on boot.
 
 
 ## Slash avoidance
-The Ethereum network penalizes malicious behavior with a slashing mechanism that burns staked Ethereum [<a href='#footnote-7'>7</a>]. Generally speaking, unless you deliberately act maliciously or over-engineer for redundancy, you won’t be slashed. 
- 
+The Ethereum network penalizes malicious behavior with a slashing mechanism that burns staked Ethereum [<a href='#footnote-7'>7</a>]. Generally speaking, unless you deliberately act maliciously or over-engineer for redundancy, you won’t be slashed.
+
 It’s very important for you to understand that **simple setups that occasionally experience downtime** are far better for you - and for the network - than complex highly-available architectures.
- 
+
 This is because **the easiest way to get slashed is to run your validating keys in two places at the same time**. This can happen if you don’t exercise extreme caution when configuring your validator client [<a href='#footnote-8'>8</a>]. This can also happen if you configure a “failover instance” that prematurely comes online, accidentally signaling malicious intent to the broader network.
- 
+
 Put simply: Ethereum gently discourages downtime with paper cuts. But it uses a ruthless banhammer to punish clones, and it doesn’t have any way to distinguish between accidental clones and real, malicious clones. So it’s best to keep it simple and expect some paper cuts.
- 
+
  - **Essential**: Never run your validating keys in two places at the same time.
  - **Essential**: Avoid over-engineering your validator setup. Keep it simple so your validator doesn't accidentally behave maliciously.
  - **Essential**: If you migrate your validator client to another machine, don't migrate your keys without also [migrating your slashing protection history](https://docs.prylabs.network/docs/wallet/slashing-protection/). If you lose your slashing protection history, we recommend waiting few epochs before starting your validator.
@@ -67,7 +67,7 @@ Put simply: Ethereum gently discourages downtime with paper cuts. But it uses a 
 
 ## Operational security
 Operational security describes aspects of security related to your day-to-day procedures. Maintaining operational security is a critical component of risk management.
- 
+
  - **Essential**: Dedicate your validator machine to validating, and use it for nothing else.
  - **Essential**: Use long, unique passwords for everything. Consider using a password manager.
  - **Essential**: Don’t use unsecured or public networks for anything related to validating.
@@ -80,7 +80,7 @@ Operational security describes aspects of security related to your day-to-day pr
 
 ## Operating system security
 We recommend applying the following security best practices to the operating system (OS) that your client runs on.
- 
+
  - **Essential**: Install only what you need.
  - **Essential**: Install only trusted software.
  - **Essential**: Keep your OS updated with the latest firmware updates and security patches.
@@ -90,43 +90,43 @@ We recommend applying the following security best practices to the operating sys
  - **Essential**: Reboot occasionally, but manually.
  - **Essential**: Start with a clean slate machine to minimize the risk of being exposed to malicious preloaded software.
  - **Essential**: Never run the client software under “administrator” accounts. The account that runs your client software should be granted the permissions it needs, and only the permissions it needs.
- 
+
 Linux-specific best practices:
- 
+
  - **Essential**: Don't use `root` unless you need to. Don't run anything as `root`.
  - **Essential**: Configure time sync. The Ethereum Launchpad demonstrates this as part of their [validator checklist](https://launchpad.ethereum.org/en/checklist).
- - **Essential**: Enable the UFW firewall [<a href='#footnote-9'>9</a>]. 
+ - **Essential**: Enable the UFW firewall [<a href='#footnote-9'>9</a>].
  - **Advanced**: Disable the root account, root account login, and password-based login [<a href='#footnote-10'>10</a>].
  - **Advanced**: Disable SSH password authentication. Use SSH keys only [<a href='#footnote-11'>11</a>].
 
 ## Wallet and key management
-You’ll be managing two types of keys: validator keys and withdrawal keys. Prysm only needs access to your validator keys. You can learn more about this [here on the Ethereum blog](https://blog.ethereum.org/2020/05/21/keys/).
-  
- - **Essential**: Keep your withdrawal keys secure, offline, and physically separated from your validator instance. Use your withdrawal keys only when withdrawing funds - otherwise these keys should never touch Prysm, or any other software.
+You’ll be managing two types of keys: validator keys and withdrawal keys. Agora-cl only needs access to your validator keys. You can learn more about this [here on the Ethereum blog](https://blog.ethereum.org/2020/05/21/keys/).
+
+ - **Essential**: Keep your withdrawal keys secure, offline, and physically separated from your validator instance. Use your withdrawal keys only when withdrawing funds - otherwise these keys should never touch Agora-cl, or any other software.
  - **Essential**: Don't use external devices that you don't trust.
  - **Essential**: Keep your mnemonic phrase in a safe place, offline.
  - **Essential**: Generate your wallet and keys on trusted hardware with the internet turned off.
- - **Essential**: Review [Prysm’s security considerations](https://docs.prylabs.network/docs/wallet/introduction#security-considerations) before generating your wallet and keys.
+ - **Essential**: Review [Agora-cl’s security considerations](https://docs.prylabs.network/docs/wallet/introduction#security-considerations) before generating your wallet and keys.
  - **Essential**: Keep your wallet mnemonic phrase and withdrawal keys physically separated from your validator client.
  - **Advanced**: Generate your wallet and keys using new, airgapped hardware that has never been - and will never be - connected to the internet.
- - **Advanced**: Use a metal wallet to protect your mnemonic phrase [<a href='#footnote-12'>12</a>]. 
+ - **Advanced**: Use a metal wallet to protect your mnemonic phrase [<a href='#footnote-12'>12</a>].
  - **Advanced**: Build the key generation software from source - don’t trust third-party binaries.
  - **Advanced**: Use a [Web3Signer](https://docs.prylabs.network/docs/wallet/web3signer/) to maintain separation between your keys and client software.
 
 ## Troubleshooting
-Ethereum and its client software are constantly improving. This constant change means that unexpected things may happen that require troubleshooting. 
-  
+Ethereum and its client software are constantly improving. This constant change means that unexpected things may happen that require troubleshooting.
+
  - **Essential**: Expect unexpected things to happen.
- - **Essential**: Be prepared to engage with the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) if you need help troubleshooting issues.
+ - **Essential**: Be prepared to engage with the [Agora-cl Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) if you need help troubleshooting issues.
  - **Essential**: When sharing logs, be sure to redact personally identifiable information and metadata that can be used to identify your validator.
- - **Essential**: Learn how to [inspect Prysm's performance](https://docs.prylabs.network/docs/monitoring/is-everything-fine).
- - **Essential**: Familiarize yourself with [Prysm's P2P connectivity guidance](https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip).
- - **Essential**: Review [the Prysm FAQ](https://docs.prylabs.network/docs/faq).
+ - **Essential**: Learn how to [inspect Agora-cl's performance](https://docs.prylabs.network/docs/monitoring/is-everything-fine).
+ - **Essential**: Familiarize yourself with [Agora-cl's P2P connectivity guidance](https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip).
+ - **Essential**: Review [the Agora-cl FAQ](https://docs.prylabs.network/docs/faq).
 
 ## Migration security
 Migrating your validator from one machine to another is a delicate process that requires attention to detail. Migrating between machines significantly increases the risk of slashing.
-  
- - **Essential**: Review [Prysm's migration guidance](https://docs.prylabs.network/docs/advanced/migrating-keys) for a detailed overview of the process and considerations.
+
+ - **Essential**: Review [Agora-cl's migration guidance](https://docs.prylabs.network/docs/advanced/migrating-keys) for a detailed overview of the process and considerations.
  - **Essential**: Never run more than a single validator process with the same keys loaded.
  - **Essential**: Accept downtime as part of a successful migration.
  - **Essential**: Maintain and utilize slashing protection.
@@ -154,17 +154,17 @@ Migrating your validator from one machine to another is a delicate process that 
 
 ## Learning resources
 
- - [Prysm Discord server](https://discord.gg/prysmaticlabs)
+ - [Agora-cl Discord server](https://discord.gg/prysmaticlabs)
  - [Ethereum launchpad](https://launchpad.ethereum.org/en/overview)
- - [Ethereum launchpad FAQ](https://launchpad.ethereum.org/en/faq) 
+ - [Ethereum launchpad FAQ](https://launchpad.ethereum.org/en/faq)
  - [Eth2 rewards and penalties calculator](https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491)
  - [EthStaker Discord server](https://invite.gg/ethstaker)
  - [EthStaker subreddit](https://reddit.com/r/ethstaker)
 
 
 ## Closing remarks
-Participating as a validator can be rewarding public service [<a href='#footnote-13'>13</a>], but it's not without risk. Following these security best practices will help you minimize risk. 
- 
+Participating as a validator can be rewarding public service [<a href='#footnote-13'>13</a>], but it's not without risk. Following these security best practices will help you minimize risk.
+
 If you have any questions, feel free to visit our [Discord](https://discord.gg/prysmaticlabs).
 
 

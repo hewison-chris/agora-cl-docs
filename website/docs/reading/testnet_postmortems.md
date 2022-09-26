@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 ## Testnet Incident Reports
 
-As part of our day to day job in building eth2 with our Prysm project, we are tasked with maintaining a high integrity cloud deployment that runs several nodes in our testnet. Additionally, we are always on call to determine problems which arise in the network and must be addressed by the team. This page outlines a collection of incident reports and their resolutions from catastrophic events in our testnet. We hope it will shed more light on our devops process and how we tackle the hard problems managing a distributed system such as eth2 entails.
+As part of our day to day job in building eth2 with our Agora-cl project, we are tasked with maintaining a high integrity cloud deployment that runs several nodes in our testnet. Additionally, we are always on call to determine problems which arise in the network and must be addressed by the team. This page outlines a collection of incident reports and their resolutions from catastrophic events in our testnet. We hope it will shed more light on our devops process and how we tackle the hard problems managing a distributed system such as eth2 entails.
 
 ### Not Receiving P2P Blocks (Incident #7)
 
@@ -22,13 +22,13 @@ As part of our day to day job in building eth2 with our Prysm project, we are ta
 
 **Network:** Topaz
 
-**Summary:** Beacon nodes were not receiving blocks via gossipsub p2p at all, making it impossible to keep up with the chain head after initial sync completes. 
+**Summary:** Beacon nodes were not receiving blocks via gossipsub p2p at all, making it impossible to keep up with the chain head after initial sync completes.
 
 **Reference issues:**
 https://github.com/prysmaticlabs/prysm/issues/5476
 https://github.com/prysmaticlabs/prysm/issues/5491
 
-**Impact:** This incident was reproducible on most node restarts, making it likely to kill our testnet if left unchecked. 
+**Impact:** This incident was reproducible on most node restarts, making it likely to kill our testnet if left unchecked.
 
 **Root Causes:** There was a race condition from the sync service needing access to the genesis time to compute a fork digest for subscribing to gossipsub topics. This value is set in the p2p service, but sometimes sync would begin before the p2p service, leading it to have a genesis time of 0.
 
@@ -60,7 +60,7 @@ p2p_topic_peer_count{topic="/eth2/f071c66c/proposer_slashing/ssz_snappy"} 3
 p2p_topic_peer_count{topic="/eth2/f071c66c/voluntary_exit/ssz_snappy"} 3
 ```
 
-Showing duplicate values for various topics, where the 00000000 and f071c66c are the fork digests for the node. The 0 value was problematic, likely showing the sync service was started with a genesis time of 0. Preston then identified: 
+Showing duplicate values for various topics, where the 00000000 and f071c66c are the fork digests for the node. The 0 value was problematic, likely showing the sync service was started with a genesis time of 0. Preston then identified:
 
 #### Timeline
 
@@ -70,11 +70,11 @@ Showing duplicate values for various topics, where the 00000000 and f071c66c are
 2020-04-18 (all times UTC)
 - 08:02:00 Preston mentions he observes fork ENR mismatches in peer connections, Raul dismisses it as likely just a bootnode failure, and Preston also observes his local node isn’t receiving any blocks via gossip sub p2p
 - 22:16:00 Preston tries to discover a potential race condition by making the p2p.ForkDigest() function return an error if p2p.genesisTime is not set, which ended up panicking right away, giving us a clue
-- 22:30:00 Raul mentions there are two places where the state initialized feed fires, and they are not likely to have bugs. This feed is what notifies other services in Prysm of the genesis time and the genesis validators root, two critical values to compute a small hex digest used for subscribing to gossipsub topics.
+- 22:30:00 Raul mentions there are two places where the state initialized feed fires, and they are not likely to have bugs. This feed is what notifies other services in Agora-cl of the genesis time and the genesis validators root, two critical values to compute a small hex digest used for subscribing to gossipsub topics.
 - 22:33:00 Preston confirms the sync genesis time value is set to 0, and that we are likely subscribing to wrong gossip topics
 - 22:35:00 Nishant mentions: “so sync needs to wait after p2p is initialized seems like sync and p2p start at the same time which is our main problem”
 - 22:36:00 Preston reports the ForkDigest method does not need to be a pointer receiver of the p2p service, but can instead be a pure helper function that services can fill in with canonical values from the blockchain service, preventing any potential race conditions
-- 22:39:00 Preston reports the issue is now resolved in his local node after seeing the beacon block p2p received metrics go up p2p_message_received_total{topic="/eth2/f071c66c/beacon_block/ssz_snappy"} 19 
+- 22:39:00 Preston reports the issue is now resolved in his local node after seeing the beacon block p2p received metrics go up p2p_message_received_total{topic="/eth2/f071c66c/beacon_block/ssz_snappy"} 19
 
 ### Chain Stuck at Genesis (Incident #6)
 
@@ -101,7 +101,7 @@ Showing duplicate values for various topics, where the 00000000 and f071c66c are
 
 #### Root Cause
 
-The problem had to do with usage of both `go-ssz.HashTreeRoot` and `stateutil.HashTreeRootState` in Prysm for the genesis state. Explanation outlined here: https://github.com/prysmaticlabs/prysm/issues/4526#issuecomment-573828747
+The problem had to do with usage of both `go-ssz.HashTreeRoot` and `stateutil.HashTreeRootState` in Agora-cl for the genesis state. Explanation outlined here: https://github.com/prysmaticlabs/prysm/issues/4526#issuecomment-573828747
 
 #### Timeline
 
@@ -111,14 +111,14 @@ The problem had to do with usage of both `go-ssz.HashTreeRoot` and `stateutil.Ha
 2019-01-10
 - 00:00:00 Genesis time was reached.
 - 00:00:00 Minio backup occurs. Link
-- 00:00:16 Slot 1 passed, no block produced. 
+- 00:00:16 Slot 1 passed, no block produced.
 - 00:04:00 Preston observes logs that fail GetBlock RPC across all validators. "Could not compute state root: could not calculate state root at slot 0: could not process block: could not process block header: parent root 0x0e6c95db700881611523e282ec3fcaeeace681786aa47928c5903650165c6165 does not match the latest block header signing root in state 0x8b25301bdeba020d4226e949eae0ecefb8863e060b7844566d51e0a42ed6490e"
 - 00:08:00 Preston restarts prod-7 and shifts all traffic there. The idea was to clear any cache value that existed before genesis start. This attempt was unsuccessful at resolving the issue.
 - 00:15:00 All hands on deck called.
 - 00:21:00 Preston deploys a hotfix. (See supporting info)
 - 00:31:00 Preston shifts all traffic to prod-7, which has the hotfix. This attempt is unsuccessful.
 - 00:33:00 Preston wipes the DB of prod-6 and restarts prod-6.
-- 00:43:00 Preston shifts all traffic to prod-6. Blocks are starting to be produced. 
+- 00:43:00 Preston shifts all traffic to prod-6. Blocks are starting to be produced.
 - 00:46:00 Preston wipes all other prod databases and restarts. Prod-6 still only one serving traffic.
 - 00:48:00 Ivan communicates to users to wipe their database and restart their nodes to sync.
 - 00:55:00 Nodes cannot sync with --init-sync-state-cache, a nil state is attempted to be saved in the database.
@@ -126,7 +126,7 @@ The problem had to do with usage of both `go-ssz.HashTreeRoot` and `stateutil.Ha
 - 01:10:00 Preston scales prod nodes to 10 and reverts the problem flag. This is to prevent prod-6 from getting killed if prod-7 reports healthy prematurely.
 - 01:20:00 Preston unshifts traffic from prod-6. All healthy prod pods are serving traffic now with high gRPC success rate.
 - 16:18:00 Preston inspects the backup database to observe that the genesis state was equal to a genesis state from running prod pod.
-- 16:29:00 Preston inspects the backup database to observe that the genesis block state root does not match the genesis state. In the problem database, genesis block state root is 0x5a45fd74d5359fb113ec5eaa8614b652aa4ef13493b1ff9439ac7bdadaed224a and genesis state root is 0x710178cf469dcd70bb1c97630205399d26e8f0913659bb591ec9c0c1ab734f1e and the hash tree root of the problem genesis block is 0x0e6c95db700881611523e282ec3fcaeeace681786aa47928c5903650165c6165. 
+- 16:29:00 Preston inspects the backup database to observe that the genesis block state root does not match the genesis state. In the problem database, genesis block state root is 0x5a45fd74d5359fb113ec5eaa8614b652aa4ef13493b1ff9439ac7bdadaed224a and genesis state root is 0x710178cf469dcd70bb1c97630205399d26e8f0913659bb591ec9c0c1ab734f1e and the hash tree root of the problem genesis block is 0x0e6c95db700881611523e282ec3fcaeeace681786aa47928c5903650165c6165.
 - 17:10:00 After further investigation between a healthy DB and one that was in the incident, Raul finds the genesis states in the DB match, but the genesis blocks mismatch due to state root problems. This is scary as it does not make much sense with our codebase.
 
 #### Supporting information
@@ -184,18 +184,18 @@ There wasn’t an obvious trigger that we were able to inspect. All the major me
 
 2019-01-01 (all times UTC)
 - 04:50 Nishant notices a ping on discord indicating that it has been more than 10 epochs since finality. Looking at the grafana charts, it seemed normal, so Nishant ignored it thinking it would resolve by itself.
-- 05:00 Nishant again looks at the grafana charts but notices that there hasn’t been justification or finality for 15 mins. However all other metrics and charts are normal and there isn’t a directly obvious explanation for it. 
+- 05:00 Nishant again looks at the grafana charts but notices that there hasn’t been justification or finality for 15 mins. However all other metrics and charts are normal and there isn’t a directly obvious explanation for it.
 - 05:05 Nishant notices that the p2p message count has dropped by a very large amount, which explains the long period without finality in the current chain. With very little attestations being sent over the wire, we have a large drop in participation rates and therefore a drop in justification and finality.
 - 05:37 Nishant tries to rollout the current master image to all production pods.
 - 05:50 The rollout does not bring any tangible results, with there being no justifcation or finality still. At this point it has been more than 50 epochs since finality.
 - 07:30 Now high grpc failure rates happen across all pods. At this moment it has been more than a 100 epochs since finality. Due to that this brings a lot of stress on the beacon-node with regards to forkchoice when determining the current head.
 - 07:40 Nishant now reverts the connection manager fix and tries to roll the old image out to the experimental pods.
 - 08:30 The fix however, takes a very long time to rollout due to the slow sync, which displays 2 hours to sync till the current chain head. Nishant then deploys a new fix which includes a recently merged PR for faster sync processing.
-- 08:50 However the fix did not have the desired effect , and now grpc failure rates climbed even higher. 
+- 08:50 However the fix did not have the desired effect , and now grpc failure rates climbed even higher.
 - 9:40 Preston, Terence and Raul are all now online and the situation is relayed to them.
 - 09:45 Preston now scales down all the relay nodes to 0 to reduce the peer counts.
 - 10:00 Preston deletes the stuck production pods, to allow only synced nodes to be hosting validators.
-- 10:10 Attestations Message Rate increasing now. 
+- 10:10 Attestations Message Rate increasing now.
 - 10:12 We finally get justification
 - 10:17 We get finality after 5 hours and the testnet survives for another day.
 - 10:45 Now that all pods are healthy in the cluster, the relay is turned back on by Preston.
@@ -208,7 +208,7 @@ There wasn’t an obvious trigger that we were able to inspect. All the major me
 
 **Status:** Root cause under investigation
 
-**Summary:** A PR into Prysm (Add Lock When Accessing Checkpoints #4086)  including a mutex lock for reading and updated justified checkpoint values was checked-in to Prysm, pushed into a Canary deployment, and then rolled out into production after the Canary successfully passed. The feature led to deadlocks in requesting attestations and proposing blocks, creating a massive drop in validator participation eventually leading to many epochs since finality.
+**Summary:** A PR into Agora-cl (Add Lock When Accessing Checkpoints #4086)  including a mutex lock for reading and updated justified checkpoint values was checked-in to Agora-cl, pushed into a Canary deployment, and then rolled out into production after the Canary successfully passed. The feature led to deadlocks in requesting attestations and proposing blocks, creating a massive drop in validator participation eventually leading to many epochs since finality.
 
 **Impact:** Large number of epochs since finality created lots of context deadlines being exceeded, causing gRPC success to tank, and eventually making it hard for beacon nodes to serve any traffic as it would take too long to process a block or request attestations even after the problematic feature was reverted. This led to many cascading failures when attempting to revive the stateful set pods and rollout other old images.
 
@@ -223,10 +223,10 @@ There wasn’t an obvious trigger that we were able to inspect. All the major me
 #### Lessons Learned
 
 **What went well**
-We were able to quickly come up with hypotheses as to what went wrong, we used Jaeger to notice forkchoice.OnBlock was taking an unreasonable amount of time, and identified that it was calling the function where the mutex deadlock was occurring. 
+We were able to quickly come up with hypotheses as to what went wrong, we used Jaeger to notice forkchoice.OnBlock was taking an unreasonable amount of time, and identified that it was calling the function where the mutex deadlock was occurring.
 
 **What went wrong**
-Even after reverting the bad feature causing the original problem, it took a lot of manual effort to fix the cascading failures and other side-effects of the original problem. 
+Even after reverting the bad feature causing the original problem, it took a lot of manual effort to fix the cascading failures and other side-effects of the original problem.
 
 #### Where we got lucky
 
@@ -241,7 +241,7 @@ We thankfully had archival and experimental pods that were working fine and as s
 - 09:40 - Scaling down does not work - we receive an alert in discord mentioning > 25 epochs since finality
 - 09:53 - Preston has observes very long times for spans in jaeger in proposing a block, suggesting there is some sort of mutex deadlock going on. Signatures failing on request block with the message `parent root does not match the latest block header signing root in state`
 - 10:00 - Raul begins investigating, looking in more detail at jaeger spans to increase likeliness of lock being the root cause
-- 10:16 - Raul identifies large monitoring gap in Jaeger, with the most expensive operation in forkchoice.OnBlock not having a span. Looking at Prysm PR #4086 shows a function `updateCheckpoints` called in forkchoice.OnBlock without a span, providing high likelihood it is the offender
+- 10:16 - Raul identifies large monitoring gap in Jaeger, with the most expensive operation in forkchoice.OnBlock not having a span. Looking at Agora-cl PR #4086 shows a function `updateCheckpoints` called in forkchoice.OnBlock without a span, providing high likelihood it is the offender
 - 10:24 - Preston suggests rolling back all images to version before PR #4086, suggesting image tag: gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:7f9a060569d32a1ae05027ba2f0337b586b27dfd7a46307f552046271f1b448c. Raul proceeds and applies image to statefulset, archival deployment, and experimental deployment
 - 10:33 - Rollback succeeded in removing the deadlock in forkchoice.OnBlock, but grpc.ProposeBlock still failing at an alarming rate. Investigation into jaeger spans concludes ProcessSlots in the state transition function is taking too long and leading to deadline exceeded problems
 - 10:38 - Raul identifies ProcessSlots is taking an average of 5 seconds due to SSZ in the production nodes, making it nearly impossible for validators to attest or request attestations to put into blocks
@@ -253,18 +253,18 @@ We thankfully had archival and experimental pods that were working fine and as s
 - 12:16 - Confirmed via Kibana pods finish initial sync in the statefulset but at the end have unhealthy status `Node is unhealthy! ERROR syncing\n*sync.RegularSync: ERROR waiting for initial sync`
 - 12:18 - Raul tracks logs for all beacon-chain-prod nodes and notices they always are unhealthy after initial sync but there are no error logs, issues persist
 - 12:30 - Nishant resumes investigation, decides to scale down statefulset prod nodes to 0
-- 12:52 - Network achieves justification 
-- 12:56 - Network achieves finality 
+- 12:52 - Network achieves justification
+- 12:56 - Network achieves finality
 - 13:00 - Network is all operational, systems back to normal, gRPC back to 100%. However, only running with archival + experimental pods. Statefulset is still at 0 pods.
 - 15:30 - Statefulset scaled back to 5
 
 11/24/2019
-- 18:00 - Alert received for no finality in 10 Epochs. 
-- 19:20 - Terence confirm with Danny that the finality reversions we have been witnessing is indeed a spec bug. However, there isn’t an easy fix that we can deploy immediately, so we will have to wait till the next release. 
+- 18:00 - Alert received for no finality in 10 Epochs.
+- 19:20 - Terence confirm with Danny that the finality reversions we have been witnessing is indeed a spec bug. However, there isn’t an easy fix that we can deploy immediately, so we will have to wait till the next release.
 - 20:30 - Nishant points to a Pull Request that modified the logic behind our pending queues that could have been the cause of our finality issues.He then opens up a PR to revert it.
 - 20:50 Preston rolls out the hotfix with the PR reverted to our experimental nodes.
 - 21:30 Seeing as the rollout did not have any negative effect on our experimental nodes, Preston then pushes the hotfix to our production nodes.
-- 22:30 The hotfix has been successfully rolled out 
+- 22:30 The hotfix has been successfully rolled out
 - 23:30 We still get alerts with no finality for 10 epochs. Which means that the hotfix was unsuccessful.
 
 11/25/2019
@@ -284,13 +284,13 @@ Statefulset prod pods being stuck even after a rollout of a previous image was c
 
 **Status:** Mitigated; In root cause investigation
 
-**Summary:** Prysm nodes observed a finalized checkpoint reversion which caused all attestations to be rejected. 
+**Summary:** Agora-cl nodes observed a finalized checkpoint reversion which caused all attestations to be rejected.
 
 **Impact:** 56 epochs gap in finality
 
-**Root Causes:** Prysm clients experienced a spec allowed finality reversion during a forking condition. Prysm’s chain service maintains the most recent finalized checkpoint and has validation to ensure a finalized checkpoint can never revert. This led to a difference in finalized checkpoints between the chain service cache and the head state. All incoming attestations were validated and rejected based on the chain service checkpoint. 
+**Root Causes:** Agora-cl clients experienced a spec allowed finality reversion during a forking condition. Agora-cl’s chain service maintains the most recent finalized checkpoint and has validation to ensure a finalized checkpoint can never revert. This led to a difference in finalized checkpoints between the chain service cache and the head state. All incoming attestations were validated and rejected based on the chain service checkpoint.
 
-**Trigger:** Finality decreases 
+**Trigger:** Finality decreases
 
 **Resolution:** TBD -- Fix the condition for updating finalized check point cache
 
@@ -298,7 +298,7 @@ Statefulset prod pods being stuck even after a rollout of a previous image was c
 
 #### Action Items
 
-- Confirm finality roll back is normal 
+- Confirm finality roll back is normal
 
 Confirmed it’s not normal. From Danny: The fork choice first narrows down the block tree by finality, then narrows it down by latest justified. In the above scenario, the block at slot x+8 should not even be considered in the fork choice
 
@@ -314,10 +314,10 @@ Lack of metrics. For a single entry, we often have to consider 2 values. The lat
 2019-11-21 (all times UTC)
 - 23:35:26 - Received  block 74137 with pre state of slot 74132. The pre state has finalized epoch is 9264.
 - 23:35:26~23:36:50 - No blocks received.
-- 23:36:50 - Received block 74144 with pre state of slot 74130 (in epoch 9266). The pre state has finalized epoch 9263. Attestations favored block from 74144 and made post state of slot 74144 the head state which has finalized epoch 9263. Database headState was updated where the finalized epoch is now 9263. ChainService.HeadState (cache) is also updated with the new state with finalized epoch of 9263. The chain service FinalizedCheckpt was not updated due to an enforcement that the finalized checkpoint cannot drop. 
+- 23:36:50 - Received block 74144 with pre state of slot 74130 (in epoch 9266). The pre state has finalized epoch 9263. Attestations favored block from 74144 and made post state of slot 74144 the head state which has finalized epoch 9263. Database headState was updated where the finalized epoch is now 9263. ChainService.HeadState (cache) is also updated with the new state with finalized epoch of 9263. The chain service FinalizedCheckpt was not updated due to an enforcement that the finalized checkpoint cannot drop.
 - 23:37 - Prometheus observed finalized epoch drop from 9264 to 9263. Link. This affected all Prylabs nodes at the same time.
-- 23:37 - P2P attestations in beacon chain nodes that attestations were “old” since their source was 6264. Nodes were producing attestations with the finalized checkpoint epoch at 9263, but nodes were validating them in p2p against 9264. 
-- 23:47 - Page is received. Preston begins investigation. 
+- 23:37 - P2P attestations in beacon chain nodes that attestations were “old” since their source was 6264. Nodes were producing attestations with the finalized checkpoint epoch at 9263, but nodes were validating them in p2p against 9264.
+- 23:47 - Page is received. Preston begins investigation.
 
 2019-11-22
 - 00:00 - Preston suspects something is going on with the finalized checkpoint.
@@ -403,9 +403,9 @@ Only thing I think of is get_head did not filter out b144 based on "block tree r
 
 **Status:** Action items in progress
 
-**Summary:** Goerli PoW test network experienced a hard fork which the Prysm testnet nodes were not compatible with. As a result, all connections to Goerli PoW chain from Prysm nodes failed and the condition could not be recovered before too many epochs had lapsed to the point that Prysm can not compute assignments fast enough.
+**Summary:** Goerli PoW test network experienced a hard fork which the Agora-cl testnet nodes were not compatible with. As a result, all connections to Goerli PoW chain from Agora-cl nodes failed and the condition could not be recovered before too many epochs had lapsed to the point that Agora-cl can not compute assignments fast enough.
 
-**Impact:** Prysm testnet stalled for 2 hours. Committee assignments could not be calculated within adequate time without substantial code changes. Prysm testnet required a restart.
+**Impact:** Agora-cl testnet stalled for 2 hours. Committee assignments could not be calculated within adequate time without substantial code changes. Agora-cl testnet required a restart.
 
 **Root Causes:** Tight coupling with PoW. Committee assignments fail to compute within a short deadline.
 
@@ -425,27 +425,27 @@ Only thing I think of is get_head did not filter out b144 based on "block tree r
 - Inability to start without ETH1 caused the chain to be 100% offline.
 
 #### Where we got lucky
-This incident exposes a single point of failure with PoW: Prysm nodes could not start without an existing PoW connection, despite being recently synced.
+This incident exposes a single point of failure with PoW: Agora-cl nodes could not start without an existing PoW connection, despite being recently synced.
 
 #### Timeline
 
 2019-10-30 (all times UTC)
 - 13:36 soc1c announces hardfork happens within one hour.
-- 13:53 Istanbul hardfork happens at block 1561651. All of Prysm goerli nodes were not compatible and could not advance the chain.
+- 13:53 Istanbul hardfork happens at block 1561651. All of Agora-cl goerli nodes were not compatible and could not advance the chain.
 - ~13:55 Beacon chain nodes stop serving traffic. All are reporting unhealthy due to lack of  healthyETH1 connection.
 - 14:05 Chain starts to stall. See chart.
 - ~14:10 Beacon chain nodes have been unhealthy for too long. Kubernetes scheduler starts to reschedule the pods, but pods cannot start.
-- 14:13 Chain stall metric drops off with no data. Presumably because all beacon chain nodes are dead and the metric is not being scraped/reported. 
+- 14:13 Chain stall metric drops off with no data. Presumably because all beacon chain nodes are dead and the metric is not being scraped/reported.
 - 15:11 Peter reaches out on twitter.
 - 15:11 Chain stalled alert fired.
 - 15:16 Chain stalled alert resolved. (Due to lack of data).
 - 16:00 Prysmatic Goerli nodes updated, syncing from genesis.
 - 16:10 Prysmatic Goerli nodes back online.
 - ~16:12 Hacked image deployed to be immediately in sync.
-- 16:14 Prysm nodes can start again and come online.
+- 16:14 Agora-cl nodes can start again and come online.
 - ~16:14 A beacon block is produced, stalled chain event fires again.
-- 16:22 All Prysm nodes back online, except prod-4 and prod-1(expected those are stuck due to issue 3885).
-- ~16:22 Hacked image rolled back. 
+- 16:22 All Agora-cl nodes back online, except prod-4 and prod-1(expected those are stuck due to issue 3885).
+- ~16:22 Hacked image rolled back.
 - 16:31 Nishant observes deadline exceeded at high rate for committee assignments. The chain is considered unrecoverable.
 - 16:31 Investigation ends.
 
@@ -475,7 +475,7 @@ Finality alert notified on call and response time was less than a minute.
 **What went wrong**
 - There are multiple issues causing finality gap and it was hard to isolate the problem.
 - We allowed too many external peers to join the testnet and go offline. At the time of the event, we only controlled 70% of active validators which is dangerously close to falling under 2/3rds majority. Given the ephemeral nature of external testers, we can assume that the majority of validators not controlled by Prysmatic Labs are offline. Any issue in the network is extra sensitive to finality gaps.
-- There is an existing bug where non-canonical blocks are served on p2p RPC requests for blocks by range. This is blocking testnet users from syncing to head and is blocking normal rollout procedures for beacon-chain-prod-1.  
+- There is an existing bug where non-canonical blocks are served on p2p RPC requests for blocks by range. This is blocking testnet users from syncing to head and is blocking normal rollout procedures for beacon-chain-prod-1.
 
 #### Where we got lucky
 - Some validators were close to ejection. After enough of the exponential penalties, the network was able to reach finality. Had this event continued beyond 100 epochs, it is very likely that we would not have been able to recover due to timeouts in committeeAssignment requests as it grows more expensive as the gap in finality increases.
@@ -492,12 +492,12 @@ Finality alert notified on call and response time was less than a minute.
 - 7:16:16 beacon-chain-experimental-6dcdd678d4-s62lv experiences less than 95% gRPC success rate for ProposeBlock. This pod is running the new image from rollout.
 - 7:16:44 Finalized epoch reaches 17332, then drops to 17331.
 - 7:19:32 beacon-chain-prod-0 experiences less than 95% gRPC success rate for ProposeBlock. This pod is running the old image and has not been restarted in over two days due to a stuck rollout with prod-1.
-- 7:19:32 beacon-chain-prod-2 experiences less than 95% gRPC success rate for ProposeBlock. Uncertain if this pod was recently restarted or running old image. 
+- 7:19:32 beacon-chain-prod-2 experiences less than 95% gRPC success rate for ProposeBlock. Uncertain if this pod was recently restarted or running old image.
 - 7:19:32 Several pods experience high rate of p2p processing failures on beacon block gossip topic.
 - 7:20:00 too_long_since_finality_10 alert starts.
 - 7:20:00 Preston ACKs alert and begins investigation.
 - 7:27:00 Preston observes block proposals are failing on three pods.
-- 7:27:00 Preston observes finalized_epoch metric drop by 1. 
+- 7:27:00 Preston observes finalized_epoch metric drop by 1.
 - 7:33:04 Finality is reached again. This gap was 26 epochs.
 - 7:37:00 Preston observes many “could not verify indexed attestation: attestation aggregation signature did not verify” errors from receiving attestations of p2p.
 - 7:40:00 Preston scales experimental pods to 0.

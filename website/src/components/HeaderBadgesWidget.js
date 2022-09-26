@@ -35,7 +35,7 @@ export const HeaderBadgesWidget = ({ commaDelimitedContributors, lastVerifiedDat
 			return (
 				<a class="header-badge">
 					<span class="badge-avatar emoji-avatar">✔️</span>
-					<span class="badge-label">Last verified on <strong>{dateString}</strong> using Prysm {versionString}</span>
+					<span class="badge-label">Last verified on <strong>{dateString}</strong> using Agora-cl {versionString}</span>
 				</a>
 			)
 		}

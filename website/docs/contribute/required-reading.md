@@ -12,7 +12,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 This page is deprecated and no longer maintained. It may not have accurate information.
 :::
 
-This page serves material that is necessary to catch up with the current state of Ethereum development, and equips readers with the knowledge required to begin making meaningful contributions to the Prysm project. Whether you are an expert on all things Ethereum or are new to the blockchain world entirely, there are appropriate resources here that will help you get up to speed swiftly.
+This page serves material that is necessary to catch up with the current state of Ethereum development, and equips readers with the knowledge required to begin making meaningful contributions to the Agora-cl project. Whether you are an expert on all things Ethereum or are new to the blockchain world entirely, there are appropriate resources here that will help you get up to speed swiftly.
 
 ## Blockchain and Ethereum basics
 
@@ -93,7 +93,7 @@ This page serves material that is necessary to catch up with the current state o
 
 ## Sharding in Ethereum
 
-This section covers the minimum sharding knowledge requirements for both Prysm's part-time and core contributors.
+This section covers the minimum sharding knowledge requirements for both Agora-cl's part-time and core contributors.
 
 ### For part-time contributors
 

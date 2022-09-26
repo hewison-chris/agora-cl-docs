@@ -1,6 +1,6 @@
 ---
 id: install-with-docker
-title: Install Prysm with Docker
+title: Install Agora-cl with Docker
 sidebar_label: Install using Docker
 ---
 
@@ -11,7 +11,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Raul,Mick" />
 
-Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker. We use [Bazel](https://bazel.build) to push preconfigured Docker images to a publicly accessible Google Cloud container registry. 
+Agora-cl can be installed on Windows, GNU/Linux, and MacOS systems with Docker. We use [Bazel](https://bazel.build) to push preconfigured Docker images to a publicly accessible Google Cloud container registry.
 
 :::tip Not familiar with Docker? Try our quickstart
 
@@ -37,27 +37,27 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     </tr>
     <tr>
       <td>
-        <ul> 
-          <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit</li> 
-          <li><strong>CPU</strong>: Intel Core i5–760 or AMD FX-8100 or better</li> 
-          <li><strong>Memory</strong>: 8GB RAM</li> 
-          <li><strong>Storage</strong>: SSD with 20GB+ available</li> 
-          <li><strong>Internet</strong>: Broadband connection</li> 
-          <li><strong>Software</strong>: The latest release of <a href='https://docs.docker.com/install/'>Docker</a> installed.</li> 
-        </ul> 
+        <ul>
+          <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit</li>
+          <li><strong>CPU</strong>: Intel Core i5–760 or AMD FX-8100 or better</li>
+          <li><strong>Memory</strong>: 8GB RAM</li>
+          <li><strong>Storage</strong>: SSD with 20GB+ available</li>
+          <li><strong>Internet</strong>: Broadband connection</li>
+          <li><strong>Software</strong>: The latest release of <a href='https://docs.docker.com/install/'>Docker</a> installed.</li>
+        </ul>
       </td>
       <td>
-        <ul> 
-          <li><strong>CPU</strong>: Intel Core i7–4770 or AMD FX-8310 or better</li> 
-          <li><strong>Memory</strong>: 16GB RAM</li> 
-          <li><strong>Storage</strong>: SSD with 100GB+ available</li> 
-        </ul> 
+        <ul>
+          <li><strong>CPU</strong>: Intel Core i7–4770 or AMD FX-8310 or better</li>
+          <li><strong>Memory</strong>: 16GB RAM</li>
+          <li><strong>Storage</strong>: SSD with 100GB+ available</li>
+        </ul>
       </td>
-    </tr> 
+    </tr>
 </table>
 
 
-## Download the Prysm Docker images
+## Download the Agora-cl Docker images
 
 First, ensure that you're running the most recent version of Docker:
 
@@ -65,7 +65,7 @@ First, ensure that you're running the most recent version of Docker:
 docker -v
 ```
 
-Next, pull the Prysm images:
+Next, pull the Agora-cl images:
 
 ```text
 ## stable, without Busybox debugging tools
@@ -81,12 +81,12 @@ docker pull gcr.io/prysmaticlabs/prysm/validator:latest-alpine
 docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:latest-alpine
 ```
 
-These commands will automatically install dependencies. 
+These commands will automatically install dependencies.
 
 
 ## Configure ports (optional)
 
-We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your beacon node startup command will configure Prysm to use your newly opened ports. Refer to [Configure ports and firewalls](../prysm-usage/p2p-host-ip.md) for more information.
+We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your beacon node startup command will configure Agora-cl to use your newly opened ports. Refer to [Configure ports and firewalls](../prysm-usage/p2p-host-ip.md) for more information.
 
 <div class='hide-tabs'>
 
@@ -94,7 +94,7 @@ We recommend opening up ports `tcp/13000` and `udp/12000` on your router and fir
 
 :::info Knowledge Check
 
-**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](../concepts/nodes-networks.md) before proceeding. 
+**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](../concepts/nodes-networks.md) before proceeding.
 
 :::
 
@@ -193,7 +193,7 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
 </TabItem>
 <TabItem value="win">
 
-To ensure that your Docker image has access to a data directory, mount a local drive to your container. Right click your Docker tray icon -> `Settings` -> `Shared Drives` -> select your drive -> `Apply`. Next, create a directory named `/prysm/` within your shared drive. This folder will be used as a local data directory for Prysm. This guide assumes that `C:` is the drive you've selected:
+To ensure that your Docker image has access to a data directory, mount a local drive to your container. Right click your Docker tray icon -> `Settings` -> `Shared Drives` -> select your drive -> `Apply`. Next, create a directory named `/prysm/` within your shared drive. This folder will be used as a local data directory for Agora-cl. This guide assumes that `C:` is the drive you've selected:
 
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
@@ -204,7 +204,7 @@ To ensure that your Docker image has access to a data directory, mount a local d
       <TabItem value="mainnet">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> 
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
   </TabItem>
@@ -273,7 +273,7 @@ The Ethereum launchpad URL is `https://launchpad.ethereum.org` and the only, off
 
 Use the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) to deposit your 32 ETH. If you want to participate in the **testnet**, use the [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
 
-Throughout the process, you'll be asked to generate new validator credentials using the [official Ethereum deposit command-line-tool](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Prysm from that folder in the next step.
+Throughout the process, you'll be asked to generate new validator credentials using the [official Ethereum deposit command-line-tool](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Agora-cl from that folder in the next step.
 
 ### Import keystores
 
@@ -346,7 +346,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCA
 </Tabs>
 
 
-:::tip Congratulations! 
+:::tip Congratulations!
 
 You’re now running a <strong>full Ethereum node</strong> and a <strong>validator</strong>.
 
@@ -357,7 +357,7 @@ It can a long time (from days to months) for your validator to become fully acti
 You can leave your **execution client**, **beacon node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
 
 
-## Appendix A: Manage Prysm with Docker
+## Appendix A: Manage Agora-cl with Docker
 
 To interact with your beacon node through Docker, use one of the following commands:
 
@@ -385,7 +385,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --clear-db \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> 
+  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 </TabItem>

@@ -16,7 +16,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 A **remote signing wallet** provides the ability to connect to a remote server to retrieve validating public keys and process signing requests via a secure [gRPC](https://grpc.io) connection. You must supply valid TLS certificates for establishing the secure connection to your server. We have created a reference implementation of a remote signer server, maintained as an open source, Apache 2 project on Github [here](https://github.com/prysmaticlabs/remote-signer) as a starting point
 
-To be compliant with a Prysm remote signing wallet, your remote signing server needs to implement the gRPC API specified in Prysm [here](https://github.com/prysmaticlabs/prysm/blob/7fff4ec41165e6581dda352b362d77fc6ca2710d/proto/validator/accounts/v2/keymanager.proto#L12).
+To be compliant with a Agora-cl remote signing wallet, your remote signing server needs to implement the gRPC API specified in Agora-cl [here](https://github.com/prysmaticlabs/prysm/blob/7fff4ec41165e6581dda352b362d77fc6ca2710d/proto/validator/accounts/v2/keymanager.proto#L12).
 
 ```go
 service RemoteSigner {
@@ -40,7 +40,7 @@ Remote sign requests are defined by the following protobuf schema
 
 ```go
 // SignRequest is a message type used by a keymanager
-// as part of Prysm's accounts implementation.
+// as part of Agora-cl's accounts implementation.
 message SignRequest {
   // 48 byte public key corresponding to an associated private key
   // being requested to sign data.
@@ -71,7 +71,7 @@ message SignResponse {
 }
 ```
 
-A Prysm validator client can then connect securely via [gRPC](https://grpc.io) to the remote server and perform its validating duties by relying on the server for the information it needs. Most advanced cloud deployments should likely use this approach, as it is the most customizable.
+A Agora-cl validator client can then connect securely via [gRPC](https://grpc.io) to the remote server and perform its validating duties by relying on the server for the information it needs. Most advanced cloud deployments should likely use this approach, as it is the most customizable.
 
 ## Usage
 

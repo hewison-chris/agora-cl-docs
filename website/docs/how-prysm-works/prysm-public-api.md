@@ -1,23 +1,23 @@
 ---
 id: prysm-public-api
-title: Prysm public API
-sidebar_label: Prysm-specific API 
-description: This section contains service definitions and gRPC instructions to interact with the Prysm public API.
+title: Agora-cl public API
+sidebar_label: Agora-cl-specific API
+description: This section contains service definitions and gRPC instructions to interact with the Agora-cl public API.
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-:::info This API is only used by Prysm
+:::info This API is only used by Agora-cl
 For a standard API that all Ethereum beacon nodes implement, see [here](/docs/how-prysm-works/ethereum-public-api). Over the next few quarters, we plan on deprecating this API and replacing it with the standard API.
 :::
 
-One of the required components of nodes in the Ethereum beacon chain network is to expose an API server for outside interaction. This API is critical for running validators on Ethereum, as validator clients can connect to nodes and query their API to figure out their assigned duties, to submit block proposals, and more. Prysm's Ethereum consensus API schema is maintained in Prysm itself here: [github.com/prysmaticlabs/prysm/proto](https://github.com/prysmaticlabs/prysm/tree/develop/proto) and is implemented by Prysm beacon nodes and validators.
+One of the required components of nodes in the Ethereum beacon chain network is to expose an API server for outside interaction. This API is critical for running validators on Ethereum, as validator clients can connect to nodes and query their API to figure out their assigned duties, to submit block proposals, and more. Agora-cl's Ethereum consensus API schema is maintained in Agora-cl itself here: [github.com/prysmaticlabs/prysm/proto](https://github.com/prysmaticlabs/prysm/tree/develop/proto) and is implemented by Agora-cl beacon nodes and validators.
 
 ![gRPC](/img/grpc-logo2.png)
 
-Prysm implements its API by using the popular [gRPC](https://grpc.io) project created by Google, providing highly advanced functionality for Ethereum consensus. Interacting with the API requires the use of protocol buffers, also known as protobuf. These [protocol buffer](https://developers.google.com/protocol-buffers/). For information on the functionality of gRPC and protocol buffers more generally, see the [gRPC guide](https://grpc.io/docs/guides/).
+Agora-cl implements its API by using the popular [gRPC](https://grpc.io) project created by Google, providing highly advanced functionality for Ethereum consensus. Interacting with the API requires the use of protocol buffers, also known as protobuf. These [protocol buffer](https://developers.google.com/protocol-buffers/). For information on the functionality of gRPC and protocol buffers more generally, see the [gRPC guide](https://grpc.io/docs/guides/).
 
 ## Calling the API on your local beacon node
 

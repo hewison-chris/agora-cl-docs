@@ -118,7 +118,7 @@ import TabItem from '@theme/TabItem';
             <div class='input-container'><input id="st-6" type='checkbox'/><span class='done'></span></div>
             <div class='guidance-container'>
                 <label for="st-6">8. Beacon node version</label>
-                <p>Ensure that you're using the <a href='https://github.com/prysmaticlabs/prysm/releases'>latest stable Prysm release</a>. Check Prysm's version by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
+                <p>Ensure that you're using the <a href='https://github.com/prysmaticlabs/prysm/releases'>latest stable Agora-cl release</a>. Check Agora-cl's version by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
             </div>
         </div>
         <div class='task'>
@@ -132,7 +132,7 @@ import TabItem from '@theme/TabItem';
             <div class='input-container'><input id="st-8" type='checkbox'/><span class='done'></span></div>
             <div class='guidance-container'>
                 <label for="st-8">10. Fee recipient configuration</label>
-                <p>Prysm will output an error if you attempt to provide an invalid Ethereum wallet address as a fee recipient address. You'll see warnings if a fee recipient address hasn't been provided. See <a href='../execution-node/fee-recipient'>Configure Fee Recipient</a> for more information.</p>
+                <p>Agora-cl will output an error if you attempt to provide an invalid Ethereum wallet address as a fee recipient address. You'll see warnings if a fee recipient address hasn't been provided. See <a href='../execution-node/fee-recipient'>Configure Fee Recipient</a> for more information.</p>
             </div>
         </div>
         <div class='task'>

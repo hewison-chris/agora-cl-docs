@@ -14,7 +14,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::info Knowledge Check
 
-**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](../concepts/nodes-networks.md) before proceeding. 
+**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](../concepts/nodes-networks.md) before proceeding.
 
 :::
 
@@ -40,7 +40,7 @@ Your node and validator will try to establish several types of connections:
  3. **Beacon nodes** try to connect to **many peer beacon nodes**.
  4. **Execution nodes** try to connect to **many peer execution nodes**.
 
-To establish these connections, your client software needs to be able to send and receive messages through specific ports. As a security best practice, we recommend blocking inbound traffic across all local ports, allowing inbound traffic on a port-by-port basis. 
+To establish these connections, your client software needs to be able to send and receive messages through specific ports. As a security best practice, we recommend blocking inbound traffic across all local ports, allowing inbound traffic on a port-by-port basis.
 
 The following firewall rules should be configured on any local operating system, third-party software, or hardware firewalls between your nodes and their internet connection:
 
@@ -51,12 +51,12 @@ The following firewall rules should be configured on any local operating system,
 | `3500/TCP`      | Block all traffic.                  | This is the JSON-RPC port for your beacon node's Query API. You (and apps) can use this port to check beacon node status and query consensus-layer chain data. This port generally shouldn't be exposed to the outside world.                                                                                |
 | `8551/TCP`      | Block all traffic.                  | Your beacon node connects to your execution node's [Engine API](https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md) using this port. Inbound and outbound traffic should be allowed through this port only if your local beacon node is connecting to a remote execution node. |
 | `4000/TCP`      | Block all traffic.                  | Your validator uses this port to connect to your beacon node via [gRPC](https://grpc.io). Inbound and outbound traffic should be allowed through this port only if your local validator is connecting to a remote beacon node.                                                                               |
-| `*/UDP+TCP`     | Allow outbound traffic.             | To [discover](https://github.com/ethereum/devp2p/wiki/Discovery-Overview) peers, Prysm's beacon node dials out through random ports. Allowing outbound TCP/UDP traffic from any port will help Prysm find peers.                                                                                             |
+| `*/UDP+TCP`     | Allow outbound traffic.             | To [discover](https://github.com/ethereum/devp2p/wiki/Discovery-Overview) peers, Agora-cl's beacon node dials out through random ports. Allowing outbound TCP/UDP traffic from any port will help Agora-cl find peers.                                                                                             |
 | `13000/TCP`     | Allow inbound and outbound traffic. | After we discover peers, we dial them through this port to establish an ongoing connection for [libp2p](https://libp2p.io/) and through which all gossip/p2p request and responses will flow.                                                                                                                |
 | `12000/UDP`     | Allow inbound and outbound traffic. | Your beacon node exposes this UDP port so that other Ethereum nodes can discover your node, request chain data, and provide chain data.                                                                                                                                                                      |
 | `30303/TCP+UDP` | Allow inbound and outbound traffic. | `30303/TCP` is your execution node's listener port, while `30303/UDP` is its discovery port. This rule lets your execution node connect to other peers. Note that some clients use `30301` by default.                                                                                                       |
 
-Note that both consensus and execution clients allow you to customize many of these ports. The above table of rules is based on default port values. 
+Note that both consensus and execution clients allow you to customize many of these ports. The above table of rules is based on default port values.
 
 When configuring `Allow inbound` rules, consider tying the rule to an IP address when possible. For example, if your beacon node on `Machine A` is connecting to a remote execution node on `Machine B`, `Machine B`'s `Allow inbound and outbound traffic over 8551` rule should be tied to `Machine A's` public IP address. More information about IP addresses and port forwarding is available below.
 
@@ -84,7 +84,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 | Public  | Visit [v4.ident.me](http://v4.ident.me/) or run `curl v4.ident.me` |
 | Router  | <code>ipconfig &#124; findstr /i "Gateway"</code>                  |
 
-  
+
 </TabItem>
 <TabItem value="others">
 
@@ -137,7 +137,7 @@ Broadcasting your static IP can make your beacon node more discoverable, which b
 
 ## Verify your node's discoverability
 
-Use the [MX Toolbox TCP Lookup tool](https://mxtoolbox.com/SuperTool.aspx?): 
+Use the [MX Toolbox TCP Lookup tool](https://mxtoolbox.com/SuperTool.aspx?):
 
 `https://mxtoolbox.com/SuperTool.aspx?action=tcp%3a{Your-Public-IP-Address}%3a13000&run=toolpage`
 
@@ -147,7 +147,7 @@ If you see the following results, your beacon node is highly discoverable:
 
 ![image](https://user-images.githubusercontent.com/2212651/81552111-7c703400-93a0-11ea-83b5-abeebc63c285.png)
 
-You can perform the same test using `30303/TCP` to test your execution node's discoverability. 
+You can perform the same test using `30303/TCP` to test your execution node's discoverability.
 
 See [Check your node and validator status](../monitoring/checking-status.md) for a comprehensive status checklist.
 

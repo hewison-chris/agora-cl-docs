@@ -14,7 +14,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::info New user?
 
-This guidance is targeted at users who are already running Prysm. If you're starting from scratch, see our [Quickstart](./install/install-with-script.md).
+This guidance is targeted at users who are already running Agora-cl. If you're starting from scratch, see our [Quickstart](./install/install-with-script.md).
 
 :::
 
@@ -34,8 +34,8 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     <div class='task'>
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Use Prysm v3.1.1</label>
-            <p><a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.1'>Prysm v3.1.1</a> is a <strong>Merge-ready release</strong>. Review the <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.1'>release notes</a> to understand how this release impacts your configuration.</p>
+            <label for="cl-1">Use Agora-cl v3.1.1</label>
+            <p><a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.1'>Agora-cl v3.1.1</a> is a <strong>Merge-ready release</strong>. Review the <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.1'>release notes</a> to understand how this release impacts your configuration.</p>
         </div>
     </div>
     <div class='task'>
@@ -48,8 +48,8 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='task'>
         <div class='input-container'><input id="cl-6" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-6">Verify your Prysm version</label>
-            <p>Verify that you're running Prysm <code>v3.1.1</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
+            <label for="cl-6">Verify your Agora-cl version</label>
+            <p>Verify that you're running Agora-cl <code>v3.1.1</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
         </div>
     </div>
     <div class='task'>
@@ -135,7 +135,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     <div class='task'>
         <div class='input-container'><input id="cl-expected" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-expected">Ensure that Prysm is running as expected</label>
+            <label for="cl-expected">Ensure that Agora-cl is running as expected</label>
             <p>See <a href='./monitoring/checking-status'>Check node and validator status</a> to learn how to check the status of your execution node, beacon node, and validator node.</p>
         </div>
     </div>
@@ -167,7 +167,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
         {label: 'IPC', value: 'ipc'}
     ]}>
     <TabItem value="jwt">
-    
+
 <h2>Configure JWT authentication</h2>
 
 <JwtGuidancePartial />
@@ -184,7 +184,7 @@ import FullSyncWarningPartial from '@site/docs/partials/_full-sync-warning-parti
 
 <FullSyncWarningPartial />
 
-Other than ensuring that you're using the [latest stable Prysm release](https://github.com/prysmaticlabs/prysm/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](./execution-node/fee-recipient.md) to learn more.
+Other than ensuring that you're using the [latest stable Agora-cl release](https://github.com/prysmaticlabs/prysm/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](./execution-node/fee-recipient.md) to learn more.
 
 import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-partial.md';
 
@@ -206,7 +206,7 @@ You can now make these changes, regardless of the network you're running on.
 **Can I use IPC post-Merge?** <br />
 Yes. You also won't have to worry about JWT if you use IPC. See our [Quickstart](./install/install-with-script.md) for IPC instructions.
 
-**Can I use a light node with Prysm, or do I need to run a full execution node?** <br />
+**Can I use a light node with Agora-cl, or do I need to run a full execution node?** <br />
 No - at this time, a full node is required.
 
 

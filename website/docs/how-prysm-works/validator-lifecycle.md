@@ -13,7 +13,7 @@ This section discusses the  lifecycle of a [validator](validator-clients.md) as 
 ![Validator Lifecycle Diagram](/img/validator-lifecycle.png)
 
 ## UNKNOWN State
-Prysm's [validator](validator-clients.md) client will report that the state of a particular validator is UNKNOWN when it loads validator keys that have not yet submitted a valid deposit to the [Ethereum proof-of-work chain](/docs/terminology#eth1) [validator deposit contract](./validator-deposit-contract).
+Agora-cl's [validator](validator-clients.md) client will report that the state of a particular validator is UNKNOWN when it loads validator keys that have not yet submitted a valid deposit to the [Ethereum proof-of-work chain](/docs/terminology#eth1) [validator deposit contract](./validator-deposit-contract).
 
 ## DEPOSITED State
 Once a valid transaction has been submitted to the [validator deposit contract](./validator-deposit-contract), your [beacon node](./beacon-node) will will detect the presence of the transaction on the ETH1 chain and your [validator](validator-clients.md) client will now report being in the DEPOSITED state.
@@ -26,12 +26,12 @@ The specification for [processing deposits](https://github.com/ethereum/consensu
 
 Once the activation epoch arrives, the validator is activated and assigned responsibilities including [proposing](/docs/terminology#propose) or [attesting](/docs/terminology#attest) to blocks on the beacon chain.  Validators  receive either rewards or penalties to the initial deposit based upon their overall performance.  A validator must remain in the active state for 2048 epochs (~9 days) before it is eligible to exit.  If a validator's balance drops below 16 ETH (typically due to inactivity), it will be ejected.  Ejections are treated the same as a voluntary exits.
 
-## EXITING State 
+## EXITING State
 An ACTIVE validator may request to exit by submitting a signed [VoluntaryExit](https://github.com/ethereum/consensus-specs/blob/v0.10.0/specs/phase0/beacon-chain.md#voluntary-exits) operation to the Ethereum network. Assuming the validator has been in the active state for at least 2048 epochs (~9 days), the validator will be assigned an exit_epoch that is determined by the length of the exiting queue.  Under normal circumstances, four validators may exit in each finalised epoch.
 
 ## SLASHING State
 If a slashable event is included in a block while a validator is either ACTIVE, EXITING, or EXITED, it will briefly enter the SLASHING state where slashing penalties are applied, before being forcefully transitioned into the EXITED state.  Slashed validators incur three distinct penalties:
-  #### [Minimum Penalty](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#slash_validator) 
+  #### [Minimum Penalty](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#slash_validator)
   A penalty of (1/32 * Effective Balance), issued immediately
   #### [Missed Attestation Penalties](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#rewards-and-penalties-1)
   A penalty equivalent to that incurred by an inactive validator, issued every epoch until the validator leaves the exit queue

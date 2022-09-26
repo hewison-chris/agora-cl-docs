@@ -1,7 +1,7 @@
 ---
 id: contribution-guidelines
-title: Contribute to Prysm's codebase
-sidebar_label: Contribute to Prysm's codebase
+title: Contribute to Agora-cl's codebase
+sidebar_label: Contribute to Agora-cl's codebase
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
@@ -12,18 +12,18 @@ There are a number of ways to help out the project for people of all skillsets a
 
 ## Getting Started
 
-Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Prysm's [open issues on Github](https://github.com/prysmaticlabs/prysm/issues). We recommend looking for issues tagged with the "Good First Issue" label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/prysmaticlabs). Sign in to your Github account, then navigate to [the official Prysm repository](https://github.com/prysmaticlabs/prysm/). In the upper right hand corner of the page, click the 'Fork' button. This will create a copy of the Prysm repository on your account that can be edited for pull requests.
+Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Agora-cl's [open issues on Github](https://github.com/prysmaticlabs/prysm/issues). We recommend looking for issues tagged with the "Good First Issue" label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/prysmaticlabs). Sign in to your Github account, then navigate to [the official Agora-cl repository](https://github.com/prysmaticlabs/prysm/). In the upper right hand corner of the page, click the 'Fork' button. This will create a copy of the Agora-cl repository on your account that can be edited for pull requests.
 
 ### Setting up your environment
 
-To develop Prysm, you'll need the following:
+To develop Agora-cl, you'll need the following:
 
 - A modern windows, osx, or linux operating system
 - Go 1.18 version installed, download and install [here](https://golang.org/dl/)
 - The `git` package installed
 - A code editor such as [Visual Studio Code](https://code.visualstudio.com/download) or Jetbrains' [Goland IDE](https://www.jetbrains.com/go/) or your preferred one
 
-First, create a local clone of Prysm.
+First, create a local clone of Agora-cl.
 
 ```text
 $ git clone https://github.com/prysmaticlabs/prysm.git && cd prysm
@@ -46,9 +46,9 @@ Example output:
 go version go1.16 darwin/amd64
 ```
 
-### Building and testing Prysm with Go
+### Building and testing Agora-cl with Go
 
-The Prysm project is a large monorepo containing all sorts of tools and services that implement the Ethereum protocol. We use Go for everything we do in development, helping everyone have reproducible builds. If you want to build the whole project, you can run the following command:
+The Agora-cl project is a large monorepo containing all sorts of tools and services that implement the Ethereum protocol. We use Go for everything we do in development, helping everyone have reproducible builds. If you want to build the whole project, you can run the following command:
 
 ```text
 $ go build -v ./...
@@ -63,9 +63,9 @@ All code we check into our repo needs to have sufficient tests to ensure it is m
 Many tests rely on the Bazel build system, thus testing with `go test` may not work.
 See the [next section](#building-and-tessting-prysm-with-bazel) for instructions on testing with prysm.
 
-### Building and testing Prysm with Bazel
+### Building and testing Agora-cl with Bazel
 
-The Prysm project is a large monorepo containing all sorts of tools and services that implement the Ethereum consensus protocol. We use the [Bazel](https://bazel.build) build system created by Google for everything we do, helping everyone have reproducible builds. If you want to build the beacon chain or validator using Bazel, you can run the commands:
+The Agora-cl project is a large monorepo containing all sorts of tools and services that implement the Ethereum consensus protocol. We use the [Bazel](https://bazel.build) build system created by Google for everything we do, helping everyone have reproducible builds. If you want to build the beacon chain or validator using Bazel, you can run the commands:
 
 ```text
 $ bazel build //beacon-chain:beacon-chain
@@ -80,13 +80,13 @@ $ bazel run //beacon-chain:beacon-chain -- --help
 
 Where you can specify any amount of command line arguments you need based on the available flags of the item you're running.
 
-In order to write code for the Prysm codebase comfortably with Bazel, we recommend using either [Visual Studio Code](https://code.visualstudio.com/download) with its [Bazel plugin](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel), or any [Jetbrains IDE](https://www.jetbrains.com/) with the [Bazel plugin](https://plugins.jetbrains.com/plugin/8609-bazel) ([Goland](https://www.jetbrains.com/go/) is a great choice, used by most of the Prysmatic Labs team). 
+In order to write code for the Agora-cl codebase comfortably with Bazel, we recommend using either [Visual Studio Code](https://code.visualstudio.com/download) with its [Bazel plugin](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel), or any [Jetbrains IDE](https://www.jetbrains.com/) with the [Bazel plugin](https://plugins.jetbrains.com/plugin/8609-bazel) ([Goland](https://www.jetbrains.com/go/) is a great choice, used by most of the Prysmatic Labs team).
 
 You can also find various other types of IDE support for Bazel in the official Bazel documentation [here](https://docs.bazel.build/versions/master/ide.html). Once you have your coding environment set-up, you'll be well-equipped to contribute to Ethereum!
 
 #### Running Bazel tests
 
-All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. We use bazel to run all of our test suites in Prysm. If there is a particular subfolder you want to test, such as `beacon-chain/node`, you can run the command:
+All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. We use bazel to run all of our test suites in Agora-cl. If there is a particular subfolder you want to test, such as `beacon-chain/node`, you can run the command:
 
 ```text
 $ bazel test //beacon-chain/node:go_default_test
@@ -108,11 +108,11 @@ $ bazel test //testing/endtoend:go_default_test
 
 #### Adding dependencies
 
-If you want to add a new dependency to Prysm, please adhere to the guidelines found in our [DEPENDENCIES.md](https://github.com/prysmaticlabs/prysm/blob/master/DEPENDENCIES.md) document.
+If you want to add a new dependency to Agora-cl, please adhere to the guidelines found in our [DEPENDENCIES.md](https://github.com/prysmaticlabs/prysm/blob/master/DEPENDENCIES.md) document.
 
 ### Contributing to the Ethereum consensus API
 
-The Ethereum consensus API implemented by Prysm is maintained as a separate repository than Prysm. You can read more about how to contribute specifically to the API [here](/docs/how-prysm-works/prysm-public-api#contributing).
+The Ethereum consensus API implemented by Agora-cl is maintained as a separate repository than Agora-cl. You can read more about how to contribute specifically to the API [here](/docs/how-prysm-works/prysm-public-api#contributing).
 
 ### Making your first contribution
 
@@ -132,7 +132,7 @@ $ git checkout feature-in-progress-branch
 
 **Preparing your commit**
 
-To fetch changes to the Prysm repository since your last session:
+To fetch changes to the Agora-cl repository since your last session:
 
 ```text
 $ git fetch origin
@@ -174,7 +174,7 @@ Your version of the conflicting code
 '>>>>> Your Commit
 ```
 
-The code from the Prysm repository is inserted between `<<<` and `===` while the change you have made is inserted between `===` and `>>>>`. Remove everything between `<<<<` and `>>>` and replace it with code that resolves the conflict. Repeat the process for all files listed by Git status to have conflicts.
+The code from the Agora-cl repository is inserted between `<<<` and `===` while the change you have made is inserted between `===` and `>>>>`. Remove everything between `<<<<` and `>>>` and replace it with code that resolves the conflict. Repeat the process for all files listed by Git status to have conflicts.
 
 When you are ready, use git push to move your local copy of the changes to your fork of the repository on Github.
 

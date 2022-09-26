@@ -8,11 +8,11 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-Validators should be online as much as possible. If you're running your validator on a cloud server, or if you want your validator to automatically start running when the host machine restarts, consider running your client software as a background service through either Docker or systemd. 
+Validators should be online as much as possible. If you're running your validator on a cloud server, or if you want your validator to automatically start running when the host machine restarts, consider running your client software as a background service through either Docker or systemd.
 
 :::caution
 
-This may be overkill for at-home stakers who use the `prysm.sh` script to run Prysm. To those users, we recommend **keeping it simple** by occasionally checking the status of your validator. See [Check Software Status](../monitoring/checking-status) to learn more.
+This may be overkill for at-home stakers who use the `prysm.sh` script to run Agora-cl. To those users, we recommend **keeping it simple** by occasionally checking the status of your validator. See [Check Software Status](../monitoring/checking-status) to learn more.
 
 :::
 
@@ -28,7 +28,7 @@ You can run your beacon node with the following systemd configuration, where you
 
 ```text
 [Unit]
-Description=Prysm Beacon chain daemon
+Description=Agora-cl Beacon chain daemon
 After=network-online.target
 
 [Service]
@@ -44,7 +44,7 @@ You can also run your validator client in systemd using the following configurat
 
 ```text
 [Unit]
-Description=Prysm Validator daemon
+Description=Agora-cl Validator daemon
 After=network-online.target
 Wants=prysm-beacon.service
 

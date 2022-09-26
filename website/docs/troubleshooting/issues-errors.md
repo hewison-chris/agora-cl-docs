@@ -1,6 +1,6 @@
 ---
 id: issues-errors
-title: Troubleshooting Prysm
+title: Troubleshooting Agora-cl
 sidebar_label: Troubleshooting
 ---
 
@@ -32,7 +32,7 @@ import StatusChecklistPartial from '@site/docs/monitoring/partials/_status-check
 
 ## Troubleshooting scenarios and solutions
 
-Common troubleshooting scenarios and solutions are detailed below. 
+Common troubleshooting scenarios and solutions are detailed below.
 
 import TroubleshootingAllPartial from '@site/docs/troubleshooting/partials/_troubleshooting-all.md';
 
@@ -54,4 +54,3 @@ import GenerateTroubleshootingReportPartial from '@site/docs/troubleshooting/par
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
 <RequestUpdateWidget />
-

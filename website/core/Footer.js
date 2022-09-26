@@ -71,7 +71,7 @@ class Footer extends React.Component {
               data-count-href="/prysmaticlabs/prysm"
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
-              aria-label="Star Prysm on GitHub">
+              aria-label="Star Agora-cl on GitHub">
               Star
             </a>
             {this.props.config.twitterUsername && (

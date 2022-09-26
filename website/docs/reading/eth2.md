@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-This page serves material necessary to catch up with the current state of Ethereum proof-of-stake development and provides readers with the knowledge required to begin making meaningful contributions to the Prysm client. Whether you are an expert on all things Ethereum or are new to the blockchain world entirely, there are appropriate resources here that will help you get up to speed.
+This page serves material necessary to catch up with the current state of Ethereum proof-of-stake development and provides readers with the knowledge required to begin making meaningful contributions to the Agora-cl client. Whether you are an expert on all things Ethereum or are new to the blockchain world entirely, there are appropriate resources here that will help you get up to speed.
 
 ## **Ethereum fundamentals**
 
@@ -31,7 +31,7 @@ This page serves material necessary to catch up with the current state of Ethere
 
 ## **ETH2 fundamentals**
 
-*Disclaimer: Because some parts of Ethereum consensus are still an active area of research and/or development, some resources may be outdated.* 
+*Disclaimer: Because some parts of Ethereum consensus are still an active area of research and/or development, some resources may be outdated.*
 
 ### Introduction and specifications
 
@@ -75,7 +75,7 @@ This page serves material necessary to catch up with the current state of Ethere
 
 ### Client Implementations
 
-* [Prysm](https://github.com/prysmaticlabs/prysm) developed in Golang and maintained by [Prysmatic Labs](https://prysmaticlabs.com/)
+* [Agora-cl](https://github.com/prysmaticlabs/prysm) developed in Golang and maintained by [Prysmatic Labs](https://prysmaticlabs.com/)
 * [Lighthouse](https://github.com/sigp/lighthouse) developed in Rust and maintained by [Sigma Prime](https://sigmaprime.io/)
 * [Lodestar](https://github.com/ChainSafe/lodestar) developed in TypeScript and maintained by [ChainSafe Systems](https://chainsafe.io/)
 * [Nimbus](https://github.com/status-im/nimbus-eth2) developed in Nim and maintained by [status](https://status.im/)

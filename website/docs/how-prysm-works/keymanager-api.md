@@ -8,13 +8,13 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-Prysm supports the official [Keymanager APIs](https://github.com/ethereum/keymanager-APIs), a REST API spec for validator clients to provide an alternative to CLI commands for onboarding and offboarding their validator keys on the consensus client. 
+Agora-cl supports the official [Keymanager APIs](https://github.com/ethereum/keymanager-APIs), a REST API spec for validator clients to provide an alternative to CLI commands for onboarding and offboarding their validator keys on the consensus client.
 
-All Prysm Validator Client APIs require the use of the `--web` flag. 
+All Agora-cl Validator Client APIs require the use of the `--web` flag.
 
 Please refer to the "local keystores APIs" to manage locally stored validator keys.
 
-Please refer to the "remote keystores APIs" to manage public key settings for Web3Signer; go to our Web3Signer docs page for more information. Prysm Web UI does not currently support this API.
+Please refer to the "remote keystores APIs" to manage public key settings for Web3Signer; go to our Web3Signer docs page for more information. Agora-cl Web UI does not currently support this API.
 
 ## Authentication
 
@@ -27,9 +27,9 @@ The token needs to be copied and set in the header of the API request:
 Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.ck3J6tcvHcI74IiFjyJqcBH-MmNAq-fMr0ncyZkGvFM`
 ```
 
-## Other Prysm specific errors and usecases
+## Other Agora-cl specific errors and usecases
 
-Prysm comes with some client specific edge cases and usages. These cases will be documented on the [Keymanager API repos under flows](https://github.com/ethereum/keymanager-APIs/tree/master/flows/client-specific/prysm).
+Agora-cl comes with some client specific edge cases and usages. These cases will be documented on the [Keymanager API repos under flows](https://github.com/ethereum/keymanager-APIs/tree/master/flows/client-specific/prysm).
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

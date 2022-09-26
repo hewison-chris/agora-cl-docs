@@ -1,6 +1,6 @@
 ---
 id: fee-recipient
-title: Configure Fee Recipient 
+title: Configure Fee Recipient
 sidebar_label: Configure Fee Recipient
 ---
 import FeeRecipientPng from '@site/static/img/fee-recipient-ui.png'
@@ -18,7 +18,7 @@ If you don't configure your fee recipient wallet address before The Merge, your 
 
 :::
 
-**Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. 
+**Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node.
 
 Your fee recipient wallet address is a **standard Ethereum wallet address**, just like the wallet address used when sending and receiving tokens from Metamask. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever your validator client proposes a new block.
 
@@ -106,9 +106,9 @@ Property definitions are as follows:
 
 The above example demonstrates configuring two 1:1 mappings between `validator public key`:`fee_recipient` and a default `fee_recipient`. In this case, the `default_config` fee recipient address would apply to all validator public keys not specified in `proposer_config`, and will override any wallet address specified by the `--suggested-fee-recipient` flag.
 
-Tell your validator to use the JSON/YAML configuration through one of the following flags: 
+Tell your validator to use the JSON/YAML configuration through one of the following flags:
 
- - `proposer-settings-file`: Points to a local JSON/YAML file. 
+ - `proposer-settings-file`: Points to a local JSON/YAML file.
  - `proposer-settings-url`: Points to a remote JSON/YAML configuration endpoint in URL format. JSON should be delivered as a JSON payload, not as a JSON file. Your client will issue a GET request and expects the response <code>Content-Type</code> header to be <code>application/json</code>
 
 
@@ -194,10 +194,10 @@ New property definitions are as follows:
 
 ### Advanced: Configure fee recipient through the Web UI
 
-<img style={{maxWidth: 700 + 'px'}} src={FeeRecipientPng} /> 
+<img style={{maxWidth: 700 + 'px'}} src={FeeRecipientPng} />
 
 Your fee recipient wallet address can also be set through the <a href='../prysm-usage/web-interface'>Web UI</a> dashboard. The Web UI uses the <a href='../how-prysm-works/keymanager-api'>Key Manager APIs</a> to set the fee recipient.
- 
+
 :::warning Fee Recipient changes from UI/API don't persist on client restart
 
 If you configure your fee recipient wallet address through the web UI or Keymanager APIs, your configuration **will not persist** if you restart your validator client.
@@ -213,7 +213,7 @@ See [this issue](https://github.com/prysmaticlabs/prysm/issues/11322) to track t
 If you don't see any errors after issuing one of the above commands, your fee recipient address has been successfully configured.
 
 **What happened to `fee-recipient-config-file`?** <br />
-`fee-recipient-config-file` and `fee-recipient-config-url` flags are deprecated and have been replaced with `proposer-settings-file` and `proposer-settings-url` flags as of Prysm v2.1.3.
+`fee-recipient-config-file` and `fee-recipient-config-url` flags are deprecated and have been replaced with `proposer-settings-file` and `proposer-settings-url` flags as of Agora-cl v2.1.3.
 
 **How do I ensure that builders receive my fee recipient wallet address?** <br />
 When `enable-builder` is set to `true` on your validator, you can use either the `--suggested-fee-recipient` flag or the JSON/YAML configuration method to communicate your fee recipient wallet address to builders.

@@ -1,24 +1,24 @@
 module.exports = {
-    title: 'Prysm',
+    title: 'Agora-cl',
     tagline: 'Ethereum consensus implementation written entirely in Go.',
     url: 'https://docs.prylabs.network',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'throw',
-    favicon: 'img/Prysm.svg',
+    favicon: 'img/Agora-cl.svg',
     organizationName: 'Prysmatic Labs',
     projectName: 'prysm-docs',
     customFields: {
-        image: 'img/Prysm.svg',
+        image: 'img/Agora-cl.svg',
     },
     trailingSlash: false,
     scripts: ['https://buttons.github.io/buttons.js'],
 
     themeConfig: {
         navbar: {
-            title: "Prysm Documentation",
+            title: "Agora-cl Documentation",
             logo: {
-                alt: "Prysm logo",
+                alt: "Agora-cl logo",
                 src: 'img/logo2.png',
                 href: '/docs/getting-started',
             },
@@ -47,9 +47,9 @@ module.exports = {
         },
         footer: {
             logo: {
-                alt: "Prysm Eth2 Docs",
+                alt: "Agora-cl Eth2 Docs",
                 href: '/docs/getting-started',
-                src: 'img/Prysm.svg',
+                src: 'img/Agora-cl.svg',
             },
             copyright: `Copyright © ${new Date().getFullYear()} Prysmatic Labs, LLC., Validator Deposit Contract 0x00000000219ab540356cbb839cbe05303d7705fa`,
             links: [],
@@ -65,8 +65,8 @@ module.exports = {
         prism: {
             theme: require('prism-react-renderer/themes/dracula'),
         },
-        ogImage: 'img/Prysm.svg',
-        twitterImage: 'img/Prysm.svg',
+        ogImage: 'img/Agora-cl.svg',
+        twitterImage: 'img/Agora-cl.svg',
     },
     presets: [
         [

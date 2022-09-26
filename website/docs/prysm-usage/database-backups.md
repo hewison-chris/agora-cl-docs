@@ -18,8 +18,8 @@ If you perform backups by manually copying the validator database while the clie
 
 Both the beacon node and validator use an embedded key-value store as a database called [BoltDB](https://github.com/boltdb/bolt) to store all important information. Backing up your beacon node database is a good practice, although **not critical** to being able to validate in Ethereum consensus. if you want to perform a backup, here's the safest way to do it.
 
-:::danger Backing up the database can lead to OOM for large databases. 
-In event your system memory is insufficient performing a backup can lead to an out of memory exception. The webhook performs the backup in-memory by copying all the separate buckets from the source database to the backup database. If the source database is large, performing the backup might take too long and lead to an inconsistent backup database. In the event the source database is large ( > 20 Gb), as in mainnet right now, it is recommended to not perform the backup via the webhook. Instead manual backups should be utilised where the beacon node is stopped and then the database file is copied via the filesystem.  
+:::danger Backing up the database can lead to OOM for large databases.
+In event your system memory is insufficient performing a backup can lead to an out of memory exception. The webhook performs the backup in-memory by copying all the separate buckets from the source database to the backup database. If the source database is large, performing the backup might take too long and lead to an inconsistent backup database. In the event the source database is large ( > 20 Gb), as in mainnet right now, it is recommended to not perform the backup via the webhook. Instead manual backups should be utilised where the beacon node is stopped and then the database file is copied via the filesystem.
 :::
 
 ### Backing up the Database via a Webhook
@@ -52,7 +52,7 @@ import TabItem from '@theme/TabItem';
 }>
 <TabItem value="lin">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.sh beacon-chain db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
@@ -67,7 +67,7 @@ bazel run //beacon-chain -- db restore --restore-source-file=/path/to/backup --r
 </TabItem>
 <TabItem value="win">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.bat beacon-chain db restore --restore-source-file=\path\to\backup --restore-target-dir=\path\to\desired\datadir
@@ -76,7 +76,7 @@ prysm.bat beacon-chain db restore --restore-source-file=\path\to\backup --restor
 </TabItem>
 <TabItem value="mac">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.sh beacon-chain db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
@@ -91,7 +91,7 @@ bazel run //beacon-chain -- db restore --restore-source-file=/path/to/backup --r
 </TabItem>
 <TabItem value="arm">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.sh beacon-chain db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
@@ -108,7 +108,7 @@ bazel run //beacon-chain -- db restore --restore-source-file=/path/to/backup --r
 
 ## Validator client
 
-### Add the backup webhook flags to your validator client 
+### Add the backup webhook flags to your validator client
 
 Add the following flags to your validator client:
 
@@ -134,7 +134,7 @@ Ensure your validator client is turned off if restoring a backup. You can restor
 }>
 <TabItem value="lin">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.sh validator db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
@@ -149,7 +149,7 @@ bazel run //validator -- db restore --restore-source-file=/path/to/backup --rest
 </TabItem>
 <TabItem value="win">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.bat validator db restore --restore-source-file=\path\to\backup --restore-target-dir=\path\to\desired\datadir
@@ -158,7 +158,7 @@ prysm.bat validator db restore --restore-source-file=\path\to\backup --restore-t
 </TabItem>
 <TabItem value="mac">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.sh validator db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
@@ -173,7 +173,7 @@ bazel run //validator -- db restore --restore-source-file=/path/to/backup --rest
 </TabItem>
 <TabItem value="arm">
 
-**Using the Prysm installation script**
+**Using the Agora-cl installation script**
 
 ```sh
 prysm.sh validator db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir

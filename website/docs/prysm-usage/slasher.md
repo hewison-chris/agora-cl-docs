@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-This section provides instructions on how to run [slasher](https://github.com/prysmaticlabs/prysm/tree/master/slasher) as an **optional** process to report slashable offenses on Ethereum proof-of-stake.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](https://docs.prylabs.network/docs/how-prysm-works/beacon-node/) for inclusion in a block.  [Validators](https://docs.prylabs.network/docs/how-prysm-works/prysm-validator-client/) earn a small whistleblower reward for including this proof into a block.  
+This section provides instructions on how to run [slasher](https://github.com/prysmaticlabs/prysm/tree/master/slasher) as an **optional** process to report slashable offenses on Ethereum proof-of-stake.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](https://docs.prylabs.network/docs/how-prysm-works/beacon-node/) for inclusion in a block.  [Validators](https://docs.prylabs.network/docs/how-prysm-works/prysm-validator-client/) earn a small whistleblower reward for including this proof into a block.
 
 :::tip Slasher Requires Significant Disk Space
 Slasher is essentially a beacon node with **superpowers**. It uses significantly more disk space when running on mainnet.
@@ -18,7 +18,7 @@ Slasher is essentially a beacon node with **superpowers**. It uses significantly
 
 ### Minimum specifications
 
-These specifications must be met in order to successfully run a Prysm beacon node in `--slasher` mode
+These specifications must be met in order to successfully run a Agora-cl beacon node in `--slasher` mode
 
 * Operating System: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit
 * Processor: Intel Core i5–760 or AMD FX-8100 or better
@@ -28,7 +28,7 @@ These specifications must be met in order to successfully run a Prysm beacon nod
 
 ### Recommended specifications
 
-These hardware specifications are recommended, but not required to run the Prysm client.
+These hardware specifications are recommended, but not required to run the Agora-cl client.
 
 * Processor: Intel Core i7–4770 or AMD FX-8310 or better
 * Memory: 16GB RAM
@@ -57,7 +57,7 @@ Running a slasher is as simple as adding the `--slasher` flag to your **beacon n
 
 ### Whistleblower Rewards
 
-Running a slasher can also offer some profits to your validators given certain conditions. If slasher detects a slashable condition, it will **broadcast it to the network by default**. Some lucky validator will then package this slashing evidence into a block and be rewarded for doing so. You can **disable** this broadcast in Prysm using the `--disable-broadcast-slashings` option in your **beacon node**.
+Running a slasher can also offer some profits to your validators given certain conditions. If slasher detects a slashable condition, it will **broadcast it to the network by default**. Some lucky validator will then package this slashing evidence into a block and be rewarded for doing so. You can **disable** this broadcast in Agora-cl using the `--disable-broadcast-slashings` option in your **beacon node**.
 
 ### Who Should Run a Slasher
 
