@@ -25,7 +25,7 @@ If you are using a custom --monitoring-host for these processes, such as an IP a
 
 ## Installing Prometheus
 
-Prometheus must first be installed to fetch the data from the beacon node and validator for Grafana to display.
+Prometheus must first be installed to fetch the data from the Agora node and validator for Grafana to display.
 
 1. [Download the Prometheus files](https://prometheus.io/download/) suited for the host system.
 
@@ -54,7 +54,7 @@ scrape_configs:
   - job_name: 'validator'
     static_configs:
       - targets: ['localhost:8081']
-  - job_name: 'beacon node'
+  - job_name: 'Agora node'
     static_configs:
       - targets: ['localhost:8080']
   - job_name: 'slasher'

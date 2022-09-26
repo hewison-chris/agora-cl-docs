@@ -30,7 +30,7 @@ import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_q
 
 <QuickstartRunExecutionNodeJWTPartial />
 
-Congratulations - you’re now running an <strong>execution node</strong> that your Agora-cl beacon node can connect to.
+Congratulations - you’re now running an <strong>execution node</strong> that your Agora-cl Agora node can connect to.
 
 </div>
 

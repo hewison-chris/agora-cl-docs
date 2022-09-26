@@ -2126,16 +2126,16 @@
     },
     {
       "aliasColors": {
-        "CPU beacon node": "red",
+        "CPU Agora node": "red",
         "CPU validator": "purple",
         "CPU validator localhost:8079": "orange",
         "CPU validator localhost:8081": "green",
-        "beacon node": "rgb(68, 218, 252)",
-        "memory beacon node": "rgb(96, 252, 255)",
+        "Agora node": "rgb(68, 218, 252)",
+        "memory Agora node": "rgb(96, 252, 255)",
         "memory validator": "rgb(255, 255, 160)",
         "memory validator localhost:8081": "purple",
         "test": "green",
-        "test beacon node": "orange",
+        "test Agora node": "orange",
         "test validator": "green",
         "validator": "yellow"
       },
@@ -2185,7 +2185,7 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "alias": "CPU beacon node",
+          "alias": "CPU Agora node",
           "fill": 0,
           "linewidth": 1,
           "yaxis": 2
@@ -2808,7 +2808,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "(time()-process_start_time_seconds{job=\"beacon node\"})/3600",
+          "expr": "(time()-process_start_time_seconds{job=\"Agora node\"})/3600",
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -3123,11 +3123,11 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "up{job=\"beacon node\"}",
+          "expr": "up{job=\"Agora node\"}",
           "hide": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "beacon node",
+          "legendFormat": "Agora node",
           "refId": "A"
         },
         {
@@ -3465,14 +3465,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(delta(log_entries_total{job=\"beacon node\", level=\"error\"}[1h]) > 0) ",
+          "expr": "sum(delta(log_entries_total{job=\"Agora node\", level=\"error\"}[1h]) > 0) ",
           "instant": false,
           "interval": "",
           "legendFormat": "errors",
           "refId": "A"
         },
         {
-          "expr": "sum(delta(log_entries_total{job=\"beacon node\", level=\"warning\"}[1h]) > 0)",
+          "expr": "sum(delta(log_entries_total{job=\"Agora node\", level=\"warning\"}[1h]) > 0)",
           "instant": false,
           "interval": "",
           "legendFormat": "warnings",
@@ -3830,8 +3830,8 @@
       {
         "current": {
           "selected": true,
-          "text": "beacon node",
-          "value": "beacon node"
+          "text": "Agora node",
+          "value": "Agora node"
         },
         "hide": 2,
         "label": null,
@@ -3839,11 +3839,11 @@
         "options": [
           {
             "selected": true,
-            "text": "beacon node",
-            "value": "beacon node"
+            "text": "Agora node",
+            "value": "Agora node"
           }
         ],
-        "query": "beacon node",
+        "query": "Agora node",
         "skipUrlSync": false,
         "type": "constant"
       },

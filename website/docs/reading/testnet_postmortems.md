@@ -32,14 +32,14 @@ https://github.com/zeroone-boa/agora-cl/issues/5491
 
 **Root Causes:** There was a race condition from the sync service needing access to the genesis time to compute a fork digest for subscribing to gossipsub topics. This value is set in the p2p service, but sometimes sync would begin before the p2p service, leading it to have a genesis time of 0.
 
-**Trigger:** Performing beacon node restarts could easily reproduce this issue.
+**Trigger:** Performing Agora node restarts could easily reproduce this issue.
 
 **Resolution:** We resolve the race condition by not making sync rely on p2p to set its ForkDigest, but instead get the genesis time directly from the blockchain service and refactoring ForkDigest to be a pure stateless function.
 
 **Detection:** Local runs, user reports.
 
 #### Where we got lucky
-- Our pods haven’t had any rolling restarts or canaries rolling out that would trigger this issue, which is reproducible many times upon starting a beacon node. If our pods restarted, our testnet could have likely been killed and have had multiple forks.
+- Our pods haven’t had any rolling restarts or canaries rolling out that would trigger this issue, which is reproducible many times upon starting a Agora node. If our pods restarted, our testnet could have likely been killed and have had multiple forks.
 
 #### Root Cause
 
@@ -268,9 +268,9 @@ We thankfully had archival and experimental pods that were working fine and as s
 - 23:30 We still get alerts with no finality for 10 epochs. Which means that the hotfix was unsuccessful.
 
 11/25/2019
-- 0:30 After looking at all our previous PRs and observing network metrics for the past few days, Preston suggests that the main cause of our finality worries isn’t a bad PR merged in , but instead the growth of the network. With peer counts increasing close to 70, each beacon node processes close to 200 attestations /sec
+- 0:30 After looking at all our previous PRs and observing network metrics for the past few days, Preston suggests that the main cause of our finality worries isn’t a bad PR merged in , but instead the growth of the network. With peer counts increasing close to 70, each Agora node processes close to 200 attestations /sec
 - 1:00 Preston then checks Jaeger and see that a very large amount of time is spent on DB writes especially in updateAttVotes in OnAttestation. The span in Jaeger, supports this theory as it shows OnAttestation taking nearly 1s with the large majority being taken up by writing attestation data to disk. Initially it looked like an improper use of Batch Updates in Bolt.
-- 1:10 After exploring the code in some more, Nishant finds the problem is not that but instead the fact that the function upateAttVotes is very heavy on disk I/O due to the latest vote being saved for each validator in the attestation. This coupled with the fact that the beacon node receives 200 attestations/sec , it would explain the large amounts of time being spent on db writes in Jaeger.
+- 1:10 After exploring the code in some more, Nishant finds the problem is not that but instead the fact that the function upateAttVotes is very heavy on disk I/O due to the latest vote being saved for each validator in the attestation. This coupled with the fact that the Agora node receives 200 attestations/sec , it would explain the large amounts of time being spent on db writes in Jaeger.
 
 #### Supporting information
 

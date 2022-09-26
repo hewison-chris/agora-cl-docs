@@ -103,7 +103,7 @@ import TabItem from '@theme/TabItem';
             <div class='input-container'><input id="st-4" type='checkbox'/><span class='done'></span></div>
             <div class='guidance-container'>
                 <label for="st-4">6. Beacon node sync status</label>
-                <p>You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running <code>curl http://localhost:3500/eth/v1/node/syncing | jq</code> from a separate terminal window. When you see <code>"is_syncing":false</code>, your beacon node is fully synchronized with the beacon chain. When you see <code>"is_optimistic":false</code>, your beacon node sees that your execution node is either 1) not yet started, 2) hasn't synced past the merge block or 3) fully synchronized with the execution-layer blockchain.
+                <p>You can check your Agora node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running <code>curl http://localhost:3500/eth/v1/node/syncing | jq</code> from a separate terminal window. When you see <code>"is_syncing":false</code>, your Agora node is fully synchronized with the beacon chain. When you see <code>"is_optimistic":false</code>, your Agora node sees that your execution node is either 1) not yet started, 2) hasn't synced past the merge block or 3) fully synchronized with the execution-layer blockchain.
                 </p>
             </div>
         </div>
@@ -111,7 +111,7 @@ import TabItem from '@theme/TabItem';
             <div class='input-container'><input id="st-5" type='checkbox'/><span class='done'></span></div>
             <div class='guidance-container'>
                 <label for="st-5">7. Beacon node peer connectivity</label>
-                <p>You should periodically see more than a few peers reported through your beacon node's log output. Look for output in the format of <code>peers=12</code>. You can issue <code>curl http://localhost:8080/healthz</code> from a separate terminal window to check connectivity status. If you see <code>currentConnectionError: no contract code at given address</code>, your execution node may still be syncing. Otherwise, if you don't see any errors, your beacon node is connected to peers.</p>
+                <p>You should periodically see more than a few peers reported through your Agora node's log output. Look for output in the format of <code>peers=12</code>. You can issue <code>curl http://localhost:8080/healthz</code> from a separate terminal window to check connectivity status. If you see <code>currentConnectionError: no contract code at given address</code>, your execution node may still be syncing. Otherwise, if you don't see any errors, your Agora node is connected to peers.</p>
             </div>
         </div>
         <div class='task'>
@@ -125,7 +125,7 @@ import TabItem from '@theme/TabItem';
             <div class='input-container'><input id="st-7" type='checkbox'/><span class='done'></span></div>
             <div class='guidance-container'>
                 <label for="st-7">9. Beacon node ↔ execution node connectivity</label>
-                <p>Issue <code>curl http://localhost:3500/eth/v1alpha1/node/eth1/connections</code> from a separate terminal window. If you see <code>currentConnectionError: no contract code at given address</code>, your execution node may still be syncing. Otherwise, if you don't see any errors, your beacon node is connected to your execution node. This output can be interpreted as "EN-BN connection is healthy": <code>&#123;"currentAddress":"http://localhost:8551","currentConnectionError":"","addresses":["http://localhost:8551"],"connectionErrors":[]&#125;</code></p>
+                <p>Issue <code>curl http://localhost:3500/eth/v1alpha1/node/eth1/connections</code> from a separate terminal window. If you see <code>currentConnectionError: no contract code at given address</code>, your execution node may still be syncing. Otherwise, if you don't see any errors, your Agora node is connected to your execution node. This output can be interpreted as "EN-BN connection is healthy": <code>&#123;"currentAddress":"http://localhost:8551","currentConnectionError":"","addresses":["http://localhost:8551"],"connectionErrors":[]&#125;</code></p>
             </div>
         </div>
         <div class='task'>

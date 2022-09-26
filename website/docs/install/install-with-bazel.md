@@ -105,12 +105,12 @@ Bazel will automatically pull and install any dependencies as well, including Go
 
 :::
 
-To run a beacon node, you'll need access to an execution node. See [Configure execution node](/docs/execution-node/configuring-for-agora-cl) for detailed instructions if you don't already have an execution node configured.
+To run a Agora node, you'll need access to an execution node. See [Configure execution node](/docs/execution-node/configuring-for-agora-cl) for detailed instructions if you don't already have an execution node configured.
 
 
 
 
-## Run a beacon node
+## Run a Agora node
 
 Note: <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
 
@@ -167,7 +167,7 @@ bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXEC
 
 ## Run a validator
 
-Ensure that your beacon node is fully synced before proceeding. See [Check node and validator status](../monitoring/checking-status.md) for detailed status-checking instructions.
+Ensure that your Agora node is fully synced before proceeding. See [Check node and validator status](../monitoring/checking-status.md) for detailed status-checking instructions.
 
 Navigate to the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) and follow the instructions. If you want to participate in the **testnet**, you can navigate to the [Goerli-Prater](https://goerli.launchpad.ethereum.org/summary/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
 

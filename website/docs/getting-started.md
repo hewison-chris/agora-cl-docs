@@ -4,10 +4,6 @@ title:  Table of contents
 sidebar_label: Table of contents
 ---
 
-import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
-
-<HeaderBadgesWidget commaDelimitedContributors="Clarin,Mick" />
-
 
 [Agora-cl](https://github.com/zeroone-boa/agora-cl) is an Agora client based on [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Agora-cl to participate in Agora's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [40,000 BOA to stake](https://bosagora.io/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-agora-cl). If you're new to Agora or are not familiar with Ethereum, you may enjoy our beginner-friendly [Nodes and networks](./concepts/nodes-networks.md) explainer.
 
@@ -27,7 +23,7 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 </div>
 <div class='panel'>
 <a href='agora-cl-usage/parameters'>Command-line options</a>
-<p>Learn how to configure Agora-cl's beacon node client, validator client, and more through its <strong>command-line interface</strong>.</p>
+<p>Learn how to configure Agora-cl's Agora node client, validator client, and more through its <strong>command-line interface</strong>.</p>
 </div>
 <div class='panel'>
 <a href='troubleshooting/issues-errors'>Troubleshooting</a>
@@ -75,19 +71,19 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 </div>
 <div class='panel'>
 <a href='agora-cl-usage/checkpoint-sync'>Sync from a checkpoint</a>
-<p>Syncing from a checkpoint significantly reduces the time it takes for Agora-cl's beacon node to sync by piggypacking off of another fully-synced node.</p>
+<p>Syncing from a checkpoint significantly reduces the time it takes for Agora-cl's Agora node to sync by piggypacking off of another fully-synced node.</p>
 </div>
 <div class='panel'>
 <a href='monitoring/checking-status'>Check node and validator status</a>
-<p>Learn how to check the status of your execution node, beacon node, and validator.</p>
+<p>Learn how to check the status of your execution node, Agora node, and validator.</p>
 </div>
 <div class='panel'>
 <a href='agora-cl-usage/slasher'>Run a slasher</a>
-<p>Learn how to run a slasher, an optional beacon node process that detects and reports slashable offenses on the Agora proof-of-stake network.</p>
+<p>Learn how to run a slasher, an optional Agora node process that detects and reports slashable offenses on the Agora proof-of-stake network.</p>
 </div>
 <div class='panel'>
 <a href='advanced/beacon_node_api'>Run an archival node</a>
-<p>Learn how to run your beacon node as an archival node. Archival nodes are like regular beacon nodes that are configured to store more blockchain data locally, increasing data retrieval performance in exchange for increased data storage requirements.</p>
+<p>Learn how to run your Agora node as an archival node. Archival nodes are like regular beacon nodes that are configured to store more blockchain data locally, increasing data retrieval performance in exchange for increased data storage requirements.</p>
 </div>
 <div class='panel secondary-panel section-title'>
 
@@ -97,7 +93,7 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 </div>
 <div class='panel'>
 <a href='agora-cl-usage/database-backups'>Back up & restore database</a>
-<p>Learn how to back up and restore your beacon node and validator databases so you can minimize downtime in the event of a system failure.</p>
+<p>Learn how to back up and restore your Agora node and validator databases so you can minimize downtime in the event of a system failure.</p>
 </div>
 <div class='panel'>
 <a href='wallet/slashing-protection'>Import & export slashing protection history</a>
@@ -149,7 +145,7 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 </div>
 <div class='panel'>
 <a href='monitoring/is-everything-fine'>Monitor Agora-cl for expected behavior</a>
-<p>Learn how to assess the health of your Agora-cl beacon node and/or validator by analyzing output logs.</p>
+<p>Learn how to assess the health of your Agora-cl Agora node and/or validator by analyzing output logs.</p>
 </div>
 <div class='panel'>
 <a href='agora-cl-usage/individual-validator-monitoring'>Monitor validators by index</a>
@@ -161,11 +157,11 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 </div>
 <div class='panel'>
 <a href='agora-cl-usage/client-stats'>Collect metrics with client-stats</a>
-<p>Learn how to collect beacon node and validator metrics using Agora-cl's <code>client-stats</code> utility. This can be used to relay metrics data to the beaconcha.in stats service.</p>
+<p>Learn how to collect Agora node and validator metrics using Agora-cl's <code>client-stats</code> utility. This can be used to relay metrics data to the beaconcha.in stats service.</p>
 </div>
 <div class='panel'>
 <a href='agora-cl-usage/web-interface'>Use Agora-cl's Web UI</a>
-<p>Agora-cl's Web UI can be used to monitor and configure your beacon node and validator on <code>localhost</code> using an app-like interface.</p>
+<p>Agora-cl's Web UI can be used to monitor and configure your Agora node and validator on <code>localhost</code> using an app-like interface.</p>
 </div>
 <div class='panel secondary-panel section-title'>
 
@@ -175,7 +171,7 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 </div>
 <div class='panel'>
 <a href='agora-cl-usage/secure-grpc'>Secure gRPC connections</a>
-<p>Learn how to create and configure TLS certificates that enable secure gRPC connections to your beacon node.</p>
+<p>Learn how to create and configure TLS certificates that enable secure gRPC connections to your Agora node.</p>
 </div>
 <div class='panel'>
 <a href='agora-cl-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a>

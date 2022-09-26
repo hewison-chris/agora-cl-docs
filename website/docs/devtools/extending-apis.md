@@ -11,9 +11,9 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 ## Introduction: Agora-cl API and Beacon API
 ---
 
-Since Day 1 of the project Agora-cl has been using [gRPC](https://grpc.io/) as the API layer for inter-process communication. As an example, all requests from the validator to the beacon node are conducted via gRPC. This technology helped us greatly to make sure our Ethereum client has a well-defined set of APIs, and that we don't introduce backwards incompatibility across versions of Agora-cl.
+Since Day 1 of the project Agora-cl has been using [gRPC](https://grpc.io/) as the API layer for inter-process communication. As an example, all requests from the validator to the Agora node are conducted via gRPC. This technology helped us greatly to make sure our Ethereum client has a well-defined set of APIs, and that we don't introduce backwards incompatibility across versions of Agora-cl.
 
-As time went on, users started asking if it would be possible to have a JSON-over-HTTP API, which users could query for information about the beacon node, the network state etc. Fortunately it is easy to expose HTTP endpoints for gRPC methods using the [grpc-gateway library](https://github.com/grpc-ecosystem/grpc-gateway). This gave birth to a Agora-cl-specific set of APIs, which we will call the Agora-cl API.
+As time went on, users started asking if it would be possible to have a JSON-over-HTTP API, which users could query for information about the Agora node, the network state etc. Fortunately it is easy to expose HTTP endpoints for gRPC methods using the [grpc-gateway library](https://github.com/grpc-ecosystem/grpc-gateway). This gave birth to a Agora-cl-specific set of APIs, which we will call the Agora-cl API.
 
 At some point Ethereum researchers, in cooperation with client developer, decided it would be a good idea to have a standard set of HTTP APIs across the whole network. This led to the [official Beacon API specification](https://ethereum.github.io/beacon-APIs/), which we will call the Beacon API.
 
@@ -123,7 +123,7 @@ Unfortunately grpc-gateway is not extensible enough to allow implementing the Be
 ## Useful links
 
 - The middleware: https://github.com/zeroone-boa/agora-cl/tree/develop/api/gateway/apimiddleware
-- Usage in the beacon node: https://github.com/zeroone-boa/agora-cl/tree/develop/beacon-chain/rpc/apimiddleware
+- Usage in the Agora node: https://github.com/zeroone-boa/agora-cl/tree/develop/beacon-chain/rpc/apimiddleware
 
 ## Using the middleware
 
@@ -174,7 +174,7 @@ func (f *BeaconEndpointFactory) Create(path string) (*apimiddleware.Endpoint, er
 }
 ```
 
-This factory will allow us to implement a new beacon node API endpoint. Let's say the Beacon API defines this endpoint:
+This factory will allow us to implement a new Agora node API endpoint. Let's say the Beacon API defines this endpoint:
 
 > Description: Returns random data based on block root and optional nonce
 > Method: GET

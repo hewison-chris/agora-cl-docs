@@ -4,9 +4,6 @@ title: Optimistic sync
 sidebar_label: Optimistic sync
 ---
 
-import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
-
-<HeaderBadgesWidget commaDelimitedContributors="Potuz" />
 
 :::info
 
@@ -240,7 +237,7 @@ The path for init sync is very similar to sections [3.2.1](#321-notifynewpayload
 
 ### 3.3 (g)RPC API
 
-A CLC is required to respond to requests for blocks, state information, head information, etc. The node is required to provide optimistic status information in its reply. Many of the endpoints simply add a JSON field `is_optimistic` that results `true` when the corresponding block has been inserted optimistically or `false` when it has been fully validated. The beacon node ultimately calls the two functions [IsOptimistic](https://github.com/zeroone-boa/agora-cl/blob/develop/beacon-chain/blockchain/chain_info.go#L301) and [IsOptimisticForRoot](https://github.com/zeroone-boa/agora-cl/blob/develop/beacon-chain/blockchain/chain_info.go#L322).
+A CLC is required to respond to requests for blocks, state information, head information, etc. The node is required to provide optimistic status information in its reply. Many of the endpoints simply add a JSON field `is_optimistic` that results `true` when the corresponding block has been inserted optimistically or `false` when it has been fully validated. The Agora node ultimately calls the two functions [IsOptimistic](https://github.com/zeroone-boa/agora-cl/blob/develop/beacon-chain/blockchain/chain_info.go#L301) and [IsOptimisticForRoot](https://github.com/zeroone-boa/agora-cl/blob/develop/beacon-chain/blockchain/chain_info.go#L322).
 
 The former is just a wrapper around the latter, it fetches the head root of the node and calls the latter. The latter returns whether the block with the given root is optimistic. It does so by calling first forkchoice's `IsOptimistic` and if it fails it checks with the database as explained in the next section.
 

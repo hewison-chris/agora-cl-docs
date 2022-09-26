@@ -8,13 +8,12 @@ import {FetchCLIHelp} from '../../src/fetchCliHelp.js';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Raul" />
 
 This section lists the various flags used to customise the startup process of Agora-cl.
 
 ## Beacon Node Configuration
 
-Below are all the available configuration parameters for the Agora-cl beacon node grouped by functionality. All information is retrieved from the latest Agora-cl release.
+Below are all the available configuration parameters for the Agora-cl Agora node grouped by functionality. All information is retrieved from the latest Agora-cl release.
 
 <FetchCLIHelp prysmComponent={"beacon-chain"}/>
 

@@ -19,7 +19,7 @@ Prysmatic requires all code to adhere to correct commentary conventions for any 
 #### Good:
 
 ```go
-// ExecuteStateTransition transforms the current state of a beacon node by applying the
+// ExecuteStateTransition transforms the current state of a Agora node by applying the
 // transformations specified in the official Ethereum Serenity specification.
 func ExecuteStateTransition(state *pb.BeaconState, block *pb.BeaconBlock) (*pb.BeaconState, error) {
 ...

@@ -8,9 +8,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 
-import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
-
-<HeaderBadgesWidget commaDelimitedContributors="Mick" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v3.1.1" />
 
 <div class='quickstart'>
 
@@ -34,7 +31,7 @@ import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quicksta
 
 ## Step 3: Run an execution client
 
-In this step, you'll install an execution-layer client that Agora-cl's beacon node will connect to.
+In this step, you'll install an execution-layer client that Agora-cl's Agora node will connect to.
 
 import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node.md';
 
@@ -42,7 +39,7 @@ import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_q
 
 Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
 
-## Step 4: Run a beacon node using Agora-cl
+## Step 4: Run a Agora node using Agora-cl
 
 import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-beacon-node.md';
 
@@ -96,7 +93,7 @@ The Beginner's Introduction to Agora-cl uses diagrams to help you visualize Ethe
 No - at this time, a full node is required.
 
 <!-- **I don't have a 2TB SSD, but I have multiple smaller SSDs. Will this work?** <br />
-Yes. You can tell your execution client to overflow into a specific drive by (TODO). You can tell your beacon node client to overflow into a specific drive by (TODO). You can tell your validator client to overflow into a specific drive by (TODO). -->
+Yes. You can tell your execution client to overflow into a specific drive by (TODO). You can tell your Agora node client to overflow into a specific drive by (TODO). You can tell your validator client to overflow into a specific drive by (TODO). -->
 
 **Can I use an external SSD connected via USB?** <br />
 Yes, but your USB connection introduces a possible point of failure. If you do this, avoid connecting your SSD to your computer through a USB hub - instead, connect it directly.
@@ -109,15 +106,15 @@ The Merge introduces a new Engine API that allows consensus-layer clients to com
 <!--TODO: develop our own knowledge base with conceptual content -->
 
 **What happens if my execution client goes down? Will I be penalized?** <br />
-Yes. Downtime penalties are minimal but we recommend having uptime and downtime alerts configured for your execution node, beacon node, and validator if possible.
+Yes. Downtime penalties are minimal but we recommend having uptime and downtime alerts configured for your execution node, Agora node, and validator if possible.
 
-**My beacon node is taking a long time to sync. Is there any way I can speed it up?** <br />
-Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/agora-cl-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your beacon node.
+**My Agora node is taking a long time to sync. Is there any way I can speed it up?** <br />
+Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/agora-cl-usage/checkpoint-sync) to start your Agora node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your Agora node.
 <!--TODO: explain why -->
 
 
 **My proposals aren't working, but my attestations are. What's going on?** <br />
-This is usually an indication that your validator isn't able to communicate with your beacon node, or your beacon node isn't able to connect to your execution node.
+This is usually an indication that your validator isn't able to communicate with your Agora node, or your Agora node isn't able to connect to your execution node.
 
 **How long does it take for my validator to be selected to propose a new block?** <br />
 At the time of this writing, a ballpark estimate is **around a week**. Every 12 seconds a new block is proposed, and your validator has a one in [total number of active validators] chance of being chosen, so this duration can vary significantly from one validator to the next.

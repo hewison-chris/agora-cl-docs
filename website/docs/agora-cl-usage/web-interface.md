@@ -75,7 +75,7 @@ the `--wallet-dir` flag will determine the location where your auth token as wel
 
 ### Accessing the web interface from a remote computer
 
-If you are running your beacon node and validator on some server that you want to access from the outside, we recommend SSH local port forwarding to access it. For example, you would do the following from your home computer:
+If you are running your Agora node and validator on some server that you want to access from the outside, we recommend SSH local port forwarding to access it. For example, you would do the following from your home computer:
 
 ```
 ssh -L 7500:127.0.0.1:7500 user@host_ip

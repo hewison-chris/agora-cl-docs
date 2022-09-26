@@ -18,13 +18,13 @@ This may be overkill for at-home stakers who use the `agora-cl.sh` script to run
 
 ### Docker
 
-You can use Docker to run your beacon node and validators as background services. See [Install with Docker](../install/install-with-docker). You can monitor and view your running Docker containers using `docker ps`.
+You can use Docker to run your Agora node and validators as background services. See [Install with Docker](../install/install-with-docker). You can monitor and view your running Docker containers using `docker ps`.
 
 ### Systemd (Linux)
 
 Linux systems allow for easy running of services in the background through a daemon process called [systemd](https://www.digitalocean.com/community/tutorials/systemd-essentials-working-with-services-units-and-the-journal). You can follow the tutorial posted by [Digital Ocean](https://www.digitalocean.com/community/tutorials/systemd-essentials-working-with-services-units-and-the-journal) on setting up systemd services.
 
-You can run your beacon node with the following systemd configuration, where you can modify some of the fields and flags to your liking. Assuming your agora-cl.sh script is at `/home/agora-cl/agora-cl.sh`.
+You can run your Agora node with the following systemd configuration, where you can modify some of the fields and flags to your liking. Assuming your agora-cl.sh script is at `/home/agora-cl/agora-cl.sh`.
 
 ```text
 [Unit]

@@ -19,13 +19,13 @@ One of the required components of nodes in the Ethereum beacon chain network is 
 
 Agora-cl implements its API by using the popular [gRPC](https://grpc.io) project created by Google, providing highly advanced functionality for Ethereum consensus. Interacting with the API requires the use of protocol buffers, also known as protobuf. These [protocol buffer](https://developers.google.com/protocol-buffers/). For information on the functionality of gRPC and protocol buffers more generally, see the [gRPC guide](https://grpc.io/docs/guides/).
 
-## Calling the API on your local beacon node
+## Calling the API on your local Agora node
 
 :::danger Do not publicly expose the API
-The API's purpose is a means of communication between your beacon node and your validator client. Because of this it is not protected against external malicious users. Some endpoints are vulnerable to Denial-of-Service attacks, while others may disclose information about your beacon node. The communication between the beacon node and the validator client should be done privately, either on the same machine or through an SSH connection.
+The API's purpose is a means of communication between your Agora node and your validator client. Because of this it is not protected against external malicious users. Some endpoints are vulnerable to Denial-of-Service attacks, while others may disclose information about your Agora node. The communication between the Agora node and the validator client should be done privately, either on the same machine or through an SSH connection.
 :::
 
-By default, the beacon node exposes a [gRPC](https://grpc.io) API on host `127.0.0.1:4000`, which is accessed by the validator client. This is not an HTTP endpoint, so you will not be able to perform API queries via HTTP on that port. However, we also expose a JSON-HTTP endpoint on `127.0.0.1:3500` by default for your needs. If you want to query information such as the chainhead from your local beacon node, you can call:
+By default, the Agora node exposes a [gRPC](https://grpc.io) API on host `127.0.0.1:4000`, which is accessed by the validator client. This is not an HTTP endpoint, so you will not be able to perform API queries via HTTP on that port. However, we also expose a JSON-HTTP endpoint on `127.0.0.1:3500` by default for your needs. If you want to query information such as the chainhead from your local Agora node, you can call:
 
 ```
 http://127.0.0.1:3500/eth/v1alpha1/beacon/chainhead
@@ -33,7 +33,7 @@ http://127.0.0.1:3500/eth/v1alpha1/beacon/chainhead
 
 ## Disabling the API
 
-By default the beacon node runs with all available set of APIs enabled. You might want to disable one or more APIs, for example for security reasons. The `--http-modules` flags allows fine-grained control over which APIs are available on your node.
+By default the Agora node runs with all available set of APIs enabled. You might want to disable one or more APIs, for example for security reasons. The `--http-modules` flags allows fine-grained control over which APIs are available on your node.
 
 ## RESTful endpoints \(gRPC Transcoding\)
 

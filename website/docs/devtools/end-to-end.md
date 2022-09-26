@@ -20,7 +20,7 @@ bazel test //testing/endtoend:go_default_test --//proto:network=minimal --test_f
 
 ## How are E2E tests special?
 
-E2E tests are located in https://github.com/zeroone-boa/agora-cl/tree/develop/testing/endtoend. They are regular Go tests enhanced by Bazel. The main reason why we need Bazel is to prepare binaries for components executed by the test, including the beacon node and validator. This means we are testing the system as a whole, including all inter-process communication. E2E uses a dedicated beacon config that overrides several important parameters, such as time-related values (we don't want the test to take too long given that it's supposed to run for several epochs).
+E2E tests are located in https://github.com/zeroone-boa/agora-cl/tree/develop/testing/endtoend. They are regular Go tests enhanced by Bazel. The main reason why we need Bazel is to prepare binaries for components executed by the test, including the Agora node and validator. This means we are testing the system as a whole, including all inter-process communication. E2E uses a dedicated beacon config that overrides several important parameters, such as time-related values (we don't want the test to take too long given that it's supposed to run for several epochs).
 
 :::info
 The difference between `TestEndToEnd_MinimalConfig` and `TestEndToEnd_MinimalConfig_ValidatorAtCurrentRelease` is that the former runs the latest validator code, whereas the latter run the validator's latest release. The idea is to ensure backwards compatibility between `HEAD` and the latest validator release.
@@ -48,7 +48,7 @@ There are several types that implement this interface and they can all be found 
 
 E2E requires appropriate regular version updates for certain components that run on binary such as web3signer. Currently, E2E can only support 1 version of a component at a time.
 
-Running components correctly is not a simple task. We can't simply start up all components at the same time and expect the system to work. The beacon node requires a running boot node to be able to find peers, as well as an Eth1 node with blocks that include deposits for validators that will be used during the test. This means we need a combination of synchronous and asynchronous behavior. This is achieved by the use of goroutines and the `ComponentRunner` interface inside `run()` in https://github.com/zeroone-boa/agora-cl/blob/develop/testing/endtoend/endtoend_test.go.
+Running components correctly is not a simple task. We can't simply start up all components at the same time and expect the system to work. The Agora node requires a running boot node to be able to find peers, as well as an Eth1 node with blocks that include deposits for validators that will be used during the test. This means we need a combination of synchronous and asynchronous behavior. This is achieved by the use of goroutines and the `ComponentRunner` interface inside `run()` in https://github.com/zeroone-boa/agora-cl/blob/develop/testing/endtoend/endtoend_test.go.
 
 ### Evaluators
 

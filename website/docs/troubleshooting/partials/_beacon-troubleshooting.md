@@ -5,9 +5,9 @@
     </tr>
     <tr>
       <td>Waiting for peers / peer disconnected / no active peers: <code>Waiting for enough suitable peers before syncing...</code> <code>msg="Peer disconnected" active=0</code></td>
-      <td>Peers will continuously disconnect and reconnect, so don't worry about <code>Peer disconnected</code> messages. If your beacon node is struggling to find peers: <br/>
+      <td>Peers will continuously disconnect and reconnect, so don't worry about <code>Peer disconnected</code> messages. If your Agora node is struggling to find peers: <br/>
       <ul>
-          <li>Your beacon node might be suffering from connectivity problems. Visit <a href='/docs/agora-cl-usage/p2p-host-ip'>Improve P2P connectivity</a> for connectivity troubleshooting guidance. Ensure that your firewall isn't restricting any <strong>outbound</strong> ports for Agora-cl.</li>
+          <li>Your Agora node might be suffering from connectivity problems. Visit <a href='/docs/agora-cl-usage/p2p-host-ip'>Improve P2P connectivity</a> for connectivity troubleshooting guidance. Ensure that your firewall isn't restricting any <strong>outbound</strong> ports for Agora-cl.</li>
           <li>You may be using an incorrect genesis state or network flag. Every test network requires its own genesis state and network flag. Visit our <a href='../install/install-with-script'>Quickstart</a> for the latest test network parameters.</li>
       </ul>
       </td>
@@ -26,7 +26,7 @@
     </tr>
     <tr>
       <td><code>could not get ancestor state: failed to unmarshal encoding: incorrect size</code></td>
-      <td>This usually indicates that your beacon node's data has become corrupt. Try restarting your beacon node with a new or cleared data directory. Consider using <a href='https://docs.prylabs.network/docs/agora-cl-usage/checkpoint-sync'>Checkpoint Sync</a> to reduce sync time.</td>
+      <td>This usually indicates that your Agora node's data has become corrupt. Try restarting your Agora node with a new or cleared data directory. Consider using <a href='https://docs.prylabs.network/docs/agora-cl-usage/checkpoint-sync'>Checkpoint Sync</a> to reduce sync time.</td>
     </tr>
     <tr>
       <td><code>could not process block: could not process block header: parent root 0x... does not match the latest block header signing root in state</code></td>
@@ -52,7 +52,7 @@
       <td>You can safely ignore this warning - it will be removed in an upcoming Agora-cl release. See <a href='https://docs.prylabs.network/docs/agora-cl-usage/checkpoint-sync'>How to configure Checkpoint Sync</a> if you'd like to learn more about checkpoint sync.</td>
     </tr>
     <tr>
-      <td><code>beacon node doesn't have a parent in db with root...</code></td>
+      <td><code>Agora node doesn't have a parent in db with root...</code></td>
       <td>If you see blocks advancing, then this can usually be ignored. If you don't see blocks advancing, there are likely other warnings and/or errors that will help you troubleshoot.</td>
     </tr>
 </table>

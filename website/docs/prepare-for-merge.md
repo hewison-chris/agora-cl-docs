@@ -8,9 +8,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
-import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
-
-<HeaderBadgesWidget commaDelimitedContributors="Mick,Raul,James" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v3.1.1" />
 
 :::info New user?
 
@@ -112,7 +109,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
                 <div class='input-container'><input id="cl-7" type='checkbox'/><span class='done'></span></div>
                 <div class='guidance-container'>
                     <label for="cl-7">Configure JWT</label>
-                    <p>If you're not using IPC to connect your beacon node and execution node, ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: <a href='./execution-node/authentication'>Configure JWT</a></p>
+                    <p>If you're not using IPC to connect your Agora node and execution node, ensure that both your execution node and Agora node are configured to use JWT authentication. These instructions are included below, and are also available here: <a href='./execution-node/authentication'>Configure JWT</a></p>
                 </div>
             </div>
         </TabItem>
@@ -122,7 +119,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-8" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-8">Update your firewall</label>
-            <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port <code>8551</code>. Previously, port <code>8545</code> was used. If your beacon node and execution node are on different host machines, ensure that your firewall rules are updated accordingly, and refer to <a href='./agora-cl-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a> for general connectivity improvement tips.</p>
+            <p>If you're not using IPC to connect your Agora node and execution node, your Agora node will need to connect to its execution node on port <code>8551</code>. Previously, port <code>8545</code> was used. If your Agora node and execution node are on different host machines, ensure that your firewall rules are updated accordingly, and refer to <a href='./agora-cl-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a> for general connectivity improvement tips.</p>
         </div>
     </div>
     <div class='task'>
@@ -136,7 +133,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-expected" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-expected">Ensure that Agora-cl is running as expected</label>
-            <p>See <a href='./monitoring/checking-status'>Check node and validator status</a> to learn how to check the status of your execution node, beacon node, and validator node.</p>
+            <p>See <a href='./monitoring/checking-status'>Check node and validator status</a> to learn how to check the status of your execution node, Agora node, and validator node.</p>
         </div>
     </div>
 </div>
@@ -147,7 +144,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 | Before                                                                                                         | Now                                                                                                                                      |
 |----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | You don't need to run a local execution client. You can use a service like Infura instead.                     | You **do** need to run an execution client. You **can't** use Infura as an execution endpoint provider.                                  |
-| The HTTP connection between beacon node and execution node doesn't need to be authenticated using a JWT token. | The HTTP connection between beacon node and execution node **does** need to be authenticated using a JWT token.                          |
+| The HTTP connection between Agora node and execution node doesn't need to be authenticated using a JWT token. | The HTTP connection between Agora node and execution node **does** need to be authenticated using a JWT token.                          |
 | Beacon nodes connect to execution nodes on port `8545` by default when using HTTP.                             | Beacon nodes connect to execution nodes on port **`8551`** by default when using HTTP.                                                   |
 | Miners receive transaction fee tips.                                                                           | **Validators** receive transaction fee tips. The "fee" is now a base fee that's burned - block producers earn only transaction fee tips. |
 | A fee recipient address does not need to be specified.                                                         | A fee recipient address **does** need to be specified.                                                                                   |

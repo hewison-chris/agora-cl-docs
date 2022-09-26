@@ -77,7 +77,7 @@ FSMs are responsible for managing state transitions (fetch request queued, block
 
 Initial Synchronization Service
 
-Available synchronization functionality is exposed via `initalsync.Service`, with two major methods: `Start()` and `Resync()`. The former is responsible for initialization of the service and the first synchronization after the node’s initial start and the latter is called when beacon node falls behind during the normal synchronization, and needs to resync using a more robust initial synchronization mechanism.
+Available synchronization functionality is exposed via `initalsync.Service`, with two major methods: `Start()` and `Resync()`. The former is responsible for initialization of the service and the first synchronization after the node’s initial start and the latter is called when Agora node falls behind during the normal synchronization, and needs to resync using a more robust initial synchronization mechanism.
 
 Another purpose of the service object is to be the glue between blocks queue and blocks processor: it makes sure that the queue is started and blocks received are forwarded to the processor.
 
@@ -121,7 +121,7 @@ Each FSM [(see fsm.go:stateMachine)](https://github.com/zeroone-boa/agora-cl/blo
 
 **Blocks:** fetched blocks; provided by the fetcher via its output channel.
 
-FSM Manager is a container used to group machines together, for easier management and traversal. It is queue’s responsibility to make sure that `Start Slot` uniquely identifies the machine: there’s no point in having a machine with the same start slots, as machines are fetching batches of a constant size starting from the start slot, therefore machines with the same start slot will essentially fetch the same block range (albeit, possibly, from the different peers). Of course sometimes such a redundancy is unavoidable: in cases when the beacon node’s head cannot be advanced, machines with slots equal to that of some previously used machines can be spawned (see how machines are reset in [onProcessSkippedEvent()](https://github.com/zeroone-boa/agora-cl/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L419) event handler).
+FSM Manager is a container used to group machines together, for easier management and traversal. It is queue’s responsibility to make sure that `Start Slot` uniquely identifies the machine: there’s no point in having a machine with the same start slots, as machines are fetching batches of a constant size starting from the start slot, therefore machines with the same start slot will essentially fetch the same block range (albeit, possibly, from the different peers). Of course sometimes such a redundancy is unavoidable: in cases when the Agora node’s head cannot be advanced, machines with slots equal to that of some previously used machines can be spawned (see how machines are reset in [onProcessSkippedEvent()](https://github.com/zeroone-boa/agora-cl/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L419) event handler).
 
 While event handlers operate on FSMs, they are not registered with machines themselves but with the queue, this is done for reasons of efficiency (machines are constantly removed and re-added, so are kept as simple as possible). When an event occurs (for example `Tick` event occurs every 200 milliseconds), each known FSM is passed to the corresponding event handler, depending on FSM’s current state. Here is the list of event handlers, required FSM start states and their corresponding handlers:
 
@@ -415,7 +415,7 @@ To run tests using vanilla Go, just use `go test` (to understand the reasons for
 go test ./beacon-chain/sync/initial-sync -v -failfast -tags develop -run TestBlocksQueue
 ```
 
-When it comes to system and integration testing, generally one is expected to do it manually: run the beacon node and see whether it was able to sync from genesis to the latest head.
+When it comes to system and integration testing, generally one is expected to do it manually: run the Agora node and see whether it was able to sync from genesis to the latest head.
 
 Variations include: stopping and restarting, stopping for a long time and then restarting, switching off access to the internet etc etc. Here is one way to do it:
 

@@ -7,9 +7,6 @@ sidebar_label: Install using Docker
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
-
-<HeaderBadgesWidget commaDelimitedContributors="Raul,Mick" />
 
 Agora-cl can be installed on Windows, GNU/Linux, and MacOS systems with Docker. We use [Bazel](https://bazel.build) to push preconfigured Docker images to a publicly accessible Google Cloud container registry.
 
@@ -86,11 +83,11 @@ These commands will automatically install dependencies.
 
 ## Configure ports (optional)
 
-We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your beacon node startup command will configure Agora-cl to use your newly opened ports. Refer to [Configure ports and firewalls](../agora-cl-usage/p2p-host-ip.md) for more information.
+We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your Agora node startup command will configure Agora-cl to use your newly opened ports. Refer to [Configure ports and firewalls](../agora-cl-usage/p2p-host-ip.md) for more information.
 
 <div class='hide-tabs'>
 
-## Run a beacon node
+## Run a Agora node
 
 :::info Knowledge Check
 
@@ -100,7 +97,7 @@ We recommend opening up ports `tcp/13000` and `udp/12000` on your router and fir
 
 If you're not already running an execution node, refer to our [Quickstart](/docs/install/install-with-script) for beginner-friendly execution node installation instructions.
 
-Next, use Docker to tell your beacon node to connect to your local execution node. Note that `<YOUR_ETH_EXECUTION_NODE_ENDPOINT>` is either an HTTP endpoint `http://host:port` or an IPC path such as `/path/to/geth.ipc`.
+Next, use Docker to tell your Agora node to connect to your local execution node. Note that `<YOUR_ETH_EXECUTION_NODE_ENDPOINT>` is either an HTTP endpoint `http://host:port` or an IPC path such as `/path/to/geth.ipc`.
 
 <Tabs
   groupId="os"
@@ -354,12 +351,12 @@ You’re now running a <strong>full Ethereum node</strong> and a <strong>validat
 
 It can a long time (from days to months) for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). See [Check node and validator status](../monitoring/checking-status.md) for detailed status monitoring guidance.
 
-You can leave your **execution client**, **beacon node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
+You can leave your **execution client**, **Agora node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
 
 
 ## Appendix A: Manage Agora-cl with Docker
 
-To interact with your beacon node through Docker, use one of the following commands:
+To interact with your Agora node through Docker, use one of the following commands:
 
  - Halt: `docker stop beacon-node` or `Ctrl+c`
  - Restart: `docker start -ai beacon-node`

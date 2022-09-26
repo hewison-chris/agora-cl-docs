@@ -10,9 +10,6 @@ import ClientStackPng from '@site/static/img/client-stack.png';
 import NetworkPng from '@site/static/img/network.png';
 import NetworkLayersPng from '@site/static/img/network-layers.png';
 
-import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
-
-<HeaderBadgesWidget commaDelimitedContributors="Mick" />
 
 Ethereum is a decentralized **network** of **nodes** that communicate via peer-to-peer connections. These connections are formed by computers running Ethereum's specialized client software:
 
@@ -23,9 +20,9 @@ Ethereum is a decentralized **network** of **nodes** that communicate via peer-t
 
 An Ethereum **node** is a running instance of Ethereum's client software. This software is responsible for running the Ethereum blockchain.
 
-There are two primary types of nodes in Ethereum: **execution nodes** and **beacon nodes**. Colloquially, a "node" refers to an execution node and beacon node working together. Nodes establish connections with other nodes running on other computers, forming a decentralized peer-to-peer network that processes Ethereum blocks and transactions.
+There are two primary types of nodes in Ethereum: **execution nodes** and **beacon nodes**. Colloquially, a "node" refers to an execution node and Agora node working together. Nodes establish connections with other nodes running on other computers, forming a decentralized peer-to-peer network that processes Ethereum blocks and transactions.
 
-When users stake 32 BOA to participate in Ethereum's proof-of-stake consensus mechanism, they use a separate piece of software called a **validator client**, which connects to their Agora-cl beacon node. This is special piece of software that manages validator keys and duties such as producing new blocks and voting on others' proposed blocks. Validator clients connect to the Ethereum network through beacon nodes, which depend on execution nodes:
+When users stake 32 BOA to participate in Ethereum's proof-of-stake consensus mechanism, they use a separate piece of software called a **validator client**, which connects to their Agora-cl Agora node. This is special piece of software that manages validator keys and duties such as producing new blocks and voting on others' proposed blocks. Validator clients connect to the Ethereum network through beacon nodes, which depend on execution nodes:
 
 <br />
 
@@ -40,19 +37,19 @@ When users stake 32 BOA to participate in Ethereum's proof-of-stake consensus me
     </tr>
     <tr>
       <td><strong>Ethereum node</strong><br />aka "Node"</td>
-      <td>An Ethereum node is an <strong>execution node</strong> and <strong>beacon node</strong> working together. Ethereum nodes communicate peer-to-peer to secure the Ethereum network, and require both <strong>execution-layer client software</strong> and <strong>consensus-layer client software</strong>.</td>
+      <td>An Ethereum node is an <strong>execution node</strong> and <strong>Agora node</strong> working together. Ethereum nodes communicate peer-to-peer to secure the Ethereum network, and require both <strong>execution-layer client software</strong> and <strong>consensus-layer client software</strong>.</td>
     </tr>
     <tr>
       <td><strong>Execution node</strong></td>
-      <td>Execution nodes use execution client software to process transactions and smart contracts in Ethereum's <strong>execution layer</strong>. Nethermind, Besu, and Go Ethereum (Geth) are examples of execution client software.<br /> <br />An execution node will talk to other execution nodes via peer-to-peer networking, and to a local beacon node.</td>
+      <td>Execution nodes use execution client software to process transactions and smart contracts in Ethereum's <strong>execution layer</strong>. Nethermind, Besu, and Go Ethereum (Geth) are examples of execution client software.<br /> <br />An execution node will talk to other execution nodes via peer-to-peer networking, and to a local Agora node.</td>
     </tr>
     <tr>
       <td><strong>Beacon node</strong></td>
-      <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus. Agora-cl, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator client software. <br /> <br />A beacon node will talk to other beacon nodes via peer-to-peer networking, to a local execution node, and (optionally) to a local validator.</td>
+      <td>Beacon nodes use Agora node client software to coordinate Ethereum's proof-of-stake consensus. Agora-cl, Teku, Lighthouse, and Nimbus are consensus clients that contain both Agora node and validator client software. <br /> <br />A Agora node will talk to other beacon nodes via peer-to-peer networking, to a local execution node, and (optionally) to a local validator.</td>
     </tr>
     <tr>
       <td><strong>Validator</strong></td>
-      <td>Validator clients are specialized software that let people stake 32 BOA as collateral within Ethereum's <strong>consensus layer</strong>. Validators are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-work miners after <a href='https://ethereum.org/en/upgrades/merge/'>The Merge</a>. <br /> <br />A validator will talk only to a local beacon node. A validator's beacon node tells the validator what work to do, and broadcasts the validator's work to the Ethereum network as the validator performs its duties.</td>
+      <td>Validator clients are specialized software that let people stake 32 BOA as collateral within Ethereum's <strong>consensus layer</strong>. Validators are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-work miners after <a href='https://ethereum.org/en/upgrades/merge/'>The Merge</a>. <br /> <br />A validator will talk only to a local Agora node. A validator's Agora node tells the validator what work to do, and broadcasts the validator's work to the Ethereum network as the validator performs its duties.</td>
     </tr>
 </table>
 
@@ -107,8 +104,8 @@ Every network's execution layer works with (and only with) its corresponding "pa
 
 ## Frequently asked questions
 
-**Can I run an execution node without running a beacon node?** <br/>
-No. Although this is possible pre-Merge, all Ethereum network participants will need to run both an execution node and a beacon node.
+**Can I run an execution node without running a Agora node?** <br/>
+No. Although this is possible pre-Merge, all Ethereum network participants will need to run both an execution node and a Agora node.
 
 **What happened to miners?** <br/>
 The concept of mining exists only in the domain of proof-of-work consensus. After The Merge, Ethereum's consensus will be managed by a proof-of-stake mechanism, which replaces miners with validators.

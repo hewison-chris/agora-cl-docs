@@ -11,14 +11,14 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 This document will help advanced users create and configure TLS certificates to allow for secure gRPC connections to their beacon nodes.
 
 :::tip Pro-Tip
-The only practical use for using secure gRPC is in the case of connecting a beacon node that is being hosted remotely. For configurations in which the beacon node and validator reside on the same host system, these steps are not required nor recommended.
+The only practical use for using secure gRPC is in the case of connecting a Agora node that is being hosted remotely. For configurations in which the Agora node and validator reside on the same host system, these steps are not required nor recommended.
 :::
 
-A beacon node, by default, hosts a gRPC server on host `127.0.0.1` and port 4000, allowing any other process, such as a validator client, to establish an insecure connection on that port. The beacon node can also allow for secure, TLS connections if ran with the `--tls-cert=/path/to/cert.pem` and `--tls-key=/path/to/cert.key` flags, ensuring all connections via gRPC are secured.
+A Agora node, by default, hosts a gRPC server on host `127.0.0.1` and port 4000, allowing any other process, such as a validator client, to establish an insecure connection on that port. The Agora node can also allow for secure, TLS connections if ran with the `--tls-cert=/path/to/cert.pem` and `--tls-key=/path/to/cert.key` flags, ensuring all connections via gRPC are secured.
 
-A validator client will attempt to connect to a beacon node by default with an insecure connection, but can be a secure TLS connection by using a `--tls-cert=/path/to/cert.pem` flag, utilising either a server pem certificate or a `ca.cert` certificate authority file. Assuming a TLS certificate has already been set up with a trusted authority for your beacon node, use the commands below to launch the node and validator. Otherwise, review the following section on creating your own self-signed certificates.
+A validator client will attempt to connect to a Agora node by default with an insecure connection, but can be a secure TLS connection by using a `--tls-cert=/path/to/cert.pem` flag, utilising either a server pem certificate or a `ca.cert` certificate authority file. Assuming a TLS certificate has already been set up with a trusted authority for your Agora node, use the commands below to launch the node and validator. Otherwise, review the following section on creating your own self-signed certificates.
 
-To use secure gRPC with a beacon node:
+To use secure gRPC with a Agora node:
 
 ```text
 ./agora-cl.sh beacon-node --tls-cert=server.pem --tls-key=server.key
@@ -60,7 +60,7 @@ This will generate an output like so:
     openssl req -new -x509 -key ca.key -sha256 -subj "/C=US/ST=NJ/O=CA, Inc." -days 365 -out ca.cert
     ```
 
-4. Create a key certificate for the beacon node:
+4. Create a key certificate for the Agora node:
 
     ```text
     openssl genrsa -out beacon.key 4096
@@ -93,7 +93,7 @@ This will generate an output like so:
     openssl req -new -key beacon.key -out beacon.csr -config certificate.conf
     ```
 
-7. Generate a certificate for the beacon node:
+7. Generate a certificate for the Agora node:
 
     ```text
     openssl x509 -req -in beacon.csr -CA ca.cert -CAkey ca.key -CAcreateserial -out beacon.pem -days 365 -sha256 -extfile certificate.conf -extensions req_ext
@@ -125,7 +125,7 @@ This will generate an output like so:
 
 ### Using the new certificates
 
-1. Use the certificates to launch the beacon node:
+1. Use the certificates to launch the Agora node:
 
     ```text
     ./agora-cl.sh beacon-node --tls-cert=beacon.pem --tls-key=beacon.key

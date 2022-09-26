@@ -81,7 +81,7 @@ To read comprehensive instructions on how to build Agora-cl's docker images for 
 
 ### With Bazel
 
-Everything in Agora-cl can be built with Bazel using `bazel build //...`. For example, the beacon node can be built with `bazel build //beacon-chain --config=release`. The `--config=release` will apply all compile-time optimizations to the code, and build everything including C dependencies and our cryptography from source. Every package in the Agora-cl monorepo can be build with `bazel build`.
+Everything in Agora-cl can be built with Bazel using `bazel build //...`. For example, the Agora node can be built with `bazel build //beacon-chain --config=release`. The `--config=release` will apply all compile-time optimizations to the code, and build everything including C dependencies and our cryptography from source. Every package in the Agora-cl monorepo can be build with `bazel build`.
 
 ### With Go
 

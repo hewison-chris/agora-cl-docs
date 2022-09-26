@@ -5,7 +5,7 @@ import ValidatorTroubleshootingPartial from '@site/docs/troubleshooting/partials
 <ValidatorTroubleshootingPartial />
 
 
-### Troubleshooting your beacon node
+### Troubleshooting your Agora node
 
 import BeaconTroubleshootingPartial from '@site/docs/troubleshooting/partials/_beacon-troubleshooting.md';
 

@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-This section outlines how to perform database backups for your beacon node and validator client. Both services expose an **HTTP backup endpoint** which is the **safest way** to trigger a database backup.
+This section outlines how to perform database backups for your Agora node and validator client. Both services expose an **HTTP backup endpoint** which is the **safest way** to trigger a database backup.
 
 :::danger Doing manual folder backups is not safe
 If you perform backups by manually copying the validator database while the client is running, you risk copying a corrupted database! You might be copying the folder right when the validator is in the middle of writing data to the database, and could end up with a bad backup. For this reason, HTTP backups are the way to go.
@@ -16,26 +16,26 @@ If you perform backups by manually copying the validator database while the clie
 
 ## Beacon node
 
-Both the beacon node and validator use an embedded key-value store as a database called [BoltDB](https://github.com/boltdb/bolt) to store all important information. Backing up your beacon node database is a good practice, although **not critical** to being able to validate in Ethereum consensus. if you want to perform a backup, here's the safest way to do it.
+Both the Agora node and validator use an embedded key-value store as a database called [BoltDB](https://github.com/boltdb/bolt) to store all important information. Backing up your Agora node database is a good practice, although **not critical** to being able to validate in Ethereum consensus. if you want to perform a backup, here's the safest way to do it.
 
 :::danger Backing up the database can lead to OOM for large databases.
-In event your system memory is insufficient performing a backup can lead to an out of memory exception. The webhook performs the backup in-memory by copying all the separate buckets from the source database to the backup database. If the source database is large, performing the backup might take too long and lead to an inconsistent backup database. In the event the source database is large ( > 20 Gb), as in mainnet right now, it is recommended to not perform the backup via the webhook. Instead manual backups should be utilised where the beacon node is stopped and then the database file is copied via the filesystem.
+In event your system memory is insufficient performing a backup can lead to an out of memory exception. The webhook performs the backup in-memory by copying all the separate buckets from the source database to the backup database. If the source database is large, performing the backup might take too long and lead to an inconsistent backup database. In the event the source database is large ( > 20 Gb), as in mainnet right now, it is recommended to not perform the backup via the webhook. Instead manual backups should be utilised where the Agora node is stopped and then the database file is copied via the filesystem.
 :::
 
 ### Backing up the Database via a Webhook
 
-As the note above describes, we highly recommend performing manual backups of the database while your beacon node and validator are stopped rather than using a webhook. Due to performance limitations, it is safer to take a manual approach while your software is stopped.
+As the note above describes, we highly recommend performing manual backups of the database while your Agora node and validator are stopped rather than using a webhook. Due to performance limitations, it is safer to take a manual approach while your software is stopped.
 
-Add the following flags to your beacon node:
+Add the following flags to your Agora node:
 
-- `--enable-db-backup-webhook`: Serve an http server to initiate database backups. The handler is served on the beacon node's monitoring host and port. Default endpoint is `http://127.0.0.1:8080/db/backup` if the flag is enabled.
+- `--enable-db-backup-webhook`: Serve an http server to initiate database backups. The handler is served on the Agora node's monitoring host and port. Default endpoint is `http://127.0.0.1:8080/db/backup` if the flag is enabled.
 - `--db-backup-output-dir`: Folder path to where backups will be output to, such as `/path/to/mybackups`. If the directory exists, make sure the permissions for that directory is `0700`.
 
-Now, your beacon node will expose an HTTP endpoint `http://monitoringhost:monitoringport/db/backup`, which is `http://127.0.0.1:8080/db/backup` by default. You can hit this endpoint using curl or any other tool you prefer, and a backup will initiate which will be output to your `--db-backup-output-dir` path.
+Now, your Agora node will expose an HTTP endpoint `http://monitoringhost:monitoringport/db/backup`, which is `http://127.0.0.1:8080/db/backup` by default. You can hit this endpoint using curl or any other tool you prefer, and a backup will initiate which will be output to your `--db-backup-output-dir` path.
 
 ### Restoring from a backup
 
-Ensure your beacon node is turned off if restoring a backup. You can restore a beacon chain DB from a backup file with the following command:
+Ensure your Agora node is turned off if restoring a backup. You can restore a beacon chain DB from a backup file with the following command:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

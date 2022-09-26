@@ -11,14 +11,14 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 This section provides instructions on how to run [slasher](https://github.com/zeroone-boa/agora-cl/tree/master/slasher) as an **optional** process to report slashable offenses on Ethereum proof-of-stake.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](https://docs.prylabs.network/docs/how-agora-cl-works/beacon-node/) for inclusion in a block.  [Validators](https://docs.prylabs.network/docs/how-agora-cl-works/agora-cl-validator-client/) earn a small whistleblower reward for including this proof into a block.
 
 :::tip Slasher Requires Significant Disk Space
-Slasher is essentially a beacon node with **superpowers**. It uses significantly more disk space when running on mainnet.
+Slasher is essentially a Agora node with **superpowers**. It uses significantly more disk space when running on mainnet.
 :::
 
 ## System requirements
 
 ### Minimum specifications
 
-These specifications must be met in order to successfully run a Agora-cl beacon node in `--slasher` mode
+These specifications must be met in order to successfully run a Agora-cl Agora node in `--slasher` mode
 
 * Operating System: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit
 * Processor: Intel Core i5–760 or AMD FX-8100 or better
@@ -53,19 +53,19 @@ Running a slasher is not meant to be profitable. Slashing is meant to be rare an
 
 ## Running Slasher
 
-Running a slasher is as simple as adding the `--slasher` flag to your **beacon node**. Doing this will enable your beacon node to perform slashing detection. However, **home stakers are advised _not_ to run a slasher on personal hardware,** as it is a tremendously resource-hungry process. Slasher is very heavy on database access and disk usage, and the `slasher.db` will quickly grow to 1TB or more when running on mainnet. Given that slasher needs to store a lot of information about attestations and blocks within the network, this is to be expected.
+Running a slasher is as simple as adding the `--slasher` flag to your **Agora node**. Doing this will enable your Agora node to perform slashing detection. However, **home stakers are advised _not_ to run a slasher on personal hardware,** as it is a tremendously resource-hungry process. Slasher is very heavy on database access and disk usage, and the `slasher.db` will quickly grow to 1TB or more when running on mainnet. Given that slasher needs to store a lot of information about attestations and blocks within the network, this is to be expected.
 
 ### Whistleblower Rewards
 
-Running a slasher can also offer some profits to your validators given certain conditions. If slasher detects a slashable condition, it will **broadcast it to the network by default**. Some lucky validator will then package this slashing evidence into a block and be rewarded for doing so. You can **disable** this broadcast in Agora-cl using the `--disable-broadcast-slashings` option in your **beacon node**.
+Running a slasher can also offer some profits to your validators given certain conditions. If slasher detects a slashable condition, it will **broadcast it to the network by default**. Some lucky validator will then package this slashing evidence into a block and be rewarded for doing so. You can **disable** this broadcast in Agora-cl using the `--disable-broadcast-slashings` option in your **Agora node**.
 
 ### Who Should Run a Slasher
 
-As summarized above, the slasher process is likely to overwhelm most home validator setups. The incentives for running a slasher accumulate irregularly, at great cost, so home stakers are advised to run their beacon node without it. It is an entirely optional process. Beacon node operators should consider running the slasher if they are operating a **staking pool** or **data center**.
+As summarized above, the slasher process is likely to overwhelm most home validator setups. The incentives for running a slasher accumulate irregularly, at great cost, so home stakers are advised to run their Agora node without it. It is an entirely optional process. Beacon node operators should consider running the slasher if they are operating a **staking pool** or **data center**.
 
 ## Using Slasher for Advanced Slashing Protection
 
-An alternative implementation for slashing prevention is the use of slasher itself as a middleware client between your beacon node and validator client. Before a validator client submits a block or an attestation, it asks the slasher if the object is slashable. If the check passes, the data will go through to the beacon node. This is the most advanced form of slashing protection as slasher is, ideally, aware of everything happening in the network and has a recorded history of blocks and attestations for every validator.
+An alternative implementation for slashing prevention is the use of slasher itself as a middleware client between your Agora node and validator client. Before a validator client submits a block or an attestation, it asks the slasher if the object is slashable. If the check passes, the data will go through to the Agora node. This is the most advanced form of slashing protection as slasher is, ideally, aware of everything happening in the network and has a recorded history of blocks and attestations for every validator.
 
 ## Further Reading
 

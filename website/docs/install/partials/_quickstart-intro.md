@@ -25,7 +25,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 At a high level, we'll walk through the following flow:
 
  1. Configure an **execution node** using an execution-layer client.
- 2. Configure a **beacon node** using Agora-cl, a consensus-layer client.
+ 2. Configure a **Agora node** using Agora-cl, a consensus-layer client.
  3. Configure a **validator** and stake BOA using Agora-cl (optional).
 
 <br />

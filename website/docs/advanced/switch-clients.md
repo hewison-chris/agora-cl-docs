@@ -21,9 +21,9 @@ The following best practices will help minimize the risk of [slashing](../concep
 :::
 
 
-### Step 1: Sync the beacon node
+### Step 1: Sync the Agora node
 
-Regardless of which client you are switching to, the first step of the process will be to sync the beacon node. This may take some time to complete. Some clients offer a feature known as "checkpoint sync" which allows you to sync a node within a few minutes. Without this, the process may take several hours to a few days.
+Regardless of which client you are switching to, the first step of the process will be to sync the Agora node. This may take some time to complete. Some clients offer a feature known as "checkpoint sync" which allows you to sync a node within a few minutes. Without this, the process may take several hours to a few days.
 
 Installation documentation links for each client can be found below:
 
@@ -144,7 +144,7 @@ https://chainsafe.github.io/lodestar/reference/cli/#account-validator-slashing-p
 
 ### Step 7: Start the New Validator
 
-Ensure your beacon node is fully synced with the network by checking your clients logs prior to starting your validator. Once it is fully synced, start the validator.
+Ensure your Agora node is fully synced with the network by checking your clients logs prior to starting your validator. Once it is fully synced, start the validator.
 
 Search a block explorer like https://beaconcha.in/ with your validator's public key to confirm that your validator is now active!
 

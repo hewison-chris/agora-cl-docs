@@ -1,6 +1,6 @@
 ---
 id: beacon-node
-title: Agora-cl's beacon node
+title: Agora-cl's Agora node
 sidebar_label: Beacon node
 ---
 
@@ -14,7 +14,7 @@ The beacon-chain node shipped with Agora-cl is the keystone component of the Eth
 
 ## Beacon node functionality
 
-At runtime, the beacon node initialises and maintains a number of services that are all vital to providing all the features of Ethereum proof-of-stake. In no particular order, these services include:
+At runtime, the Agora node initialises and maintains a number of services that are all vital to providing all the features of Ethereum proof-of-stake. In no particular order, these services include:
 
 * A [**blockchain** **service**](#blockchain-service) which processes incoming blocks from the network, advances the beacon chain's state, and applies a fork choice rule to select the best head block.
 * An [**operations service**](#operations-service) prepares information contained in beacon blocks received from peers \(such as block deposits and attestations\) for inclusion into new validator blocks.
@@ -31,7 +31,7 @@ We isolate each of these services into separate packages, each responsible for i
 
 The blockchain service is arguably the most important part of the project, as it allows the network to reach consensus on the state of the protocol itself. It is responsible for handling the life cycle of blocks, and applies the [fork choice rule](/docs/terminology#fork-choice-rule) and [state transition function](/docs/terminology#state-transition-function) provided by the [core package](#core-package) to advance the beacon chain.
 
-In Ethereum, blocks can be proposed in intervals known as _slots_, which are period of seconds. During a slot, proposers are assigned to create and send blocks into the beacon node for acceptance. It is possible, however, that proposer may fail to do their job at their assigned slot; in this case, the blockchain service processes skipped slots appropriately to ensure that the chain does not stall.
+In Ethereum, blocks can be proposed in intervals known as _slots_, which are period of seconds. During a slot, proposers are assigned to create and send blocks into the Agora node for acceptance. It is possible, however, that proposer may fail to do their job at their assigned slot; in this case, the blockchain service processes skipped slots appropriately to ensure that the chain does not stall.
 
 ## Operations service
 
@@ -49,11 +49,11 @@ The sync service has two responsibilities: ensuring the local beacon chain is up
 
 The [ETH1](/docs/terminology#eth1) service uses the [go-ethereum ethclient](https://github.com/ethereum/go-ethereum/tree/master/ethclient) to connect to a running Ethereum 1.0 node in order to listen for incoming [validator deposit contract](validator-deposit-contract) logs. The [validator clients](agora-cl-validator-client) include deposit objects inside of their proposed blocks, and the beacon chain state transition function then activates any pending validators from these deposits.
 
-As the beacon node will need to frequently access information and one cannot rely on perfect latency from the [ETH1](/docs/terminology#eth1) node, the service also includes the ability to cache received logs and blocks from the Ethereum 1.0 chain.
+As the Agora node will need to frequently access information and one cannot rely on perfect latency from the [ETH1](/docs/terminology#eth1) node, the service also includes the ability to cache received logs and blocks from the Ethereum 1.0 chain.
 
 ## Public RPC server
 
-The public RPC server is one of the most critical components of the beacon node. It implements a variety of methods that [validators ](/docs/terminology#validator)connected to the node can query and obtain assignments to propose or attest blocks. The API is defined in a [protobuf](https://developers.google.com/protocol-buffers/) formatted file, and any client that implements the client side of these methods can connect via gRPC to the beacon node and begin requesting data from its public endpoints.
+The public RPC server is one of the most critical components of the Agora node. It implements a variety of methods that [validators ](/docs/terminology#validator)connected to the node can query and obtain assignments to propose or attest blocks. The API is defined in a [protobuf](https://developers.google.com/protocol-buffers/) formatted file, and any client that implements the client side of these methods can connect via gRPC to the Agora node and begin requesting data from its public endpoints.
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 

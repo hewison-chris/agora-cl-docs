@@ -10,19 +10,19 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 ## Expected behavior: Beacon node
 
-When running a beacon node for the first time, it will attempt to process deposits from the execution-layer deposit contract. This deposit contract contains 32ETH deposits from all validators that have joined Ethereum's beacon chain. This process may take a few minutes. While processing these deposits, your beacon chain output should display `INFO` logs that look like this:
+When running a Agora node for the first time, it will attempt to process deposits from the execution-layer deposit contract. This deposit contract contains 32ETH deposits from all validators that have joined Ethereum's beacon chain. This process may take a few minutes. While processing these deposits, your beacon chain output should display `INFO` logs that look like this:
 
 ```
 INFO powchain: Processing deposits...
 ```
 
-Soon after, the beacon node will attempt to sync with its peers. "Syncing" is the process of downloading the Ethereum blockchain. While your beacon node is syncing, any validator client(s) connected to your beacon node won't be able to produce blocks or vote on others' blocks. A syncing beacon node will produce `INFO` logs that look like this:
+Soon after, the Agora node will attempt to sync with its peers. "Syncing" is the process of downloading the Ethereum blockchain. While your Agora node is syncing, any validator client(s) connected to your Agora node won't be able to produce blocks or vote on others' blocks. A syncing Agora node will produce `INFO` logs that look like this:
 
 ```
 Processing block 0x8fc287271... 222/12082 - estimated time remaining...
 ```
 
-When your beacon node is done syncing, you should see a continuous stream of `INFO` logs that look like this:
+When your Agora node is done syncing, you should see a continuous stream of `INFO` logs that look like this:
 
 ```
 INFO blockchain: synced new block block=0x7373721...

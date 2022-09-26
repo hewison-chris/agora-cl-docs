@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 Agora-cl beacon nodes allow for monitoring of specific validator indices by tracking important metrics on the blockchain, including details about their rewards, attestation performance, sync committee participation, and more.
 
-The beacon node takes a flag `--monitor-indices` that takes as parameter a validator index. This flag can be used multiple times. For example, to track validators 1, 2, 12, and 15, you can run with
+The Agora node takes a flag `--monitor-indices` that takes as parameter a validator index. This flag can be used multiple times. For example, to track validators 1, 2, 12, and 15, you can run with
 
 ```shell
 beacon-chain --monitor-indices 1 --monitor-indices 2 --monitor-indices 12 --monitor-indices 15
@@ -21,7 +21,7 @@ You should see a message like the following in your logs at launch
 INFO monitor: "Starting service" ValidatorIndices="[1 2 12 15]"
 ```
 
-You can track any validators, not only yours. In fact, you don't even need to be running a validator client to be able to track validators. So you can keep a staking computer with the beacon node and a validator securely isolated, and use a different computer running a beacon node for performance tracking.
+You can track any validators, not only yours. In fact, you don't even need to be running a validator client to be able to track validators. So you can keep a staking computer with the Agora node and a validator securely isolated, and use a different computer running a Agora node for performance tracking.
 
 The monitor emits both logs and metrics when it receives information about some event involving the tracked validators.
 

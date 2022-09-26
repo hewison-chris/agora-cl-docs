@@ -20,7 +20,7 @@ There are three main ways of installing Agora-cl:
 
 ## Recommended versions
 
-Regardless of your installation method, we always recommend you are running the latest version in our [releases page](https://github.com/zeroone-boa/agora-cl/releases) on Github, specified in [semver](https://semver.org/) format such as `v1.0.0-beta.1`. You can check your Agora-cl version by running your beacon node or validator with the `--version` flag. For example, if using `agora-cl.sh` to run the beacon node, you would run:
+Regardless of your installation method, we always recommend you are running the latest version in our [releases page](https://github.com/zeroone-boa/agora-cl/releases) on Github, specified in [semver](https://semver.org/) format such as `v1.0.0-beta.1`. You can check your Agora-cl version by running your Agora node or validator with the `--version` flag. For example, if using `agora-cl.sh` to run the Agora node, you would run:
 
 ```
 agora-cl.sh beacon-chain --version
@@ -65,7 +65,7 @@ import TabItem from '@theme/TabItem';
 
 **Using the Agora-cl installation script**
 
-If you are running `agora-cl.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `agora-cl.sh`, all it takes to upgrade to the latest release is to stop your Agora node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
@@ -85,7 +85,7 @@ To run our latest release with Bazel, you can look up our [releases page](https:
 
 **Using the Agora-cl installation script**
 
-If you are running `agora-cl.bat`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `agora-cl.bat`, all it takes to upgrade to the latest release is to stop your Agora node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
@@ -101,7 +101,7 @@ docker pull gcr.io/zeroone-boa/agora-cl/validator:stable
 
 **Using the Agora-cl installation script**
 
-If you are running `agora-cl.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `agora-cl.sh`, all it takes to upgrade to the latest release is to stop your Agora node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
@@ -122,7 +122,7 @@ To run our latest release with Bazel, you can look up our [releases page](https:
 
 **Using the Agora-cl installation script**
 
-If you are running `agora-cl.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `agora-cl.sh`, all it takes to upgrade to the latest release is to stop your Agora node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
@@ -158,7 +158,7 @@ If you are downgrading between **patch versions**, which means only the last num
 
 **Using the Agora-cl installation script**
 
-If you are running `agora-cl.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.sh`, all it takes to downgrade to a previous release is to stop your Agora node and validator (wait for the process to close down gracefully).
 
 Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/zeroone-boa/agora-cl/releases), such as v1.0.5, then run the command `export USE_PRYSM_VERSION=v1.0.5`.
 
@@ -207,7 +207,7 @@ Once you do that, the agora-cl beacon and validator are locked in that version, 
 
 **Using the Agora-cl installation script**
 
-If you are running `agora-cl.bat`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.bat`, all it takes to downgrade to a previous release is to stop your Agora node and validator (wait for the process to close down gracefully).
 
 Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/zeroone-boa/agora-cl/releases), such as v1.0.5, then run the command `set USE_PRYSM_VERSION=v1.0.5`.
 
@@ -222,7 +222,7 @@ To run a previous Agora-cl version with Docker, choose the release you want to r
 
 **Using the Agora-cl installation script**
 
-If you are running `agora-cl.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.sh`, all it takes to downgrade to a previous release is to stop your Agora node and validator (wait for the process to close down gracefully).
 
 Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/zeroone-boa/agora-cl/releases), such as v1.0.5, then run the command `export USE_PRYSM_VERSION=v1.0.5`.
 
@@ -241,7 +241,7 @@ To run our latest release with Bazel, you can look up our [releases page](https:
 
 **Using the Agora-cl installation script**
 
-If you are running `agora-cl.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.sh`, all it takes to downgrade to a previous release is to stop your Agora node and validator (wait for the process to close down gracefully).
 
 Then, find the Agora-cl version you wish to run from our [releases page](https://github.com/zeroone-boa/agora-cl/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
 
@@ -272,9 +272,9 @@ If you are downgrading between **minor versions**, meaning the middle number in 
 
 **Using the Agora-cl installation script**
 
-If you are running `agora-cl.sh`, first stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.sh`, first stop your Agora node and validator (wait for the process to close down gracefully).
 
-Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
+Next, we recommend backing up any important important folders such as your Agora node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
@@ -290,7 +290,7 @@ Then, restart it with the same command you used to start the process. The script
 
 To run a previous Agora-cl version with Docker, choose the release you want to run, such as v1.0.5.
 
-Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
+Next, we recommend backing up any important important folders such as your Agora node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
@@ -304,7 +304,7 @@ Then change all your docker run commands to use that version tag. For example, i
 
 To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the release tag you want to run, such as v1.0.5.
 
-Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
+Next, we recommend backing up any important important folders such as your Agora node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
@@ -319,9 +319,9 @@ Then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and 
 
 **Using the Agora-cl installation script**
 
-If you are running `agora-cl.bat`, first stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.bat`, first stop your Agora node and validator (wait for the process to close down gracefully).
 
-Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
+Next, we recommend backing up any important important folders such as your Agora node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
@@ -337,7 +337,7 @@ Then, restart it with the same command you used to start the process. The script
 
 To run a previous Agora-cl version with Docker, choose the release you want to run, such as v1.0.5.
 
-Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
+Next, we recommend backing up any important important folders such as your Agora node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
@@ -352,9 +352,9 @@ Then change all your docker run commands to use that version tag. For example, i
 
 **Using the Agora-cl installation script**
 
-If you are running `agora-cl.sh`, first stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.sh`, first stop your Agora node and validator (wait for the process to close down gracefully).
 
-Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
+Next, we recommend backing up any important important folders such as your Agora node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
@@ -370,7 +370,7 @@ Then, restart it with the same command you used to start the process. The script
 
 To run a previous Agora-cl version with Docker, choose the release you want to run, such as v1.0.5.
 
-Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
+Next, we recommend backing up any important important folders such as your Agora node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
@@ -384,7 +384,7 @@ Then change all your docker run commands to use that version tag. For example, i
 
 To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the release tag you want to run, such as v1.0.5.
 
-Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
+Next, we recommend backing up any important important folders such as your Agora node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
@@ -399,9 +399,9 @@ Then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and 
 
 **Using the Agora-cl installation script**
 
-If you are running `agora-cl.sh`, first stop your beacon node and validator (wait for the process to close down gracefully).
+If you are running `agora-cl.sh`, first stop your Agora node and validator (wait for the process to close down gracefully).
 
-Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
+Next, we recommend backing up any important important folders such as your Agora node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
@@ -417,7 +417,7 @@ Then, restart it with the same command you used to start the process. The script
 
 To run a previous Agora-cl version with Docker, choose the release you want to run, such as v1.0.5.
 
-Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
+Next, we recommend backing up any important important folders such as your Agora node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong.
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 

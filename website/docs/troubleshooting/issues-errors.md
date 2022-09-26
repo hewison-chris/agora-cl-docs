@@ -4,9 +4,6 @@ title: Troubleshooting Agora-cl
 sidebar_label: Troubleshooting
 ---
 
-import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
-
-<HeaderBadgesWidget commaDelimitedContributors="Nishant,Mick" />
 
 ## Select a configuration
 

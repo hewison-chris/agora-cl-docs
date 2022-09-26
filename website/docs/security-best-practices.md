@@ -4,9 +4,6 @@ title: Staking with Agora-cl - Security best practices
 sidebar_label: Security best practices
 ---
 
-import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
-
-<HeaderBadgesWidget commaDelimitedContributors="Mick" />
 
 Ethereum's transition to proof-of-stake is made possible by validators who each stake 32 BOA into the [validator deposit contract](https://docs.prylabs.network/docs/how-agora-cl-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
 
@@ -39,7 +36,7 @@ While it's possible to optimize your client instance architecture for high-avail
  - **Essential**: Use a network monitoring service [<a href='#footnote-5'>5</a>] to configure alerts when something isn't right with your validator.
  - **Advanced**: Use an uninterruptible power supply (UPS) to protect your computer from issues related to power outages.
  - **Advanced**: Configure automatic boot / AC auto-recovery in your BIOS.
- - **Advanced**: Ensure that your beacon node and/or validator automatically start running when you reboot your machine.
+ - **Advanced**: Ensure that your Agora node and/or validator automatically start running when you reboot your machine.
  - **Advanced**: Configure [Prometheus and Grafana](https://docs.prylabs.network/docs/agora-cl-usage/monitoring/grafana-dashboard/) to help you visualize real-time validator metrics.
  - **Advanced**: Use a web-based uptime monitoring solution to monitor your validator's uptime with periodic ping-response checks [<a href='#footnote-6'>6</a>].
  - **Advanced**: Configure your validator client's machine to periodically ping a secondary machine with your validator status. If the secondary machine doesn't receive an expected ping from your validator, raise an alert.

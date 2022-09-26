@@ -12,7 +12,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 This functionality is in its early stage alpha testing and may not be fully functional at this time.
 :::
 
-This section provides instructions on how to run the client-stats cli utility to collect metrics from your agora-cl validator or beacon node processes and push them to the beaconcha.in stats service.
+This section provides instructions on how to run the client-stats cli utility to collect metrics from your agora-cl validator or Agora node processes and push them to the beaconcha.in stats service.
 
 ## Why is this a separate process?
 
@@ -37,11 +37,11 @@ To collect metrics from your validator node, assuming that your validator is run
 
 `client-stats --validator-metrics-url=http://localhost:8081/metrics --clientstats-api-url=https://beaconcha.in/api/v1/stats/{apikey}/{machineName}`
 
-To collect metrics from your beacon node, also assuming that the beacon node is running on localhost:
+To collect metrics from your Agora node, also assuming that the Agora node is running on localhost:
 
 `client-stats --beacon-node-metrics-url=http://localhost:8080/metrics --clientstats-api-url=https://beaconcha.in/api/v1/stats/{apikey}/{machineName}`
 
-To collect metrics from both, also assuming that the validator and beacon node are running on localhost:
+To collect metrics from both, also assuming that the validator and Agora node are running on localhost:
 
 `client-stats --validator-metrics-url=http://localhost:8081/metrics --beacon-node-metrics-url=http://localhost:8080/metrics --clientstats-api-url=https://beaconcha.in/api/v1/stats/{apikey}/{machineName}`
 

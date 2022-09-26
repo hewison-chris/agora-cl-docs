@@ -4,9 +4,6 @@ title: Configure Fee Recipient
 sidebar_label: Configure Fee Recipient
 ---
 import FeeRecipientPng from '@site/static/img/fee-recipient-ui.png'
-import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
-
-<HeaderBadgesWidget commaDelimitedContributors="James,Mick" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v3.1.1" />
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,7 +15,7 @@ If you don't configure your fee recipient wallet address before The Merge, your 
 
 :::
 
-**Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node.
+**Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and Agora node.
 
 Your fee recipient wallet address is a **standard Ethereum wallet address**, just like the wallet address used when sending and receiving tokens from Metamask. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever your validator client proposes a new block.
 
@@ -33,12 +30,12 @@ Priority fees are captured by execution clients in the execution layer <a class=
 
 ## Configure fee recipient
 
-Your fee recipient wallet address can be configured on your **validator client instance** and on your **beacon node**. We recommend configuring it in both places. Your validator's configuration will override the beacon node configuration, while the beacon node configuration will be treated like a backup in the event that your validator configuration fails.
+Your fee recipient wallet address can be configured on your **validator client instance** and on your **Agora node**. We recommend configuring it in both places. Your validator's configuration will override the Agora node configuration, while the Agora node configuration will be treated like a backup in the event that your validator configuration fails.
 
 
 ### Configure fee recipient via flags
 
-Your fee recipient wallet address can be configured on both your beacon node and validator through the `--suggested-fee-recipient` flag:
+Your fee recipient wallet address can be configured on both your Agora node and validator through the `--suggested-fee-recipient` flag:
 
  - **Beacon node**: `./agora-cl.sh beacon-chain --suggested-fee-recipient=<WALLET ADDRESS>`
  - **Validator**: `./agora-cl.sh validator --suggested-fee-recipient=<WALLET ADDRESS>`

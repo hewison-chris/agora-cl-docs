@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 #### How do I troubleshoot errors?
 
-If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/zeroone-boa/agora-cl/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Agora-cl version you're running** and your **operating system**, and then file a bug report [here](https://github.com/zeroone-boa/agora-cl/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysmaticlabs) about your error and we'll take a look as soon as possible.
+If your Agora node or validator logs display an `ERROR`, go to our [open issues](https://github.com/zeroone-boa/agora-cl/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Agora-cl version you're running** and your **operating system**, and then file a bug report [here](https://github.com/zeroone-boa/agora-cl/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysmaticlabs) about your error and we'll take a look as soon as possible.
 
 #### My validator is losing money, what's going on?
 
@@ -141,7 +141,7 @@ For help with running geth specifically, the [go-ethereum discord](https://disco
 
 #### How often should I perform database backups?
 
-The Agora-cl beacon node and validator allow performing database backups in case your machine gets corrupted and you need to restore it from some checkpoint. You can read our instructions on performing backups [here](/docs/agora-cl-usage/database-backups). Briefly, the frequency at which you should perform backups really depends on your personal preference. If you want to perform backups once a day or once every week, there is no harm nor bigger difference in doing so. Losing your beacon chain database is not a big deal aside from the fact that you will need to sync again from genesis. Losing your validator db can be problematic but if you wait several epochs before starting your validator, ensure your computer's clock is synced, the risk of slashing is low.
+The Agora-cl Agora node and validator allow performing database backups in case your machine gets corrupted and you need to restore it from some checkpoint. You can read our instructions on performing backups [here](/docs/agora-cl-usage/database-backups). Briefly, the frequency at which you should perform backups really depends on your personal preference. If you want to perform backups once a day or once every week, there is no harm nor bigger difference in doing so. Losing your beacon chain database is not a big deal aside from the fact that you will need to sync again from genesis. Losing your validator db can be problematic but if you wait several epochs before starting your validator, ensure your computer's clock is synced, the risk of slashing is low.
 
 #### Seeing a warning regarding binary signature not being trusted when downloading Agora-cl, should I be worried?
 
@@ -177,17 +177,17 @@ Depositing into Agora as a validator is a multi-step process that can require qu
 
 #### I made a correct deposit and my validator status in Agora-cl is still UNKNOWN, what’s going on?
 
-There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the beacon node to be able to process logs from the eth1 chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on the Agora launchpad), or (3) you never actually sent a deposit to the right contract address
+There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the Agora node to be able to process logs from the eth1 chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on the Agora launchpad), or (3) you never actually sent a deposit to the right contract address
 
 #### How can I move my validator to a different computer without getting slashed?
 
 Agora-cl will soon implement the slashing protection [standard format](https://eips.ethereum.org/EIPS/eip-3076), meaning that you can export your slashing protection history and import it easily into another machine running any Agora consensus client, not just Agora-cl! In the meantime, however, migrating machines can be a little tricky and we prepared the following set of tips to help keep you safe.
 
-1. Turn off your beacon node and validator on machine 1, make sure it is not running as a system process. You can check this using the process monitor tools of your OS, or a command line tool such as top or htop and check for anything containing the name “agora-cl” “validator” or “beacon”
+1. Turn off your Agora node and validator on machine 1, make sure it is not running as a system process. You can check this using the process monitor tools of your OS, or a command line tool such as top or htop and check for anything containing the name “agora-cl” “validator” or “beacon”
 2. Note the location of your wallet directory. If you used the default when you started Agora-cl, you can view its path at the top of the output of `validator accounts list`, which varies based on your operating system
 3. Take that entire directory and move it over to your next machine
 4. If you modified your validators’ `— datadir`, also migrate that directory to your next machine
-5. Wait at least a few epochs, sync your beacon node on your second machine, then start your validator client on your second machine
+5. Wait at least a few epochs, sync your Agora node on your second machine, then start your validator client on your second machine
 6. Ensure you never run the same keys again on machine 1 or anywhere else
 
 #### Can I use testnet validators keys on mainnet?
@@ -210,12 +210,12 @@ You can then confirm your validator was added by running `validator accounts lis
 The easiest way to check your current validator account balance is to search for your validator public key in a blockchain explorer like [beaconchai.in](https://beaconcha.in/).
 
 <!--todo: explain how -->
-If you have a fully synced beacon node, you can fetch your account balance via the beacon node API.
+If you have a fully synced Agora node, you can fetch your account balance via the Agora node API.
 
 
 #### Why are some validators making a lot more money than others?
 
-If you look at the [validator leaderboard](https://beaconcha.in/validators/leaderboard), there are some validators at the top that seem to be doing a lot better than others. The reason being that either they (a) got lucky with being assigned to propose more blocks than other validators, or (b) they caught slashable offenses in the network and packed them into their blocks. Slashings are meant to be rare, and Agora-cl's slasher by default broadcasts slashings it finds to the network so that validators do not selfishly hold on to them. You can actually disable this to selfishly withhold slashings with the `--disable-broadcast-slashings` flag in your beacon node, although don't expect to get rich from slashing other validators.
+If you look at the [validator leaderboard](https://beaconcha.in/validators/leaderboard), there are some validators at the top that seem to be doing a lot better than others. The reason being that either they (a) got lucky with being assigned to propose more blocks than other validators, or (b) they caught slashable offenses in the network and packed them into their blocks. Slashings are meant to be rare, and Agora-cl's slasher by default broadcasts slashings it finds to the network so that validators do not selfishly hold on to them. You can actually disable this to selfishly withhold slashings with the `--disable-broadcast-slashings` flag in your Agora node, although don't expect to get rich from slashing other validators.
 
 Overall, keep in mind that no one has an extra advantage as a validator compared to others. Block proposal opportunities are random and it does not matter how powerful your hardware is. A lot of the times the validators near the top simply got lucky.
 
