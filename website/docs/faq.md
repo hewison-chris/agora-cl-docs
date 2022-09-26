@@ -61,9 +61,9 @@ If that still does not help, please file an issue with our team on Github [here]
 
 #### I got slashed! Why? How can I avoid getting slashed?
 
-Slashing is a way for the network to penalize validator actions that can be harmful to the Ethereum proof-of-stake network. At a high level, a single validator proposing two conflicting blocks or votes or trying to rewrite the history of the chain is considered malicious and such validators will get slashed. Unfortunately, there is no way for the protocol to detect between malicious validators or validators who simply had some faulty configuration that led them to create a slashable offense.
+Slashing is a way for the network to penalize validator actions that can be harmful to the Agora proof-of-stake network. At a high level, a single validator proposing two conflicting blocks or votes or trying to rewrite the history of the chain is considered malicious and such validators will get slashed. Unfortunately, there is no way for the protocol to detect between malicious validators or validators who simply had some faulty configuration that led them to create a slashable offense.
 
-The most common way validators get slashed is by **running the same validator key in two separate validator client processes at the same time**. This will absolutely get you slashed. Some stakers try to create complicated failover scenarios without realizing the risk this entails, do not do this. If you already got slashed, you will leak funds for a while until you are forcefully exited from the validator registry. Thankfully, slashing penalties in phase 0 are quite small. If you are slashed, you should keep performing your validator duties until you are exited. You will be able to then withdraw your validator balance until after Ethereum is fully proof-of-stake (ETA 2022) and will miss out on all the rewards until then.
+The most common way validators get slashed is by **running the same validator key in two separate validator client processes at the same time**. This will absolutely get you slashed. Some stakers try to create complicated failover scenarios without realizing the risk this entails, do not do this. If you already got slashed, you will leak funds for a while until you are forcefully exited from the validator registry. Thankfully, slashing penalties in phase 0 are quite small. If you are slashed, you should keep performing your validator duties until you are exited. You will be able to then withdraw your validator balance until after Agora is fully proof-of-stake (ETA 2022) and will miss out on all the rewards until then.
 
 Our team prepared a blog post on [slashing prevention tips](https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50) you can read to avoid slashings in the future.
 
@@ -173,15 +173,15 @@ Yes, we currently support arm 64-bit architectures such as the raspberry pi 4 an
 
 #### I sent my deposit and so much time has passed but my validator is not active yet
 
-Depositing into Ethereum as a validator is a multi-step process that can require quite a bit of waiting. As a comprehensive reference, we recommend reading Jim McDee's excellent post on the matter [here](https://www.attestant.io/posts/understanding-the-validator-lifecycle/#:~:text=Active%20%2D%20the%20validator%20is%20attesting,blocks%2C%20having%20been%20caught%20cheating). If you sent your deposit, we recommend tracking its progress in one of the block explorers such as [beaconcha.in](https://beaconcha.in) or [beaconscan](https://beaconscan.io). If your deposit is pending and it has still been a while, it is likely because there are a lot of validators in the pending queue ahead of you. There are approximately 4 validators activated every 6.4 minutes, and with thousands in the queue, your wait time can take days or even weeks. You can check how many validators are in the queue on the front page of [beaconcha.in](https://beaconcha.in).
+Depositing into Agora as a validator is a multi-step process that can require quite a bit of waiting. As a comprehensive reference, we recommend reading Jim McDee's excellent post on the matter [here](https://www.attestant.io/posts/understanding-the-validator-lifecycle/#:~:text=Active%20%2D%20the%20validator%20is%20attesting,blocks%2C%20having%20been%20caught%20cheating). If you sent your deposit, we recommend tracking its progress in one of the block explorers such as [beaconcha.in](https://beaconcha.in) or [beaconscan](https://beaconscan.io). If your deposit is pending and it has still been a while, it is likely because there are a lot of validators in the pending queue ahead of you. There are approximately 4 validators activated every 6.4 minutes, and with thousands in the queue, your wait time can take days or even weeks. You can check how many validators are in the queue on the front page of [beaconcha.in](https://beaconcha.in).
 
 #### I made a correct deposit and my validator status in Agora-cl is still UNKNOWN, what’s going on?
 
-There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the beacon node to be able to process logs from the eth1 chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on the Ethereum launchpad), or (3) you never actually sent a deposit to the right contract address
+There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the beacon node to be able to process logs from the eth1 chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on the Agora launchpad), or (3) you never actually sent a deposit to the right contract address
 
 #### How can I move my validator to a different computer without getting slashed?
 
-Agora-cl will soon implement the slashing protection [standard format](https://eips.ethereum.org/EIPS/eip-3076), meaning that you can export your slashing protection history and import it easily into another machine running any Ethereum consensus client, not just Agora-cl! In the meantime, however, migrating machines can be a little tricky and we prepared the following set of tips to help keep you safe.
+Agora-cl will soon implement the slashing protection [standard format](https://eips.ethereum.org/EIPS/eip-3076), meaning that you can export your slashing protection history and import it easily into another machine running any Agora consensus client, not just Agora-cl! In the meantime, however, migrating machines can be a little tricky and we prepared the following set of tips to help keep you safe.
 
 1. Turn off your beacon node and validator on machine 1, make sure it is not running as a system process. You can check this using the process monitor tools of your OS, or a command line tool such as top or htop and check for anything containing the name “agora-cl” “validator” or “beacon”
 2. Note the location of your wallet directory. If you used the default when you started Agora-cl, you can view its path at the top of the output of `validator accounts list`, which varies based on your operating system
@@ -192,19 +192,19 @@ Agora-cl will soon implement the slashing protection [standard format](https://e
 
 #### Can I use testnet validators keys on mainnet?
 
-While this is possible, we highly recommend against it. Given there are so many things that can go wrong when generating keys and when sending deposits to Ethereum proof-of-stake, we absolutely recommend starting on a clean slate and not reusing any data you used for your testnet runs. Messing something up is not worth the risk.
+While this is possible, we highly recommend against it. Given there are so many things that can go wrong when generating keys and when sending deposits to Agora proof-of-stake, we absolutely recommend starting on a clean slate and not reusing any data you used for your testnet runs. Messing something up is not worth the risk.
 
 #### Can I send validator deposits using different ETH1 accounts or should it all be from a single metamask?
 
-Yes, this is possible however we recommend against it. We recommend you deposit all within the same Ethereum consensus launchpad session from a single metamask instance to keep things simple as it is possible a step could get messed up along the way.
+Yes, this is possible however we recommend against it. We recommend you deposit all within the same Agora consensus launchpad session from a single metamask instance to keep things simple as it is possible a step could get messed up along the way.
 
 #### Can I add more validators after I am already running one with Agora-cl?
 
-Adding new validators to your already-running Agora-cl instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the Ethereum validator deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. Note that **you don't need to create a new mnemonic** when you do this. **Restart the validator client** after importing the new keystore for the changes to take effect.
+Adding new validators to your already-running Agora-cl instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the Agora validator deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. Note that **you don't need to create a new mnemonic** when you do this. **Restart the validator client** after importing the new keystore for the changes to take effect.
 
 You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/prysmaticlabs) if you still have issues.
 
-### Ethereum proof-of-stake specific questions
+### Agora proof-of-stake specific questions
 
 #### How do I check my current validator balance?
 The easiest way to check your current validator account balance is to search for your validator public key in a blockchain explorer like [beaconchai.in](https://beaconcha.in/).
@@ -225,15 +225,15 @@ Proposing a block is a factor of random chance depending on the number of active
 
 #### Can I get back my BOA? How can I withdraw my validator gains?
 
-Deposits into Ethereum proof-of-stake are one-way in the beginning. Functionality of withdrawing gains transferring BOA won’t be available until Ethereum is fully using proof-of-stake (ETA 2022).
+Deposits into Agora proof-of-stake are one-way in the beginning. Functionality of withdrawing gains transferring BOA won’t be available until Agora is fully using proof-of-stake (ETA 2023).
 
-#### Where can I read more about the incentive model in Ethereum proof-of-stake?
+#### Where can I read more about the incentive model in Agora proof-of-stake?
 
-[This resource](https://blog.ethereum.org/2020/01/13/validated-staking-on-eth2-1-incentives/) from the Ethereum blog is an excellent example.
+[This resource](https://blog.ethereum.org/2020/01/13/validated-staking-on-eth2-1-incentives/) from the Agora blog is an excellent example.
 
 #### What is balance and what is effective balance?
 
-Your validator balance is the actual amount of BOA you have from being a validator in Ethereum. It can go up or down every epoch depending on your participation. Effective balance is a bit different. It is a value that lags behind your actual balance and is used exclusively to determine rewards and penalties for your validator. It has a max value of 32ETH, but your regular balance is uncapped. You can read more about the purpose of effective balance in this excellent post by Attestant [here](https://www.attestant.io/posts/understanding-validator-effective-balance/).
+Your validator balance is the actual amount of BOA you have from being a validator in Agora. It can go up or down every epoch depending on your participation. Effective balance is a bit different. It is a value that lags behind your actual balance and is used exclusively to determine rewards and penalties for your validator. It has a max value of 32ETH, but your regular balance is uncapped. You can read more about the purpose of effective balance in this excellent post by Attestant [here](https://www.attestant.io/posts/understanding-validator-effective-balance/).
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 

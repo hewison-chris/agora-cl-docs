@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "An Ethereum 2.0 client written entirely in Go.",
+    "tagline": "An Agora client written entirely in Go.",
     "docs": {
       "activating-a-validator": {
         "title": "Activating a Validator",
@@ -55,8 +55,8 @@
         "sidebar_label": "Agora-cl Validator Client"
       },
       "how-agora-cl-works/agora-cl-public-api": {
-        "title": "Ethereum 2.0 Public API",
-        "sidebar_label": "Ethereum 2.0 Public API"
+        "title": "Agora Public API",
+        "sidebar_label": "Agora Public API"
       },
       "how-agora-cl-works/simple-serialize-ssz": {
         "title": "Simple Serialize (SSZ)",
@@ -83,16 +83,16 @@
         "sidebar_label": "On the Public Testnet"
       },
       "introduction/on-ethereum-2": {
-        "title": "On Ethereum 2.0",
-        "sidebar_label": "On Ethereum 2.0"
+        "title": "On Agora",
+        "sidebar_label": "On Agora"
       },
       "introduction/what-is-agora-cl": {
         "title": "What is Agora-cl?",
         "sidebar_label": "What is Agora-cl?"
       },
-      "licenses/prysmatic-labs": {
-        "title": "Prysmatic Labs",
-        "sidebar_label": "Prysmatic Labs"
+      "licenses/bosagora": {
+        "title": "Bosagora",
+        "sidebar_label": "Bosagora"
       },
       "licenses/third-parties": {
         "title": "licenses/third-parties"

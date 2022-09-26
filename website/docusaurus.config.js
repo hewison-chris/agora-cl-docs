@@ -1,6 +1,6 @@
 module.exports = {
     title: 'Agora-cl',
-    tagline: 'Ethereum consensus implementation written entirely in Go.',
+    tagline: 'Agora consensus implementation written entirely in Go.',
     url: 'https://docs.prylabs.network',
     baseUrl: '/',
     onBrokenLinks: 'throw',
