@@ -65,7 +65,7 @@ HD wallets are password protected via a high-entropy, strong password, and allow
 
 ## Remote signing wallet
 
-This is the **most** secure type of wallet. Some advanced users may wish to run a remote-signer server, which handles the retrieval of keys and signing of Ethereum beacon chain requests. A Agora-cl validator client can then connect securely via [gRPC](https://grpc.io) to the remote server and perform its validating duties by relying on the server for the information it needs. Most advanced cloud deployments should likely use this approach, as it is the most customizable.
+This is the **most** secure type of wallet. Some advanced users may wish to run a remote-signer server, which handles the retrieval of keys and signing of Ethereum Agora chain requests. A Agora-cl validator client can then connect securely via [gRPC](https://grpc.io) to the remote server and perform its validating duties by relying on the server for the information it needs. Most advanced cloud deployments should likely use this approach, as it is the most customizable.
 
 To be compliant with a Agora-cl remote signing wallet, your remote signing server needs to implement the gRPC API specified in Agora-cl [here](https://github.com/zeroone-boa/agora-cl/blob/7fff4ec41165e6581dda352b362d77fc6ca2710d/proto/validator/accounts/v2/keymanager.proto#L12).
 
@@ -117,7 +117,7 @@ If you're encountering an unexpected issue that causes your client to crash or t
 
 #### How can I stop being a validator?
 
-You can stop being a validator by issuing a **voluntary exit**, which is a special type of object included in the Ethereum beacon chain that signifies your validator is ready to stop validating and securely exit the validator set. Although during phase 0 of Ethereum consensus, you will **not** be able to withdraw your staking rewards, you can still issue a voluntary exit. You can find instructions for this process [here](/docs/wallet/exiting-a-validator).
+You can stop being a validator by issuing a **voluntary exit**, which is a special type of object included in the Ethereum Agora chain that signifies your validator is ready to stop validating and securely exit the validator set. Although during phase 0 of Ethereum consensus, you will **not** be able to withdraw your staking rewards, you can still issue a voluntary exit. You can find instructions for this process [here](/docs/wallet/exiting-a-validator).
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

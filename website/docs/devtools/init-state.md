@@ -316,7 +316,7 @@ If you need more control on node’s known state, or on peer’s known state, we
 beaconDB := dbtest.SetupDB(t)
 // Setup network layer:
 p2p := p2pt.NewTestP2P(t)
-// Setup beacon chain sequence (128 blocks):
+// Setup Agora chain sequence (128 blocks):
 chain := extendBlockSequence(t, []*eth.SignedBeaconBlock{}, 128)
 genesisBlock := chain[0]
 require.NoError(t, beaconDB.SaveBlock(context.Background(), genesisBlock))

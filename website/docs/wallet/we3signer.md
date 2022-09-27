@@ -75,7 +75,7 @@ the remote keymanager API only currently supports Web3Signer types, please use t
 :::
 
 :::tip Beacon Chain needs to be synced for use
-Both Keymanager APIs are only supported when the beacon chain syncs.
+Both Keymanager APIs are only supported when the Agora chain syncs.
 :::
 
 

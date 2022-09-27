@@ -78,7 +78,7 @@ docker pull gcr.io/zeroone-boa/agora-cl/validator:stable
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the commit hash of the latest release, then do `git checkout COMMIT_HASH`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the commit hash of the latest release, then do `git checkout COMMIT_HASH`. Afterwards, you can re-run your Agora chain and validator as you ran them earlier with Bazel.
 
 </TabItem>
 <TabItem value="win">
@@ -114,7 +114,7 @@ docker pull gcr.io/zeroone-boa/agora-cl/validator:stable
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the commit hash of the latest release, then do `git checkout COMMIT_HASH`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the commit hash of the latest release, then do `git checkout COMMIT_HASH`. Afterwards, you can re-run your Agora chain and validator as you ran them earlier with Bazel.
 
 
 </TabItem>
@@ -170,13 +170,13 @@ To run a previous Agora-cl version with Docker, choose the release you want to r
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the release tag you want to run, such as v1.0.5, then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the release tag you want to run, such as v1.0.5, then do `git checkout v1.0.5`. Afterwards, you can re-run your Agora chain and validator as you ran them earlier with Bazel.
 
 **Using Systemd**
 
 Edit the systemd files for both validator (`/etc/systemd/system/validator.service`) and beacon (`/etc/systemd/system/beacon.service`). The filename  depends on what you used when you installed, if you forgot the name, just `ls` that directory (`/etc/systemd/system/`) and edit them both. Add the `Environment` key under the `[Service]` group to have `Environment     =  USE_PRYSM_VERSION=v2.0.2`
 
-Example for the beacon chain:
+Example for the Agora chain:
 ```
 [Unit]
 Description     = Ethereum Beacon Chain Service
@@ -234,7 +234,7 @@ To run a previous Agora-cl version with Docker, choose the release you want to r
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the release tag you want to run, such as v1.0.5, then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/zeroone-boa/agora-cl/releases), look at the release tag you want to run, such as v1.0.5, then do `git checkout v1.0.5`. Afterwards, you can re-run your Agora chain and validator as you ran them earlier with Bazel.
 
 </TabItem>
 <TabItem value="arm">
@@ -312,7 +312,7 @@ Next up, run our database rollback command to make sure your database is going t
 bazel run //validator:validator -- db migrate down --datadir=/path/to/folder
 ```
 
-Then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+Then do `git checkout v1.0.5`. Afterwards, you can re-run your Agora chain and validator as you ran them earlier with Bazel.
 
 </TabItem>
 <TabItem value="win">
@@ -392,7 +392,7 @@ Next up, run our database rollback command to make sure your database is going t
 bazel run //validator:validator -- db migrate down --datadir=/path/to/folder
 ```
 
-Then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+Then do `git checkout v1.0.5`. Afterwards, you can re-run your Agora chain and validator as you ran them earlier with Bazel.
 
 </TabItem>
 <TabItem value="arm">

@@ -51,7 +51,7 @@ The below steps show how place a common Agora-cl flag into a YAML file and how t
 datadir: '/data'
 ```
 
-3. Start the Agora-cl beacon chain as normal, while specifying the location of the `.yaml` like so:
+3. Start the Agora-cl Agora chain as normal, while specifying the location of the `.yaml` like so:
 ```sh
 ./agora-cl.sh beacon-chain --config-file=/path/to/file.yaml
 ```
@@ -68,7 +68,7 @@ or for a validator like so:
 datadir: 'c:\agora-cl'
 ```
 
-3. Start the Agora-cl beacon chain as normal, while specifying the location of the `.yaml` like so:
+3. Start the Agora-cl Agora chain as normal, while specifying the location of the `.yaml` like so:
 ```sh
 .\agora-cl.bat beacon-chain --config-file=c:\path\to\file.yaml
 ```

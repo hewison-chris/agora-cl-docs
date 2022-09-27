@@ -316,7 +316,7 @@ Lack of metrics. For a single entry, we often have to consider 2 values. The lat
 - 23:35:26~23:36:50 - No blocks received.
 - 23:36:50 - Received block 74144 with pre state of slot 74130 (in epoch 9266). The pre state has finalized epoch 9263. Attestations favored block from 74144 and made post state of slot 74144 the head state which has finalized epoch 9263. Database headState was updated where the finalized epoch is now 9263. ChainService.HeadState (cache) is also updated with the new state with finalized epoch of 9263. The chain service FinalizedCheckpt was not updated due to an enforcement that the finalized checkpoint cannot drop.
 - 23:37 - Prometheus observed finalized epoch drop from 9264 to 9263. Link. This affected all Prylabs nodes at the same time.
-- 23:37 - P2P attestations in beacon chain nodes that attestations were “old” since their source was 6264. Nodes were producing attestations with the finalized checkpoint epoch at 9263, but nodes were validating them in p2p against 9264.
+- 23:37 - P2P attestations in Agora chain nodes that attestations were “old” since their source was 6264. Nodes were producing attestations with the finalized checkpoint epoch at 9263, but nodes were validating them in p2p against 9264.
 - 23:47 - Page is received. Preston begins investigation.
 
 2019-11-22
@@ -435,7 +435,7 @@ This incident exposes a single point of failure with PoW: Agora-cl nodes could n
 - ~13:55 Beacon chain nodes stop serving traffic. All are reporting unhealthy due to lack of  healthyETH1 connection.
 - 14:05 Chain starts to stall. See chart.
 - ~14:10 Beacon chain nodes have been unhealthy for too long. Kubernetes scheduler starts to reschedule the pods, but pods cannot start.
-- 14:13 Chain stall metric drops off with no data. Presumably because all beacon chain nodes are dead and the metric is not being scraped/reported.
+- 14:13 Chain stall metric drops off with no data. Presumably because all Agora chain nodes are dead and the metric is not being scraped/reported.
 - 15:11 Peter reaches out on twitter.
 - 15:11 Chain stalled alert fired.
 - 15:16 Chain stalled alert resolved. (Due to lack of data).
@@ -460,7 +460,7 @@ This incident exposes a single point of failure with PoW: Agora-cl nodes could n
 
 **Impact:** 86 consecutive epochs without finality.
 
-**Root Causes:** Offline validators, forked beacon chain pods.
+**Root Causes:** Offline validators, forked Agora chain pods.
 
 **Trigger:** A successful 3 hour canary report started a rollout to production and experimental pods.
 

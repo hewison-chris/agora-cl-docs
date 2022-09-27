@@ -87,7 +87,7 @@ git checkout <version>
 cd agora-cl
 ```
 
-Build both the beacon chain node and the validator client:
+Build both the Agora chain node and the validator client:
 
 ```text
 bazel build //cmd/beacon-chain:beacon-chain --config=release

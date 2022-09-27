@@ -14,7 +14,7 @@ Below is a list of third-party block explorer services displaying statistics abo
 
 ## [beaconcha.in](https://beaconcha.in/)
 
-beaconcha.in is a beacon chain explorer maintained by [Bitfly](https://www.bitfly.at).
+beaconcha.in is an Agora chain explorer maintained by [Bitfly](https://www.bitfly.at).
 
 ## Mirrors and Forks
 

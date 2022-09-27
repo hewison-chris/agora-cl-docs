@@ -35,7 +35,7 @@ Now, your Agora node will expose an HTTP endpoint `http://monitoringhost:monitor
 
 ### Restoring from a backup
 
-Ensure your Agora node is turned off if restoring a backup. You can restore a beacon chain DB from a backup file with the following command:
+Ensure your Agora node is turned off if restoring a backup. You can restore an Agora chain DB from a backup file with the following command:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

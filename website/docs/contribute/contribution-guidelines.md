@@ -65,7 +65,7 @@ See the [next section](#building-and-tessting-agora-cl-with-bazel) for instructi
 
 ### Building and testing Agora-cl with Bazel
 
-The Agora-cl project is a large monorepo containing all sorts of tools and services that implement the Ethereum consensus protocol. We use the [Bazel](https://bazel.build) build system created by Google for everything we do, helping everyone have reproducible builds. If you want to build the beacon chain or validator using Bazel, you can run the commands:
+The Agora-cl project is a large monorepo containing all sorts of tools and services that implement the Ethereum consensus protocol. We use the [Bazel](https://bazel.build) build system created by Google for everything we do, helping everyone have reproducible builds. If you want to build the Agora chain or validator using Bazel, you can run the commands:
 
 ```text
 $ bazel build //beacon-chain:beacon-chain

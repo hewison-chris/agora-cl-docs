@@ -53,7 +53,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-2" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-2">Review "Before and now"</label>
-            <p>The <a href='#the-merge-before-and-now'>Before and now</a> section below gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. See the Ethereum.org <a href='https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/'>Merge announcement</a> and <a href='https://launchpad.ethereum.org/en/merge-readiness'>Merge readiness checklist</a> for more detailed information.</p>
+            <p>The <a href='#the-merge-before-and-now'>Before and now</a> section below gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. <a href='https://launchpad.bosagora.io/en/merge-readiness'>Merge readiness checklist</a> for more detailed information.</p>
         </div>
     </div>
     <div class='task'>
@@ -68,37 +68,15 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='guidance-container'>
             <label for="cl-3">Use a Merge-ready version of your execution client</label>
             <p>
-                <Tabs className="tabgroup-with-label" groupId="execution-clients" defaultValue="geth" values={[
+                <Tabs className="tabgroup-with-label" groupId="execution-clients" defaultValue="agora-el" values={[
                 {label: 'Execution client:', value: 'label'},
-                {label: 'Geth', value: 'geth'},
-                {label: 'Nethermind', value: 'nethermind'},
-                {label: 'Besu', value: 'besu'}
+                {label: 'Agora', value: 'agora-el'}
                 ]}>
-                    <TabItem value="geth">Use <code>geth version</code> to check Geth's version. See <a href='https://github.com/ethereum/go-ethereum/releases'>Geth's releases page</a> and join <a href='https://discord.gg/invite/nthXNEv'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
-                    <TabItem value="nethermind">Review Nethermind's log output to see what version you're using. See <a href='https://github.com/NethermindEth/nethermind/releases'>Nethermind's releases page</a> and join <a href='https://discord.com/invite/DedCdvDaNm'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
-                    <TabItem value="besu">Review Besu's log output to see what version you're using. See Besu's <a href='https://github.com/hyperledger/besu/releases'>releases page</a> and join <a href='https://discord.com/invite/hyperledger'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+                    <TabItem value="agora-el">Use <code>agora-el version</code> to check the version. See <a href='https://github.com/zeroone-boa/agora-el/releases'>Agora-el's releases page</a> and join <a href='https://discord.gg/invite/XXX'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
                 </Tabs>
             </p>
         </div>
     </div>
-    <Tabs className="tabgroup-with-label" groupId="execution-clients" defaultValue="geth" values={[
-            {label: 'Execution client:', value: 'label'},
-            {label: 'Geth', value: 'geth'},
-            {label: 'Nethermind', value: 'nethermind'},
-            {label: 'Besu', value: 'besu'}
-            ]}>
-        <TabItem value="geth">
-            <div class='task'>
-                <div class='input-container'><input id="cl-4" type='checkbox'/><span class='done'></span></div>
-                <div class='guidance-container'>
-                    <label for="cl-4">Update Geth now</label>
-                    <p>Geth 1.10.22 contains a regression. Update to <a href='https://github.com/ethereum/go-ethereum/releases'>v1.10.23+</a> if you haven't already.</p>
-                </div>
-            </div>
-        </TabItem>
-        <TabItem value="nethermind"></TabItem>
-        <TabItem value="besu"></TabItem>
-    </Tabs>
     <Tabs className="tabgroup-with-label" groupId="protocol" defaultValue="jwt" values={[
         {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},

@@ -18,11 +18,11 @@ Most often refers to a validator client instance, but can also refer to an indiv
 
 #### Proposal \(propose\) <a id="propose"></a>
 
-The process of creating and adding new blocks to the beacon chain.
+The process of creating and adding new blocks to the Agora chain.
 
 #### Attestation \(attest\) <a id="attest"></a>
 
-The process of voting on the validity of newly created blocks on the beacon chain.
+The process of voting on the validity of newly created blocks on the Agora chain.
 
 #### ETH1
 
