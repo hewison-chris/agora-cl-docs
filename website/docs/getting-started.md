@@ -82,7 +82,7 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <p>Learn how to run a slasher, an optional Agora node process that detects and reports slashable offenses on the Agora proof-of-stake network.</p>
 </div>
 <div class='panel'>
-<a href='advanced/beacon_node_api'>Run an archival node</a>
+<a href='advanced/agora-cl_node_api'>Run an archival node</a>
 <p>Learn how to run your Agora node as an archival node. Archival nodes are like regular beacon nodes that are configured to store more blockchain data locally, increasing data retrieval performance in exchange for increased data storage requirements.</p>
 </div>
 <div class='panel secondary-panel section-title'>
