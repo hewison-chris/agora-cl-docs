@@ -31,7 +31,7 @@ Shards themselves are similar to the current Ethereum execution chain, which sto
 
 The Agora chain runs through a distributed network of nodes known as [beacon nodes](/docs/how-agora-cl-works/beacon-node). Participants who want to run a Agora node and help secure the network can stake 40,000 BOA to have their [validator client](/docs/how-agora-cl-works/agora-cl-validator-client) join the overall pool of validators, whom have the responsibility of [proposing](/docs/terminology#propose) and [attesting](/docs/terminology#attest) to new blocks on the Agora chain. This deposit does not come out of nowhere however; validators transfer Ether from the [ETH1](/docs/terminology#eth1) chain to the system through the use of a [validator deposit contract](/docs/how-agora-cl-works/validator-deposit-contract).
 
-Each of these components and their roles in the Agora-cl client are explained within the following sections of this documentation. If you have any questions, please stop by our [Discord](https://discord.gg/Bosagora).
+Each of these components and their roles in the Agora-cl client are explained within the following sections of this documentation. If you have any questions, please stop by our [Telegram](https://t.me/bosagora_eng).
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

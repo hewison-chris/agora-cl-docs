@@ -52,9 +52,9 @@ class Footer extends React.Component {
               rel="noreferrer noopener">
               Gitter
             </a>
-            <a href="https://discord.com/invite/Bosagora">Discord</a>
+            <a href="https://t.me/bosagora_eng">Telegram</a>
             <a
-              href="https://twitter.com/prylabs"
+              href="https://twitter.com/bosagora1"
               target="_blank"
               rel="noreferrer noopener">
               Twitter
@@ -62,7 +62,7 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href={"https://medium.com/Bosagora"}>Blog</a>
+            <a href={"https://medium.com/bosagora"}>Blog</a>
             <a href="https://github.com/zeroone-boa/agora-cl">GitHub</a>
             <a
               className="github-button"

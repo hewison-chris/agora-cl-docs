@@ -39,7 +39,7 @@ module.exports = {
                 position: 'right',
             },
             {
-                href: 'https://discord.gg/bosagora',
+                href: 'https://t.me/bosagora_eng',
                 label: 'Discord',
                 position: 'right',
             },

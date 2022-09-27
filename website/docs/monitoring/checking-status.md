@@ -27,7 +27,7 @@ import StatusChecklistPartial from '@site/docs/monitoring/partials/_status-check
 
 <StatusChecklistPartial />
 
-Running into unexpected output? Generate a **troubleshooting report** using our [troubleshooting checklist](../troubleshooting/issues-errors.md) and share it with us on [Discord](https://discord.gg/Bosagora).
+Running into unexpected output? Generate a **troubleshooting report** using our [troubleshooting checklist](../troubleshooting/issues-errors.md) and share it with us on [Telegram](https://t.me/bosagora_eng).
 
 </div>
 

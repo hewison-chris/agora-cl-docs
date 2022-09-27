@@ -16,11 +16,11 @@ Note that this document is subject to the [Prysmatic Labs Terms of Service](http
 The following principles apply generally to staking security:
 
  - **Keep it simple**. Over-engineered solutions tend to increase risk.
- - **Stay up to date**. At a minimum, join the [agora-cl-dev Google Group](https://groups.google.com/g/agora-cl-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the [Agora-cl Discord server](https://discord.gg/Bosagora) and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
+ - **Stay up to date**. At a minimum, join the [agora-cl-dev Google Group](https://groups.google.com/g/agora-cl-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the [Agora-cl Discord server](https://t.me/bosagora_eng) and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
  - **Testnet first**. Harden your configuration using testnet [<a href='#footnote-1'>1</a>] before staking with real BOA on mainnet.
  - **Simulate risk events**. For each of the aspects within this document, simulate risk events and document your own risk mitigation plans. You can use the [risk mitigation worksheet](#mitigation-worksheet) located at the end of this guide.
  - **Proactively manage risk** You can't completely eliminate risk, but you can minimize it by following the best practices within this guide.
- - **If you’re not sure, ask**. The [Agora-cl Discord server](https://discord.gg/Bosagora) and [r/ethstaker](https://www.reddit.com/r/ethstaker) subreddit are full of people who genuinely enjoy helping out.
+ - **If you’re not sure, ask**. The [Agora-cl Discord server](https://t.me/bosagora_eng) and [r/ethstaker](https://www.reddit.com/r/ethstaker) subreddit are full of people who genuinely enjoy helping out.
 
 
 ## Uptime management
@@ -114,7 +114,7 @@ You’ll be managing two types of keys: validator keys and withdrawal keys. Agor
 Ethereum and its client software are constantly improving. This constant change means that unexpected things may happen that require troubleshooting.
 
  - **Essential**: Expect unexpected things to happen.
- - **Essential**: Be prepared to engage with the [Agora-cl Discord server](https://discord.gg/Bosagora), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) if you need help troubleshooting issues.
+ - **Essential**: Be prepared to engage with the [Agora-cl Discord server](https://t.me/bosagora_eng), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) if you need help troubleshooting issues.
  - **Essential**: When sharing logs, be sure to redact personally identifiable information and metadata that can be used to identify your validator.
  - **Essential**: Learn how to [inspect Agora-cl's performance](https://docs.prylabs.network/docs/monitoring/is-everything-fine).
  - **Essential**: Familiarize yourself with [Agora-cl's P2P connectivity guidance](https://docs.prylabs.network/docs/agora-cl-usage/p2p-host-ip).
@@ -151,7 +151,7 @@ Migrating your validator from one machine to another is a delicate process that 
 
 ## Learning resources
 
- - [Agora-cl Discord server](https://discord.gg/Bosagora)
+ - [Agora-cl Discord server](https://t.me/bosagora_eng)
  - [Ethereum launchpad](https://launchpad.ethereum.org/en/overview)
  - [Ethereum launchpad FAQ](https://launchpad.ethereum.org/en/faq)
  - [Eth2 rewards and penalties calculator](https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491)
@@ -162,7 +162,7 @@ Migrating your validator from one machine to another is a delicate process that 
 ## Closing remarks
 Participating as a validator can be rewarding public service [<a href='#footnote-13'>13</a>], but it's not without risk. Following these security best practices will help you minimize risk.
 
-If you have any questions, feel free to visit our [Discord](https://discord.gg/Bosagora).
+If you have any questions, feel free to visit our [Telegram](https://t.me/bosagora_eng).
 
 
 -----------------------------------

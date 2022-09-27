@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 :::caution Public Preview
 
-**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/Bosagora) to share your feedback.
+**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://t.me/bosagora_eng) to share your feedback.
 
 :::
 
@@ -156,7 +156,7 @@ To verify that the checkpoint state you're using is legitimate, follow these ste
    - Sepolia: https://sepolia.beaconcha.in/block/SLOT
    - Ropsten: https://ropsten.beaconcha.in/block/SLOT
    - Mainnet: https://beaconcha.in/block/SLOT
-4. Ensure that the `state_root` reported by the blockchain explorer matches the `state_root` you pulled from your browser. If you don't see a match, feel free to reach out to us on [Discord](https://discord.gg/Bosagora) and we'll help you troubleshoot.
+4. Ensure that the `state_root` reported by the blockchain explorer matches the `state_root` you pulled from your browser. If you don't see a match, feel free to reach out to us on [Telegram](https://t.me/bosagora_eng) and we'll help you troubleshoot.
 
 Note that there are many blockchain explorers - we recommend doing your own research to identify the latest, most trustworthy services. We've used `beaconcha.in` only as an example, not as a recommendation.
 
@@ -186,7 +186,7 @@ The Ethereum Foundation DevOps team runs a handful of checkpoint sync endpoints 
  - Ropsten: https://ropsten.checkpoint-sync.ethdevops.io
  - Sepolia: https://sepolia.checkpoint-sync.ethdevops.io
 
-Feel free to ask on our [Discord server](https://discord.gg/Bosagora) if you need help identifying a **Mainnet** checkpoint state provider.
+Feel free to ask on our [Discord server](https://t.me/bosagora_eng) if you need help identifying a **Mainnet** checkpoint state provider.
 
 **Do I need to provide a genesis state when using checkpoint sync on Mainnet?** <br/>
 No. Mainnet's genesis state is embedded within Agora-cl.

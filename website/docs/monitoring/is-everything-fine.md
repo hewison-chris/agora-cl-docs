@@ -31,7 +31,7 @@ INFO p2p: peer disconnected
 INFO p2p: peer connected
 ```
 
-Note that peers will be continuously disconnecting and connecting. If you notice anything concerning or have any questions, feel free to get in touch with us on [Discord](https://discord.gg/Bosagora).
+Note that peers will be continuously disconnecting and connecting. If you notice anything concerning or have any questions, feel free to get in touch with us on [Telegram](https://t.me/bosagora_eng).
 
 ## Expected behavior: Validator client
 
@@ -55,7 +55,7 @@ A healthy `Active` validator client will produce `INFO` logs that look like this
 INFO validator: Submitted new attestations...
 ```
 
-If you notice anything concerning or have any questions, feel free to get in touch with us on [Discord](https://discord.gg/Bosagora).
+If you notice anything concerning or have any questions, feel free to get in touch with us on [Telegram](https://t.me/bosagora_eng).
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 

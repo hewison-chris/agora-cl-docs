@@ -13,7 +13,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Troubleshooting checklist
 
-If you're running into unexpected outputs or errors, use the following checklist to check the status of your configuration. In many cases, this checklist will help you independently resolve your issue. If you still need help after completing this checklist, you can generate a [**troubleshooting report** below](#generate-troubleshooting-report) and paste it into [Discord](https://discord.gg/bosagora) when asking for support.
+If you're running into unexpected outputs or errors, use the following checklist to check the status of your configuration. In many cases, this checklist will help you independently resolve your issue. If you still need help after completing this checklist, you can generate a [**troubleshooting report** below](#generate-troubleshooting-report) and paste it into [Telegram](https://t.me/bosagora_eng) when asking for support.
 
 :::tip Thank you!
 
@@ -41,7 +41,7 @@ import TroubleshootingAllPartial from '@site/docs/troubleshooting/partials/_trou
  1. Complete the above troubleshooting checklist
  2. Fill in the below form
  3. Click `Generate troubleshooting report`
- 4. Copy and paste the report into [Discord](https://discord.gg/bosagora) when asking for support
+ 4. Copy and paste the report into [Telegram](https://t.me/bosagora_eng) when asking for support
 
 import GenerateTroubleshootingReportPartial from '@site/docs/troubleshooting/partials/_generate-troubleshooting-report.md';
 

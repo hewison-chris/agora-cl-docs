@@ -302,7 +302,7 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 
 ## Need assistance?
 
-Join our [Discord](https://discord.gg/Bosagora) server - a member of the team or our community will be happy to help.
+Join our [Telegram](https://t.me/bosagora_eng) server - a member of the team or our community will be happy to help.
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

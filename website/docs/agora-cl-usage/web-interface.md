@@ -106,7 +106,7 @@ If your browser cache was cleared, you're running on a new browser, or validator
 
 ### Reporting Issues
 
-Please create a [github issue](https://github.com/Bosagora) or contact the team on [Discord](https://discord.gg/Bosagora) to report an issue
+Please create a [github issue](https://github.com/Bosagora) or contact the team on [Telegram](https://t.me/bosagora_eng) to report an issue
 
 ## Contributing
 

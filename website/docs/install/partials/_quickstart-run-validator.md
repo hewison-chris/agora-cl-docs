@@ -57,7 +57,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>If you need GöETH, head over to one of the following Discord servers:</p>
         <ul>
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
-          <li><a href='https://discord.gg/Bosagora'>Agora-cl Discord server</a></li>
+          <li><a href='https://t.me/bosagora_eng'>Agora-cl Discord server</a></li>
         </ul>
         <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real BOA to the testnet deposit contract.</strong> Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>agora-cl.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
@@ -69,7 +69,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>If you need rEth, head over to one of the following Discord servers:</p>
         <ul>
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
-          <li><a href='https://discord.gg/Bosagora'>Agora-cl Discord server</a></li>
+          <li><a href='https://t.me/bosagora_eng'>Agora-cl Discord server</a></li>
         </ul>
         <p>Someone should be able to give you the rETH you need. You can then deposit 32 rETH into the Ropsten testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real BOA to the testnet deposit contract.</strong> Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>agora-cl.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --ropsten</code></pre>
@@ -123,7 +123,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>If you need GöETH, head over to one of the following Discord servers:</p>
         <ul>
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
-          <li><a href='https://discord.gg/Bosagora'>Agora-cl Discord server</a></li>
+          <li><a href='https://t.me/bosagora_eng'>Agora-cl Discord server</a></li>
         </ul>
         <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real BOA to the testnet deposit contract.</strong>  Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>./agora-cl.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
@@ -135,7 +135,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>If you need rETH, head over to one of the following Discord servers:</p>
         <ul>
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
-          <li><a href='https://discord.gg/Bosagora'>Agora-cl Discord server</a></li>
+          <li><a href='https://t.me/bosagora_eng'>Agora-cl Discord server</a></li>
         </ul>
         <p>Someone should be able to give you the rETH you need. You can then deposit 32 rETH into the Ropsten testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real BOA to the testnet deposit contract.</strong>  Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>./agora-cl.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --ropsten</code></pre>
