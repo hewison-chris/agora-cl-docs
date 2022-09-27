@@ -190,7 +190,7 @@ import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-part
 
 :::tip Congratulations!
 
-You’re now ready for The Merge. If you have any questions, feel free ask them on our [Discord](https://discord.gg/prysmaticlabs).
+You’re now ready for The Merge. If you have any questions, feel free ask them on our [Discord](https://discord.gg/Bosagora).
 
 :::
 

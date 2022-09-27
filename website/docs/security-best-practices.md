@@ -5,7 +5,7 @@ sidebar_label: Security best practices
 ---
 
 
-Ethereum's transition to proof-of-stake is made possible by validators who each stake 40,000 BOA into the [validator deposit contract](https://docs.prylabs.network/docs/how-agora-cl-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
+Agora's transition to proof-of-stake is made possible by validators who each stake 40,000 BOA into the [validator deposit contract](https://docs.prylabs.network/docs/how-agora-cl-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
 
 Validators are rewarded for maintaining highly available, trustworthy validator client instances. The security best practices in this guide will help you fulfill this responsibility by helping you minimize risk across a variety of security aspects. Within each aspect, you'll find **recommended**, **advanced**, and **Linux-specific** guidance.
 
@@ -16,21 +16,21 @@ Note that this document is subject to the [Prysmatic Labs Terms of Service](http
 The following principles apply generally to staking security:
 
  - **Keep it simple**. Over-engineered solutions tend to increase risk.
- - **Stay up to date**. At a minimum, join the [agora-cl-dev Google Group](https://groups.google.com/g/agora-cl-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the [Agora-cl Discord server](https://discord.gg/prysmaticlabs) and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
+ - **Stay up to date**. At a minimum, join the [agora-cl-dev Google Group](https://groups.google.com/g/agora-cl-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the [Agora-cl Discord server](https://discord.gg/Bosagora) and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
  - **Testnet first**. Harden your configuration using testnet [<a href='#footnote-1'>1</a>] before staking with real BOA on mainnet.
  - **Simulate risk events**. For each of the aspects within this document, simulate risk events and document your own risk mitigation plans. You can use the [risk mitigation worksheet](#mitigation-worksheet) located at the end of this guide.
  - **Proactively manage risk** You can't completely eliminate risk, but you can minimize it by following the best practices within this guide.
- - **If you’re not sure, ask**. The [Agora-cl Discord server](https://discord.gg/prysmaticlabs) and [r/ethstaker](https://www.reddit.com/r/ethstaker) subreddit are full of people who genuinely enjoy helping out.
+ - **If you’re not sure, ask**. The [Agora-cl Discord server](https://discord.gg/Bosagora) and [r/ethstaker](https://www.reddit.com/r/ethstaker) subreddit are full of people who genuinely enjoy helping out.
 
 
 ## Uptime management
-The security of the Ethereum blockchain relies on a **highly available** network of validators. Ethereum's proof-of-stake implementation incentivizes validators to remain online.
+The security of the Agora blockchain relies on a **highly available** network of validators. Agora's proof-of-stake implementation incentivizes validators to remain online.
 
 If your validator goes offline, you can lose some of your staked BOA [<a href='#footnote-2'>2</a>]. As long as you're online most of the time, you'll be profitable. Losses incurred from occasional downtime are negligible [<a href='#footnote-3'>3</a>].
 
 While it's possible to optimize your client instance architecture for high-availability and redundancy, we encourage validators to **keep it simple**. Complex validator architectures run the risk of accidentally engaging in slashable behavior. This can result in slashing [<a href='#footnote-4'>4</a>], which is a far steeper price to pay than the occasional downtime penalty.
 
- - **Essential**: Ensure that you have adequate disk space. [We recommend having 100GB of SSD storage available](https://docs.prylabs.network/docs/install/install-with-script#recommended-specifications). After [The Merge](https://ethereum.org/en/upgrades/merge/), this recommendation will increase to 1-2 TB if you're also running an [execution client](https://docs.prylabs.network/docs/execution-node/configuring-for-agora-cl) on the same computer.
+ - **Essential**: Ensure that you have adequate disk space. [We recommend having 100GB of SSD storage available](https://docs.prylabs.network/docs/install/install-with-script#recommended-specifications). After [The Merge](https://docs.bosagora.org/en/updates/agora-merge-update), this recommendation will increase to 1-2 TB if you're also running an [execution client](https://docs.prylabs.network/docs/execution-node/configuring-for-agora-cl) on the same computer.
  - **Essential**: Use SSDs, not spinning disks.
  - **Essential**: Periodically check your disk space to ensure that it's not being consumed by another application.
  - **Essential**: Use a network monitoring service [<a href='#footnote-5'>5</a>] to configure alerts when something isn't right with your validator.
@@ -114,7 +114,7 @@ You’ll be managing two types of keys: validator keys and withdrawal keys. Agor
 Ethereum and its client software are constantly improving. This constant change means that unexpected things may happen that require troubleshooting.
 
  - **Essential**: Expect unexpected things to happen.
- - **Essential**: Be prepared to engage with the [Agora-cl Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) if you need help troubleshooting issues.
+ - **Essential**: Be prepared to engage with the [Agora-cl Discord server](https://discord.gg/Bosagora), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) if you need help troubleshooting issues.
  - **Essential**: When sharing logs, be sure to redact personally identifiable information and metadata that can be used to identify your validator.
  - **Essential**: Learn how to [inspect Agora-cl's performance](https://docs.prylabs.network/docs/monitoring/is-everything-fine).
  - **Essential**: Familiarize yourself with [Agora-cl's P2P connectivity guidance](https://docs.prylabs.network/docs/agora-cl-usage/p2p-host-ip).
@@ -151,7 +151,7 @@ Migrating your validator from one machine to another is a delicate process that 
 
 ## Learning resources
 
- - [Agora-cl Discord server](https://discord.gg/prysmaticlabs)
+ - [Agora-cl Discord server](https://discord.gg/Bosagora)
  - [Ethereum launchpad](https://launchpad.ethereum.org/en/overview)
  - [Ethereum launchpad FAQ](https://launchpad.ethereum.org/en/faq)
  - [Eth2 rewards and penalties calculator](https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491)
@@ -162,7 +162,7 @@ Migrating your validator from one machine to another is a delicate process that 
 ## Closing remarks
 Participating as a validator can be rewarding public service [<a href='#footnote-13'>13</a>], but it's not without risk. Following these security best practices will help you minimize risk.
 
-If you have any questions, feel free to visit our [Discord](https://discord.gg/prysmaticlabs).
+If you have any questions, feel free to visit our [Discord](https://discord.gg/Bosagora).
 
 
 -----------------------------------

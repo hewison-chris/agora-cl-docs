@@ -5,7 +5,7 @@ sidebar_label: Table of contents
 ---
 
 
-[Agora-cl](https://github.com/zeroone-boa/agora-cl) is an Agora client based on [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Agora-cl to participate in Agora's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [40,000 BOA to stake](https://bosagora.io/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-agora-cl). If you're new to Agora or are not familiar with Ethereum, you may enjoy our beginner-friendly [Nodes and networks](./concepts/nodes-networks.md) explainer.
+[Agora-cl](https://github.com/zeroone-boa/agora-cl) is an Agora client based on [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) Prysm client written in [Go](https://golang.org). You can use Agora-cl to participate in Agora's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [40,000 BOA to stake](https://bosagora.io/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-agora-cl). If you're new to Agora or are not familiar with Ethereum, you may enjoy our beginner-friendly [Nodes and networks](./concepts/nodes-networks.md) explainer.
 
 The following table of contents provides a descriptive overview of Agora-cl's documentation:
 
@@ -15,7 +15,7 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 </div>
 <div class='panel'>
 <a href='prepare-for-merge'>Prepare for The Merge</a>
-<p><strong>Current Agora-cl users</strong> can follow this guidance to prepare their nodes and validators for <a href='https://ethereum.org/en/upgrades/merge/'>The Merge</a>, an ongoing event that transitions Agora from proof-of-authority to proof-of-stake.</p>
+<p><strong>Current Agora-cl users</strong> can follow this guidance to prepare their nodes and validators for <a href='https://docs.bosagora.org/en/updates/agora-merge-update'>The Merge</a>, an ongoing event that transitions Agora from proof-of-authority to proof-of-stake.</p>
 </div>
 <div class='panel'>
 <a href='security-best-practices'>Security best practices</a>
@@ -302,7 +302,7 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 
 ## Need assistance?
 
-Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the team or our community will be happy to help.
+Join our [Discord](https://discord.gg/Bosagora) server - a member of the team or our community will be happy to help.
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

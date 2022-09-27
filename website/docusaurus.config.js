@@ -1,12 +1,12 @@
 module.exports = {
     title: 'Agora-cl',
     tagline: 'Agora consensus implementation written entirely in Go.',
-    url: 'https://docs.prylabs.network',
+    url: 'https://agora-cl-docs.bosagora.io',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'throw',
     favicon: 'img/Agora-cl.svg',
-    organizationName: 'Prysmatic Labs',
+    organizationName: 'Bosagora',
     projectName: 'agora-cl-docs',
     customFields: {
         image: 'img/Agora-cl.svg',
@@ -39,7 +39,7 @@ module.exports = {
                 position: 'right',
             },
             {
-                href: 'https://discord.gg/prysmaticlabs',
+                href: 'https://discord.gg/bosagora',
                 label: 'Discord',
                 position: 'right',
             },
@@ -47,11 +47,11 @@ module.exports = {
         },
         footer: {
             logo: {
-                alt: "Agora-cl Eth2 Docs",
+                alt: "Agora-cl Docs",
                 href: '/docs/getting-started',
                 src: 'img/Agora-cl.svg',
             },
-            copyright: `Copyright © ${new Date().getFullYear()} Prysmatic Labs, LLC., Validator Deposit Contract 0x00000000219ab540356cbb839cbe05303d7705fa`,
+            copyright: `Copyright © ${new Date().getFullYear()} Bosagora, Validator Deposit Contract 0xXXX`, //TODO: update deposit contract address
             links: [],
         },
         algolia: {
@@ -78,7 +78,7 @@ module.exports = {
                     showLastUpdateTime: false,
                     showLastUpdateAuthor: false,
                     sidebarPath: require.resolve('./sidebars.json'),
-                    editUrl: 'https://github.com/prysmaticlabs/documentation/edit/master/website/',
+                    editUrl: 'https://github.com/zeroone-boa/agora-cl-docs/edit/master/website/',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),

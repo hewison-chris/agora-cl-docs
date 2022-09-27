@@ -13,7 +13,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <div class='status-guide'>
 
-## Select a configuration 
+## Select a configuration
 
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 
@@ -27,7 +27,7 @@ import StatusChecklistPartial from '@site/docs/monitoring/partials/_status-check
 
 <StatusChecklistPartial />
 
-Running into unexpected output? Generate a **troubleshooting report** using our [troubleshooting checklist](../troubleshooting/issues-errors.md) and share it with us on [Discord](https://discord.gg/prysmaticlabs).
+Running into unexpected output? Generate a **troubleshooting report** using our [troubleshooting checklist](../troubleshooting/issues-errors.md) and share it with us on [Discord](https://discord.gg/Bosagora).
 
 </div>
 

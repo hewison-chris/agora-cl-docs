@@ -280,7 +280,7 @@ Agora-cl will output a success message upon successful import. An error message 
 
 **I'm nervous about this procedure... can I have some help?**
 
-Absolutely - feel free to send us a message on [Discord](https://discord.com/invite/prysmaticlabs) and someone from our team will be happy to help.
+Absolutely - feel free to send us a message on [Discord](https://discord.com/invite/Bosagora) and someone from our team will be happy to help.
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

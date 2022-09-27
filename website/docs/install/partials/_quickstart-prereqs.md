@@ -49,6 +49,6 @@
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for the network(s) that you're using: [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/), [Mainnet](https://launchpad.ethereum.org/en/).
 - Review all of our [published security best practices](/docs/security-best-practices).
-- **Join the community** - join our [mailing list](https://groups.google.com/g/agora-cl-dev), the [Agora-cl Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
+- **Join the community** - join our [mailing list](https://groups.google.com/g/agora-cl-dev), the [Agora-cl Discord server](https://discord.gg/Bosagora), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 </div>

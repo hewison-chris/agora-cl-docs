@@ -11,19 +11,19 @@ import TabItem from '@theme/TabItem';
 
 :::tip Configure this before The Merge
 
-If you don't configure your fee recipient wallet address before The Merge, your priority fee earnings will be deposited into a [burn address](https://etherscan.io/address/0x0000000000000000000000000000000000000000).
+If you don't configure your fee recipient wallet address before The Merge, your priority fee earnings will be deposited into a [burn address](https://scan.bosagora.org/address/0x0000000000000000000000000000000000000000/coin-balances).
 
 :::
 
 **Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and Agora node.
 
-Your fee recipient wallet address is a **standard Ethereum wallet address**, just like the wallet address used when sending and receiving tokens from Metamask. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever your validator client proposes a new block.
+Your fee recipient wallet address is a **standard Agora wallet address**, just like the wallet address used when sending and receiving tokens from Metamask. After [The Merge](https://docs.bosagora.org/en/updates/agora-merge-update), execution clients will begin depositing priority fees into this address whenever your validator client proposes a new block.
 
 ## Background
 
-When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. Priority fees are like tips. End-users use priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
+When users pay gas to submit transactions to the Agora network, they can specify a **priority fee**. Priority fees are like tips. End-users use priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
 
-Miners currently collect these priority fees. After The Merge, proof-of-work will be replaced with proof-of-stake. At this point, validators will collect these priority fees <a class="footnote" href='#footnote-1'>[1]</a>.
+Miners currently collect these priority fees. After The Merge, proof-of-authority will be replaced with proof-of-stake. At this point, validators will collect 70% of these priority fees and 30% will be added to the Commons Budget balance<a class="footnote" href='#footnote-1'>[1]</a>.
 
 Priority fees are captured by execution clients in the execution layer <a class="footnote" href='#footnote-2'>[2]</a>, so validator clients need to tell execution clients where to forward the fees. This "forwarding address" is referred to as your **fee recipient** wallet address.
 
@@ -37,12 +37,12 @@ Your fee recipient wallet address can be configured on your **validator client i
 
 Your fee recipient wallet address can be configured on both your Agora node and validator through the `--suggested-fee-recipient` flag:
 
- - **Beacon node**: `./agora-cl.sh beacon-chain --suggested-fee-recipient=<WALLET ADDRESS>`
+ - **Agora node**: `./agora-cl.sh beacon-chain --suggested-fee-recipient=<WALLET ADDRESS>`
  - **Validator**: `./agora-cl.sh validator --suggested-fee-recipient=<WALLET ADDRESS>`
 
 For example: `./agora-cl.sh validator --suggested-fee-recipient=0xCHANGEME012345c769F504hs287200aF50400a`.
 
-If your validator is running multiple keys (for example, staking 64 BOA using two validator public keys that have been imported into a single validator client instance), all validator public keys will use the wallet address specified through the `--suggested-fee-recipient` flag. You can optionally associate different fee recipient wallet addresses to individual validator public keys using the JSON/YAML configuration method detailed in the following section.
+If your validator is running multiple keys (for example, staking 80,000 BOA using two validator public keys that have been imported into a single validator client instance), all validator public keys will use the wallet address specified through the `--suggested-fee-recipient` flag. You can optionally associate different fee recipient wallet addresses to individual validator public keys using the JSON/YAML configuration method detailed in the following section.
 
 
 ### Configure fee recipient via JSON/YAML (validator only)
@@ -199,7 +199,7 @@ Your fee recipient wallet address can also be set through the <a href='../agora-
 
 If you configure your fee recipient wallet address through the web UI or Keymanager APIs, your configuration **will not persist** if you restart your validator client.
 
-See [this issue](https://github.com/zeroone-boa/agora-cl/issues/11322) to track the status of configuration persistence, and use the `--proposer-settings-file` or `--proposer-settings-url` flags for persistent validator settings in the meantime.
+Use the `--proposer-settings-file` or `--proposer-settings-url` flags for persistent validator settings until persistence is implemented.
 
 :::
 
@@ -208,9 +208,6 @@ See [this issue](https://github.com/zeroone-boa/agora-cl/issues/11322) to track 
 
 **How do I know if fee recipient was properly configured?** <br />
 If you don't see any errors after issuing one of the above commands, your fee recipient address has been successfully configured.
-
-**What happened to `fee-recipient-config-file`?** <br />
-`fee-recipient-config-file` and `fee-recipient-config-url` flags are deprecated and have been replaced with `proposer-settings-file` and `proposer-settings-url` flags as of Agora-cl v2.1.3.
 
 **How do I ensure that builders receive my fee recipient wallet address?** <br />
 When `enable-builder` is set to `true` on your validator, you can use either the `--suggested-fee-recipient` flag or the JSON/YAML configuration method to communicate your fee recipient wallet address to builders.

@@ -1,4 +1,4 @@
-## docker build -t gcr.io/prysmaticlabs/documentation
+## docker build -t bosagora/agora-cl-docs
 FROM node:11-alpine as builder
 
 RUN apk add --no-cache \

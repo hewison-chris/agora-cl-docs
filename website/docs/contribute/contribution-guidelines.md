@@ -8,11 +8,11 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-There are a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/prysmaticlabs) and a member of the team or community will be happy to answer questions and offer some direction.
+There are a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/Bosagora) and a member of the team or community will be happy to answer questions and offer some direction.
 
 ## Getting Started
 
-Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Agora-cl's [open issues on Github](https://github.com/zeroone-boa/agora-cl/issues). We recommend looking for issues tagged with the "Good First Issue" label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/prysmaticlabs). Sign in to your Github account, then navigate to [the official Agora-cl repository](https://github.com/zeroone-boa/agora-cl/). In the upper right hand corner of the page, click the 'Fork' button. This will create a copy of the Agora-cl repository on your account that can be edited for pull requests.
+Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Agora-cl's [open issues on Github](https://github.com/zeroone-boa/agora-cl/issues). We recommend looking for issues tagged with the "Good First Issue" label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/Bosagora). Sign in to your Github account, then navigate to [the official Agora-cl repository](https://github.com/zeroone-boa/agora-cl/). In the upper right hand corner of the page, click the 'Fork' button. This will create a copy of the Agora-cl repository on your account that can be edited for pull requests.
 
 ### Setting up your environment
 

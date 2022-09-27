@@ -17,16 +17,16 @@ import TabItem from '@theme/TabItem';
 
 #### How do I troubleshoot errors?
 
-If your Agora node or validator logs display an `ERROR`, go to our [open issues](https://github.com/zeroone-boa/agora-cl/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Agora-cl version you're running** and your **operating system**, and then file a bug report [here](https://github.com/zeroone-boa/agora-cl/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysmaticlabs) about your error and we'll take a look as soon as possible.
+If your Agora node or validator logs display an `ERROR`, go to our [open issues](https://github.com/zeroone-boa/agora-cl/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Agora-cl version you're running** and your **operating system**, and then file a bug report [here](https://github.com/zeroone-boa/agora-cl/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/Bosagora) about your error and we'll take a look as soon as possible.
 
 #### My validator is losing money, what's going on?
 
 1. Try restarting your machine and associated processes.
-1. See if your node or validator client crashed. You can view the logs of the process to see if there were any `ERROR` logs. If so, please file a bug report or talk to our team on [discord](https://discord.gg/prysmaticlabs). A fatal crash is quite serious and something we'll investigate right away.
+1. See if your node or validator client crashed. You can view the logs of the process to see if there were any `ERROR` logs. If so, please file a bug report or talk to our team on [discord](https://discord.gg/Bosagora). A fatal crash is quite serious and something we'll investigate right away.
 2. Check your network connectivity. You can improve this by following our tips [here](/docs/agora-cl-usage/p2p-host-ip) which can help you find better peers, improve attestation effectiveness, and more.
 3. Check your system resource usage, perhaps your node is using excess CPU and RAM. Depending on your operating system, there are different ways to do this.
 
-If you still need help, note your **Agora-cl version** and **operating system**, and then reach out to our team on [Discord](https://discord.gg/prysmaticlabs). Providing as much information as possible will help us troubleshoot your issue.
+If you still need help, note your **Agora-cl version** and **operating system**, and then reach out to our team on [Discord](https://discord.gg/Bosagora). Providing as much information as possible will help us troubleshoot your issue.
 
 #### My node suddenly lost peers, what can I do?
 
@@ -34,7 +34,7 @@ Losing peers can be due to the following reasons:
 
 1. Your network connectivity has problems. You can check how to improve it with some of our tips [here](/docs/agora-cl-usage/p2p-host-ip).
 2. Agora-cl is using a ton of memory or system resources and perhaps you ran out of memory. Ensure you meet the minimum specifications for running Agora-cl specified in our installation pages for your operating system.
-3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/docs/agora-cl-usage/staying-up-to-date) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/prysmaticlabs) letting us know you had this issue.
+3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/docs/agora-cl-usage/staying-up-to-date) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/Bosagora) letting us know you had this issue.
 
 #### I have an issue in the web UI, getting errors, what can I do?
 
@@ -65,7 +65,7 @@ Slashing is a way for the network to penalize validator actions that can be harm
 
 The most common way validators get slashed is by **running the same validator key in two separate validator client processes at the same time**. This will absolutely get you slashed. Some stakers try to create complicated failover scenarios without realizing the risk this entails, do not do this. If you already got slashed, you will leak funds for a while until you are forcefully exited from the validator registry. Thankfully, slashing penalties in phase 0 are quite small. If you are slashed, you should keep performing your validator duties until you are exited. You will be able to then withdraw your validator balance until after Agora is fully proof-of-stake (ETA 2022) and will miss out on all the rewards until then.
 
-Our team prepared a blog post on [slashing prevention tips](https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50) you can read to avoid slashings in the future.
+The Prysm team prepared a blog post on [slashing prevention tips](https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50) for the Ethereum blockchain network, but you can read to apply the same principals, to avoid slashings from your validator in the Agora network.
 
 ### Running Agora-cl
 
@@ -105,7 +105,7 @@ If you are running using docker and the :stable tag for Agora-cl, stable will al
 
 ```
 CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
-371d6675888b        gcr.io/zeroone-boa/agora-cl/validator:stable            "validator"              6 days ago
+371d6675888b        bosagora/agora-cl-validator:agora_v3.1.1   "validator"              6 days ago
 ```
 </TabItem>
 <TabItem value="bazel">
@@ -151,15 +151,15 @@ When downloading the Agora-cl precompiled binaries such as with agora-cl.sh or a
 Latest Agora-cl version is v1.1.0.
 Beacon chain is up to date.
 Verifying binary integrity.
-beacon-chain-v1.1.0-linux-amd64: OK
-gpg: Signature made Mon Jan 18 13:03:57 2021 PST
-gpg:                using RSA key 0AE0051D647BA3C1A917AF4072E33E4DF1A5036E
-gpg: Good signature from "Preston Van Loon <preston@prysmaticlabs.com>" [unknown]
+agora-cl-v3.1.1-linux-amd64: OK
+gpg: Signature made Mon Oct 01 10:00:57 2022 UTC
+gpg:                using RSA key 0AABBCCD64CCC3C1A917AF4072E33E4DF1A50DDD
+gpg: Good signature from "Mr X <XXX@Bosagora.com>" [unknown]
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg:          There is no indication that the signature belongs to the owner.
 ```
 
-Regarding the WARNING above, it means that the signature is correctly signed by the owner, however, since Agora-cl does not yet provide official linux packages nor windows trusted certs, you will get a warning that it might not have been Preston Van Loon that actually signed the binary, since there is no way to verify the integrity with a trusted authority. If binary integrity and security matter the most to you, building and running open source software from source is the best way to have full confidence the software you are running is a result of code you can inspect yourself.
+Regarding the WARNING above, it means that the signature is correctly signed by the owner, however, since Agora-cl does not yet provide official linux packages nor windows trusted certs, you will get a warning that it might not have been Mr X that actually signed the binary, since there is no way to verify the integrity with a trusted authority. If binary integrity and security matter the most to you, building and running open source software from source is the best way to have full confidence the software you are running is a result of code you can inspect yourself.
 
 #### How can I view the metrics of my node? How can I visualize them?
 
@@ -202,7 +202,7 @@ Yes, this is possible however we recommend against it. We recommend you deposit 
 
 Adding new validators to your already-running Agora-cl instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the Agora validator deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. Note that **you don't need to create a new mnemonic** when you do this. **Restart the validator client** after importing the new keystore for the changes to take effect.
 
-You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/prysmaticlabs) if you still have issues.
+You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/Bosagora) if you still have issues.
 
 ### Agora proof-of-stake specific questions
 

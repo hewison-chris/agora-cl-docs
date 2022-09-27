@@ -16,7 +16,7 @@ Agora-cl's validator accounts are extensible enough to allow for the most basic 
 
 Out of the box, Agora-cl supports 3 basic kinds of wallets that encompass many different use-cases. In order of highest to lowest security:
 
-1. **Remote signing wallet**: (most secure) An advanced kind of wallet in which validator keys and signing requests are processed by a remote server via gRPC (view our remote server [reference implementation](https://github.com/prysmaticlabs/remote-signer)).
+1. **Remote signing wallet**: (most secure) An advanced kind of wallet in which validator keys and signing requests are processed by a remote server via gRPC (view our remote server [reference implementation](https://github.com/Bosagora/remote-signer)).
 2. **non-HD wallet**: (good security) A simple wallet in which accounts are password protected and validator keys are generated non-deterministically. This is the recommended approach if you want to import an account from the [Ethereum launchpad](https://launchpad.ethereum.org/) and you can read dedicated instructions [here](/docs/wallet/nondeterministic).
 3. **HD wallet**: (least security) A common type of blockchain wallet which is generated from a english mnemonic, able to create new accounts deterministically. The encrypted seed is stored on day encrypted by a strong password. Given you are tying your HD wallet to the validator client, it is less secure than simply importing validating keys you need from an external source or running a remote signer.
 
@@ -87,7 +87,7 @@ service RemoteSigner {
 }
 ```
 
-We have also a created a reference remote signer implementation, maintained as an open source, Apache 2 project on Github [here](https://github.com/prysmaticlabs/remote-signer) as a starting point.
+We have also a created a reference remote signer implementation, maintained as an open source, Apache 2 project on Github [here](https://github.com/Bosagora/remote-signer) as a starting point.
 
 [Create and use a remote signing wallet](https://docs.prylabs.network/docs/wallet/remote)
 
@@ -105,7 +105,7 @@ If you are running a **remote signer wallet**, we do not store anything on disk 
 
 #### Why is my validator losing BOA despite my setup appearing ok?
 
-If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your Agora node is either (a) crashed, (b) not synced to the chain head. This might also mean your Agora node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](/docs/monitoring/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/prysmaticlabs) anytime.
+If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your Agora node is either (a) crashed, (b) not synced to the chain head. This might also mean your Agora node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](/docs/monitoring/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/Bosagora) anytime.
 
 #### How can I use a hardware wallet with my validator?
 
@@ -113,7 +113,7 @@ At the moment, there is no built-in hardware wallet support for validators, but 
 
 #### Help! Something is messed up with the validator and I can't start it
 
-If you're encountering an unexpected issue that causes your client to crash or throw errors you cannot understand, you can always talk to your team on [Discord](https://discord.gg/prysmaticlabs).
+If you're encountering an unexpected issue that causes your client to crash or throw errors you cannot understand, you can always talk to your team on [Discord](https://discord.gg/Bosagora).
 
 #### How can I stop being a validator?
 
