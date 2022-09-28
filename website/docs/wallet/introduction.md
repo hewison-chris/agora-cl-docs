@@ -49,7 +49,7 @@ wallet-directory/
         all-accounts.keystore.json
 ```
 
-[Create and use a non-HD wallet](https://docs.prylabs.network/docs/wallet/nondeterministic)
+[Create and use a non-HD wallet](/docs/wallet/nondeterministic)
 
 ## HD wallets
 
@@ -61,7 +61,7 @@ glue hawk service repeat album stable arctic piece kiss arrive viable labor conn
 
 HD wallets are password protected via a high-entropy, strong password, and allow for easy creation of as many validator account as you wish.
 
-[Create and use an HD wallet](https://docs.prylabs.network/docs/wallet/deterministic)
+[Create and use an HD wallet](/docs/wallet/deterministic)
 
 ## Remote signing wallet
 
@@ -89,7 +89,7 @@ service RemoteSigner {
 
 We have also a created a reference remote signer implementation, maintained as an open source, Apache 2 project on Github [here](https://github.com/Bosagora/remote-signer) as a starting point.
 
-[Create and use a remote signing wallet](https://docs.prylabs.network/docs/wallet/remote)
+[Create and use a remote signing wallet](/docs/wallet/remote)
 
 ## Frequently asked questions
 

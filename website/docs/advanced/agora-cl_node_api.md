@@ -28,7 +28,7 @@ While the default setting is sufficient for regular Agora chain functionality, i
 
 Full details of the Ethereum beacon API are available here:
 
-The Agora-cl documenation portal [Ethreum public API] (https://docs.prylabs.network/docs/how-agora-cl-works/agora-cl-public-api)
+The Agora-cl documenation portal [Agora public API] (/docs/how-agora-cl-works/agora-cl-public-api)
 
 ## Command line/Configuration file usage:
 

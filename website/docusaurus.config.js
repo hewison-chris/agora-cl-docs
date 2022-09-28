@@ -40,7 +40,7 @@ module.exports = {
             },
             {
                 href: 'https://t.me/bosagora_eng',
-                label: 'Discord',
+                label: 'Telegram',
                 position: 'right',
             },
             ],

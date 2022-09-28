@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-This section provides instructions on how to run [slasher](https://github.com/zeroone-boa/agora-cl/tree/master/slasher) as an **optional** process to report slashable offenses on Ethereum proof-of-stake.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](https://docs.prylabs.network/docs/how-agora-cl-works/beacon-node/) for inclusion in a block.  [Validators](https://docs.prylabs.network/docs/how-agora-cl-works/agora-cl-validator-client/) earn a small whistleblower reward for including this proof into a block.
+This section provides instructions on how to run [slasher](https://github.com/zeroone-boa/agora-cl/tree/master/slasher) as an **optional** process to report slashable offenses on Ethereum proof-of-stake.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](/docs/how-agora-cl-works/beacon-node/) for inclusion in a block.  [Validators](/docs/how-agora-cl-works/agora-cl-validator-client/) earn a small whistleblower reward for including this proof into a block.
 
 :::tip Slasher Requires Significant Disk Space
 Slasher is essentially a Agora node with **superpowers**. It uses significantly more disk space when running on mainnet.

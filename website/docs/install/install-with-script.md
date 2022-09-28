@@ -109,7 +109,7 @@ The Merge introduces a new Engine API that allows consensus-layer clients to com
 Yes. Downtime penalties are minimal but we recommend having uptime and downtime alerts configured for your execution node, Agora node, and validator if possible.
 
 **My Agora node is taking a long time to sync. Is there any way I can speed it up?** <br />
-Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/agora-cl-usage/checkpoint-sync) to start your Agora node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your Agora node.
+Yes - you can use [checkpoint sync](/docs/agora-cl-usage/checkpoint-sync) to start your Agora node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your Agora node.
 <!--TODO: explain why -->
 
 

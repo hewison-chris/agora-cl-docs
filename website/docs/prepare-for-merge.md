@@ -72,7 +72,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
                 {label: 'Execution client:', value: 'label'},
                 {label: 'Agora', value: 'agora-el'}
                 ]}>
-                    <TabItem value="agora-el">Use <code>agora-el version</code> to check the version. See <a href='https://github.com/zeroone-boa/agora-el/releases'>Agora-el's releases page</a> and join <a href='https://discord.gg/invite/XXX'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+                    <TabItem value="agora-el">Use <code>agora-el version</code> to check the version. See <a href='https://github.com/zeroone-boa/agora-el/releases'>Agora-el's releases page</a> and join <a href='(https://t.me/bosagora_eng'>Telegram</a> to stay up to date as we approach Mainnet Merge.</TabItem>
                 </Tabs>
             </p>
         </div>
