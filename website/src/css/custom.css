@@ -1,13 +1,13 @@
 :root {
-  --agora-cl-pink: #c72a7d;
-  --tab-active-color: #3578e5;
-  --tab-active-color-hover: hsl(217, 58%, 36%);
-  --tab-gray: #ddd;
-  --agora-cl-pink-light: #da77ab;
+  --boa-navy: #140950;
+  --boa-pantone: #4d00ee;
+  --tab-active-color: #eb6162;
+  --tab-active-color-hover: #140950;
+  --tab-gray: #32e090;
 }
 html[data-theme='dark'] {
-  --agora-cl-pink: var(--agora-cl-pink-light);
-  --tab-gray: #aaa;
+  --boa-navy: var(--boa-pantone);
+  --tab-gray: #32e090;
 }
 html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child {
   color: #eee;
@@ -19,7 +19,7 @@ html[data-theme='dark'] .troubleshooting-report-area > span {
   color: #ddd !important;
 }
 .navbar__link--active {
-  color: var(--agora-cl-pink-light) !important;
+  color: var(--boa-pantone) !important;
 }
 /* used to hide all but the topmost tabs within our quickstart */
 .hidden {
@@ -296,13 +296,13 @@ rows .troubleshooting-report-area > textarea::placeholder {
 }
 /* General elements */
 a {
-  color: var(--agora-cl-pink);
+  color: var(--boa-navy);
 }
 .footnote {
   color: #aaa !important;
 }
 .footnote:hover {
-  color: #000 !important;
+  color: #140950 !important;
 }
 .markdown h2 {
   font-size: 1.5rem !important;
@@ -444,7 +444,7 @@ footer > .col a,
 html[data-theme='dark'] .update-request > a,
 html[data-theme='dark'] footer > .col a {
   background-color: #111;
-  color: var(--agora-cl-pink);
+  color: var(--boa-navy);
 }
 footer > .col a:hover,
 .update-request > a:hover {
@@ -455,7 +455,7 @@ footer > .col a:hover,
 html[data-theme='dark'] .update-request > a:hover,
 html[data-theme='dark'] footer > .col a:hover {
   background-color: #333;
-  color: var(--agora-cl-pink);
+  color: var(--boa-navy);
 }
 footer > .col a svg {
   height: 17px;
@@ -476,7 +476,7 @@ footer.docusaurus-mt-lg {
   color: white;
 }
 .navbar--fixed-top {
-  border-bottom: 3px solid var(--agora-cl-pink);
+  border-bottom: 3px solid var(--boa-navy);
 }
 .navbar__link--active {
   font-weight: 600;
@@ -486,7 +486,7 @@ footer.docusaurus-mt-lg {
 }
 .navbar__link:hover,
 .navbar__link--active {
-  color: var(--agora-cl-pink);
+  color: var(--boa-navy);
 }
 .navbar__brand {
   color: white;
@@ -501,17 +501,17 @@ footer.docusaurus-mt-lg {
 }
 .menu__link:hover,
 .menu__link--active:hover {
-  color: var(--agora-cl-pink);
+  color: var(--boa-navy);
 }
 .table-of-contents > li {
   font-size: 17px;
   color: #22292f;
 }
 .table-of-contents__link:hover {
-  color: var(--agora-cl-pink);
+  color: var(--boa-navy);
 }
 .toc .toggleNav ul li a:hover {
-  color: var(--agora-cl-pink);
+  color: var(--boa-navy);
 }
 .toc .toggleNav ul li.navListItemActive a {
   color: white;
@@ -554,7 +554,7 @@ header > h1 {
   opacity: 1;
 }
 .header-badges .header-badge:hover .badge-label {
-  color: #000;
+  color: #140950;
 }
 .header-badges .header-badge .badge-label {
   white-space: nowrap;

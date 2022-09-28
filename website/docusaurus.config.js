@@ -5,7 +5,7 @@ module.exports = {
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'throw',
-    favicon: 'img/Agora-cl.svg',
+    favicon: 'img/bosagora-logo.png',
     organizationName: 'Bosagora',
     projectName: 'agora-cl-docs',
     customFields: {

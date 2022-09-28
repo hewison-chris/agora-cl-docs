@@ -1,13 +1,13 @@
 :root {
-    --agora-cl-pink: #c72a7d;
+    --boa-navy: #140950;
+    --boa-pantone: #4d00ee;
     --tab-active-color: #3578e5;
-    --tab-active-color-hover: hsl(217, 58%, 36%);
+    --tab-active-color-hover: #140950;
     --tab-gray: #ddd;
-    --agora-cl-pink-light: #da77ab;
 }
 
 html[data-theme='dark'] {
-    --agora-cl-pink: var(--agora-cl-pink-light);
+    --boa-navy: var(--boa-pantone);
     --tab-gray: #aaa;
 
     .quickstart-tabs {
@@ -30,7 +30,7 @@ html[data-theme='dark'] {
 }
 
 .navbar__link--active {
-    color: var(--agora-cl-pink-light) !important;
+    color: var(--boa-pantone) !important;
 }
 
 /* used to hide all but the topmost tabs within our quickstart */
@@ -326,7 +326,7 @@ html[data-theme='dark'] {
 /* General elements */
 
 a {
-    color: var(--agora-cl-pink);
+    color: var(--boa-navy);
 }
 
 .footnote {
@@ -334,7 +334,7 @@ a {
 }
 
 .footnote:hover {
-    color: #000 !important;
+    color: #140950 !important;
 }
 
 .markdown {
@@ -513,7 +513,7 @@ footer>.col a,
 html[data-theme='dark'] .update-request>a,
 html[data-theme='dark'] footer>.col a {
     background-color: #111;
-    color: var(--agora-cl-pink);
+    color: var(--boa-navy);
 }
 
 footer>.col a:hover,
@@ -526,7 +526,7 @@ footer>.col a:hover,
 html[data-theme='dark'] .update-request>a:hover,
 html[data-theme='dark'] footer>.col a:hover {
     background-color: #333;
-    color: var(--agora-cl-pink);
+    color: var(--boa-navy);
 }
 
 
@@ -556,7 +556,7 @@ footer.docusaurus-mt-lg {
 }
 
 .navbar--fixed-top {
-    border-bottom: 3px solid var(--agora-cl-pink);
+    border-bottom: 3px solid var(--boa-navy);
 }
 
 .navbar__link--active {
@@ -569,7 +569,7 @@ footer.docusaurus-mt-lg {
 
 .navbar__link:hover,
 .navbar__link--active {
-    color: var(--agora-cl-pink);
+    color: var(--boa-navy);
 }
 
 .navbar__brand {
@@ -588,7 +588,7 @@ footer.docusaurus-mt-lg {
 
 .menu__link:hover,
 .menu__link--active:hover {
-    color: var(--agora-cl-pink);
+    color: var(--boa-navy);
 }
 
 .table-of-contents>li> {
@@ -597,11 +597,11 @@ footer.docusaurus-mt-lg {
 }
 
 .table-of-contents__link:hover {
-    color: var(--agora-cl-pink);
+    color: var(--boa-navy);
 }
 
 .toc .toggleNav ul li a:hover {
-    color: var(--agora-cl-pink);
+    color: var(--boa-navy);
 }
 
 .toc .toggleNav ul li.navListItemActive a {
@@ -649,7 +649,7 @@ header>h1 {
             }
 
             .badge-label {
-                color: #000;
+                color: #140950;
             }
         }
 
