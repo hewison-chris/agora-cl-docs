@@ -18,15 +18,15 @@ module.exports = {
         navbar: {
             title: "Agora-cl Documentation",
             logo: {
-                alt: "Agora-cl logo",
-                src: 'img/logo2.png',
+                alt: "logo",
+                src: 'img/bosagora-logo.png',
                 href: '/docs/getting-started',
             },
             items: [{
                 type: 'docsVersion',
                 position: 'left',
                 to: 'https://github.com/zeroone-boa/agora-cl/releases/tag/v3.1.1',
-                label: 'v3.1.1',
+                label: 'agora_v3.1.1',
             },
             {
                 to: 'docs/install/install-with-script',
