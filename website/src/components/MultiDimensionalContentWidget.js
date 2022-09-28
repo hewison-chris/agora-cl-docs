@@ -75,19 +75,11 @@ export const MultiDimensionalContentWidget = () => {
 
 		if (isSelectedByText('Mainnet'))
 			selectedNetwork = "Mainnet";
-		else if (isSelectedByText('Goerli-Prater'))
-			selectedNetwork = "Goerli-Prater";
-		else if (isSelectedByText('Sepolia'))
-			selectedNetwork = "Sepolia";
-		else if (isSelectedByText('Ropsten'))
-			selectedNetwork = "Ropsten";
+		else if (isSelectedByText('Testnet'))
+			selectedNetwork = "Testnet";
 
-		if (isSelectedByText('Geth'))
-			selectedEL = "Geth";
-		else if (isSelectedByText('Nethermind'))
-			selectedEL = "Nethermind";
-		else if (isSelectedByText('Besu'))
-			selectedEL = "Besu";
+		if (isSelectedByText('Agora-el'))
+			selectedEL = "Agora-el";
 
 		if (isSelectedByText('IPC'))
 			selectedENBN = "IPC";
@@ -120,27 +112,16 @@ export const MultiDimensionalContentWidget = () => {
 						var targetElement = event.target;
 						var textContent = targetElement.textContent;
 
-						if (textContent == 'Besu') {
-							if (isSelectedByText('IPC')) {
-								selectByText('HTTP-JWT');
-							}
-							disableByText('IPC');
-						} else if (textContent == 'Geth' || textContent == 'Nethermind') {
+						if (textContent == 'Agora-el') {
 							enableByText('IPC');
 						} else if (textContent == 'IPC') {
 							if (jwtOnly()) {
 								setTimeout(function () { selectByText('HTTP-JWT'); }, 50)
 								disableByText('IPC');
 							} else {
-								if (isSelectedByText('Besu')) {
-									selectByText('Geth');
-								}
-								disableByText('Besu');
+								selectByText('Agora-el');
 							}
-						} else if (textContent == 'HTTP-JWT') {
-							enableByText('Besu');
 						}
-
 						toggleUpdated(targetElement);
 						stashConfig();
 					}, false)

@@ -10,7 +10,7 @@ This guidance is targeted at new users. If you're already running a node, see [P
 
 ## Select a configuration
 
-If you're looking for the simplest configuration, select `Geth` and `IPC`:
+If you're looking for the simplest configuration, select `Agora-el` and `IPC`:
 
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 
@@ -18,15 +18,15 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Introduction
 
-Agora-cl is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this quickstart, you’ll use Agora-cl to run an Ethereum node and optionally a validator. This will let you stake 40,000 BOA using hardware that you manage.
+Agora-cl is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this quickstart, you’ll use Agora-cl to run an Agora-cl node and optionally a validator. This will let you stake 40,000 BOA using hardware that you manage.
 
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge.
 
 At a high level, we'll walk through the following flow:
 
- 1. Configure an **execution node** using an execution-layer client.
- 2. Configure a **Agora node** using Agora-cl, a consensus-layer client.
- 3. Configure a **validator** and stake BOA using Agora-cl (optional).
+ 1. Configure an **Agora execution node** using Agora-el, an execution-layer client.
+ 2. Configure an **Agora consensus node** using Agora-cl, a consensus-layer client.
+ 3. Configure an **Agora validator** and stake BOA using Agora-validator (optional).
 
 <br />
 

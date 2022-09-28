@@ -20,9 +20,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
 <Tabs className="tabgroup-with-label network-tabgroup" groupId="network" defaultValue="mainnet" values={[
         {label: 'Network:', value: 'label'},
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Ropsten', value: 'ropsten'}
+        {label: 'Testnet', value: 'testnet'}
     ]}>
     <TabItem className="unclickable-element" value="label"></TabItem>
     <TabItem value="mainnet"></TabItem>
@@ -33,14 +31,10 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
 
 <Tabs className="tabgroup-with-label hidden-in-docker-guide el-tabgroup" groupId="execution-clients" defaultValue="geth" values={[
   {label: 'Execution client:', value: 'label'},
-  {label: 'Geth', value: 'geth'},
-  {label: 'Nethermind', value: 'nethermind'},
-  {label: 'Besu', value: 'besu'}
+  {label: 'Agora-el', value: 'agora-el'}
   ]}>
   <TabItem className="unclickable-element" value="label"></TabItem>
-  <TabItem value="geth"></TabItem>
-  <TabItem value="nethermind"></TabItem>
-  <TabItem value="besu"></TabItem>
+  <TabItem value="agora-el"></TabItem>
 </Tabs>
 
 <Tabs className="tabgroup-with-label hidden-in-jwt-guide hidden-in-docker-guide enbn-tabgroup" groupId="protocol" defaultValue="jwt" values={[

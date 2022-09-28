@@ -18,7 +18,7 @@ This guidance is targeted at users who only need to configure an execution clien
 
 ## Select a configuration
 
-If you're looking for the simplest configuration, select `Geth` and `IPC`:
+If you're looking for the simplest configuration, select `Agora-el` and `IPC`:
 
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 

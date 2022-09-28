@@ -1,10 +1,10 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Create a folder called `ethereum` on your SSD, and then two subfolders within it: `consensus` and `execution`:
+Create a folder called `agora` on your SSD, and then two subfolders within it: `consensus` and `execution`:
 
 ```
-📂ethereum
+📂agora
 ┣ 📂consensus
 ┣ 📂execution
 ```
@@ -17,8 +17,8 @@ Create a folder called `ethereum` on your SSD, and then two subfolders within it
     <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
 
 ```
-mkdir agora-cl && cd agora-cl
-curl https://raw.githubusercontent.com/zeroone-boa/agora-cl/master/agora-cl.bat --output agora-cl.bat
+mkdir -p agora\consensus && cd agora\consensus
+curl https://raw.githubusercontent.com/zeroone-boa/agora-cl/agora_v3.1.1/prysm.bat --output agora-cl.bat
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ```
 
@@ -28,8 +28,8 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
     <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
 
 ```
-mkdir agora-cl && cd agora-cl
-curl https://raw.githubusercontent.com/zeroone-boa/agora-cl/master/agora-cl.sh --output agora-cl.sh && chmod +x agora-cl.sh
+mkdir agora/consensus && cd agora/consensus
+curl https://raw.githubusercontent.com/zeroone-boa/agora-cl/agora_v3.1.1/prysm.sh --output agora-cl.sh && chmod +x agora-cl.sh
 ```
 
   <p>This will download the Agora-cl client and make it executable.</p>

@@ -5,7 +5,7 @@ sidebar_label: Security best practices
 ---
 
 
-Agora's transition to proof-of-stake is made possible by validators who each stake 40,000 BOA into the [validator deposit contract](/docs/how-agora-cl-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
+Agora's transition to proof-of-stake is made possible by validators who each stake 40,000 BOA into the [validator deposit contract](/docs/how-agora-cl-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Agora network in exchange for staking rewards.
 
 Validators are rewarded for maintaining highly available, trustworthy validator client instances. The security best practices in this guide will help you fulfill this responsibility by helping you minimize risk across a variety of security aspects. Within each aspect, you'll find **recommended**, **advanced**, and **Linux-specific** guidance.
 
@@ -16,17 +16,17 @@ Note that this document is subject to the [Prysmatic Labs Terms of Service](http
 The following principles apply generally to staking security:
 
  - **Keep it simple**. Over-engineered solutions tend to increase risk.
- - **Stay up to date**. At a minimum, join the [agora-cl-dev Google Group](https://groups.google.com/g/agora-cl-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the [Agora-cl Discord server](https://t.me/bosagora_eng) and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
+ - **Stay up to date**. At a minimum, join the [Bosagora Telegram](https://t.me/bosagora_eng). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
  - **Testnet first**. Harden your configuration using testnet [<a href='#footnote-1'>1</a>] before staking with real BOA on mainnet.
  - **Simulate risk events**. For each of the aspects within this document, simulate risk events and document your own risk mitigation plans. You can use the [risk mitigation worksheet](#mitigation-worksheet) located at the end of this guide.
  - **Proactively manage risk** You can't completely eliminate risk, but you can minimize it by following the best practices within this guide.
- - **If you’re not sure, ask**. The [Agora-cl Discord server](https://t.me/bosagora_eng) and [r/ethstaker](https://www.reddit.com/r/ethstaker) subreddit are full of people who genuinely enjoy helping out.
+ - **If you’re not sure, ask**. The [Bosagora Telegram](https://t.me/bosagora_eng) are full of people who genuinely enjoy helping out.
 
 
 ## Uptime management
 The security of the Agora blockchain relies on a **highly available** network of validators. Agora's proof-of-stake implementation incentivizes validators to remain online.
 
-If your validator goes offline, you can lose some of your staked BOA [<a href='#footnote-2'>2</a>]. As long as you're online most of the time, you'll be profitable. Losses incurred from occasional downtime are negligible [<a href='#footnote-3'>3</a>].
+If your validator goes offline, you can lose some of your staked BOA. In a similar way to staked ETH in the Ethereum blockchain shown here [<a href='#footnote-2'>2</a>]. As long as you're online most of the time, you'll be profitable. Losses incurred from occasional downtime are negligible [<a href='#footnote-3'>3</a>].
 
 While it's possible to optimize your client instance architecture for high-availability and redundancy, we encourage validators to **keep it simple**. Complex validator architectures run the risk of accidentally engaging in slashable behavior. This can result in slashing [<a href='#footnote-4'>4</a>], which is a far steeper price to pay than the occasional downtime penalty.
 
@@ -48,13 +48,13 @@ Linux-specific best practices:
 
 
 ## Slash avoidance
-The Ethereum network penalizes malicious behavior with a slashing mechanism that burns staked Ethereum [<a href='#footnote-7'>7</a>]. Generally speaking, unless you deliberately act maliciously or over-engineer for redundancy, you won’t be slashed.
+The Agora network penalizes malicious behavior with a slashing mechanism that burns staked BOA [<a href='#footnote-7'>7</a>]. Generally speaking, unless you deliberately act maliciously or over-engineer for redundancy, you won’t be slashed.
 
 It’s very important for you to understand that **simple setups that occasionally experience downtime** are far better for you - and for the network - than complex highly-available architectures.
 
 This is because **the easiest way to get slashed is to run your validating keys in two places at the same time**. This can happen if you don’t exercise extreme caution when configuring your validator client [<a href='#footnote-8'>8</a>]. This can also happen if you configure a “failover instance” that prematurely comes online, accidentally signaling malicious intent to the broader network.
 
-Put simply: Ethereum gently discourages downtime with paper cuts. But it uses a ruthless banhammer to punish clones, and it doesn’t have any way to distinguish between accidental clones and real, malicious clones. So it’s best to keep it simple and expect some paper cuts.
+Put simply: Agora gently discourages downtime with paper cuts. But it uses a ruthless banhammer to punish clones, and it doesn’t have any way to distinguish between accidental clones and real, malicious clones. So it’s best to keep it simple and expect some paper cuts.
 
  - **Essential**: Never run your validating keys in two places at the same time.
  - **Essential**: Avoid over-engineering your validator setup. Keep it simple so your validator doesn't accidentally behave maliciously.
@@ -91,13 +91,13 @@ We recommend applying the following security best practices to the operating sys
 Linux-specific best practices:
 
  - **Essential**: Don't use `root` unless you need to. Don't run anything as `root`.
- - **Essential**: Configure time sync. The Ethereum Launchpad demonstrates this as part of their [validator checklist](https://launchpad.ethereum.org/en/checklist).
+ - **Essential**: Configure time sync. The Agora staking Launchpad demonstrates this as part of their [validator checklist](https://agora-staking.bosagora.org/en/checklist).
  - **Essential**: Enable the UFW firewall [<a href='#footnote-9'>9</a>].
  - **Advanced**: Disable the root account, root account login, and password-based login [<a href='#footnote-10'>10</a>].
  - **Advanced**: Disable SSH password authentication. Use SSH keys only [<a href='#footnote-11'>11</a>].
 
 ## Wallet and key management
-You’ll be managing two types of keys: validator keys and withdrawal keys. Agora-cl only needs access to your validator keys. You can learn more about this [here on the Ethereum blog](https://blog.ethereum.org/2020/05/21/keys/).
+You’ll be managing two types of keys: validator keys and withdrawal keys. Agora-cl only needs access to your validator keys. You can learn more about this [here on the Ethereum blog](https://blog.ethereum.org/2020/05/21/keys/) as Agora uses the same type of keys.
 
  - **Essential**: Keep your withdrawal keys secure, offline, and physically separated from your validator instance. Use your withdrawal keys only when withdrawing funds - otherwise these keys should never touch Agora-cl, or any other software.
  - **Essential**: Don't use external devices that you don't trust.
@@ -111,10 +111,10 @@ You’ll be managing two types of keys: validator keys and withdrawal keys. Agor
  - **Advanced**: Use a [Web3Signer](/docs/wallet/web3signer/) to maintain separation between your keys and client software.
 
 ## Troubleshooting
-Ethereum and its client software are constantly improving. This constant change means that unexpected things may happen that require troubleshooting.
+Agora and its client software are constantly improving. This constant change means that unexpected things may happen that require troubleshooting.
 
  - **Essential**: Expect unexpected things to happen.
- - **Essential**: Be prepared to engage with the [Agora-cl Discord server](https://t.me/bosagora_eng), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) if you need help troubleshooting issues.
+ - **Essential**: Be prepared to engage with the [Bosagora Telegram](https://t.me/bosagora_eng) if you need help troubleshooting issues.
  - **Essential**: When sharing logs, be sure to redact personally identifiable information and metadata that can be used to identify your validator.
  - **Essential**: Learn how to [inspect Agora-cl's performance](/docs/monitoring/is-everything-fine).
  - **Essential**: Familiarize yourself with [Agora-cl's P2P connectivity guidance](/docs/agora-cl-usage/p2p-host-ip).
@@ -151,13 +151,8 @@ Migrating your validator from one machine to another is a delicate process that 
 
 ## Learning resources
 
- - [Agora-cl Discord server](https://t.me/bosagora_eng)
- - [Ethereum launchpad](https://launchpad.ethereum.org/en/overview)
- - [Ethereum launchpad FAQ](https://launchpad.ethereum.org/en/faq)
- - [Eth2 rewards and penalties calculator](https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491)
- - [EthStaker Discord server](https://invite.gg/ethstaker)
- - [EthStaker subreddit](https://reddit.com/r/ethstaker)
-
+ - [Bosagora Telegram](https://t.me/bosagora_eng)
+ - [Bosagora gitbook](https://docs.bosagora.org/en/agora/what-is-agora)
 
 ## Closing remarks
 Participating as a validator can be rewarding public service [<a href='#footnote-13'>13</a>], but it's not without risk. Following these security best practices will help you minimize risk.

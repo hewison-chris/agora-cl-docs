@@ -67,7 +67,7 @@ This page serves material necessary to catch up with the current state of Ethere
 
 ### Mainnet Blockchain
 
-* [Launchpad](https://launchpad.ethereum.org/en/)
+* [Launchpad](https://agora-staking.bosagora.org/en/)
 * [Beacon Chain Explorer](https://beaconcha.in/)
 * [Another Beacon Chain Explorer](https://explorer.bitquery.io/eth2)
 * [Validator Queue Statistics](https://eth2-validator-queue.web.app/index.html)

@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-There are a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://t.me/bosagora_eng) and a member of the team or community will be happy to answer questions and offer some direction.
+There are a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by [**Telegram**](https://t.me/bosagora_eng) and a member of the team or community will be happy to answer questions and offer some direction.
 
 ## Getting Started
 
@@ -32,7 +32,7 @@ $ git clone https://github.com/zeroone-boa/agora-cl.git && cd agora-cl
 Then link your local repository to your newly created fork.
 
 ```text
-$ git remote add myprysmrepo https://github.com/<your_github_user_name>/agora-cl.git
+$ git remote add myfork https://github.com/<your_github_user_name>/agora-cl.git
 ```
 
 Finally, ensure Go is installed and working on your machine:
@@ -179,7 +179,7 @@ The code from the Agora-cl repository is inserted between `<<<` and `===` while 
 When you are ready, use git push to move your local copy of the changes to your fork of the repository on Github.
 
 ```text
-$ git push myrepo feature-in-progress-branch
+$ git push myfork feature-in-progress-branch
 ```
 
 #### Opening a pull request

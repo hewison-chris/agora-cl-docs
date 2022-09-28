@@ -17,16 +17,16 @@ Agora-cl's validator accounts are extensible enough to allow for the most basic 
 Out of the box, Agora-cl supports 3 basic kinds of wallets that encompass many different use-cases. In order of highest to lowest security:
 
 1. **Remote signing wallet**: (most secure) An advanced kind of wallet in which validator keys and signing requests are processed by a remote server via gRPC (view our remote server [reference implementation](https://github.com/Bosagora/remote-signer)).
-2. **non-HD wallet**: (good security) A simple wallet in which accounts are password protected and validator keys are generated non-deterministically. This is the recommended approach if you want to import an account from the [Ethereum launchpad](https://launchpad.ethereum.org/) and you can read dedicated instructions [here](/docs/wallet/nondeterministic).
+2. **non-HD wallet**: (good security) A simple wallet in which accounts are password protected and validator keys are generated non-deterministically. This is the recommended approach if you want to import an account from the [Agora staking launchpad](https://agora-staking.bosagora.org/) and you can read dedicated instructions [here](/docs/wallet/nondeterministic).
 3. **HD wallet**: (least security) A common type of blockchain wallet which is generated from a english mnemonic, able to create new accounts deterministically. The encrypted seed is stored on day encrypted by a strong password. Given you are tying your HD wallet to the validator client, it is less secure than simply importing validating keys you need from an external source or running a remote signer.
 
-At the core of Agora-cl's validator accounts lies the notion of a validator private key, which is stored in a password-protected, keystore.json file. Agora-cl supports the ability to manage many validator accounts, making it easy to import and export them as well as easily list all the account info in your wallet. Agora-cl is compliant with the [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335) standards for storing Ethereum consensus validator private keys, making it possible to move keys between different Ethereum consensus client implementations.
+At the core of Agora-cl's validator accounts lies the notion of a validator private key, which is stored in a password-protected, keystore.json file. Agora-cl supports the ability to manage many validator accounts, making it easy to import and export them as well as easily list all the account info in your wallet.
 
 ### Security considerations
 
-Security for your keys is a big topic, but at its core, it is important to clarify the role of the private keys in Ethereum consensus. When you generate a validator key, you actually generate 2 different ones: a **withdrawal key** and a **validating key**. The withdrawal key should be stored offline, and can be used to withdraw your gains in the future as it is not used during the validating process. Your validating key, however, needs to be accessible by your running validator client software **at all times**.
+Security for your keys is a big topic, but at its core, it is important to clarify the role of the private keys in Agora consensus. When you generate a validator key, you actually generate 2 different ones: a **withdrawal key** and a **validating key**. The withdrawal key should be stored offline, and can be used to withdraw your gains in the future as it is not used during the validating process. Your validating key, however, needs to be accessible by your running validator client software **at all times**.
 
-As a validator, you're expected to be consistently online to produce blocks and vote on others' blocks, as this is how you get rewarded for participating in Ethereum consensus. To do this, your software needs to have instant access to your validating key, also referred to often as a "hot key" or access to a "hot wallet". Keeping your withdrawal key, or wallet mnemonic _far away_ from your validator client is what will give you **optimal security** in Ethereum consensus. If someone were to steal your validating keys, they wouldn't be able to withdraw your validator's staked BOA.
+As a validator, you're expected to be consistently online to produce blocks and vote on others' blocks, as this is how you get rewarded for participating in Agora consensus. To do this, your software needs to have instant access to your validating key, also referred to often as a "hot key" or access to a "hot wallet". Keeping your withdrawal key, or wallet mnemonic _far away_ from your validator client is what will give you **optimal security** in Agora consensus. If someone were to steal your validating keys, they wouldn't be able to withdraw your validator's staked BOA.
 
 :::tip Keeping your wallet safe
 When creating an HD wallet, you'll be given a 24-word mnemonic phrase which you need to store safely. Make sure you write it down somewhere safe offline, and do not leave traces of it on your computer. If someone gets ahold of this mnemonic, they can steal all your accounts!
@@ -34,14 +34,14 @@ When creating an HD wallet, you'll be given a 24-word mnemonic phrase which you 
 
 The ideal security for an average user participating as a validator is as follows:
 
-- Create a wallet using the official [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli) and keep your mnemonic stored offline, safely.
+- Create a wallet using the official [agora-deposit-cli](https://github.com/zeroone-boa/agora-deposit-cli) and keep your mnemonic stored offline, safely.
 - Import only the validating keys you need into your validator client, such as by following the instructions [here](../install/install-with-script#step-5-run-a-validator-using-agora-cl).
 
 For **best security** in production cloud deployments, it's best you use a **remote signer**, as that offers absolute separation of your secret keys and your validator client software. Read more about remote signers [here](/docs/wallet/remote).
 
 ## Non-HD wallets (Importing Keystores)
 
-Agora-cl supports a non-deterministic wallet, which is a very simple kind of wallet storing validating keystores on disk, which can be imported from an external source such as the [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli). This type of wallet makes it very easy to import and export accounts, useful for certain cloud deployments in which you don't want to store your eth2 withdrawal keys on-disk. This wallet is also the recommended approach if you generated a validator deposit using the [Ethereum launchpad](https://launchpad.ethereum.org/).
+Agora-cl supports a non-deterministic wallet, which is a very simple kind of wallet storing validating keystores on disk, which can be imported from an external source such as the [agora-deposit-cli](https://github.com/zeroone-boa/agora-deposit-cli). This type of wallet makes it very easy to import and export accounts, useful for certain cloud deployments in which you don't want to store your BOA withdrawal keys on-disk. This wallet is also the recommended approach if you generated a validator deposit using the [Agora staking launchpad](https://agora-staking.bosagora.org/).
 
 ```text
 wallet-directory/
@@ -65,7 +65,7 @@ HD wallets are password protected via a high-entropy, strong password, and allow
 
 ## Remote signing wallet
 
-This is the **most** secure type of wallet. Some advanced users may wish to run a remote-signer server, which handles the retrieval of keys and signing of Ethereum Agora chain requests. A Agora-cl validator client can then connect securely via [gRPC](https://grpc.io) to the remote server and perform its validating duties by relying on the server for the information it needs. Most advanced cloud deployments should likely use this approach, as it is the most customizable.
+This is the **most** secure type of wallet. Some advanced users may wish to run a remote-signer server, which handles the retrieval of keys and signing of Agora chain requests. An Agora-cl validator client can then connect securely via [gRPC](https://grpc.io) to the remote server and perform its validating duties by relying on the server for the information it needs. Most advanced cloud deployments should likely use this approach, as it is the most customizable.
 
 To be compliant with a Agora-cl remote signing wallet, your remote signing server needs to implement the gRPC API specified in Agora-cl [here](https://github.com/zeroone-boa/agora-cl/blob/7fff4ec41165e6581dda352b362d77fc6ca2710d/proto/validator/accounts/v2/keymanager.proto#L12).
 
@@ -87,8 +87,6 @@ service RemoteSigner {
 }
 ```
 
-We have also a created a reference remote signer implementation, maintained as an open source, Apache 2 project on Github [here](https://github.com/Bosagora/remote-signer) as a starting point.
-
 [Create and use a remote signing wallet](/docs/wallet/remote)
 
 ## Frequently asked questions
@@ -109,7 +107,7 @@ If your validator client is running fine without errors but you're seeing your v
 
 #### How can I use a hardware wallet with my validator?
 
-At the moment, there is no built-in hardware wallet support for validators, but teams such as Ledger are working on integrating BLS12-381 keys (the type of keys used by Ethereum consensus) into their products.
+At the moment, there is no built-in hardware wallet support for validators, but teams such as Ledger are working on integrating BLS12-381 keys (the type of keys used by Agora consensus) into their products.
 
 #### Help! Something is messed up with the validator and I can't start it
 
@@ -117,7 +115,7 @@ If you're encountering an unexpected issue that causes your client to crash or t
 
 #### How can I stop being a validator?
 
-You can stop being a validator by issuing a **voluntary exit**, which is a special type of object included in the Ethereum Agora chain that signifies your validator is ready to stop validating and securely exit the validator set. Although during phase 0 of Ethereum consensus, you will **not** be able to withdraw your staking rewards, you can still issue a voluntary exit. You can find instructions for this process [here](/docs/wallet/exiting-a-validator).
+You can stop being a validator by issuing a **voluntary exit**, which is a special type of object included in the Agora chain that signifies your validator is ready to stop validating and securely exit the validator set. Although until after an upgrade following the merge, you will **not** be able to withdraw your staking rewards, you can still issue a voluntary exit. You can find instructions for this process [here](/docs/wallet/exiting-a-validator).
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

@@ -18,7 +18,7 @@ At runtime, the Agora node initialises and maintains a number of services that a
 
 * A [**blockchain** **service**](#blockchain-service) which processes incoming blocks from the network, advances the Agora chain's state, and applies a fork choice rule to select the best head block.
 * An [**operations service**](#operations-service) prepares information contained in beacon blocks received from peers \(such as block deposits and attestations\) for inclusion into new validator blocks.
-* A [**core package** ](#core-package) containing Ethereum beacon-chain core functions, utilities, and state transitions required for conformity with the protocol.
+* A [**core package** ](#core-package) containing Agora-cl-chain core functions, utilities, and state transitions required for conformity with the protocol.
 * A [**sync service**](#sync-service) which both queries nodes across the network to ensure latest [canonical head](/docs/terminology#canonical-head-block) and state are synced and processes incoming block announcements from peers.
 * An [**BOA 1.0 service**](#eth1-service) that listens to latest event logs from the validator deposit contract and the BOA 1.0 blockchain.
 * A [**public RPC server**](#public-rpc-server) that requests information about the Agora chain's state, the latest block, validator information, etcetera.

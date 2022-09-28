@@ -169,11 +169,11 @@ bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXEC
 
 Ensure that your Agora node is fully synced before proceeding. See [Check node and validator status](../monitoring/checking-status.md) for detailed status-checking instructions.
 
-Navigate to the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) and follow the instructions. If you want to participate in the **testnet**, you can navigate to the [Goerli-Prater](https://goerli.launchpad.ethereum.org/summary/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
+Navigate to the [Mainnet Launchpad](https://agora-staking.bosagora.org/summary) and follow the instructions. If you want to participate in the **testnet**, you can navigate to the [Goerli-Prater](https://goerli.launchpad.ethereum.org/summary/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
 
 :::danger Exercise extreme caution
 
-The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send BOA directly to the contract - use the Ethereum.org launchpad instead.
+The correct address for the launchpad is https://agora-staking.bosagora.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send BOA directly to the contract - use the Ethereum.org launchpad instead.
 
 :::
 

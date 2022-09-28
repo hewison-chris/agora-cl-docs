@@ -53,7 +53,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-2" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-2">Review "Before and now"</label>
-            <p>The <a href='#the-merge-before-and-now'>Before and now</a> section below gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. <a href='https://launchpad.bosagora.io/en/merge-readiness'>Merge readiness checklist</a> for more detailed information.</p>
+            <p>The <a href='#the-merge-before-and-now'>Before and now</a> section below gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. <a href='https://agora-staking.bosagora.org/en/merge-readiness'>Merge readiness checklist</a> for more detailed information.</p>
         </div>
     </div>
     <div class='task'>
@@ -175,7 +175,7 @@ You’re now ready for The Merge. If you have any questions, feel free ask them 
 
 ## Frequently asked questions
 
-**I'm currently running a validator on Ethereum Mainnet. When should I make changes?** <br />
+**I'm currently running a validator on Agora Mainnet. When should I make changes?** <br />
 You can now make these changes, regardless of the network you're running on.
 
 **Can I use IPC post-Merge?** <br />

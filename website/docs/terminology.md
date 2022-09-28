@@ -24,10 +24,6 @@ The process of creating and adding new blocks to the Agora chain.
 
 The process of voting on the validity of newly created blocks on the Agora chain.
 
-#### ETH1
-
-The existing Ethereum 1.0 protocol.
-
 ## Technical terms
 
 #### Canonical head block

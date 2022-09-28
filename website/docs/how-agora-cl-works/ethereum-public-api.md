@@ -2,7 +2,7 @@
 id: ethereum-public-api
 title: Eth Beacon Node API
 sidebar_label: Eth Beacon Node API
-description: This section contains information about the official Ethereum beacon API
+description: This section contains information about the official Agora-cl API
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';

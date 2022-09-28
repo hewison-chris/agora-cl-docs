@@ -26,7 +26,7 @@ While the default setting is sufficient for regular Agora chain functionality, i
 
 ## Beacon chain API information
 
-Full details of the Ethereum beacon API are available here:
+Full details of the Agora-cl API are available here:
 
 The Agora-cl documenation portal [Agora public API] (/docs/how-agora-cl-works/agora-cl-public-api)
 

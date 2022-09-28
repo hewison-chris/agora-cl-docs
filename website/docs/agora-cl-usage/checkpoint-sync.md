@@ -10,11 +10,11 @@ import TabItem from '@theme/TabItem';
 
 :::caution Public Preview
 
-**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://t.me/bosagora_eng) to share your feedback.
+**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Bosagora Telegram](https://t.me/bosagora_eng) to share your feedback.
 
 :::
 
-**Checkpoint sync** is a feature that significantly speeds up the initial sync between your Agora node and the Beacon Chain. With checkpoint sync configured, your Agora node will begin syncing from a recently finalized checkpoint instead of syncing from genesis. This can make installations, validator migrations, recoveries, and testnet deployments *way* faster.
+**Checkpoint sync** is a feature that significantly speeds up the initial sync between your Agora node and the Agora Chain. With checkpoint sync configured, your Agora node will begin syncing from a recently finalized checkpoint instead of syncing from genesis. This can make installations, validator migrations, recoveries, and testnet deployments *way* faster.
 
 To sync from a checkpoint, your Agora-cl Agora node needs three pieces of information: the latest finalized `BeaconState`, the `SignedBeaconBlock`, and (if you're on a testnet) the genesis state for the network you're using. Together, the `BeaconState` and `SignedBeaconBlock` represent a single **checkpoint state**.
 
@@ -58,7 +58,7 @@ level=info msg="requesting <your configured checkpoint sync endpoint>"
 
 The above instructions tell you how to **request** checkpoint state from another node. If you want to **serve** these requests, run a fully synced node with the following flags:
 
- - `--enable-debug-rpc-endpoints`: The [Beacon Node API for retrieving a BeaconState](https://ethereum.github.io/beacon-APIs/#/Debug/getStateV2) is a debug endpoint - this flag tells Agora-cl to enable the endpoint so checkpoint sync requests can be served through your Agora node's RPC gateway provider endpoint.
+ - `--enable-debug-rpc-endpoints`: The [Agora Node API for retrieving a BeaconState](https://ethereum.github.io/beacon-APIs/#/Debug/getStateV2) is a debug endpoint - this flag tells Agora-cl to enable the endpoint so checkpoint sync requests can be served through your Agora node's RPC gateway provider endpoint.
 
 Note that **this is entirely optional**. The Agora node *requesting* the checkpoint state from this node doesn't need these flags.
 
@@ -186,7 +186,7 @@ The Ethereum Foundation DevOps team runs a handful of checkpoint sync endpoints 
  - Ropsten: https://ropsten.checkpoint-sync.ethdevops.io
  - Sepolia: https://sepolia.checkpoint-sync.ethdevops.io
 
-Feel free to ask on our [Discord server](https://t.me/bosagora_eng) if you need help identifying a **Mainnet** checkpoint state provider.
+Feel free to ask on our [Bosagora Telegram](https://t.me/bosagora_eng) if you need help identifying a **Mainnet** checkpoint state provider.
 
 **Do I need to provide a genesis state when using checkpoint sync on Mainnet?** <br/>
 No. Mainnet's genesis state is embedded within Agora-cl.

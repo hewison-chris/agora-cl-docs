@@ -104,7 +104,7 @@ The concept of mining exists only in the domain of proof-of-authority consensus.
 Slashers, like validators, use specialized pieces of consensus-layer client software to fulfill a critical responsibility for the Agora network. Slashers attempt to detect and punish malicious validators. Learn more by reading our [Slasher documentation](../agora-cl-usage/slasher.md).
 
 **How do I get testnet BOA?** <br/>
-We recommend using [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/). If that doesn't work, you can ask the community for testnet BOA on either the [Agora-cl Discord server](https://t.me/bosagora_eng) or on [r/ethstaker](https://www.reddit.com/r/ethstaker).
+We recommend using [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/). If that doesn't work, you can ask the community for testnet BOA on either the [Bosagora Telegram](https://t.me/bosagora_eng) or on [r/ethstaker](https://www.reddit.com/r/ethstaker).
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
