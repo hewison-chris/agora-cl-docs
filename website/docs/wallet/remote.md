@@ -91,7 +91,7 @@ Then select **Remote** wallet when prompted. You can also create a wallet **non-
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/agora-cl-wallet-v2").
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/AgoraValidators/agora-cl-wallet-v2").
 | `--keymanager-kind`     | Type of wallet to create, either "direct", "derived, or "remote" (default "derived").
 | `--grpc-remote-address`     | Host:port of a gRPC server for the remote signer server.
 | `--remote-signer-crt-path`     | /path/to/client.crt for establishing a secure, TLS gRPC connection to a remote signer server.
@@ -110,7 +110,7 @@ You can also edit your wallet configuration **non-interactively** by using the f
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/agora-cl-wallet-v2").
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/AgoraValidators/agora-cl-wallet-v2").
 | `--grpc-remote-address`     | Host:port of a gRPC server for the remote signer server.
 | `--remote-signer-crt-path`     | /path/to/client.crt for establishing a secure, TLS gRPC connection to a remote signer server.
 | `--remote-signer-key-path`     | /path/to/client.key for establishing a secure, TLS gRPC connection to a remote signer server.
@@ -127,9 +127,9 @@ You can list all validator accounts in your non-HD wallet using the following co
 Where you'll see the following output
 
 ```bash
-[2020-07-27 14:30:13]  INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/agora-cl-wallet-v2
+[2020-07-27 14:30:13]  INFO accounts: (wallet path) /Users/johndoe/Library/AgoraValidators/agora-cl-wallet-v2
 (keymanager kind) remote signer
-(configuration file path) /Users/johndoe/Library/Eth2Validators/agora-cl-wallet-v2/remote/keymanageropts.json
+(configuration file path) /Users/johndoe/Library/AgoraValidators/agora-cl-wallet-v2/remote/keymanageropts.json
 
 Configuration options
 Remote gRPC address: localhost:4000
@@ -148,7 +148,7 @@ You can view all available options to run the `list` command by typing `./agora-
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/agora-cl-wallet-v2")
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/AgoraValidators/agora-cl-wallet-v2")
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

@@ -5,7 +5,7 @@ sidebar_label: Table of contents
 ---
 
 
-[Agora-cl](https://github.com/zeroone-boa/agora-cl) is an Agora client based on [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) Prysm client written in [Go](https://golang.org). You can use Agora-cl to participate in Agora's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [40,000 BOA to stake](https://bosagora.io/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-agora-cl). If you're new to Agora or are not familiar with Ethereum, you may enjoy our beginner-friendly [Nodes and networks](./concepts/nodes-networks.md) explainer.
+[Agora-cl](https://github.com/zeroone-boa/agora-cl) is an Agora consensus layer client based on [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) [Prysm client](https://github.com/prysmaticlabs/prysm) written in [Go](https://golang.org). You can use Agora-cl to participate in Agora's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [40,000 BOA to stake](https://docs.bosagora.org/en/validator-start/becoming-a-validator/staking-deposit-contract), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-agora-cl). If you're new to Agora and are not familiar with Ethereum, you may enjoy the beginner-friendly [Nodes and networks](./concepts/nodes-networks.md) explainer.
 
 The following table of contents provides a descriptive overview of Agora-cl's documentation:
 
@@ -248,7 +248,7 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <a href='how-agora-cl-works/optimistic-sync'>Optimistic sync</a>
 </div>
 <div class='panel'>
-<a href='how-agora-cl-works/beacon-node'>Beacon node</a>
+<a href='how-agora-cl-works/agora-cl node'>Beacon node</a>
 </div>
 <div class='panel'>
 <a href='how-agora-cl-works/agora-cl-validator-client'>Validator client</a>

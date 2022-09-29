@@ -24,9 +24,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
     ]}>
     <TabItem className="unclickable-element" value="label"></TabItem>
     <TabItem value="mainnet"></TabItem>
-    <TabItem value="goerli-prater"></TabItem>
-    <TabItem value="sepolia"></TabItem>
-    <TabItem value="ropsten"></TabItem>
+    <TabItem value="testnet"></TabItem>
 </Tabs>
 
 <Tabs className="tabgroup-with-label hidden-in-docker-guide el-tabgroup" groupId="execution-clients" defaultValue="geth" values={[

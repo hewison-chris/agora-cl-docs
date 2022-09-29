@@ -122,9 +122,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Ropsten', value: 'ropsten'}
+        {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
 
@@ -133,12 +131,12 @@ bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXEC
 ```
 
   </TabItem>
-      <TabItem value="goerli-prater">
+      <TabItem value="testnet">
 
-Download the Goerli-Prater genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
+Download the Testnet genesis state from [Github](https://agora-testnet.s3.ap-southeast-1.amazonaws.com/testnet-genesis.ssz) to a local file. Then issue the following command:
 
 ```text
-bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --prater --genesis-state=/path/to/genesis.ssz
+bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --testnet --genesis-state=/path/to/genesis.ssz
 ```
 
   </TabItem>
@@ -169,7 +167,7 @@ bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXEC
 
 Ensure that your Agora node is fully synced before proceeding. See [Check node and validator status](../monitoring/checking-status.md) for detailed status-checking instructions.
 
-Navigate to the [Mainnet Launchpad](https://agora-staking.bosagora.org/summary) and follow the instructions. If you want to participate in the **testnet**, you can navigate to the [Goerli-Prater](https://goerli.launchpad.ethereum.org/summary/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
+Navigate to the [Mainnet Launchpad](https://agora-staking.bosagora.org/summary) and follow the instructions. If you want to participate in the **testnet**, you can navigate to the [Testnet](https://goerli.launchpad.ethereum.org/summary/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
 
 :::danger Exercise extreme caution
 
@@ -177,10 +175,10 @@ The correct address for the launchpad is https://agora-staking.bosagora.org and 
 
 :::
 
-Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. Copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` directory you created during the launchpad process. For example, if your eth2.0-deposit-cli installation is in your `$HOME` (or `%LOCALAPPDATA%` on Windows) directory, you can then run the following command to import your keys:
+Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/zeroone-boa/agora-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `agora-deposit-cli` directory. Copy the path to the `validator_keys` folder under the `agora-deposit-cli` directory you created during the launchpad process. For example, if your agora-deposit-cli installation is in your `$HOME` (or `%LOCALAPPDATA%` on Windows) directory, you can then run the following command to import your keys:
 
 ```text
-bazel run //validator:validator -- accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --accept-terms-of-use
+bazel run //validator:validator -- accounts import --keys-dir=$HOME/agora-deposit-cli/validator_keys --accept-terms-of-use
 ```
 
 Next, open a second terminal window and issue the followimg command to start your validator.
@@ -230,8 +228,8 @@ The tags for the images are specified [here](https://github.com/zeroone-boa/agor
 <!-- todo: RC links to gcr.io -->
 
 ```text
-gcr.io/zeroone-boa/agora-cl/beacon-chain:latest
-gcr.io/zeroone-boa/agora-cl/validator:latest
+bosagora/agora-cl-node:latest
+bosagora/agora-cl-validator:latest
 ```
 
 You can edit these in the links above to your liking.
@@ -278,7 +276,7 @@ fd6fa224ea91: Loading layer [==================================================>
 a6dc470c72b7: Loading layer [==================================================>]  10.24kB/10.24kB
 a0de9c673ef6: Loading layer [==================================================>]  56.37MB/56.37MB
 84ff92691f90: Loading layer [==================================================>]  10.24kB/10.24kB
-Loaded image: gcr.io/zeroone-boa/agora-cl/beacon-chain:latest
+Loaded image: bosagora/agora-cl-node:latest
 Loaded image: zeroone-boa/agora-cl-beacon-chain:latest
 ```
 
@@ -308,7 +306,7 @@ bazel run //validator:push_images --config=release
 
 Which will deploy all images with the tags specified in [here](https://github.com/zeroone-boa/agora-cl/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/zeroone-boa/agora-cl/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator.
 
-By default, this will deploy to Prysmatic Labs' Google Container Registry namespace: `gcr.io/zeroone-boa/agora-cl`, which you will not have authentication access to, so make sure you edit the image tags to your appropriate registry and authenticate as needed.
+By default, this will deploy to Bosagora dockerhub organisation: `bosagora`, which you will not have authentication access to, so make sure you edit the image tags to your appropriate registry and authenticate as needed.
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

@@ -21,7 +21,7 @@ A validator client will attempt to connect to a Agora node by default with an in
 To use secure gRPC with a Agora node:
 
 ```text
-./agora-cl.sh beacon-node --tls-cert=server.pem --tls-key=server.key
+./agora-cl.sh agora-cl node --tls-cert=server.pem --tls-key=server.key
 ```
 
 and to use secure gRPC with a validator:
@@ -128,7 +128,7 @@ This will generate an output like so:
 1. Use the certificates to launch the Agora node:
 
     ```text
-    ./agora-cl.sh beacon-node --tls-cert=beacon.pem --tls-key=beacon.key
+    ./agora-cl.sh agora-cl node --tls-cert=beacon.pem --tls-key=beacon.key
     ```
 
 2. As well as a validator:

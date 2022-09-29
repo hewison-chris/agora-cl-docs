@@ -69,7 +69,7 @@ import TabItem from '@theme/TabItem';
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet bosagora/agora-cl-validator:stable -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
 ```
 
 **Using Bazel**
@@ -93,7 +93,7 @@ agora-cl.bat validator slashing-protection-history export --datadir=\path\to\val
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\outputdir:/output -v \path\to\wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable --slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
+docker run -it -v \path\to\outputdir:/output -v \path\to\wallet:/wallet bosagora/agora-cl-validator:stable --slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
 ```
 
 Note that `datadir` should point to the directory containing your `validator.db` file. For example: `/direct/validator.db`.
@@ -112,7 +112,7 @@ The first time you run the process you will be asked to accept or decline the te
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet bosagora/agora-cl-validator:stable -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
 ```
 
 **Using Bazel**
@@ -203,9 +203,9 @@ You can also run the accounts backup command non-interactively by using the foll
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/agora-cl-wallet-v2")
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/AgoraValidators/agora-cl-wallet-v2")
 | `--wallet-password-file` | Path to a plain-text, .txt file containing your wallet's password.
-| `--backup-dir`     | Path to a directory where accounts will be backed up into a zip file. (default: $HOME/Eth2Validators/)
+| `--backup-dir`     | Path to a directory where accounts will be backed up into a zip file. (default: $HOME/AgoraValidators/)
 | `--backup-public-keys`	| Comma-separated list of public key hex strings to specify which validator accounts to backup.
 | `--backup-password-file` |	Path to a plain-text, .txt file containing the desired password for your backed up accounts.
 
@@ -255,7 +255,7 @@ To import a slashing protection JSON file (all Ethereum consensus clients use th
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet bosagora/agora-cl-validator:stable -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 **Using Bazel**
@@ -275,7 +275,7 @@ agora-cl.bat validator slashing-protection-history import --datadir=\path\to\val
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet bosagora/agora-cl-validator:stable -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 </TabItem>
@@ -290,7 +290,7 @@ docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable -- slashing-protection-history import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet bosagora/agora-cl-validator:stable -- slashing-protection-history import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 **Using Bazel**

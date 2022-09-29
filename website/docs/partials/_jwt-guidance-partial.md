@@ -18,6 +18,6 @@ import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_q
 
 Next, we'll configure your Agora node to consume your JWT token so it can form an authenticated HTTP connection with your execution node.
 
-import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-beacon-node.md';
+import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-agora-cl-node.md';
 
 <QuickstartRunBeaconNodePartial />

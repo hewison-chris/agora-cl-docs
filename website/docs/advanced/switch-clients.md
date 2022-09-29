@@ -88,7 +88,7 @@ https://lighthouse-book.sigmaprime.io/validator-import-launchpad.html#1-run-the-
 
 <TabItem value="tek">
 
-https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Connect/Connect-To-Mainnet/#run-the-validator-and-beacon-node-as-a-single-process
+https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Connect/Connect-To-Mainnet/#run-the-validator-and-agora-cl node-as-a-single-process
 
 </TabItem>
 

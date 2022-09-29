@@ -41,7 +41,7 @@ Congratulations - you’re now running an <strong>execution node</strong> in Eth
 
 ## Step 4: Run a Agora node using Agora-cl
 
-import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-beacon-node.md';
+import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-agora-cl-node.md';
 
 <QuickstartRunBeaconNodePartial />
 

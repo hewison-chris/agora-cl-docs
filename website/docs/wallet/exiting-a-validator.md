@@ -47,8 +47,8 @@ Although validator nodes can voluntarily exit, you won't be able to withdraw you
 **Using Docker**
 
 ```text
-docker run -it -v $HOME/Eth2Validators/agora-cl-wallet-v2:/wallet \
-  gcr.io/zeroone-boa/agora-cl/validator:latest \
+docker run -it -v $HOME/AgoraValidators/agora-cl-wallet-v2:/wallet \
+  bosagora/agora-cl-validator:latest \
   accounts voluntary-exit --wallet-dir=/wallet
 ```
 
@@ -70,7 +70,7 @@ agora-cl.bat validator accounts voluntary-exit
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\agora-cl-wallet-v2:/wallet gcr.io/zeroone-boa/agora-cl/validator:latest accounts voluntary-exit --wallet-dir=/wallet
+docker run -it -v %LOCALAPPDATA%\AgoraValidators\agora-cl-wallet-v2:/wallet bosagora/agora-cl-validator:latest accounts voluntary-exit --wallet-dir=/wallet
 ```
 
 </TabItem>
@@ -85,8 +85,8 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\agora-cl-wallet-v2:/wallet gcr.i
 **Using Docker**
 
 ```text
-docker run -it -v $HOME/Eth2Validators/agora-cl-wallet-v2:/wallet \
-  gcr.io/zeroone-boa/agora-cl/validator:latest \
+docker run -it -v $HOME/AgoraValidators/agora-cl-wallet-v2:/wallet \
+  bosagora/agora-cl-validator:latest \
   accounts voluntary-exit --wallet-dir=/wallet
 ```
 

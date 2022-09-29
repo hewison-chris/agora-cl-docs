@@ -1,5 +1,5 @@
 ---
-id: beacon-node
+id: agora-cl node
 title: Agora-cl's Agora node
 sidebar_label: Beacon node
 ---

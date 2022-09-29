@@ -33,7 +33,7 @@ Then select **HD** wallet when prompted. You can also create a wallet **non-inte
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/agora-cl-wallet-v2")
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/AgoraValidators/agora-cl-wallet-v2")
 | `--keymanager-kind`     | Type of wallet to create, either "direct", "derived, or "remote" (default "derived")
 | `--wallet-password-file` | Path to a plain-text, password.txt file to lock your wallet
 |`--mnemonic-25th-word-file`| (Advanced) Path to a plain-text, .txt file containing a 25th word passphrase for your mnemonic for HD wallets.
@@ -57,11 +57,11 @@ Output
 
 ```text
 ✔ Enter the wallet recovery phrase: layer write film stuff camp album strong ...
-Enter a wallet directory: /Users/johndoe/Library/Eth2Validators/.agora-cl-wallet-v2
+Enter a wallet directory: /Users/johndoe/Library/AgoraValidators/.agora-cl-wallet-v2
 New wallet password: *********
 Confirm password: *********
 Enter how many accounts you would like to recover: 2
-[2020-07-27 11:54:16]  INFO accounts: Successfully recovered HD wallet with 2 accounts. Please use accounts list to view details for your accounts. wallet-path=/Users/johndoe/Library/Eth2Validators/agora-cl-wallet-v2
+[2020-07-27 11:54:16]  INFO accounts: Successfully recovered HD wallet with 2 accounts. Please use accounts list to view details for your accounts. wallet-path=/Users/johndoe/Library/AgoraValidators/agora-cl-wallet-v2
 ```
 
 :::info Recovering many accounts
@@ -70,7 +70,7 @@ Your accounts are generated deterministically from your recovery phrase, so you 
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/agora-cl-wallet-v2")
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/AgoraValidators/agora-cl-wallet-v2")
 | `--num-accounts` | Total number of accounts to recover from the wallet (default 1)
 
 ### List validator accounts
@@ -84,7 +84,7 @@ You can list all validator accounts in your HD wallet using the following comman
 Where you'll see the following output
 
 ```bash
-INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/agora-cl-wallet-v2
+INFO accounts: (wallet path) /Users/johndoe/Library/AgoraValidators/agora-cl-wallet-v2
 
 Showing **1** validator account
 View the eth1 deposit transaction data for your accounts by running `validator accounts list --show-deposit-data
@@ -104,7 +104,7 @@ You can view the `deposit_data` needed to send 32ETH to the Ethereum validator d
 Where you'll see the following output
 
 ```bash
-INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/agora-cl-wallet-v2
+INFO accounts: (wallet path) /Users/johndoe/Library/AgoraValidators/agora-cl-wallet-v2
 
 Showing **1** validator account
 
@@ -124,7 +124,7 @@ You can also run the `accounts list` command **non-interactively** by using the 
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/agora-cl-wallet-v2").
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/AgoraValidators/agora-cl-wallet-v2").
 | `--wallet-password-file` | Path to plain-text file containing your wallet's password.
 | `--show-deposit-data` | Display raw eth1 tx deposit data for validator accounts.
 | `--show-private-keys` | Display the private keys for validator accounts.

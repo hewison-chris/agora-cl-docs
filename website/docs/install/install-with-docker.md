@@ -66,16 +66,16 @@ Next, pull the Agora-cl images:
 
 ```text
 ## stable, without Busybox debugging tools
-docker pull gcr.io/zeroone-boa/agora-cl/validator:stable
-docker pull gcr.io/zeroone-boa/agora-cl/beacon-chain:stable
+docker pull bosagora/agora-cl-validator:stable
+docker pull bosagora/agora-cl-node:stable
 
 ## latest, without Busybox debugging tools
-docker pull gcr.io/zeroone-boa/agora-cl/validator:latest
-docker pull gcr.io/zeroone-boa/agora-cl/beacon-chain:latest
+docker pull bosagora/agora-cl-validator:latest
+docker pull bosagora/agora-cl-node:latest
 
 ## latest, with Busybox debugging tools
-docker pull gcr.io/zeroone-boa/agora-cl/validator:latest-alpine
-docker pull gcr.io/zeroone-boa/agora-cl/beacon-chain:latest-alpine
+docker pull bosagora/agora-cl-validator:latest-alpine
+docker pull bosagora/agora-cl-node:latest-alpine
 ```
 
 These commands will automatically install dependencies.
@@ -111,15 +111,13 @@ Next, use Docker to tell your Agora node to connect to your local execution node
 
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Ropsten', value: 'ropsten'}
+        {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
 
 ```text
-docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/zeroone-boa/agora-cl/beacon-chain:stable \
+docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name agora-cl node \
+  bosagora/agora-cl-node:stable \
   --datadir=/data \
   --jwt-secret=<YOUR_JWT_SECRET> \
   --rpc-host=0.0.0.0 \
@@ -129,13 +127,13 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 ```
 
   </TabItem>
-      <TabItem value="goerli-prater">
+      <TabItem value="testnet">
 
-Download the Goerli-Prater genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
+Download the Testnet genesis state from [Github](https://agora-testnet.s3.ap-southeast-1.amazonaws.com/testnet-genesis.ssz) to a local file. Then issue the following command:
 
 ```text
-docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/zeroone-boa/agora-cl/beacon-chain:stable \
+docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name agora-cl node \
+  bosagora/agora-cl-node:stable \
   --datadir=/data \
   --jwt-secret=<YOUR_JWT_SECRET> \
   --rpc-host=0.0.0.0 \
@@ -143,43 +141,7 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   --monitoring-host=0.0.0.0 \
   --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
   --genesis-state=/genesis/genesis.ssz \
-  --prater
-```
-
-  </TabItem>
-      <TabItem value="sepolia">
-
-Download the Sepolia genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file, then run
-
-```text
-docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/zeroone-boa/agora-cl/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
-  --datadir=/data \
-  --jwt-secret=<YOUR_JWT_SECRET> \
-  --rpc-host=0.0.0.0 \
-  --grpc-gateway-host=0.0.0.0 \
-  --monitoring-host=0.0.0.0 \
-  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
-  --genesis-state=/genesis/genesis.ssz \
-  --sepolia
-```
-
-  </TabItem>
-      <TabItem value="ropsten">
-
-Download the Ropsten genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz) to a local file, then run
-
-```text
-docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/zeroone-boa/agora-cl/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
-  --datadir=/data \
-  --jwt-secret=<YOUR_JWT_SECRET> \
-  --rpc-host=0.0.0.0 \
-  --grpc-gateway-host=0.0.0.0 \
-  --monitoring-host=0.0.0.0 \
-  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
-  --genesis-state=/genesis/genesis.ssz \
-  --ropsten
+  --testnet
 ```
 
   </TabItem>
@@ -194,43 +156,22 @@ To ensure that your Docker image has access to a data directory, mount a local d
 
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Ropsten', value: 'ropsten'}
+        {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/zeroone-boa/agora-cl/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+docker run -it -v %LOCALAPPDATA%\Agora:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp bosagora/agora-cl-node:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
   </TabItem>
-      <TabItem value="goerli-prater">
+      <TabItem value="testnet">
 
-Download the Goerli-Prater genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
-
-```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/zeroone-boa/agora-cl/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --prater
-```
-
-  </TabItem>
-      <TabItem value="sepolia">
-
-Download the Sepolia genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file, then run
+Download the Testnet genesis state from [Github](https://agora-testnet.s3.ap-southeast-1.amazonaws.com/testnet-genesis.ssz) to a local file. Then issue the following command:
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/zeroone-boa/agora-cl/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --sepolia
+docker run -it -v %LOCALAPPDATA%\Agora:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp bosagora/agora-cl-node:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --testnet
 ```
-
-  </TabItem>
-      <TabItem value="ropsten">
-
-Download the Ropsten genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz) to a local file, then run
-
-```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/zeroone-boa/agora-cl/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --ropsten
-```
-
 
   </TabItem>
     </Tabs>
@@ -264,17 +205,17 @@ If your node is done synchronizing, you will see the response:
 
 :::danger Exercise caution
 
-The Ethereum launchpad URL is `https://agora-staking.bosagora.org` and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send BOA directly to the contract - deposit your stake through Ethereum.org launchpad.
+The Ethereum launchpad URL is `https://agora-staking.bosagora.org` and the only, official validator deposit contract is [0xXXX](https://https://www.boascan.io/0xXXX). Don't send BOA directly to the contract - deposit your stake through [Agora staking](https://agora-staking.bosagora.org).
 
 :::
 
-Use the [Mainnet Launchpad](https://agora-staking.bosagora.org/summary) to deposit your 40,000 BOA. If you want to participate in the **testnet**, use the [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
+Use the [Mainnet Launchpad](https://agora-staking.bosagora.org) to deposit your 40,000 BOA. If you want to participate in the **testnet**, use the [Testnet](https://testnet-agora-staking.bosagora.org).
 
-Throughout the process, you'll be asked to generate new validator credentials using the [official Ethereum deposit command-line-tool](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Agora-cl from that folder in the next step.
+Throughout the process, you'll be asked to generate new validator credentials using the [Agora deposit command-line-tool](https://github.com/zeroone-boa/agora-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `agora-deposit-cli` directory. You can import all of your validator keys into Agora-cl from that folder in the next step.
 
 ### Import keystores
 
-Copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` directory you created during the launchpad process and issue the following command:
+Copy the path to the `validator_keys` folder under the `agora-deposit-cli` directory you created during the launchpad process and issue the following command:
 
 <Tabs
   groupId="os"
@@ -287,11 +228,11 @@ Copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` dire
 <TabItem value="others">
 
 ```text
-docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
-  -v $HOME/Eth2Validators/agora-cl-wallet-v2:/wallet \
+docker run -it -v $HOME/agora-deposit-cli/validator_keys:/keys \
+  -v $HOME/AgoraValidators/agora-cl-wallet-v2:/wallet \
   --name validator \
   --accept-terms-of-use \
-  gcr.io/zeroone-boa/agora-cl/validator:stable \
+  bosagora/agora-cl-validator:stable \
   accounts import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
@@ -299,7 +240,7 @@ docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
 <TabItem value="win">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\agora-cl-wallet-v2:/wallet gcr.io/zeroone-boa/agora-cl/validator:stable accounts import --keys-dir=/keys --wallet-dir=/wallet --accept-terms-of-use
+docker run -it -v %LOCALAPPDATA%\agora-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\AgoraValidators\agora-cl-wallet-v2:/wallet bosagora/agora-cl-validator:stable accounts import --keys-dir=/keys --wallet-dir=/wallet --accept-terms-of-use
 ```
 
 </TabItem>
@@ -322,10 +263,10 @@ Open a second terminal window. Issue the following command to start the validato
 <TabItem value="others">
 
 ```text
-docker run -it -v $HOME/Eth2Validators/agora-cl-wallet-v2:/wallet \
-  -v $HOME/Eth2:/validatorDB \
+docker run -it -v $HOME/AgoraValidators/agora-cl-wallet-v2:/wallet \
+  -v $HOME/Agora:/validatorDB \
   --network="host" --name validator \
-  gcr.io/zeroone-boa/agora-cl/validator:stable \
+  bosagora/agora-cl-validator:stable \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet \
   --datadir=/validatorDB
@@ -335,7 +276,7 @@ docker run -it -v $HOME/Eth2Validators/agora-cl-wallet-v2:/wallet \
 <TabItem value="win">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\agora-cl-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/zeroone-boa/agora-cl/validator:stable --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB
+docker run -it -v %LOCALAPPDATA%\AgoraValidators\agora-cl-wallet-v2:/wallet -v %LOCALAPPDATA%\Agora:/validatorDB --network="host" --name validator bosagora/agora-cl-validator:stable --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB
 ```
 
 </TabItem>
@@ -345,11 +286,11 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\agora-cl-wallet-v2:/wallet -v %L
 
 :::tip Congratulations!
 
-You’re now running a <strong>full Ethereum node</strong> and a <strong>validator</strong>.
+You’re now running a <strong>full Agora node</strong> and a <strong>validator</strong>.
 
 :::
 
-It can a long time (from days to months) for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). See [Check node and validator status](../monitoring/checking-status.md) for detailed status monitoring guidance.
+It can take some time for your validator to become fully activated as there is a limit to how many can join each epoch. See [Check node and validator status](../monitoring/checking-status.md) for detailed status monitoring guidance.
 
 You can leave your **execution client**, **Agora node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
 
@@ -358,9 +299,9 @@ You can leave your **execution client**, **Agora node**, and **validator client*
 
 To interact with your Agora node through Docker, use one of the following commands:
 
- - Halt: `docker stop beacon-node` or `Ctrl+c`
- - Restart: `docker start -ai beacon-node`
- - Delete: `docker rm beacon-node`
+ - Halt: `docker stop agora-cl node` or `Ctrl+c`
+ - Restart: `docker start -ai agora-cl node`
+ - Delete: `docker rm agora-cl node`
 
 To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter, where `<YOUR_ETH_EXECUTION_NODE_ENDPOINT>` is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8551` for Geth) or an IPC path such as `/path/to/geth.ipc`:
 
@@ -376,8 +317,8 @@ To recreate a deleted container and refresh the chain database, issue the start 
 <TabItem value="others">
 
 ```text
-docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/zeroone-boa/agora-cl/beacon-chain:latest \
+docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name agora-cl node \
+  bosagora/agora-cl-node:latest \
   --datadir=/data \
   --clear-db \
   --rpc-host=0.0.0.0 \
@@ -389,7 +330,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 <TabItem value="win">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/zeroone-boa/agora-cl/beacon-chain:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+docker run -it -v %LOCALAPPDATA%\Agora:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name agora-cl node bosagora/agora-cl-node:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 </TabItem>

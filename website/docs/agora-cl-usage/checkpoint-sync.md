@@ -20,7 +20,7 @@ To sync from a checkpoint, your Agora-cl Agora node needs three pieces of inform
 
 These three pieces of information can be retrieved either via a **network request**, or via **file export/import**. Syncing via network is the method we recommend to most users because it's more straightforward.
 
-After configuring checkpoint sync, we strongly recommend [verifying the authenticity of your Agora node's checkpoint](#verify-the-authenticity-of-your-beacon-nodes-checkpoint) as a way to "trust but verify" the integrity of your checkpoint data.
+After configuring checkpoint sync, we strongly recommend [verifying the authenticity of your Agora node's checkpoint](#verify-the-authenticity-of-your-agora-cl nodes-checkpoint) as a way to "trust but verify" the integrity of your checkpoint data.
 
 ## Option 1: Configure checkpoint sync via network request
 
@@ -91,7 +91,7 @@ remote: Total 167386 (delta 118), reused 220 (delta 93), pack-reused 167054
 Receiving objects: 100% (167386/167386), 154.30 MiB | 39.56 MiB/s, done.
 Resolving deltas: 100% (127482/127482), done.
 
-$ go run github.com/zeroone-boa/agora-cl/v3/cmd/prysmctl checkpoint-sync download --beacon-node-host=http://localhost:3500
+$ go run github.com/zeroone-boa/agora-cl/v3/cmd/prysmctl checkpoint-sync download --agora-cl node-host=http://localhost:3500
 ```
 
 You should see the following output if your export was successful:
@@ -113,7 +113,7 @@ The two exported `*.ssz` files are your `BeaconState` and `SignedBeaconBlock` fi
 curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug/beacon/states/genesis > genesis.ssz
 ```
 
-You can also just manually download the genesis state from GitHub: [Goerli-Prater](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) | [Sepolia](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) | [Ropsten](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz)
+You can also just manually download the genesis state from GitHub: [Goerli-Prater](https://agora-testnet.s3.ap-southeast-1.amazonaws.com/testnet-genesis.ssz) | [Sepolia](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) | [Ropsten](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz)
 
 Use the following command to start your Agora node with checkpoint sync configured to use this checkpoint state:
 
@@ -152,13 +152,9 @@ To verify that the checkpoint state you're using is legitimate, follow these ste
 1. Navigate to `http://localhost:3500/eth/v1/beacon/headers/finalized` using your browser.
 2. Find the `slot` number and `state_root` value.
 3. Use a trusted blockchain explorer to verify the `state_root`. To be extra safe, follow this procedure using multiple blockchain explorers. Using `beaconcha.in` as an example, navigate to one of the following pages, replacing `SLOT` with the `slot` you pulled from your browser:
-   - Prater: https://prater.beaconcha.in/block/SLOT
-   - Sepolia: https://sepolia.beaconcha.in/block/SLOT
-   - Ropsten: https://ropsten.beaconcha.in/block/SLOT
-   - Mainnet: https://beaconcha.in/block/SLOT
+   - Testnet: https://testnet.agorascan.io/block/SLOT
+   - Mainnet: https://agorascan.io/block/SLOT
 4. Ensure that the `state_root` reported by the blockchain explorer matches the `state_root` you pulled from your browser. If you don't see a match, feel free to reach out to us on [Telegram](https://t.me/bosagora_eng) and we'll help you troubleshoot.
-
-Note that there are many blockchain explorers - we recommend doing your own research to identify the latest, most trustworthy services. We've used `beaconcha.in` only as an example, not as a recommendation.
 
 ## Frequently asked questions
 
@@ -180,11 +176,8 @@ Yes. Checkpoint sync is a network-agnostic feature. You can even use it on local
 No - checkpoint sync requires a fresh, unused data directory.
 
 **Are there any publicly available, trustworthy checkpoint sync endpoints that I can use?** <br/>
-The Ethereum Foundation DevOps team runs a handful of checkpoint sync endpoints that can be used for testnets:
-
- - Goerli/Prater: https://goerli.checkpoint-sync.ethdevops.io
- - Ropsten: https://ropsten.checkpoint-sync.ethdevops.io
- - Sepolia: https://sepolia.checkpoint-sync.ethdevops.io
+The Bosagora Foundation DevOps team runs a handful of checkpoint sync endpoints that can be used:
+XXX
 
 Feel free to ask on our [Bosagora Telegram](https://t.me/bosagora_eng) if you need help identifying a **Mainnet** checkpoint state provider.
 

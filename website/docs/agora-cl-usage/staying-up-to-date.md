@@ -72,8 +72,8 @@ If you are running `agora-cl.sh`, all it takes to upgrade to the latest release 
 To update your Agora-cl with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
 ```text
-docker pull gcr.io/zeroone-boa/agora-cl/beacon-chain:stable
-docker pull gcr.io/zeroone-boa/agora-cl/validator:stable
+docker pull bosagora/agora-cl-node:stable
+docker pull bosagora/agora-cl-validator:stable
 ```
 
 **Using Bazel**
@@ -92,8 +92,8 @@ If you are running `agora-cl.bat`, all it takes to upgrade to the latest release
 To update your Agora-cl with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
 ```text
-docker pull gcr.io/zeroone-boa/agora-cl/beacon-chain:stable
-docker pull gcr.io/zeroone-boa/agora-cl/validator:stable
+docker pull bosagora/agora-cl-node:stable
+docker pull bosagora/agora-cl-validator:stable
 ```
 
 </TabItem>
@@ -108,8 +108,8 @@ If you are running `agora-cl.sh`, all it takes to upgrade to the latest release 
 To update your Agora-cl with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
 ```text
-docker pull gcr.io/zeroone-boa/agora-cl/beacon-chain:stable
-docker pull gcr.io/zeroone-boa/agora-cl/validator:stable
+docker pull bosagora/agora-cl-node:stable
+docker pull bosagora/agora-cl-validator:stable
 ```
 
 **Using Bazel**
@@ -129,8 +129,8 @@ If you are running `agora-cl.sh`, all it takes to upgrade to the latest release 
 To update your Agora-cl with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
 ```text
-docker pull gcr.io/zeroone-boa/agora-cl/beacon-chain:stable
-docker pull gcr.io/zeroone-boa/agora-cl/validator:stable
+docker pull bosagora/agora-cl-node:stable
+docker pull bosagora/agora-cl-validator:stable
 ```
 
 </TabItem>
@@ -166,7 +166,7 @@ Then, restart it with the same command you used to start the process. The script
 
 **Using Docker**
 
-To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
+To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run bosagora/agora-cl:stable`, do `docker run bosagora/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 **Using Bazel**
 
@@ -186,7 +186,7 @@ After           = network-online.target
 [Service]
 Type            = simple
 User            = eth
-ExecStart       = /home/eth/agora-cl/agora-cl.sh beacon-chain --config-file=/etc/agora-cl/beacon-chain.yaml
+ExecStart       = /home/eth/agora-cl/agora-cl.sh beacon-chain --config-file=/etc/agora-cl-node.yaml
 Restart         = on-failure
 TimeoutStopSec  = 900
 Environment     = USE_PRYSM_VERSION=v2.0.2
@@ -215,7 +215,7 @@ Then, restart it with the same command you used to start the process. The script
 
 **Using Docker**
 
-To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
+To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run bosagora/agora-cl:stable`, do `docker run bosagora/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 </TabItem>
 <TabItem value="mac">
@@ -230,7 +230,7 @@ Then, restart it with the same command you used to start the process. The script
 
 **Using Docker**
 
-To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
+To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run bosagora/agora-cl:stable`, do `docker run bosagora/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 **Using Bazel**
 
@@ -249,7 +249,7 @@ Then, restart it with the same command you used to start the process. The script
 
 **Using Docker**
 
-To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
+To run a previous Agora-cl version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run bosagora/agora-cl:stable`, do `docker run bosagora/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 </TabItem>
 </Tabs>
@@ -295,10 +295,10 @@ Next, we recommend backing up any important important folders such as your Agora
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
 ```
-docker run -v /path/to/folder:/data gcr.io/zeroone-boa/agora-cl/validator:stable db migrate down --datadir=/data
+docker run -v /path/to/folder:/data bosagora/agora-cl-validator:stable db migrate down --datadir=/data
 ```
 
-Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
+Then change all your docker run commands to use that version tag. For example, instead of `docker run bosagora/agora-cl:stable`, do `docker run bosagora/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 **Using Bazel**
 
@@ -342,10 +342,10 @@ Next, we recommend backing up any important important folders such as your Agora
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
 ```
-docker run -v \path\to\folder:/data gcr.io/zeroone-boa/agora-cl/validator:stable db migrate down --datadir=/data
+docker run -v \path\to\folder:/data bosagora/agora-cl-validator:stable db migrate down --datadir=/data
 ```
 
-Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
+Then change all your docker run commands to use that version tag. For example, instead of `docker run bosagora/agora-cl:stable`, do `docker run bosagora/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 </TabItem>
 <TabItem value="mac">
@@ -375,10 +375,10 @@ Next, we recommend backing up any important important folders such as your Agora
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
 ```
-docker run -v /path/to/folder:/data gcr.io/zeroone-boa/agora-cl/validator:stable db migrate down --datadir=/data
+docker run -v /path/to/folder:/data bosagora/agora-cl-validator:stable db migrate down --datadir=/data
 ```
 
-Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
+Then change all your docker run commands to use that version tag. For example, instead of `docker run bosagora/agora-cl:stable`, do `docker run bosagora/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 **Using Bazel**
 
@@ -422,10 +422,10 @@ Next, we recommend backing up any important important folders such as your Agora
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
 
 ```
-docker run -v /path/to/folder:/data gcr.io/zeroone-boa/agora-cl/validator:stable db migrate down --datadir=/data
+docker run -v /path/to/folder:/data bosagora/agora-cl-validator:stable db migrate down --datadir=/data
 ```
 
-Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/zeroone-boa/agora-cl:stable`, do `docker run gcr.io/zeroone-boa/agora-cl:v1.0.5` if you want to run version v1.0.5.
+Then change all your docker run commands to use that version tag. For example, instead of `docker run bosagora/agora-cl:stable`, do `docker run bosagora/agora-cl:v1.0.5` if you want to run version v1.0.5.
 
 </TabItem>
 </Tabs>
