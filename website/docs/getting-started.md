@@ -280,7 +280,7 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <a href='audits/phase0'>Security audits</a>
 </div>
 <div class='panel'>
-<a href='licenses/prysmatic-labs'>Agora-cl license</a>
+<a href='licenses/bosagora'>Agora-cl license</a>
 </div>
 <div class='panel'>
 <a href='reading/eth2'>Ethereum learning resources</a>
