@@ -1,5 +1,5 @@
 ## docker build -t bosagora/agora-cl-docs
-FROM node:11-alpine as builder
+FROM node:16-alpine as builder
 
 RUN apk add --no-cache \
     autoconf \
@@ -18,7 +18,7 @@ COPY ./website /app/website
 COPY ./website/package.json ./website/package-lock.json ./
 
 # Storing node modules on a separate layer will prevent unnecessary npm installs at each build
-RUN npm i -g npm@6.4
+RUN npm i -g npm@8.5.5
 RUN npm ci
 RUN mv ./node_modules .
 
