@@ -25,9 +25,9 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 <div class='hide-tabs'>
 
-import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quickstart-install-agora-cl.md';
+import QuickstartInstallAgoraPartial from '@site/docs/install/partials/_quickstart-install-agora-cl.md';
 
-<QuickstartInstallPrysmPartial />
+<QuickstartInstallAgoraPartial />
 
 ## Step 3: Run an execution client
 

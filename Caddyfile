@@ -1,4 +1,4 @@
-http://docs.prylabs.network
+http://agora-cl-docs.bosagora.org
 root * /usr/share/caddy/html
 file_server
 uri strip_suffix .html
