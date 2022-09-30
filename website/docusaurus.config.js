@@ -6,8 +6,9 @@ module.exports = {
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'throw',
     favicon: 'img/bosagora-logo.png',
-    organizationName: 'Bosagora',
+    organizationName: 'zeroone-boa',
     projectName: 'agora-cl-docs',
+    deploymentBranch: 'gh-pages',
     customFields: {
         image: 'img/Agora-cl.svg',
     },
