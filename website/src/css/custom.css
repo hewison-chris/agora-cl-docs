@@ -3,7 +3,7 @@
   --boa-pantone: #4d00ee;
   --tab-active-color: #eb6162;
   --tab-active-color-hover: #140950;
-  --tab-gray: #32e090;
+  --tab-gray: #aaa;
 }
 html[data-theme='dark'] {
   --boa-navy: var(--boa-pantone);
