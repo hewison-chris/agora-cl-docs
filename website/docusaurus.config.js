@@ -8,7 +8,6 @@ module.exports = {
     favicon: 'img/bosagora-logo.png',
     organizationName: 'zeroone-boa',
     projectName: 'agora-cl-docs',
-    deploymentBranch: 'gh-pages',
     customFields: {
         image: 'img/Agora-cl.svg',
     },
