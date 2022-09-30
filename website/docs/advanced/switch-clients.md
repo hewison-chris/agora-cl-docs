@@ -39,7 +39,7 @@ Ensuring you stop and disable Agora-cl is critical to avoiding slashing events b
 
 Disabling Agora-cl prevents it from automatically starting up again after a reboot.
 
-Remove Agora-cl's validator keys as an added protection by following [these](http://localhost:3000/docs/advanced/migrating-keys#step-5--verification-and-restarting-the-validator-client) instructions above.
+Remove Agora-cl's validator keys as an added protection by following [these](/docs/advanced/migrating-keys#step-5--verification-and-restarting-the-validator-client) instructions above.
 
 ### Step 3: Export slashing protection history
 
