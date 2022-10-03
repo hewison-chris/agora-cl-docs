@@ -54,14 +54,14 @@ module.exports = {
             copyright: `Copyright © ${new Date().getFullYear()} Bosagora, Validator Deposit Contract 0xXXX`, //TODO: update deposit contract address
             links: [],
         },
-        algolia: {
-            apiKey: 'd56b00e670b1ea4c44047c2d34807f6d',
-            indexName: 'prysmaticlabs_prysm',
-            algoliaOptions: {}
-        },
-        googleAnalytics: {
-            trackingID: 'UA-139640266-2',
-        },
+        // algolia: { // TODO: add api key
+        //     apiKey: '',
+        //     indexName: '',
+        //     algoliaOptions: {}
+        // },
+        // googleAnalytics: {
+        //     trackingID: 'UA-139640266-2',
+        // },
         prism: {
             theme: require('prism-react-renderer/themes/dracula'),
         },
