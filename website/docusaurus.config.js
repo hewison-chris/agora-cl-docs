@@ -59,9 +59,9 @@ module.exports = {
             indexName: 'Agora-cl-docs',
             algoliaOptions: {}
         },
-        // googleAnalytics: {
-        //     trackingID: 'UA-139640266-2',
-        // },
+        googleAnalytics: {
+            trackingID: 'G-JRX83Q75ZS',
+        },
         prism: {
             theme: require('prism-react-renderer/themes/dracula'),
         },
