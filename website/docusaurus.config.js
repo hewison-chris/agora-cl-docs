@@ -54,11 +54,11 @@ module.exports = {
             copyright: `Copyright © ${new Date().getFullYear()} Bosagora, Validator Deposit Contract 0xXXX`, //TODO: update deposit contract address
             links: [],
         },
-        // algolia: { // TODO: add api key
-        //     apiKey: '',
-        //     indexName: '',
-        //     algoliaOptions: {}
-        // },
+        algolia: {
+            apiKey: 'c47fa702577224e82bad194375c4a62d',
+            indexName: 'Agora-cl-docs',
+            algoliaOptions: {}
+        },
         // googleAnalytics: {
         //     trackingID: 'UA-139640266-2',
         // },
