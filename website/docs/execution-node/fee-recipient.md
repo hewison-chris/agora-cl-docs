@@ -33,19 +33,7 @@ Priority fees are captured by execution clients in the execution layer <a class=
 Your fee recipient wallet address can be configured on your **validator client instance** and on your **Agora node**. We recommend configuring it in both places. Your validator's configuration will override the Agora node configuration, while the Agora node configuration will be treated like a backup in the event that your validator configuration fails.
 
 
-### Configure fee recipient via flags
-
-Your fee recipient wallet address can be configured on both your Agora node and validator through the `--suggested-fee-recipient` flag:
-
- - **Agora node**: `./agora-cl.sh beacon-chain --suggested-fee-recipient=<WALLET ADDRESS>`
- - **Validator**: `./agora-cl.sh validator --suggested-fee-recipient=<WALLET ADDRESS>`
-
-For example: `./agora-cl.sh validator --suggested-fee-recipient=0xCHANGEME012345c769F504hs287200aF50400a`.
-
-If your validator is running multiple keys (for example, staking 80,000 BOA using two validator public keys that have been imported into a single validator client instance), all validator public keys will use the wallet address specified through the `--suggested-fee-recipient` flag. You can optionally associate different fee recipient wallet addresses to individual validator public keys using the JSON/YAML configuration method detailed in the following section.
-
-
-### Configure fee recipient via JSON/YAML (validator only)
+### Configure fee recipient via JSON/YAML
 
 You can assign different wallet addresses to each of your validator public keys using JSON/YAML configuration. Fee recipient address assignments specified through JSON/YAML override those configured through the `--suggested-fee-recipient` flag. This method of configuration uses the following JSON/YAML schema:
 

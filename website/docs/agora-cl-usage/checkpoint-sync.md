@@ -184,8 +184,6 @@ Feel free to ask on our [Bosagora Telegram](https://t.me/bosagora_eng) if you ne
 **Do I need to provide a genesis state when using checkpoint sync on Mainnet?** <br/>
 No. Mainnet's genesis state is embedded within Agora-cl.
 
-**Will I be able to use Infura as a checkpoint state provider after The Merge?** <br/>
-Yes. You won't be able to use Infura as an execution node endpoint provider post-Merge (see: [Prepare for The Merge](../prepare-for-merge.md)), but you can use it as a checkpoint state provider post-Merge.
 
 **I started a Agora node with checkpoint sync enabled. Can I have other nodes pull checkpoint state from this node right away, or do I need to wait for it to become fully synced?** <br/>
 Block and state are immediately finalized upon import, so your first node should be able to serve checkpoint sync requests to other clients without having to wait.

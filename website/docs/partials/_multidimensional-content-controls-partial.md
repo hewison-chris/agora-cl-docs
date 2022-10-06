@@ -26,23 +26,4 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
     <TabItem value="mainnet"></TabItem>
     <TabItem value="testnet"></TabItem>
 </Tabs>
-
-<Tabs className="tabgroup-with-label hidden-in-docker-guide el-tabgroup" groupId="execution-clients" defaultValue="geth" values={[
-  {label: 'Execution client:', value: 'label'},
-  {label: 'Agora-el', value: 'agora-el'}
-  ]}>
-  <TabItem className="unclickable-element" value="label"></TabItem>
-  <TabItem value="agora-el"></TabItem>
-</Tabs>
-
-<Tabs className="tabgroup-with-label hidden-in-jwt-guide hidden-in-docker-guide enbn-tabgroup" groupId="protocol" defaultValue="jwt" values={[
-        {label: 'EN-BN connection:', value: 'label'},
-        {label: 'HTTP-JWT', value: 'jwt'},
-        {label: 'IPC', value: 'ipc'}
-    ]}>
-    <TabItem className="unclickable-element" value="label"></TabItem>
-    <TabItem value="jwt"></TabItem>
-    <TabItem value="ipc"></TabItem>
-</Tabs>
-
 </div>

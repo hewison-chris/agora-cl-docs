@@ -4,31 +4,12 @@ title: Block explorers
 sidebar_label: Block explorers
 ---
 
-import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+## Agora Execution Layer
+[Mainnet BoaScan](https://www.boascan.io)
 
-<HeaderBadgesWidget />
+[Testnet BoaScan](https://testnet.boascan.io)
 
-Below is a list of third-party block explorer services displaying statistics about Ethereum proof-of-stake.
+## Agora Consensus Layer
+[Mainnet AgoraScan](https://www.agorascan.io)
 
-## [beacon.etherscan.io](https://beacon.etherscan.io)
-
-## [beaconcha.in](https://beaconcha.in/)
-
-beaconcha.in is an Agora chain explorer maintained by [Bitfly](https://www.bitfly.at).
-
-## Mirrors and Forks
-
-This sections lists open source mirrors of forks of original, major block explorers. [Redot](https://redot.com) maintains two open-source mirrors that are forks of Bitfly's original work [beaconcha.in](https://beaconcha.in) at
-
-- [ethscan.org](https://ethscan.org)
-- [eth2.redot.com](https://eth2.redot.com)
-
-Their respective Github repositories are:
-
-- [nobd/ethscan-org](https://github.com/nobd/ethscan-org)
-- [eth2-redot-com](https://github.com/AtlantPlatform/eth2-redot-com)
-
-
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />
+[Testnet AgoraScan](https://testnet.agorascan.io)

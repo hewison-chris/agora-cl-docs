@@ -10,10 +10,6 @@
         },
         {
             "type": "doc",
-            "id": "prepare-for-merge"
-        },
-        {
-            "type": "doc",
             "id": "security-best-practices"
         },
         {
@@ -32,39 +28,11 @@
             "type": "category",
             "collapsed": true,
             "collapsible": true,
-            "label": "Advanced installation guides",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "install/install-with-docker"
-                },
-                {
-                    "type": "doc",
-                    "id": "install/install-with-bazel"
-                }
-            ]
-        },
-        {
-            "type": "category",
-            "collapsed": true,
-            "collapsible": true,
             "label": "How-tos",
             "items": [
                 {
                     "type": "doc",
                     "id": "execution-node/fee-recipient"
-                },
-                {
-                    "type": "doc",
-                    "id": "execution-node/authentication"
-                },
-                {
-                    "type": "doc",
-                    "id": "execution-node/configuring-for-agora-cl"
-                },
-                {
-                    "type": "doc",
-                    "id": "agora-cl-usage/staying-up-to-date"
                 },
                 {
                     "type": "doc",
@@ -223,10 +191,6 @@
                     "id": "reading/golang"
                 },
                 {
-                    "type": "doc",
-                    "id": "reading/bazel"
-                },
-                {
                     "type": "category",
                     "collapsed": true,
                     "collapsible": true,
@@ -325,10 +289,6 @@
                 {
                     "type": "doc",
                     "id": "reading/eth2"
-                },
-                {
-                    "type": "doc",
-                    "id": "reading/testnet-postmortems"
                 },
                 {
                     "type": "doc",

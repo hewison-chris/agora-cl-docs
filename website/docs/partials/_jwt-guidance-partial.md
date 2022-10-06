@@ -10,7 +10,7 @@ Your execution node needs to **expose a new port** and then **use the JWT token*
 
 <p class="hidden-in-mergeprep-guide">Using the latest version of your execution client software, issue the following command to configure your execution node's JWT token and Engine API endpoint:</p>
 
-import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node.md';
+import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-agora-el-node.md';
 
 <QuickstartRunExecutionNodeJWTPartial />
 
