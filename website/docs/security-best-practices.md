@@ -30,7 +30,7 @@ If your validator goes offline, you can lose some of your staked BOA. As long as
 
 While it's possible to optimize your client instance architecture for high-availability and redundancy, we encourage validators to **keep it simple**. Complex validator architectures run the risk of accidentally engaging in slashable behavior. This can result in slashing, which is a far steeper price to pay than the occasional downtime penalty.
 
- - **Essential**: Ensure that you have adequate disk space. [We recommend having 100GB of SSD storage available](/docs/install/install-with-script#recommended-specifications). After [The Merge](https://docs.bosagora.org/en/updates/agora-merge-update), this recommendation will increase to 1-2 TB if you're also running an [execution client](/docs/execution-node/configuring-for-agora-cl) on the same computer.
+ - **Essential**: Ensure that you have adequate disk space. [We recommend having 100GB of SSD storage available](/docs/install/install-with-script#recommended-specifications). After [The Merge](https://docs.bosagora.org/en/updates/agora-merge-update), this recommendation will increase to 500 GB if you're also running an execution client (Agora-el) on the same computer.
  - **Essential**: Use SSDs, not spinning disks.
  - **Essential**: Periodically check your disk space to ensure that it's not being consumed by another application.
  - **Essential**: Use a network monitoring service to configure alerts when something isn't right with your validator.

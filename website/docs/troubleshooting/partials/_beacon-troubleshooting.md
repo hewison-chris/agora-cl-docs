@@ -26,15 +26,7 @@
     </tr>
     <tr>
       <td><code>could not get ancestor state: failed to unmarshal encoding: incorrect size</code></td>
-      <td>This usually indicates that your Agora node's data has become corrupt. Try restarting your Agora node with a new or cleared data directory. Consider using <a href='https://docs.prylabs.network/docs/agora-cl-usage/checkpoint-sync'>Checkpoint Sync</a> to reduce sync time.</td>
-    </tr>
-    <tr>
-      <td><code>could not process block: could not process block header: parent root 0x... does not match the latest block header signing root in state</code></td>
-      <td>This error is being actively investigated. See <a href='https://github.com/zeroone-boa/agora-cl/issues/11279'>this open issue</a> for more information.</td>
-    </tr>
-    <tr>
-      <td><code>Could not check configuration values between execution and consensus client" error="method not found" prefix=powchain</code></td>
-      <td>Geth users see this error when they're using an old Geth binary. Make sure you're using the <a href='https://github.com/ethereum/go-ethereum/releases'>latest stable release of Geth</a>.</td>
+      <td>This usually indicates that your Agora node's data has become corrupt. Try restarting your Agora node with a new or cleared data directory.</td>
     </tr>
     <tr>
       <td>
@@ -45,11 +37,6 @@
         <code>warning msg="Batch is not processed" error="could not process block in batch: timeout from http.Client: received an undefined ee error. </code><br/><br/>
         <code>warning msg="Batch is not processed" error="could not process block in batch: got an unexpected error in JSON-RPC response: 403 Forbidden: signature is invalid</code>
       </td>
-      <td>These errors are usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
-    </tr>
-    <tr>
-      <td><code>weak-subjectivity-checkpoint not provided. Agora-cl recommends providing a weak subjectivity checkpoint for nodes synced from genesis</code></td>
-      <td>You can safely ignore this warning - it will be removed in an upcoming Agora-cl release. See <a href='https://docs.prylabs.network/docs/agora-cl-usage/checkpoint-sync'>How to configure Checkpoint Sync</a> if you'd like to learn more about checkpoint sync.</td>
     </tr>
     <tr>
       <td><code>Agora node doesn't have a parent in db with root...</code></td>

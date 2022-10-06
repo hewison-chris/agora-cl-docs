@@ -1,16 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::info Already running a node?
-
-This guidance is targeted at new users. If you're already running a node, see [Prepare for The Merge](../../prepare-for-merge.md).
-
-:::
-
-
 ## Select a configuration
-
-If you're looking for the simplest configuration, select `Agora-el` and `IPC`:
 
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 
@@ -18,7 +9,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Introduction
 
-Agora-cl is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this quickstart, you’ll use Agora-cl to run an Agora-cl node and optionally a validator. This will let you stake 40,000 BOA using hardware that you manage.
+Agora-cl is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) for use in the Agora public blockchain network. In this quickstart, you’ll use Agora-cl to run consensus layer node and optionally a validator. This will let you stake 40,000 BOA using hardware that you manage.
 
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge.
 

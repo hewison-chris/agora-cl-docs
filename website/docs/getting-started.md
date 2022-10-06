@@ -14,9 +14,6 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <p><strong>New Agora-cl users</strong> can follow this guidance to get started with Agora-cl.</p>
 </div>
 <div class='panel'>
-<a href='prepare-for-merge'>Prepare for The Merge</a>
-<p><strong>Current Agora-cl users</strong> can follow this guidance to prepare their nodes and validators for <a href='https://docs.bosagora.org/en/updates/agora-merge-update'>The Merge</a>, an ongoing event that transitions Agora from proof-of-authority to proof-of-stake.</p>
-</div>
 <div class='panel'>
 <a href='security-best-practices'>Security best practices</a>
 <p>Learn how to <strong>minimize risk</strong> as a validator. The guidelines provided in this document are client-agnostic (they apply to Agora-cl and other clients, too).</p>
@@ -35,20 +32,6 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 </div>
 <div class='panel section-title'>
 
-## Advanced installation guides
-
-<p>This section contains alternatives to the script-based installation guidance provided within our <a href='install/install-with-script'>Quickstart</a>.</p>
-</div>
-<div class='panel'>
-<a href='install/install-with-docker'>Install using Docker</a>
-<p>Learn how to install Agora-cl using preconfigured Docker images that ship with every Agora-cl release.</p>
-</div>
-<div class='panel'>
-<a href='install/install-with-bazel'>Build from source</a>
-<p>Learn how to build Agora-cl from source using Bazel.</p>
-</div>
-<div class='panel section-title'>
-
 ## How-tos
 
 <p>This section contains procedural documentation that walks you through <strong>specific tasks related to Agora-cl</strong>.</p>
@@ -57,17 +40,6 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <a href='execution-node/fee-recipient'>Configure Fee Recipient</a>
 <p>Learn how to specify a Fee Recipient wallet address that allows validators to earn <strong>transaction fee tips</strong> post-Merge.</p>
 </div>
-<div class='panel'>
-<a href='execution-node/authentication'>Configure JWT authentication</a>
-<p>After The Merge, Agora-cl will need to securely connect to a local execution node. This how-to shows you how to form this secure connection using a JWT token.</p>
-</div>
-<div class='panel'>
-<a href='execution-node/authentication'>Configure execution node</a>
-<p>After The Merge, Agora-cl will need to securely connect to a local execution node. This how-to shows you how to configure Geth, Besu, or Nethermind.</p>
-</div>
-<div class='panel'>
-<a href='agora-cl-usage/staying-up-to-date'>Update and downgrade Agora-cl</a>
-<p>Learn how to <strong>keep Agora-cl updated</strong>, how to downgrade Agora-cl, and how to use release candidates.</p>
 </div>
 <div class='panel'>
 <a href='agora-cl-usage/checkpoint-sync'>Sync from a checkpoint</a>
@@ -210,9 +182,6 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <div class='panel'>
 <a href='reading/golang'>Golang resources</a>
 </div>
-<div class='panel'>
-<a href='reading/bazel'>About Bazel</a>
-</div>
 <div class='panel secondary-panel section-title'>
 
 ### APIs
@@ -284,9 +253,6 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 </div>
 <div class='panel'>
 <a href='reading/eth2'>Ethereum learning resources</a>
-</div>
-<div class='panel'>
-<a href='reading/testnet-postmortems'>Testnet postmortems</a>
 </div>
 <div class='panel'>
 <a href='devtools/block-explorers'>Block explorers</a>

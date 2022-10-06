@@ -34,7 +34,7 @@ Losing peers can be due to the following reasons:
 
 1. Your network connectivity has problems. You can check how to improve it with some of our tips [here](/docs/agora-cl-usage/p2p-host-ip).
 2. Agora-cl is using a ton of memory or system resources and perhaps you ran out of memory. Ensure you meet the minimum specifications for running Agora-cl specified in our installation pages for your operating system.
-3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/docs/agora-cl-usage/staying-up-to-date) to see if your issue is resolved. If this is the case, talk to our team on [Telegram](https://t.me/bosagora_eng) letting us know you had this issue.
+3. A bug in our software that can affect your p2p connectivity.
 
 #### I have an issue in the web UI, getting errors, what can I do?
 
@@ -69,62 +69,6 @@ The Prysm team prepared a blog post on [slashing prevention tips](https://medium
 
 ### Running Agora-cl
 
-#### How can I check my Agora-cl version?
-
-Depending on your installation method, there are different ways to verify your Agora-cl version:
-
-<Tabs
-  groupId="method"
-  defaultValue="script"
-  values={[
-    {label: 'Installation script', value: 'script'},
-    {label: 'Docker', value: 'docker'},
-    {label: 'Bazel', value: 'bazel'},
-  ]
-}>
-<TabItem value="script">
-
-**Using agora-cl.sh**
-
-```text
-./agora-cl.sh validator --version
-./agora-cl.sh beacon-chain --version
-```
-
-**Using agora-cl.bat**
-
-```text
-agora-cl.bat validator --version
-agora-cl.bat beacon-chain --version
-```
-
-</TabItem>
-<TabItem value="docker">
-
-If you are running using docker and the :stable tag for Agora-cl, stable will always point to our latest [release](https://github.com/zeroone-boa/agora-cl/releases). Otherwise, you can run the command `docker ps` to see your running docker containers. The suffix of your image name after the colon is the version you are running.
-
-```
-CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
-371d6675888b        bosagora/agora-cl-validator:agora_v3.1.1   "validator"              6 days ago
-```
-</TabItem>
-<TabItem value="bazel">
-
-If you are using Bazel, it means you are building Agora-cl from source. You can do `git log` and you will see the current commit hash you are running at the top. You can then visit our [releases page](https://github.com/zeroone-boa/agora-cl/releases) to check what version the commit hash corresponds to.
-
-</TabItem>
-</Tabs>
-
-#### How can I upgrade Agora-cl? Do I just need to close and restart the process?
-
-Upgrading Agora-cl is done differently depending on your operating system and installation method. We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Agora-cl](/docs/agora-cl-usage/staying-up-to-date).
-
-#### How can I downgrade Agora-cl to an older version?
-
-Upgrading Agora-cl is done differently depending on your operating system and installation method. Please note that downgrading may not be as easy as upgrading as some versions may not be backward compatible and you will need to perform extra steps. For example, migrating down from v1.x to v1.0.x has breaking changes that require you to also rollback your database.
-
-We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Agora-cl](/docs/agora-cl-usage/staying-up-to-date).
-
 #### How can I improve my attestation effectiveness?
 
 Attestation effectiveness is a metric that directly affects your validator rewards. In simple terms, an attestation is more valuable the sooner it is put into a block and included in the chain. This interval is called the "inclusion distance" of an attestation. The smaller it is, the more profitable your validator will be. We highly recommend reading Attestant's awesome blog post on the matter [here](https://www.attestant.io/posts/defining-attestation-effectiveness/).
@@ -142,24 +86,6 @@ For help with running geth specifically, the [go-ethereum discord](https://disco
 #### How often should I perform database backups?
 
 The Agora-cl Agora node and validator allow performing database backups in case your machine gets corrupted and you need to restore it from some checkpoint. You can read our instructions on performing backups [here](/docs/agora-cl-usage/database-backups). Briefly, the frequency at which you should perform backups really depends on your personal preference. If you want to perform backups once a day or once every week, there is no harm nor bigger difference in doing so. Losing your Agora chain database is not a big deal aside from the fact that you will need to sync again from genesis. Losing your validator db can be problematic but if you wait several epochs before starting your validator, ensure your computer's clock is synced, the risk of slashing is low.
-
-#### Seeing a warning regarding binary signature not being trusted when downloading Agora-cl, should I be worried?
-
-When downloading the Agora-cl precompiled binaries such as with agora-cl.sh or agora-cl.bat, you might see the following output
-
-```
-Latest Agora-cl version is v1.1.0.
-Beacon chain is up to date.
-Verifying binary integrity.
-agora-cl-v3.1.1-linux-amd64: OK
-gpg: Signature made Mon Oct 01 10:00:57 2022 UTC
-gpg:                using RSA key 0AABBCCD64CCC3C1A917AF4072E33E4DF1A50DDD
-gpg: Good signature from "Mr X <XXX@Bosagora.com>" [unknown]
-gpg: WARNING: This key is not certified with a trusted signature!
-gpg:          There is no indication that the signature belongs to the owner.
-```
-
-Regarding the WARNING above, it means that the signature is correctly signed by the owner, however, since Agora-cl does not yet provide official linux packages nor windows trusted certs, you will get a warning that it might not have been Mr X that actually signed the binary, since there is no way to verify the integrity with a trusted authority. If binary integrity and security matter the most to you, building and running open source software from source is the best way to have full confidence the software you are running is a result of code you can inspect yourself.
 
 #### How can I view the metrics of my node? How can I visualize them?
 

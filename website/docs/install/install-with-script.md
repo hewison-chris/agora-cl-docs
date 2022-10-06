@@ -1,6 +1,6 @@
 ---
 id: install-with-script
-title: "Quickstart: Run a node and (optionally) stake BOA using Agora-cl"
+title: "Quickstart: Run an Agora node (and a validator)"
 sidebar_label: "Quickstart: Run a node"
 ---
 
@@ -17,44 +17,39 @@ import QuickstartIntroPartial from '@site/docs/install/partials/_quickstart-intr
 
 ## Step 1: Review prerequisites and best practices
 
-import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-prereqs.md';
+import QuickstartStep1Partial from '@site/docs/install/partials/_quickstart-prereqs.md';
 
-<QuickstartPrereqsPartial />
-
-## Step 2: Install Agora-cl
+<QuickstartStep1Partial />
 
 <div class='hide-tabs'>
 
-import QuickstartInstallAgoraPartial from '@site/docs/install/partials/_quickstart-install-agora-cl.md';
+## Step 2: Install Agora Configuration
 
-<QuickstartInstallAgoraPartial />
+import QuickstartStep2Partial from '@site/docs/install/partials/_quickstart-install-agora-config.md';
 
-## Step 3: Run an execution client
+<QuickstartStep2Partial />
 
-In this step, you'll install an execution-layer client that Agora-cl's Agora node will connect to.
+## Step 3: Run an Agora execution client
 
-import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node.md';
+import QuickstartStep3Partial from '@site/docs/install/partials/_quickstart-run-agora-el-node.md';
 
-<QuickstartRunExecutionNodeJWTPartial />
+<QuickstartStep3Partial />
 
-Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
+Congratulations - you’re now running an <strong>execution node</strong> in Agora's execution layer.
 
-## Step 4: Run a Agora node using Agora-cl
+## Step 4: Run an Agora consensus layer client
 
-import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-agora-cl-node.md';
+import QuickstartStep4Partial from '@site/docs/install/partials/_quickstart-run-agora-cl-node.md';
 
-<QuickstartRunBeaconNodePartial />
+<QuickstartStep4Partial />
 
-
-## Step 5: Run a validator using Agora-cl
-
+## Step 5: Run an Agora validator
 
 import QuickstartRunValidatorPartial from '@site/docs/install/partials/_quickstart-run-validator.md';
 
 <QuickstartRunValidatorPartial />
 
 </div>
-
 </div>
 
 -------
