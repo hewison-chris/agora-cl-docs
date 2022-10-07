@@ -75,10 +75,6 @@ The following table of contents provides a descriptive overview of Agora-cl's do
 <a href='advanced/migrating-keys'>Move to a new machine</a>
 <p>Learn how to migrate from one host system to another while minimizing risk of slashing and downtime.</p>
 </div>
-<div class='panel'>
-<a href='advanced/switch-clients'>Switch to a new client</a>
-<p>Learn how to migrate from one client to another while minimizing risk of slashing and downtime.</p>
-</div>
 <div class='panel secondary-panel section-title'>
 
 ### Validator and wallet management
