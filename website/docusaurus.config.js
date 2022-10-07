@@ -11,9 +11,9 @@ module.exports = {
     customFields: {
         image: 'img/Agora-cl.svg',
     },
+    plugins: [require.resolve("@cmfcmf/docusaurus-search-local")],
     trailingSlash: false,
     scripts: ['https://buttons.github.io/buttons.js'],
-
     themeConfig: {
         navbar: {
             title: "Agora-cl Documentation",
@@ -54,14 +54,6 @@ module.exports = {
             copyright: `Copyright © ${new Date().getFullYear()} Bosagora, Validator Deposit Contract 0xXXX`, //TODO: update deposit contract address
             links: [],
         },
-        algolia: {
-            apiKey: 'c47fa702577224e82bad194375c4a62d',
-            indexName: 'Agora-cl-docs',
-            algoliaOptions: {}
-        },
-        googleAnalytics: {
-            trackingID: 'G-JRX83Q75ZS',
-        },
         prism: {
             theme: require('prism-react-renderer/themes/dracula'),
         },
@@ -79,6 +71,9 @@ module.exports = {
                     showLastUpdateAuthor: false,
                     sidebarPath: require.resolve('./sidebars.json'),
                     editUrl: 'https://github.com/zeroone-boa/agora-cl-docs/edit/master/website/',
+                },
+                googleAnalytics: {
+                    trackingID: 'G-JRX83Q75ZS',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
