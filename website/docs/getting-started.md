@@ -10,7 +10,7 @@ sidebar_label: Table of contents
 The following table of contents provides a descriptive overview of Agora-cl's documentation:
 
 <div class='panel'>
-<a href='install/install-with-script'>Quickstart: Run a node and (optionally) stake BOA using Agora-cl</a>
+<a href='install/install-with-script'>Quickstart: Run an Agora node (and a validator)</a>
 <p><strong>New Agora-cl users</strong> can follow this guidance to get started with Agora-cl.</p>
 </div>
 <div class='panel'>

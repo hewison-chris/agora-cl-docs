@@ -25,7 +25,7 @@ module.exports = {
             items: [{
                 type: 'docsVersion',
                 position: 'left',
-                to: 'https://github.com/zeroone-boa/agora-cl/tree/v1.0.0',
+                to: 'https://github.com/zeroone-boa/agora-cl/releases/tag/v1.0.0',
                 label: 'v1.0.0',
             },
             {
