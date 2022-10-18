@@ -18,11 +18,11 @@ To voluntarily exit your validator from the Ethereum network, you'll follow this
  2. Select the account(s) that should be exited. This step can be skipped by specifying the account(s) via the `--public-keys` flag when issuing the `voluntary-exit` command.
  3. Confirm your understanding of the consequences of exiting your validator by typing `Exit my validator` when prompted.
 
-After providing confirmation, your validator node will initiate the voluntary exit by broadcasting your request through your Agora node. By default, your validator node will try to access a Agora node running on `127.0.0.1:4000`. Learn how to update this and other settings via the `--help` flag (for example: `./agora-cl.sh validator accounts voluntary-exit --help`). Alternatively, visit our [Parameters documentation](../agora-cl-usage/parameters.md).
+After providing confirmation, your validator node will initiate the voluntary exit by broadcasting your request through your Agora node. By default, your validator node will try to access a Agora node running on `127.0.0.1:4000`. Learn how to update this and other settings via the `--help` flag. Alternatively, visit our [Parameters documentation](../agora-cl-usage/parameters.md).
 
 :::caution
 
-Although validator nodes can voluntarily exit, you won't be able to withdraw your staked funds or re-enroll your validator until withdrawal functionality is implemented, which will likely happen soon after The Merge. Visit the [Ethereum Validator FAQ](https://agora-staking.bosagora.org/en/faq) to learn more.
+Although validator nodes can voluntarily exit, you won't be able to withdraw your staked funds or re-enroll your validator until withdrawal functionality is implemented, which will likely happen soon after The Merge. Visit the [Agora Validator FAQ](https://agora-staking.bosagora.org/en/faq) to learn more.
 
 :::
 
@@ -33,16 +33,9 @@ Although validator nodes can voluntarily exit, you won't be able to withdraw you
     {label: 'Linux', value: 'lin'},
     {label: 'Windows', value: 'win'},
     {label: 'MacOS', value: 'mac'},
-    {label: 'Arm64', value: 'arm'},
   ]
 }>
 <TabItem value="lin">
-
-**Using Agora-cl.sh**
-
-```bash
-./agora-cl.sh validator accounts voluntary-exit
-```
 
 **Using Docker**
 
@@ -50,12 +43,6 @@ Although validator nodes can voluntarily exit, you won't be able to withdraw you
 docker run -it -v $HOME/AgoraValidators/agora-cl-wallet-v2:/wallet \
   bosagora/agora-cl-validator:latest \
   accounts voluntary-exit --wallet-dir=/wallet
-```
-
-**Using Bazel**
-
-```bash
-bazel run //validator --config=release -- accounts voluntary-exit
 ```
 
 </TabItem>
@@ -76,31 +63,12 @@ docker run -it -v %LOCALAPPDATA%\AgoraValidators\agora-cl-wallet-v2:/wallet bosa
 </TabItem>
 <TabItem value="mac">
 
-**Using Agora-cl.sh**
-
-```bash
-./agora-cl.sh validator accounts voluntary-exit
-```
-
 **Using Docker**
 
 ```text
 docker run -it -v $HOME/AgoraValidators/agora-cl-wallet-v2:/wallet \
   bosagora/agora-cl-validator:latest \
   accounts voluntary-exit --wallet-dir=/wallet
-```
-
-**Using Bazel**
-
-```bash
-bazel run //validator --config=release -- accounts voluntary-exit
-```
-
-</TabItem>
-<TabItem value="arm">
-
-```bash
-./agora-cl.sh validator accounts voluntary-exit
 ```
 
 </TabItem>
